@@ -1,0 +1,21 @@
+		(1)	(2)	(3)	(4)	(5)	(6)
+VARIABLES	LABELS						
+							
+SameAlphaHypGroupIV	SameAlphaHypGroupIV	0.0400***	0.0559***	0.0855***	0.0496***		
+		(0.0040)	(0.0064)	(0.0065)	(0.0029)		
+AlphaDistIV	AlphaDistIV					-0.0022***	
+						(0.0001)	
+IG	IG						0.0716***
+							(0.0053)
+Constant	Constant	0.0030	0.0013	0.0009	0.0012	0.0540***	0.0011
+		(0.0019)	(0.0028)	(0.0031)	(0.0014)	(0.0032)	(0.0078)
+							
+Observations		27,075	11,918	9,519	52,326	52,326	4,268
+R-squared		0.0291	0.0265	0.0513	0.0284	0.0291	0.0634
+IV		No	No	No	No	No	No
+Controls		Yes	Yes	Yes	Yes	Yes	Yes
+Dyadic Group Clustering		Yes	Yes	Yes	Yes	Yes	Yes
+StdErr IV		0.0141	0.0181	0.0187	0.0102	0.000376	0.0114
+Kleibergen-Paap Weak IV F-stat		8.008	9.539	21	23.87	35.07	39.80
+\textit{Mean}(Dep. Var.)		0.00872	0.00856	0.00819	0.00852	0.00852	0.0225
+\textit{Std.Dev.}(Dep. Var.)		0.0930	0.0921	0.0902	0.0919	0.0919	0.148

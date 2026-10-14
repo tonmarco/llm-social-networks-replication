@@ -1,0 +1,17 @@
+		(1)	(2)	(3)	(4)
+VARIABLES	LABELS				
+					
+LUL	LUL	-0.9950*	-0.2297	-0.7478	-0.4280
+		(0.5991)	(0.5357)	(1.0144)	(0.7844)
+Constant	Constant	1.3124***	0.4106***	-0.2648***	-1.0300***
+		(0.0390)	(0.0297)	(0.0371)	(0.0332)
+					
+Observations		7,422	13,632	11,225	20,047
+R-squared		0.0126	0.0113	0.0009	0.0145
+IV		Yes	Yes	Yes	Yes
+Controls		Yes	Yes	Yes	Yes
+Dyadic Group Clustering		Yes	Yes	Yes	Yes
+Condition		DiffPP==0	DiffPP==1	DiffPP==2	DiffPP>=3
+StdErr LUL		0.662	0.422	0.827	0.569
+\textit{Mean}(Dep. Var.)		1.105	0.245	-0.349	-1.078
+\textit{Std.Dev.}(Dep. Var.)		0.984	1.035	1.155	1.362

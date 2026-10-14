@@ -1,0 +1,93 @@
+---
+title: "PEAS Political Network"
+author: "[redacted for review"
+date: "1/29/2020"
+output: html_document
+---
+
+
+```{r Measurement Properties, echo=FALSE, warning=FALSE, message=FALSE}
+library(haven)
+library(tidyverse)
+library(psych) # for OMEGA
+library(mice) #multiple imputation
+library(apaTables) #Correlation Table
+
+#read data
+NDAT <- read_sav("nodeatt.sav")#load node attributes (wide format) - missing are blank - use for ERGMS
+elist <- read_sav("PEAS_edgelist_nomissing.sav") #edgelist data (long format) ---note these are the final prepared files
+
+IM <- c("PA1R", "PA4")
+EN <- c("PA2R", "PA3")
+RWAN <- c("RWAA1", "RWAA2", "RWAC1", "RWAC2", "RWAT1", "RWAT2")
+SDON <- c("SDO1", "SDO2R", "SDO3R", "SDO4", "SDO5R", "SDO6", "SDO7R", "SDO8R")
+PATN <- c("PAT1", "PAT2", "PAT3", "PAT4")
+IAPN <- c("PA5", "PA6")
+SAPN <- c("PA7", "PA8")
+
+RWA_Ax <- c("RWAA1", "RWAA2")
+RWA_Cx <- c("RWAC1", "RWAC2")
+RWA_Tx <- c("RWAT1", "RWAT2")
+
+SDO_Dx <- c("SDO1","SDO2R", "SDO6", "SDO7R","SDO8R")
+SDO_AEx <- c("SDO3R", "SDO4", "SDO5R")
+
+class(NDAT$Trump)
+
+NDAT <- NDAT  %>% 
+       mutate(PA2R = 7-PA2,
+              PA1R = 7-PA1,
+              SDO2R = 8-SDO2,
+              SDO3R = 8-SDO3,
+              SDO5R = 8-SDO5,
+              SDO7R = 8-SDO7, 
+              SDO8R = 8-SDO8) %>%
+       mutate(
+              ENV = rowMeans(select(.,EN)),
+              IMM = rowMeans(select(., IM)),
+              RWA = rowMeans(select(., RWAN)),
+              SDO = rowMeans(select(., SDON)),
+              PAT = rowMeans(select(., PATN)),
+              IAP = rowMeans(select(., IAPN)),
+              SAP = rowMeans(select(., SAPN)),
+              Trump = na_if(Trump, 6),
+              Obama = na_if(Obama, 6),
+              Medu = na_if(Medu, 4),
+              Medu = na_if(Medu, 11),
+              Fedu = na_if(Fedu, 4),
+              Fedu = na_if(Fedu, 11),
+              RWA_A = rowMeans(select(., RWA_Ax)),
+              RWA_C = rowMeans(select(., RWA_Cx)),
+              RWA_T = rowMeans(select(., RWA_Tx)),
+              SDO_D = rowMeans(select(., SDO_Dx)),
+              SDO_AE = rowMeans(select(., SDO_AEx)))
+              
+
+#recode pedu as highest level of either parents' edu
+NDAT$pedu[NDAT$Medu == 1 | NDAT$Fedu == 1  ] <- 1 
+NDAT$pedu[NDAT$Medu == 2 | NDAT$Fedu == 2  ] <- 2
+NDAT$pedu[NDAT$Medu == 3 | NDAT$Fedu == 3  ] <- 3
+
+NDAT$Race_1[is.na(NDAT$Race_1)] <- 0 #recode NA's for Race White as 0.
+NDAT$Ethnicity[is.na(NDAT$Ethnicity)] <- 1 #recode NA's for Ethnicity as 0
+
+```
+
+```{r and Descriptives, warning=FALSE, echo=FALSE}
+
+#need to impute data for ERGM models
+node_att <- NDAT %>% 
+             select(c(Gender, Grade, Race_1, Ethnicity, income, pedu, RWA, SDO, PAT, ENV, IMM, IAP, SAP, Trump, Obama, RWA_A, RWA_C, RWA_T, SDO_AE, SDO_D))
+
+node_att$Trump <- as.numeric(node_att$Trump)
+node_att$Obama <- as.numeric(node_att$Obama)
+node_att$Gender <- as.factor(node_att$Gender)
+node_att$Grade <- as.factor(node_att$Grade)
+node_att$Race_1 <- as.factor(node_att$Race_1)
+node_att$Ethnicity <- as.factor(node_att$Ethnicity)
+node_att$income <- as.numeric(node_att$income)
+
+NAI <- mice(node_att, m=5, maxit = 5, method = 'pmm', seed = 500)
+NAI <- complete(NAI) 
+
+```

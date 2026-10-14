@@ -1,0 +1,63 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogFigureA3.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}31 Dec 2025, 18:21:52
+{txt}
+{com}. 
+. preserve
+{txt}
+{com}. twoway ///
+>     (hist DiffPP  if LUL==1, ///
+>                 density start(-0.5) width(1) ///
+>         fcolor(ltblue%35) lcolor(none) lwidth(none) ///
+>         barwidth(0.90) ) ///
+>     (hist DiffPPa if LUL==1, ///
+>                 density start(-0.5) width(1) ///        
+>         fcolor(gs10) lcolor(dkgray) lwidth(thin) ///
+>         barwidth(0.50) ), ///
+>         xscale(range(0 8) noextend) xlabel(0(1)8) ///
+>     yline(0.05(0.05)0.4, lcolor(gs15) lwidth(vthin)) ///
+>     yline(0.0(0.1)0.4,  lcolor(gs13) lwidth(vthin)) ///
+>     legend(order(1 "Pre-Sciences Po (Aug 2013)" 2 "Survey time (Mar 2014)") ///
+>            position(6) rows(1) size(small)) ///
+>     xtitle("Political opinion gap") ytitle("Percent") ///
+>     scheme(s1mono) ///
+>     plotregion(margin(b+2)) ///
+>     graphregion(color(white))
+{p 0 4 2}
+{txt}(note:  named style
+dkgray not found in class
+color,  default attributes used)
+{p_end}
+{p 0 4 2}
+{txt}(note:  named style
+dkgray not found in class
+color,  default attributes used)
+{p_end}
+{res}{txt}
+{com}. graph save "$path/Results/FigureA3", replace
+{res}{txt}file {bf:/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/FigureA3.gph} saved
+
+{com}. cap erase "$path/Results/FigureA3.pdf"
+{txt}
+{com}. graph export "$path/Results/FigureA3.pdf", as(pdf) replace
+{txt}{p 0 4 2}
+file {bf}
+/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/FigureA3.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}.         
+. restore
+{txt}
+{com}. 
+. //- Table A5: Effects of Integration Group on Movement of Opinion Pairs Using Alphabetical Distance
+. 
+. * close previous log file
+. cap log close
+{smcl}
+{com}{sf}{ul off}

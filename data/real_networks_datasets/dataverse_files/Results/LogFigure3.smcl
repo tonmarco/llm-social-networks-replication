@@ -1,0 +1,844 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogFigure3.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}31 Dec 2025, 18:16:57
+{txt}
+{com}. 
+. * effect on gap in political opinion
+. preserve
+{txt}
+{com}. * left-left
+. ivreg2 ChangePP (LUL=IG) $Xvar if $condition & LCR==1
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}    8911
+{txt}{col 55}F( 16,  8894) = {res}   11.86
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 13905.14824{txt}{col 55}Centered R2   = {res} -0.0050
+{txt}Total (uncentered) SS   = {res}       17332{txt}{col 55}Uncentered R2 = {res}  0.1937
+{txt}Residual SS             = {res} 13974.05095{txt}{col 55}Root MSE      = {res}   1.252
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    ChangePP{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-1.722149{col 26}{space 2} .5819113{col 37}{space 1}   -2.96{col 46}{space 3}0.003{col 54}{space 4}-2.862674{col 67}{space 3}-.5816236
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0544062{col 26}{space 2} .0372967{col 37}{space 1}    1.46{col 46}{space 3}0.145{col 54}{space 4} -.018694{col 67}{space 3} .1275064
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0159663{col 26}{space 2} .0393688{col 37}{space 1}   -0.41{col 46}{space 3}0.685{col 54}{space 4}-.0931276{col 67}{space 3} .0611951
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2} .3288758{col 26}{space 2} .1269293{col 37}{space 1}    2.59{col 46}{space 3}0.010{col 54}{space 4}  .080099{col 67}{space 3} .5776526
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2}-.2020229{col 26}{space 2} .0286346{col 37}{space 1}   -7.06{col 46}{space 3}0.000{col 54}{space 4}-.2581457{col 67}{space 3}-.1459002
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .5565151{col 26}{space 2} .0876467{col 37}{space 1}    6.35{col 46}{space 3}0.000{col 54}{space 4} .3847306{col 67}{space 3} .7282996
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .1943723{col 26}{space 2} .0660894{col 37}{space 1}    2.94{col 46}{space 3}0.003{col 54}{space 4} .0648395{col 67}{space 3}  .323905
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2}-.2095428{col 26}{space 2} .1038371{col 37}{space 1}   -2.02{col 46}{space 3}0.044{col 54}{space 4}-.4130597{col 67}{space 3}-.0060259
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0087542{col 26}{space 2} .0283113{col 37}{space 1}    0.31{col 46}{space 3}0.757{col 54}{space 4}-.0467349{col 67}{space 3} .0642432
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} .0000272{col 26}{space 2} 5.83e-06{col 37}{space 1}    4.66{col 46}{space 3}0.000{col 54}{space 4} .0000157{col 67}{space 3} .0000386
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0647332{col 26}{space 2} .0302473{col 37}{space 1}    2.14{col 46}{space 3}0.032{col 54}{space 4} .0054496{col 67}{space 3} .1240168
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.1235587{col 26}{space 2} .0276664{col 37}{space 1}   -4.47{col 46}{space 3}0.000{col 54}{space 4}-.1777839{col 67}{space 3}-.0693334
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .0657608{col 26}{space 2} .0876315{col 37}{space 1}    0.75{col 46}{space 3}0.453{col 54}{space 4}-.1059939{col 67}{space 3} .2375154
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0598365{col 26}{space 2} .0271867{col 37}{space 1}   -2.20{col 46}{space 3}0.028{col 54}{space 4}-.1131214{col 67}{space 3}-.0065515
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} .3033273{col 26}{space 2} .1040717{col 37}{space 1}    2.91{col 46}{space 3}0.004{col 54}{space 4} .0993505{col 67}{space 3} .5073041
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2}   .15979{col 26}{space 2}  .082497{col 37}{space 1}    1.94{col 46}{space 3}0.053{col 54}{space 4}-.0019013{col 67}{space 3} .3214812
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .6409652{col 26}{space 2}  .042327{col 37}{space 1}   15.14{col 46}{space 3}0.000{col 54}{space 4} .5580058{col 67}{space 3} .7239245
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##idtest:Underidentification test} (Anderson canon. corr. LM statistic):{res}{col 71} 283.154
+{txt}{col 52}Chi-sq({res}1{txt}) P-val =  {res}{col 73}0.0000
+{txt}{hline 78}
+{help ivreg2##widtest:Weak identification test} (Cragg-Donald Wald F statistic):{res}{col 71} 291.889
+{txt}Stock-Yogo weak ID test critical values:{res}{txt}{col 42}10% maximal IV size{res}{col 73} 16.38
+{txt}{col 42}15% maximal IV size{res}{col 73}  8.96
+{txt}{col 42}20% maximal IV size{res}{col 73}  6.66
+{txt}{col 42}25% maximal IV size{res}{col 73}  5.53
+{txt}Source: Stock-Yogo (2005).  Reproduced by permission.
+{hline 78}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. local res_1 = _b[LUL]
+{txt}
+{com}. * right-right
+. ivreg2 ChangePP (LUL=IG) $Xvar if $condition &  LCR==2
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}    4560
+{txt}{col 55}F( 16,  4543) = {res}   12.31
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 5495.262281{txt}{col 55}Centered R2   = {res}  0.0411
+{txt}Total (uncentered) SS   = {res}        6336{txt}{col 55}Uncentered R2 = {res}  0.1683
+{txt}Residual SS             = {res} 5269.547557{txt}{col 55}Root MSE      = {res}   1.075
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    ChangePP{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-.2515522{col 26}{space 2} .4628992{col 37}{space 1}   -0.54{col 46}{space 3}0.587{col 54}{space 4}-1.158818{col 67}{space 3} .6557136
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} -.207143{col 26}{space 2} .0461825{col 37}{space 1}   -4.49{col 46}{space 3}0.000{col 54}{space 4} -.297659{col 67}{space 3}-.1166269
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2} .3511603{col 26}{space 2} .0498822{col 37}{space 1}    7.04{col 46}{space 3}0.000{col 54}{space 4}  .253393{col 67}{space 3} .4489276
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2} .8101091{col 26}{space 2} .1411452{col 37}{space 1}    5.74{col 46}{space 3}0.000{col 54}{space 4} .5334695{col 67}{space 3} 1.086749
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2}-.1951105{col 26}{space 2} .0476105{col 37}{space 1}   -4.10{col 46}{space 3}0.000{col 54}{space 4}-.2884254{col 67}{space 3}-.1017956
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .4807538{col 26}{space 2} .2800769{col 37}{space 1}    1.72{col 46}{space 3}0.086{col 54}{space 4}-.0681868{col 67}{space 3} 1.029694
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}-.0418675{col 26}{space 2} .0695228{col 37}{space 1}   -0.60{col 46}{space 3}0.547{col 54}{space 4}-.1781296{col 67}{space 3} .0943947
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0556341{col 26}{space 2} .1181836{col 37}{space 1}    0.47{col 46}{space 3}0.638{col 54}{space 4}-.1760014{col 67}{space 3} .2872696
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0345188{col 26}{space 2} .0335926{col 37}{space 1}    1.03{col 46}{space 3}0.304{col 54}{space 4}-.0313215{col 67}{space 3} .1003592
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} 3.00e-06{col 26}{space 2} 5.95e-06{col 37}{space 1}    0.50{col 46}{space 3}0.614{col 54}{space 4}-8.66e-06{col 67}{space 3} .0000147
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .2746992{col 26}{space 2} .0408931{col 37}{space 1}    6.72{col 46}{space 3}0.000{col 54}{space 4} .1945502{col 67}{space 3} .3548482
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.1237683{col 26}{space 2} .0330149{col 37}{space 1}   -3.75{col 46}{space 3}0.000{col 54}{space 4}-.1884763{col 67}{space 3}-.0590603
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .1636358{col 26}{space 2} .1018831{col 37}{space 1}    1.61{col 46}{space 3}0.108{col 54}{space 4}-.0360513{col 67}{space 3}  .363323
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0050283{col 26}{space 2} .0326513{col 37}{space 1}   -0.15{col 46}{space 3}0.878{col 54}{space 4}-.0690237{col 67}{space 3} .0589671
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0454988{col 26}{space 2} .1198417{col 37}{space 1}   -0.38{col 46}{space 3}0.704{col 54}{space 4}-.2803842{col 67}{space 3} .1893867
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .2261957{col 26}{space 2} .1396539{col 37}{space 1}    1.62{col 46}{space 3}0.105{col 54}{space 4}-.0475209{col 67}{space 3} .4999123
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .4217699{col 26}{space 2} .0722807{col 37}{space 1}    5.84{col 46}{space 3}0.000{col 54}{space 4} .2801023{col 67}{space 3} .5634375
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##idtest:Underidentification test} (Anderson canon. corr. LM statistic):{res}{col 71} 181.790
+{txt}{col 52}Chi-sq({res}1{txt}) P-val =  {res}{col 73}0.0000
+{txt}{hline 78}
+{help ivreg2##widtest:Weak identification test} (Cragg-Donald Wald F statistic):{res}{col 71} 188.632
+{txt}Stock-Yogo weak ID test critical values:{res}{txt}{col 42}10% maximal IV size{res}{col 73} 16.38
+{txt}{col 42}15% maximal IV size{res}{col 73}  8.96
+{txt}{col 42}20% maximal IV size{res}{col 73}  6.66
+{txt}{col 42}25% maximal IV size{res}{col 73}  5.53
+{txt}Source: Stock-Yogo (2005).  Reproduced by permission.
+{hline 78}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. local res_2 = _b[LUL]
+{txt}
+{com}. * center-center
+. ivreg2 ChangePP (LUL=IG) $Xvar if $condition &  LCR==3
+{txt}Warning - collinearities detected
+Vars dropped:{col 21}NAT1
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}    4371
+{txt}{col 55}F( 15,  4355) = {res}    3.89
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res}  4736.63418{txt}{col 55}Centered R2   = {res}  0.0128
+{txt}Total (uncentered) SS   = {res}        5852{txt}{col 55}Uncentered R2 = {res}  0.2010
+{txt}Residual SS             = {res} 4676.010448{txt}{col 55}Root MSE      = {res}   1.034
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    ChangePP{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-.4845993{col 26}{space 2} .8819816{col 37}{space 1}   -0.55{col 46}{space 3}0.583{col 54}{space 4}-2.213252{col 67}{space 3} 1.244053
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}  .019879{col 26}{space 2} .0452162{col 37}{space 1}    0.44{col 46}{space 3}0.660{col 54}{space 4}-.0687432{col 67}{space 3} .1085012
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0032402{col 26}{space 2} .0479565{col 37}{space 1}   -0.07{col 46}{space 3}0.946{col 54}{space 4}-.0972331{col 67}{space 3} .0907528
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 9}ADM {c |}{col 14}{res}{space 2} .0033834{col 26}{space 2} .0373952{col 37}{space 1}    0.09{col 46}{space 3}0.928{col 54}{space 4}-.0699099{col 67}{space 3} .0766767
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .1155122{col 26}{space 2} .1772642{col 37}{space 1}    0.65{col 46}{space 3}0.515{col 54}{space 4}-.2319191{col 67}{space 3} .4629436
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0903108{col 26}{space 2} .0793561{col 37}{space 1}    1.14{col 46}{space 3}0.255{col 54}{space 4}-.0652242{col 67}{space 3} .2458458
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2}-.1305342{col 26}{space 2} .1101418{col 37}{space 1}   -1.19{col 46}{space 3}0.236{col 54}{space 4}-.3464082{col 67}{space 3} .0853398
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2}-.0125333{col 26}{space 2} .0322606{col 37}{space 1}   -0.39{col 46}{space 3}0.698{col 54}{space 4} -.075763{col 67}{space 3} .0506964
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} -.000015{col 26}{space 2} 6.71e-06{col 37}{space 1}   -2.24{col 46}{space 3}0.025{col 54}{space 4}-.0000282{col 67}{space 3}-1.89e-06
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2}-.0859335{col 26}{space 2} .0354657{col 37}{space 1}   -2.42{col 46}{space 3}0.015{col 54}{space 4} -.155445{col 67}{space 3}-.0164219
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}  .076647{col 26}{space 2}  .032592{col 37}{space 1}    2.35{col 46}{space 3}0.019{col 54}{space 4}  .012768{col 67}{space 3} .1405261
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.0023007{col 26}{space 2} .1014113{col 37}{space 1}   -0.02{col 46}{space 3}0.982{col 54}{space 4}-.2010632{col 67}{space 3} .1964618
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0100209{col 26}{space 2} .0322918{col 37}{space 1}   -0.31{col 46}{space 3}0.756{col 54}{space 4}-.0733117{col 67}{space 3} .0532699
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} .3179701{col 26}{space 2} .1122032{col 37}{space 1}    2.83{col 46}{space 3}0.005{col 54}{space 4} .0980558{col 67}{space 3} .5378845
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .5347492{col 26}{space 2}  .175975{col 37}{space 1}    3.04{col 46}{space 3}0.002{col 54}{space 4} .1898446{col 67}{space 3} .8796538
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .5361481{col 26}{space 2} .0548334{col 37}{space 1}    9.78{col 46}{space 3}0.000{col 54}{space 4} .4286766{col 67}{space 3} .6436197
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##idtest:Underidentification test} (Anderson canon. corr. LM statistic):{res}{col 71}  84.533
+{txt}{col 52}Chi-sq({res}1{txt}) P-val =  {res}{col 73}0.0000
+{txt}{hline 78}
+{help ivreg2##widtest:Weak identification test} (Cragg-Donald Wald F statistic):{res}{col 71}  85.885
+{txt}Stock-Yogo weak ID test critical values:{res}{txt}{col 42}10% maximal IV size{res}{col 73} 16.38
+{txt}{col 42}15% maximal IV size{res}{col 73}  8.96
+{txt}{col 42}20% maximal IV size{res}{col 73}  6.66
+{txt}{col 42}25% maximal IV size{res}{col 73}  5.53
+{txt}Source: Stock-Yogo (2005).  Reproduced by permission.
+{hline 78}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE
+{col 23}PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+Dropped collinear:{col 23}NAT1
+{hline 78}
+
+{com}. local res_3 = _b[LUL]
+{txt}
+{com}. * left-right
+. ivreg2 ChangePP (LUL=IG) $Xvar if $condition &  LCR==4
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   12864
+{txt}{col 55}F( 16, 12847) = {res}   22.62
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 25496.93252{txt}{col 55}Centered R2   = {res}  0.0274
+{txt}Total (uncentered) SS   = {res}       43976{txt}{col 55}Uncentered R2 = {res}  0.4361
+{txt}Residual SS             = {res} 24798.41978{txt}{col 55}Root MSE      = {res}   1.388
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    ChangePP{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-.4621467{col 26}{space 2} .5950724{col 37}{space 1}   -0.78{col 46}{space 3}0.437{col 54}{space 4}-1.628467{col 67}{space 3} .7041737
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .2042645{col 26}{space 2} .0343946{col 37}{space 1}    5.94{col 46}{space 3}0.000{col 54}{space 4} .1368523{col 67}{space 3} .2716768
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.3975859{col 26}{space 2} .0363472{col 37}{space 1}  -10.94{col 46}{space 3}0.000{col 54}{space 4}-.4688251{col 67}{space 3}-.3263467
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-1.035623{col 26}{space 2} .1110164{col 37}{space 1}   -9.33{col 46}{space 3}0.000{col 54}{space 4}-1.253211{col 67}{space 3}-.8180348
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2}  .275396{col 26}{space 2} .0275574{col 37}{space 1}    9.99{col 46}{space 3}0.000{col 54}{space 4} .2213845{col 67}{space 3} .3294075
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2}-.4789832{col 26}{space 2} .1236941{col 37}{space 1}   -3.87{col 46}{space 3}0.000{col 54}{space 4}-.7214193{col 67}{space 3}-.2365471
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}-.0955577{col 26}{space 2} .0554146{col 37}{space 1}   -1.72{col 46}{space 3}0.085{col 54}{space 4}-.2041684{col 67}{space 3}  .013053
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .1269856{col 26}{space 2}  .099659{col 37}{space 1}    1.27{col 46}{space 3}0.203{col 54}{space 4}-.0683424{col 67}{space 3} .3223136
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2}-.0558058{col 26}{space 2} .0254036{col 37}{space 1}   -2.20{col 46}{space 3}0.028{col 54}{space 4} -.105596{col 67}{space 3}-.0060157
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} 5.20e-07{col 26}{space 2} 4.60e-06{col 37}{space 1}    0.11{col 46}{space 3}0.910{col 54}{space 4}-8.50e-06{col 67}{space 3} 9.54e-06
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2}-.0733086{col 26}{space 2} .0282344{col 37}{space 1}   -2.60{col 46}{space 3}0.009{col 54}{space 4}-.1286471{col 67}{space 3}-.0179702
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.1020929{col 26}{space 2} .0252542{col 37}{space 1}   -4.04{col 46}{space 3}0.000{col 54}{space 4}-.1515901{col 67}{space 3}-.0525956
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.0007808{col 26}{space 2} .0819314{col 37}{space 1}   -0.01{col 46}{space 3}0.992{col 54}{space 4}-.1613634{col 67}{space 3} .1598018
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0381048{col 26}{space 2} .0250341{col 37}{space 1}   -1.52{col 46}{space 3}0.128{col 54}{space 4}-.0871708{col 67}{space 3} .0109611
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0440472{col 26}{space 2} .0998193{col 37}{space 1}   -0.44{col 46}{space 3}0.659{col 54}{space 4}-.2396895{col 67}{space 3}  .151595
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .0114716{col 26}{space 2}   .11575{col 37}{space 1}    0.10{col 46}{space 3}0.921{col 54}{space 4}-.2153942{col 67}{space 3} .2383373
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-1.224036{col 26}{space 2} .0436672{col 37}{space 1}  -28.03{col 46}{space 3}0.000{col 54}{space 4}-1.309622{col 67}{space 3} -1.13845
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##idtest:Underidentification test} (Anderson canon. corr. LM statistic):{res}{col 71} 379.253
+{txt}{col 52}Chi-sq({res}1{txt}) P-val =  {res}{col 73}0.0000
+{txt}{hline 78}
+{help ivreg2##widtest:Weak identification test} (Cragg-Donald Wald F statistic):{res}{col 71} 390.257
+{txt}Stock-Yogo weak ID test critical values:{res}{txt}{col 42}10% maximal IV size{res}{col 73} 16.38
+{txt}{col 42}15% maximal IV size{res}{col 73}  8.96
+{txt}{col 42}20% maximal IV size{res}{col 73}  6.66
+{txt}{col 42}25% maximal IV size{res}{col 73}  5.53
+{txt}Source: Stock-Yogo (2005).  Reproduced by permission.
+{hline 78}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. local res_4 = _b[LUL]
+{txt}
+{com}. * left-center
+. ivreg2 ChangePP (LUL=IG) $Xvar if $condition &  LCR==5
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   12596
+{txt}{col 55}F( 16, 12579) = {res}    9.40
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 19362.63036{txt}{col 55}Centered R2   = {res}  0.0116
+{txt}Total (uncentered) SS   = {res}       21652{txt}{col 55}Uncentered R2 = {res}  0.1161
+{txt}Residual SS             = {res} 19137.97694{txt}{col 55}Root MSE      = {res}   1.233
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    ChangePP{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-.4079006{col 26}{space 2} .5135367{col 37}{space 1}   -0.79{col 46}{space 3}0.427{col 54}{space 4}-1.414414{col 67}{space 3} .5986128
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0828148{col 26}{space 2} .0312657{col 37}{space 1}    2.65{col 46}{space 3}0.008{col 54}{space 4} .0215351{col 67}{space 3} .1440945
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.1520616{col 26}{space 2} .0327478{col 37}{space 1}   -4.64{col 46}{space 3}0.000{col 54}{space 4}-.2162461{col 67}{space 3}-.0878772
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.7812288{col 26}{space 2} .1318114{col 37}{space 1}   -5.93{col 46}{space 3}0.000{col 54}{space 4}-1.039575{col 67}{space 3}-.5228832
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0033089{col 26}{space 2}  .024109{col 37}{space 1}    0.14{col 46}{space 3}0.891{col 54}{space 4}-.0439438{col 67}{space 3} .0505616
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .4199723{col 26}{space 2} .0906336{col 37}{space 1}    4.63{col 46}{space 3}0.000{col 54}{space 4} .2423337{col 67}{space 3} .5976108
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0778213{col 26}{space 2}  .056532{col 37}{space 1}    1.38{col 46}{space 3}0.169{col 54}{space 4}-.0329794{col 67}{space 3}  .188622
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .1587342{col 26}{space 2} .0813598{col 37}{space 1}    1.95{col 46}{space 3}0.051{col 54}{space 4} -.000728{col 67}{space 3} .3181964
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} -.051821{col 26}{space 2} .0228604{col 37}{space 1}   -2.27{col 46}{space 3}0.023{col 54}{space 4}-.0966267{col 67}{space 3}-.0070153
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-.0000186{col 26}{space 2} 4.79e-06{col 37}{space 1}   -3.89{col 46}{space 3}0.000{col 54}{space 4} -.000028{col 67}{space 3}-9.23e-06
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2}-.1539373{col 26}{space 2}  .024924{col 37}{space 1}   -6.18{col 46}{space 3}0.000{col 54}{space 4}-.2027875{col 67}{space 3}-.1050871
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} .0282623{col 26}{space 2} .0225597{col 37}{space 1}    1.25{col 46}{space 3}0.210{col 54}{space 4} -.015954{col 67}{space 3} .0724785
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.0381758{col 26}{space 2} .0735975{col 37}{space 1}   -0.52{col 46}{space 3}0.604{col 54}{space 4}-.1824241{col 67}{space 3} .1060726
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0206175{col 26}{space 2} .0223228{col 37}{space 1}   -0.92{col 46}{space 3}0.356{col 54}{space 4}-.0643693{col 67}{space 3} .0231344
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.2630282{col 26}{space 2} .0826645{col 37}{space 1}   -3.18{col 46}{space 3}0.001{col 54}{space 4}-.4250476{col 67}{space 3}-.1010088
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .1096412{col 26}{space 2} .0907996{col 37}{space 1}    1.21{col 46}{space 3}0.227{col 54}{space 4}-.0683228{col 67}{space 3} .2876053
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.2296672{col 26}{space 2} .0364943{col 37}{space 1}   -6.29{col 46}{space 3}0.000{col 54}{space 4}-.3011946{col 67}{space 3}-.1581397
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##idtest:Underidentification test} (Anderson canon. corr. LM statistic):{res}{col 71} 365.912
+{txt}{col 52}Chi-sq({res}1{txt}) P-val =  {res}{col 73}0.0000
+{txt}{hline 78}
+{help ivreg2##widtest:Weak identification test} (Cragg-Donald Wald F statistic):{res}{col 71} 376.351
+{txt}Stock-Yogo weak ID test critical values:{res}{txt}{col 42}10% maximal IV size{res}{col 73} 16.38
+{txt}{col 42}15% maximal IV size{res}{col 73}  8.96
+{txt}{col 42}20% maximal IV size{res}{col 73}  6.66
+{txt}{col 42}25% maximal IV size{res}{col 73}  5.53
+{txt}Source: Stock-Yogo (2005).  Reproduced by permission.
+{hline 78}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. local res_5 = _b[LUL]
+{txt}
+{com}. * center-right
+. ivreg2 ChangePP (LUL=IG) $Xvar if $condition &  LCR==6
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}    9024
+{txt}{col 55}F( 16,  9007) = {res}   17.72
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res}   12442.457{txt}{col 55}Centered R2   = {res}  0.0166
+{txt}Total (uncentered) SS   = {res}       13368{txt}{col 55}Uncentered R2 = {res}  0.0847
+{txt}Residual SS             = {res} 12235.73386{txt}{col 55}Root MSE      = {res}   1.164
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    ChangePP{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-1.132692{col 26}{space 2} .5527471{col 37}{space 1}   -2.05{col 46}{space 3}0.040{col 54}{space 4}-2.216056{col 67}{space 3}-.0493272
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0040376{col 26}{space 2} .0354553{col 37}{space 1}    0.11{col 46}{space 3}0.909{col 54}{space 4}-.0654535{col 67}{space 3} .0735286
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0234881{col 26}{space 2} .0372179{col 37}{space 1}   -0.63{col 46}{space 3}0.528{col 54}{space 4}-.0964339{col 67}{space 3} .0494577
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2} -.340309{col 26}{space 2} .1570191{col 37}{space 1}   -2.17{col 46}{space 3}0.030{col 54}{space 4}-.6480608{col 67}{space 3}-.0325572
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .1856892{col 26}{space 2} .0314975{col 37}{space 1}    5.90{col 46}{space 3}0.000{col 54}{space 4} .1239552{col 67}{space 3} .2474232
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2}-.5491187{col 26}{space 2} .1612283{col 37}{space 1}   -3.41{col 46}{space 3}0.001{col 54}{space 4}-.8651205{col 67}{space 3} -.233117
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}-.1544994{col 26}{space 2} .0573236{col 37}{space 1}   -2.70{col 46}{space 3}0.007{col 54}{space 4}-.2668516{col 67}{space 3}-.0421473
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} -.288886{col 26}{space 2} .0937881{col 37}{space 1}   -3.08{col 46}{space 3}0.002{col 54}{space 4}-.4727074{col 67}{space 3}-.1050647
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0210771{col 26}{space 2} .0252685{col 37}{space 1}    0.83{col 46}{space 3}0.404{col 54}{space 4}-.0284482{col 67}{space 3} .0706024
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} 6.57e-06{col 26}{space 2} 4.64e-06{col 37}{space 1}    1.42{col 46}{space 3}0.157{col 54}{space 4}-2.52e-06{col 67}{space 3} .0000157
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0791173{col 26}{space 2} .0288166{col 37}{space 1}    2.75{col 46}{space 3}0.006{col 54}{space 4} .0226378{col 67}{space 3} .1355967
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} .0059684{col 26}{space 2} .0252494{col 37}{space 1}    0.24{col 46}{space 3}0.813{col 54}{space 4}-.0435195{col 67}{space 3} .0554563
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.0760653{col 26}{space 2} .0750934{col 37}{space 1}   -1.01{col 46}{space 3}0.311{col 54}{space 4}-.2232457{col 67}{space 3}  .071115
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0236744{col 26}{space 2}  .025028{col 37}{space 1}   -0.95{col 46}{space 3}0.344{col 54}{space 4}-.0727284{col 67}{space 3} .0253796
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} .7138248{col 26}{space 2}  .094976{col 37}{space 1}    7.52{col 46}{space 3}0.000{col 54}{space 4} .5276753{col 67}{space 3} .8999743
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .2421244{col 26}{space 2} .1350588{col 37}{space 1}    1.79{col 46}{space 3}0.073{col 54}{space 4} -.022586{col 67}{space 3} .5068348
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.6026013{col 26}{space 2} .0459118{col 37}{space 1}  -13.13{col 46}{space 3}0.000{col 54}{space 4}-.6925869{col 67}{space 3}-.5126157
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##idtest:Underidentification test} (Anderson canon. corr. LM statistic):{res}{col 71} 276.946
+{txt}{col 52}Chi-sq({res}1{txt}) P-val =  {res}{col 73}0.0000
+{txt}{hline 78}
+{help ivreg2##widtest:Weak identification test} (Cragg-Donald Wald F statistic):{res}{col 71} 285.176
+{txt}Stock-Yogo weak ID test critical values:{res}{txt}{col 42}10% maximal IV size{res}{col 73} 16.38
+{txt}{col 42}15% maximal IV size{res}{col 73}  8.96
+{txt}{col 42}20% maximal IV size{res}{col 73}  6.66
+{txt}{col 42}25% maximal IV size{res}{col 73}  5.53
+{txt}Source: Stock-Yogo (2005).  Reproduced by permission.
+{hline 78}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. local res_6 = _b[LUL]
+{txt}
+{com}. 
+. /*
+> gen orientation = ""
+> replace orientation = "left-left" if _n==1
+> replace orientation = "right-right" if _n==2
+> replace orientation = "center-center" if _n==3
+> replace orientation = "left-right" if _n==4
+> replace orientation = "left-center" if _n==5
+> replace orientation = "center-right" if _n==6
+> */
+. 
+. gen gap_effect = .
+{txt}(294,306 missing values generated)
+
+{com}. replace gap_effect = `res_1' in 1  // left-left
+{txt}(1 real change made)
+
+{com}. replace gap_effect = `res_2' in 2 // right-right
+{txt}(1 real change made)
+
+{com}. replace gap_effect = `res_3' in 3  // center-center
+{txt}(1 real change made)
+
+{com}. replace gap_effect = `res_4' in 4 // left-right
+{txt}(1 real change made)
+
+{com}. replace gap_effect = `res_5' in 5  // left-center
+{txt}(1 real change made)
+
+{com}. replace gap_effect = `res_6' in 6 // center-right
+{txt}(1 real change made)
+
+{com}. 
+. cap drop n
+{txt}
+{com}. gen n = _n
+{txt}
+{com}. * Create Graph A: Effect on political opinion gap
+. graph bar (mean) gap_effect in 1/6, ///
+>         over(n, label(angle(45)) relabel(1 "left-left" 2 "right-right" 3 "center-center" 4 "left-right" 5 "left-center" 6 "center-right")) ///
+>     ytitle("Effect on the pair's political opinion gap") ///
+>     ylabel(-1.8(0.2)0) ///
+>     bar(1, color("31 119 180")) ///
+>     graphregion(color(white)) ///
+>     plotregion(color(white)) ///
+>     name(graph_a, replace)
+{res}{txt}
+{com}.         //    title("(A) Effect on the pair's political opinion gap", position(11) size(medium))
+. graph export "$path/Results/Figure3a.png", replace width(800) height(600)
+{txt}{p 0 4 2}
+file {bf}
+/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Figure3a.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. restore 
+{txt}
+{com}.         
+. * effect on sum of political opinions   
+. preserve
+{txt}
+{com}. * left-left
+. ivreg2 ChangeSumPP (LUL=IG) $Xvar if $condition & LCR==1
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}    8911
+{txt}{col 55}F( 16,  8894) = {res}   31.76
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 23685.13433{txt}{col 55}Centered R2   = {res}  0.0540
+{txt}Total (uncentered) SS   = {res}       33412{txt}{col 55}Uncentered R2 = {res}  0.3294
+{txt}Residual SS             = {res} 22405.50754{txt}{col 55}Root MSE      = {res}   1.586
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} ChangeSumPP{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2} .0103618{col 26}{space 2} .7368397{col 37}{space 1}    0.01{col 46}{space 3}0.989{col 54}{space 4}-1.433817{col 67}{space 3} 1.454541
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} -.188549{col 26}{space 2} .0472266{col 37}{space 1}   -3.99{col 46}{space 3}0.000{col 54}{space 4}-.2811114{col 67}{space 3}-.0959865
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2} .3666363{col 26}{space 2} .0498503{col 37}{space 1}    7.35{col 46}{space 3}0.000{col 54}{space 4} .2689314{col 67}{space 3} .4643411
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2} .9275321{col 26}{space 2}  .160723{col 37}{space 1}    5.77{col 46}{space 3}0.000{col 54}{space 4} .6125208{col 67}{space 3} 1.242543
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2}-.3003831{col 26}{space 2} .0362583{col 37}{space 1}   -8.28{col 46}{space 3}0.000{col 54}{space 4} -.371448{col 67}{space 3}-.2293182
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .2628663{col 26}{space 2} .1109819{col 37}{space 1}    2.37{col 46}{space 3}0.018{col 54}{space 4} .0453459{col 67}{space 3} .4803868
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .1104171{col 26}{space 2}  .083685{col 37}{space 1}    1.32{col 46}{space 3}0.187{col 54}{space 4}-.0536026{col 67}{space 3} .2744367
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2}-.2102986{col 26}{space 2} .1314827{col 37}{space 1}   -1.60{col 46}{space 3}0.110{col 54}{space 4}    -.468{col 67}{space 3} .0474028
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0861152{col 26}{space 2} .0358489{col 37}{space 1}    2.40{col 46}{space 3}0.016{col 54}{space 4} .0158527{col 67}{space 3} .1563777
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} .0000817{col 26}{space 2} 7.39e-06{col 37}{space 1}   11.07{col 46}{space 3}0.000{col 54}{space 4} .0000673{col 67}{space 3} .0000962
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .4259315{col 26}{space 2} .0383004{col 37}{space 1}   11.12{col 46}{space 3}0.000{col 54}{space 4} .3508642{col 67}{space 3} .5009988
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.1571872{col 26}{space 2} .0350324{col 37}{space 1}   -4.49{col 46}{space 3}0.000{col 54}{space 4}-.2258493{col 67}{space 3} -.088525
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.2194494{col 26}{space 2} .1109626{col 37}{space 1}   -1.98{col 46}{space 3}0.048{col 54}{space 4} -.436932{col 67}{space 3}-.0019667
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} .0217898{col 26}{space 2} .0344249{col 37}{space 1}    0.63{col 46}{space 3}0.527{col 54}{space 4}-.0456818{col 67}{space 3} .0892614
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} .4022643{col 26}{space 2} .1317798{col 37}{space 1}    3.05{col 46}{space 3}0.002{col 54}{space 4} .1439806{col 67}{space 3} .6605479
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2}-.5524491{col 26}{space 2} .1044611{col 37}{space 1}   -5.29{col 46}{space 3}0.000{col 54}{space 4}-.7571891{col 67}{space 3}-.3477091
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .6779971{col 26}{space 2} .0535961{col 37}{space 1}   12.65{col 46}{space 3}0.000{col 54}{space 4} .5729506{col 67}{space 3} .7830436
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##idtest:Underidentification test} (Anderson canon. corr. LM statistic):{res}{col 71} 283.154
+{txt}{col 52}Chi-sq({res}1{txt}) P-val =  {res}{col 73}0.0000
+{txt}{hline 78}
+{help ivreg2##widtest:Weak identification test} (Cragg-Donald Wald F statistic):{res}{col 71} 291.889
+{txt}Stock-Yogo weak ID test critical values:{res}{txt}{col 42}10% maximal IV size{res}{col 73} 16.38
+{txt}{col 42}15% maximal IV size{res}{col 73}  8.96
+{txt}{col 42}20% maximal IV size{res}{col 73}  6.66
+{txt}{col 42}25% maximal IV size{res}{col 73}  5.53
+{txt}Source: Stock-Yogo (2005).  Reproduced by permission.
+{hline 78}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. local res_1 = _b[LUL]
+{txt}
+{com}. * right-right
+. ivreg2 ChangeSumPP (LUL=IG) $Xvar if $condition &  LCR==2
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}    4560
+{txt}{col 55}F( 16,  4543) = {res}   23.36
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 8174.083333{txt}{col 55}Centered R2   = {res}  0.0664
+{txt}Total (uncentered) SS   = {res}       17872{txt}{col 55}Uncentered R2 = {res}  0.5730
+{txt}Residual SS             = {res} 7631.359406{txt}{col 55}Root MSE      = {res}   1.294
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} ChangeSumPP{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-.5177696{col 26}{space 2} .5570584{col 37}{space 1}   -0.93{col 46}{space 3}0.353{col 54}{space 4}-1.609584{col 67}{space 3} .5740448
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}  .272201{col 26}{space 2} .0555766{col 37}{space 1}    4.90{col 46}{space 3}0.000{col 54}{space 4} .1632729{col 67}{space 3}  .381129
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.5388495{col 26}{space 2} .0600288{col 37}{space 1}   -8.98{col 46}{space 3}0.000{col 54}{space 4}-.6565038{col 67}{space 3}-.4211952
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-1.077144{col 26}{space 2} .1698558{col 37}{space 1}   -6.34{col 46}{space 3}0.000{col 54}{space 4}-1.410055{col 67}{space 3}-.7442322
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .3081419{col 26}{space 2} .0572951{col 37}{space 1}    5.38{col 46}{space 3}0.000{col 54}{space 4} .1958456{col 67}{space 3} .4204381
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2}-1.055164{col 26}{space 2} .3370478{col 37}{space 1}   -3.13{col 46}{space 3}0.002{col 54}{space 4}-1.715765{col 67}{space 3}-.3945622
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}-.1746059{col 26}{space 2} .0836646{col 37}{space 1}   -2.09{col 46}{space 3}0.037{col 54}{space 4}-.3385854{col 67}{space 3}-.0106263
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2}-.0034265{col 26}{space 2} .1422235{col 37}{space 1}   -0.02{col 46}{space 3}0.981{col 54}{space 4}-.2821795{col 67}{space 3} .2753264
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0265732{col 26}{space 2} .0404258{col 37}{space 1}    0.66{col 46}{space 3}0.511{col 54}{space 4}-.0526598{col 67}{space 3} .1058063
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} .0000121{col 26}{space 2} 7.16e-06{col 37}{space 1}    1.69{col 46}{space 3}0.090{col 54}{space 4}-1.91e-06{col 67}{space 3} .0000262
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .2195663{col 26}{space 2} .0492112{col 37}{space 1}    4.46{col 46}{space 3}0.000{col 54}{space 4} .1231141{col 67}{space 3} .3160186
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} .2115835{col 26}{space 2} .0397305{col 37}{space 1}    5.33{col 46}{space 3}0.000{col 54}{space 4} .1337131{col 67}{space 3} .2894539
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.1361639{col 26}{space 2} .1226073{col 37}{space 1}   -1.11{col 46}{space 3}0.267{col 54}{space 4}-.3764698{col 67}{space 3}  .104142
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0363437{col 26}{space 2}  .039293{col 37}{space 1}   -0.92{col 46}{space 3}0.355{col 54}{space 4}-.1133565{col 67}{space 3} .0406691
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} .3861482{col 26}{space 2} .1442189{col 37}{space 1}    2.68{col 46}{space 3}0.007{col 54}{space 4} .1034843{col 67}{space 3} .6688121
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2}-.0475283{col 26}{space 2} .1680612{col 37}{space 1}   -0.28{col 46}{space 3}0.777{col 54}{space 4}-.3769221{col 67}{space 3} .2818655
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-2.046551{col 26}{space 2} .0869835{col 37}{space 1}  -23.53{col 46}{space 3}0.000{col 54}{space 4}-2.217035{col 67}{space 3}-1.876066
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##idtest:Underidentification test} (Anderson canon. corr. LM statistic):{res}{col 71} 181.790
+{txt}{col 52}Chi-sq({res}1{txt}) P-val =  {res}{col 73}0.0000
+{txt}{hline 78}
+{help ivreg2##widtest:Weak identification test} (Cragg-Donald Wald F statistic):{res}{col 71} 188.632
+{txt}Stock-Yogo weak ID test critical values:{res}{txt}{col 42}10% maximal IV size{res}{col 73} 16.38
+{txt}{col 42}15% maximal IV size{res}{col 73}  8.96
+{txt}{col 42}20% maximal IV size{res}{col 73}  6.66
+{txt}{col 42}25% maximal IV size{res}{col 73}  5.53
+{txt}Source: Stock-Yogo (2005).  Reproduced by permission.
+{hline 78}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. local res_2 = _b[LUL]
+{txt}
+{com}. * center-center
+. ivreg2 ChangeSumPP (LUL=IG) $Xvar if $condition &  LCR==3
+{txt}Warning - collinearities detected
+Vars dropped:{col 21}NAT1
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}    4371
+{txt}{col 55}F( 15,  4355) = {res}   10.76
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 7806.297872{txt}{col 55}Centered R2   = {res}  0.0172
+{txt}Total (uncentered) SS   = {res}        8764{txt}{col 55}Uncentered R2 = {res}  0.1246
+{txt}Residual SS             = {res} 7671.748894{txt}{col 55}Root MSE      = {res}   1.325
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} ChangeSumPP{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2} 1.518193{col 26}{space 2} 1.129715{col 37}{space 1}    1.34{col 46}{space 3}0.179{col 54}{space 4}-.6960077{col 67}{space 3} 3.732395
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0831379{col 26}{space 2} .0579167{col 37}{space 1}    1.44{col 46}{space 3}0.151{col 54}{space 4}-.0303768{col 67}{space 3} .1966526
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.1983447{col 26}{space 2} .0614266{col 37}{space 1}   -3.23{col 46}{space 3}0.001{col 54}{space 4}-.3187387{col 67}{space 3}-.0779507
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 9}ADM {c |}{col 14}{res}{space 2}-.2393512{col 26}{space 2} .0478989{col 37}{space 1}   -5.00{col 46}{space 3}0.000{col 54}{space 4}-.3332313{col 67}{space 3} -.145471
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .6864676{col 26}{space 2} .2270546{col 37}{space 1}    3.02{col 46}{space 3}0.002{col 54}{space 4} .2414487{col 67}{space 3} 1.131487
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}-.0091019{col 26}{space 2} .1016458{col 37}{space 1}   -0.09{col 46}{space 3}0.929{col 54}{space 4} -.208324{col 67}{space 3} .1901203
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .5100878{col 26}{space 2} .1410788{col 37}{space 1}    3.62{col 46}{space 3}0.000{col 54}{space 4} .2335785{col 67}{space 3} .7865971
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0354588{col 26}{space 2} .0413221{col 37}{space 1}    0.86{col 46}{space 3}0.391{col 54}{space 4} -.045531{col 67}{space 3} .1164487
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} .0000132{col 26}{space 2} 8.59e-06{col 37}{space 1}    1.54{col 46}{space 3}0.124{col 54}{space 4}-3.62e-06{col 67}{space 3}   .00003
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0483252{col 26}{space 2} .0454275{col 37}{space 1}    1.06{col 46}{space 3}0.287{col 54}{space 4}-.0407109{col 67}{space 3} .1373614
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.0463751{col 26}{space 2} .0417465{col 37}{space 1}   -1.11{col 46}{space 3}0.267{col 54}{space 4}-.1281967{col 67}{space 3} .0354465
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .1114712{col 26}{space 2}  .129896{col 37}{space 1}    0.86{col 46}{space 3}0.391{col 54}{space 4}-.1431203{col 67}{space 3} .3660627
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} .0029286{col 26}{space 2}  .041362{col 37}{space 1}    0.07{col 46}{space 3}0.944{col 54}{space 4}-.0781394{col 67}{space 3} .0839967
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-1.000149{col 26}{space 2} .1437192{col 37}{space 1}   -6.96{col 46}{space 3}0.000{col 54}{space 4}-1.281833{col 67}{space 3}-.7184642
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} -.663013{col 26}{space 2} .2254033{col 37}{space 1}   -2.94{col 46}{space 3}0.003{col 54}{space 4}-1.104795{col 67}{space 3}-.2212306
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.2818226{col 26}{space 2} .0702352{col 37}{space 1}   -4.01{col 46}{space 3}0.000{col 54}{space 4}-.4194811{col 67}{space 3}-.1441641
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##idtest:Underidentification test} (Anderson canon. corr. LM statistic):{res}{col 71}  84.533
+{txt}{col 52}Chi-sq({res}1{txt}) P-val =  {res}{col 73}0.0000
+{txt}{hline 78}
+{help ivreg2##widtest:Weak identification test} (Cragg-Donald Wald F statistic):{res}{col 71}  85.885
+{txt}Stock-Yogo weak ID test critical values:{res}{txt}{col 42}10% maximal IV size{res}{col 73} 16.38
+{txt}{col 42}15% maximal IV size{res}{col 73}  8.96
+{txt}{col 42}20% maximal IV size{res}{col 73}  6.66
+{txt}{col 42}25% maximal IV size{res}{col 73}  5.53
+{txt}Source: Stock-Yogo (2005).  Reproduced by permission.
+{hline 78}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE
+{col 23}PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+Dropped collinear:{col 23}NAT1
+{hline 78}
+
+{com}. local res_3 = _b[LUL]
+{txt}
+{com}. * left-right
+. ivreg2 ChangeSumPP (LUL=IG) $Xvar if $condition &  LCR==4
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   12864
+{txt}{col 55}F( 16, 12847) = {res}   23.39
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 28877.96891{txt}{col 55}Centered R2   = {res}  0.0262
+{txt}Total (uncentered) SS   = {res}       29428{txt}{col 55}Uncentered R2 = {res}  0.0444
+{txt}Residual SS             = {res} 28121.75261{txt}{col 55}Root MSE      = {res}   1.479
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} ChangeSumPP{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-.4396581{col 26}{space 2} .6336931{col 37}{space 1}   -0.69{col 46}{space 3}0.488{col 54}{space 4}-1.681674{col 67}{space 3} .8023575
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0605978{col 26}{space 2} .0366269{col 37}{space 1}    1.65{col 46}{space 3}0.098{col 54}{space 4}-.0111896{col 67}{space 3} .1323852
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2} -.105474{col 26}{space 2} .0387062{col 37}{space 1}   -2.72{col 46}{space 3}0.006{col 54}{space 4}-.1813367{col 67}{space 3}-.0296113
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.2013262{col 26}{space 2} .1182215{col 37}{space 1}   -1.70{col 46}{space 3}0.089{col 54}{space 4}-.4330361{col 67}{space 3} .0303836
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2}-.1650908{col 26}{space 2} .0293459{col 37}{space 1}   -5.63{col 46}{space 3}0.000{col 54}{space 4}-.2226077{col 67}{space 3}-.1075739
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2}-.4590582{col 26}{space 2}  .131722{col 37}{space 1}   -3.49{col 46}{space 3}0.000{col 54}{space 4}-.7172286{col 67}{space 3}-.2008878
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}-.0328038{col 26}{space 2} .0590111{col 37}{space 1}   -0.56{col 46}{space 3}0.578{col 54}{space 4}-.1484634{col 67}{space 3} .0828558
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2}-.0757065{col 26}{space 2} .1061269{col 37}{space 1}   -0.71{col 46}{space 3}0.476{col 54}{space 4}-.2837115{col 67}{space 3} .1322984
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0695496{col 26}{space 2} .0270523{col 37}{space 1}    2.57{col 46}{space 3}0.010{col 54}{space 4}  .016528{col 67}{space 3} .1225712
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} .0000161{col 26}{space 2} 4.90e-06{col 37}{space 1}    3.29{col 46}{space 3}0.001{col 54}{space 4} 6.52e-06{col 67}{space 3} .0000257
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .2728518{col 26}{space 2} .0300669{col 37}{space 1}    9.07{col 46}{space 3}0.000{col 54}{space 4} .2139219{col 67}{space 3} .3317818
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} .0437264{col 26}{space 2} .0268932{col 37}{space 1}    1.63{col 46}{space 3}0.104{col 54}{space 4}-.0089832{col 67}{space 3} .0964361
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .0251901{col 26}{space 2} .0872488{col 37}{space 1}    0.29{col 46}{space 3}0.773{col 54}{space 4}-.1458144{col 67}{space 3} .1961947
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0310577{col 26}{space 2} .0266588{col 37}{space 1}   -1.17{col 46}{space 3}0.244{col 54}{space 4}-.0833081{col 67}{space 3} .0211926
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} .4329128{col 26}{space 2} .1062977{col 37}{space 1}    4.07{col 46}{space 3}0.000{col 54}{space 4} .2245733{col 67}{space 3} .6412524
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2}-.4446202{col 26}{space 2} .1232622{col 37}{space 1}   -3.61{col 46}{space 3}0.000{col 54}{space 4}-.6862098{col 67}{space 3}-.2030307
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.4181408{col 26}{space 2} .0465012{col 37}{space 1}   -8.99{col 46}{space 3}0.000{col 54}{space 4}-.5092815{col 67}{space 3}-.3270002
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##idtest:Underidentification test} (Anderson canon. corr. LM statistic):{res}{col 71} 379.253
+{txt}{col 52}Chi-sq({res}1{txt}) P-val =  {res}{col 73}0.0000
+{txt}{hline 78}
+{help ivreg2##widtest:Weak identification test} (Cragg-Donald Wald F statistic):{res}{col 71} 390.257
+{txt}Stock-Yogo weak ID test critical values:{res}{txt}{col 42}10% maximal IV size{res}{col 73} 16.38
+{txt}{col 42}15% maximal IV size{res}{col 73}  8.96
+{txt}{col 42}20% maximal IV size{res}{col 73}  6.66
+{txt}{col 42}25% maximal IV size{res}{col 73}  5.53
+{txt}Source: Stock-Yogo (2005).  Reproduced by permission.
+{hline 78}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. local res_4 = _b[LUL]
+{txt}
+{com}. * left-center
+. ivreg2 ChangeSumPP (LUL=IG) $Xvar if $condition &  LCR==5
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   12596
+{txt}{col 55}F( 16, 12579) = {res}   20.69
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 28236.72912{txt}{col 55}Centered R2   = {res}  0.0202
+{txt}Total (uncentered) SS   = {res}       29284{txt}{col 55}Uncentered R2 = {res}  0.0552
+{txt}Residual SS             = {res} 27667.61677{txt}{col 55}Root MSE      = {res}   1.482
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} ChangeSumPP{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-.7720662{col 26}{space 2} .6174607{col 37}{space 1}   -1.25{col 46}{space 3}0.211{col 54}{space 4}-1.982267{col 67}{space 3} .4381346
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}-.0479406{col 26}{space 2} .0375929{col 37}{space 1}   -1.28{col 46}{space 3}0.202{col 54}{space 4}-.1216215{col 67}{space 3} .0257402
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2} .1011343{col 26}{space 2} .0393749{col 37}{space 1}    2.57{col 46}{space 3}0.010{col 54}{space 4} .0239609{col 67}{space 3} .1783076
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2} .9830129{col 26}{space 2}  .158486{col 37}{space 1}    6.20{col 46}{space 3}0.000{col 54}{space 4}  .672386{col 67}{space 3}  1.29364
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2}-.2481547{col 26}{space 2} .0289879{col 37}{space 1}   -8.56{col 46}{space 3}0.000{col 54}{space 4}-.3049699{col 67}{space 3}-.1913394
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .4691565{col 26}{space 2}  .108975{col 37}{space 1}    4.31{col 46}{space 3}0.000{col 54}{space 4} .2555694{col 67}{space 3} .6827437
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0657339{col 26}{space 2} .0679723{col 37}{space 1}    0.97{col 46}{space 3}0.334{col 54}{space 4}-.0674894{col 67}{space 3} .1989573
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .1534143{col 26}{space 2} .0978245{col 37}{space 1}    1.57{col 46}{space 3}0.117{col 54}{space 4}-.0383182{col 67}{space 3} .3451468
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .1169434{col 26}{space 2} .0274867{col 37}{space 1}    4.25{col 46}{space 3}0.000{col 54}{space 4} .0630704{col 67}{space 3} .1708163
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} .0000442{col 26}{space 2} 5.76e-06{col 37}{space 1}    7.66{col 46}{space 3}0.000{col 54}{space 4} .0000329{col 67}{space 3} .0000554
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .2318111{col 26}{space 2} .0299679{col 37}{space 1}    7.74{col 46}{space 3}0.000{col 54}{space 4} .1730752{col 67}{space 3} .2905471
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.0934263{col 26}{space 2} .0271251{col 37}{space 1}   -3.44{col 46}{space 3}0.001{col 54}{space 4}-.1465905{col 67}{space 3} -.040262
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.0176258{col 26}{space 2} .0884913{col 37}{space 1}   -0.20{col 46}{space 3}0.842{col 54}{space 4}-.1910656{col 67}{space 3} .1558141
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} .0071535{col 26}{space 2} .0268402{col 37}{space 1}    0.27{col 46}{space 3}0.790{col 54}{space 4}-.0454524{col 67}{space 3} .0597593
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.2919926{col 26}{space 2} .0993932{col 37}{space 1}   -2.94{col 46}{space 3}0.003{col 54}{space 4}-.4867998{col 67}{space 3}-.0971854
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2}-.4694293{col 26}{space 2} .1091747{col 37}{space 1}   -4.30{col 46}{space 3}0.000{col 54}{space 4}-.6834077{col 67}{space 3}-.2554508
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .1802392{col 26}{space 2} .0438796{col 37}{space 1}    4.11{col 46}{space 3}0.000{col 54}{space 4} .0942368{col 67}{space 3} .2662416
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##idtest:Underidentification test} (Anderson canon. corr. LM statistic):{res}{col 71} 365.912
+{txt}{col 52}Chi-sq({res}1{txt}) P-val =  {res}{col 73}0.0000
+{txt}{hline 78}
+{help ivreg2##widtest:Weak identification test} (Cragg-Donald Wald F statistic):{res}{col 71} 376.351
+{txt}Stock-Yogo weak ID test critical values:{res}{txt}{col 42}10% maximal IV size{res}{col 73} 16.38
+{txt}{col 42}15% maximal IV size{res}{col 73}  8.96
+{txt}{col 42}20% maximal IV size{res}{col 73}  6.66
+{txt}{col 42}25% maximal IV size{res}{col 73}  5.53
+{txt}Source: Stock-Yogo (2005).  Reproduced by permission.
+{hline 78}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. local res_5 = _b[LUL]
+{txt}
+{com}. * center-right
+. ivreg2 ChangeSumPP (LUL=IG) $Xvar if $condition &  LCR==6
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}    9024
+{txt}{col 55}F( 16,  9007) = {res}   13.45
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 16319.78546{txt}{col 55}Centered R2   = {res}  0.0230
+{txt}Total (uncentered) SS   = {res}       24692{txt}{col 55}Uncentered R2 = {res}  0.3543
+{txt}Residual SS             = {res} 15943.78702{txt}{col 55}Root MSE      = {res}   1.329
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} ChangeSumPP{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-.1903468{col 26}{space 2} .6309678{col 37}{space 1}   -0.30{col 46}{space 3}0.763{col 54}{space 4}-1.427021{col 67}{space 3} 1.046327
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .1935317{col 26}{space 2} .0404727{col 37}{space 1}    4.78{col 46}{space 3}0.000{col 54}{space 4} .1142068{col 67}{space 3} .2728567
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.3847331{col 26}{space 2} .0424847{col 37}{space 1}   -9.06{col 46}{space 3}0.000{col 54}{space 4}-.4680016{col 67}{space 3}-.3014646
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-1.294613{col 26}{space 2} .1792393{col 37}{space 1}   -7.22{col 46}{space 3}0.000{col 54}{space 4}-1.645916{col 67}{space 3}-.9433108
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2}-.0817393{col 26}{space 2} .0359548{col 37}{space 1}   -2.27{col 46}{space 3}0.023{col 54}{space 4}-.1522094{col 67}{space 3}-.0112692
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} -.032005{col 26}{space 2} .1840442{col 37}{space 1}   -0.17{col 46}{space 3}0.862{col 54}{space 4} -.392725{col 67}{space 3}  .328715
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0296708{col 26}{space 2} .0654356{col 37}{space 1}    0.45{col 46}{space 3}0.650{col 54}{space 4}-.0985806{col 67}{space 3} .1579222
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .5488253{col 26}{space 2} .1070603{col 37}{space 1}    5.13{col 46}{space 3}0.000{col 54}{space 4} .3389909{col 67}{space 3} .7586597
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0342068{col 26}{space 2} .0288443{col 37}{space 1}    1.19{col 46}{space 3}0.236{col 54}{space 4} -.022327{col 67}{space 3} .0907406
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} .0000144{col 26}{space 2} 5.29e-06{col 37}{space 1}    2.71{col 46}{space 3}0.007{col 54}{space 4} 3.98e-06{col 67}{space 3} .0000247
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2}  .154567{col 26}{space 2} .0328945{col 37}{space 1}    4.70{col 46}{space 3}0.000{col 54}{space 4}  .090095{col 67}{space 3}  .219039
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.0861238{col 26}{space 2} .0288225{col 37}{space 1}   -2.99{col 46}{space 3}0.003{col 54}{space 4}-.1426149{col 67}{space 3}-.0296327
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.1501715{col 26}{space 2} .0857201{col 37}{space 1}   -1.75{col 46}{space 3}0.080{col 54}{space 4}-.3181798{col 67}{space 3} .0178367
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} -.022036{col 26}{space 2} .0285698{col 37}{space 1}   -0.77{col 46}{space 3}0.441{col 54}{space 4}-.0780318{col 67}{space 3} .0339598
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.6474346{col 26}{space 2} .1084163{col 37}{space 1}   -5.97{col 46}{space 3}0.000{col 54}{space 4}-.8599266{col 67}{space 3}-.4349426
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2}-.3404266{col 26}{space 2} .1541714{col 37}{space 1}   -2.21{col 46}{space 3}0.027{col 54}{space 4}-.6425969{col 67}{space 3}-.0382563
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.9563802{col 26}{space 2}  .052409{col 37}{space 1}  -18.25{col 46}{space 3}0.000{col 54}{space 4}  -1.0591{col 67}{space 3}-.8536606
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##idtest:Underidentification test} (Anderson canon. corr. LM statistic):{res}{col 71} 276.946
+{txt}{col 52}Chi-sq({res}1{txt}) P-val =  {res}{col 73}0.0000
+{txt}{hline 78}
+{help ivreg2##widtest:Weak identification test} (Cragg-Donald Wald F statistic):{res}{col 71} 285.176
+{txt}Stock-Yogo weak ID test critical values:{res}{txt}{col 42}10% maximal IV size{res}{col 73} 16.38
+{txt}{col 42}15% maximal IV size{res}{col 73}  8.96
+{txt}{col 42}20% maximal IV size{res}{col 73}  6.66
+{txt}{col 42}25% maximal IV size{res}{col 73}  5.53
+{txt}Source: Stock-Yogo (2005).  Reproduced by permission.
+{hline 78}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. local res_6 = _b[LUL]
+{txt}
+{com}. 
+. /*
+> gen orientation = ""
+> replace orientation = "left-left" if _n==1
+> replace orientation = "right-right" if _n==2
+> replace orientation = "center-center" if _n==3
+> replace orientation = "left-right" if _n==4
+> replace orientation = "left-center" if _n==5
+> replace orientation = "center-right" if _n==6
+> */
+. 
+. gen sum_effect = .
+{txt}(294,306 missing values generated)
+
+{com}. replace sum_effect = `res_1' in 1  // left-left
+{txt}(1 real change made)
+
+{com}. replace sum_effect = `res_2' in 2 // right-right
+{txt}(1 real change made)
+
+{com}. replace sum_effect = `res_3' in 3  // center-center
+{txt}(1 real change made)
+
+{com}. replace sum_effect = `res_4' in 4 // left-right
+{txt}(1 real change made)
+
+{com}. replace sum_effect = `res_5' in 5  // left-center
+{txt}(1 real change made)
+
+{com}. replace sum_effect = `res_6' in 6 // center-right       
+{txt}(1 real change made)
+
+{com}. 
+. cap drop n
+{txt}
+{com}. gen n = _n
+{txt}
+{com}. * Create Graph B: Effect on sum of political opinions  
+. graph bar sum_effect in 1/6, ///
+>         over(n, label(angle(45)) relabel(1 "left-left" 2 "right-right" 3 "center-center" 4 "left-right" 5 "left-center" 6 "center-right")) ///
+>         ytitle("Effect on the pair's sum of political opinions") ///
+>     ylabel(-1(0.5)1.5) ///
+>     bar(1, color("31 119 180")) ///
+>     graphregion(color(white)) ///
+>     plotregion(color(white)) ///
+>     name(graph_b, replace)
+{res}{txt}
+{com}.         // title("(B) Effect on the pair's sum of political opinions", position(11) size(medium))
+. graph export "$path/Results/Figure3b.png", replace width(800) height(600)
+{txt}{p 0 4 2}
+file {bf}
+/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Figure3b.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. restore 
+{txt}
+{com}. 
+. log close // Figure 3
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogFigure3.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}31 Dec 2025, 18:17:06
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

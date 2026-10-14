@@ -1,0 +1,18 @@
+		(1)	(2)	(3)	(4)	(5)
+VARIABLES	LABELS					
+						
+SameAlphaHypGroupIV	SameAlphaHypGroupIV	0.5966***	0.5668***	0.6548***	0.5863***	
+		(0.0097)	(0.0084)	(0.0117)	(0.0053)	
+AlphaDistIV	AlphaDistIV					-0.0284***
+						(0.0002)
+Constant	Constant	0.0065	0.0081**	0.0030	0.0066***	0.6791***
+		(0.0048)	(0.0037)	(0.0053)	(0.0024)	(0.0052)
+						
+Observations		6,087	7,844	4,706	21,054	21,054
+R-squared		0.3860	0.3675	0.4039	0.3654	0.4813
+IV		No	No	No	No	No
+Controls		Yes	Yes	Yes	Yes	Yes
+Dyadic Group Clustering		Yes	Yes	Yes	Yes	Yes
+StdErr IV		0.0831	0.0598	0.0786	0.0489	0.00156
+\textit{Mean}(Dep. Var.)		0.0191	0.0154	0.0189	0.0173	0.0173
+\textit{Std.Dev.}(Dep. Var.)		0.137	0.123	0.136	0.131	0.131

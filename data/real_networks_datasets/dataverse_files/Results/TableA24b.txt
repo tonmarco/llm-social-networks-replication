@@ -1,0 +1,16 @@
+		(1)	(2)	(3)	(4)	(5)	(6)
+VARIABLES	LABELS						
+							
+LAL	LAL	1.3933	-2.2843**	-0.6900	-1.3819	-2.0356**	-2.0907***
+		(1.1373)	(0.9437)	(0.7249)	(0.9206)	(0.8644)	(0.7386)
+Constant	Constant	-1.2551***	1.5604***	-0.0895***	-0.1067***	-0.1053***	-0.1678**
+		(0.0222)	(0.0227)	(0.0297)	(0.0212)	(0.0213)	(0.0770)
+							
+Observations		27,075	11,918	9,519	52,326	52,326	4,268
+R-squared		0.0086	-0.0418	0.0010	-0.0010	-0.0094	-0.0431
+IV		Same Hyp. Group	Same Hyp. Group	Same Hyp. Group	Same Hyp. Group	Same Hyp. Group	Same Hyp. Group
+Controls		Yes	Yes	Yes	Yes	Yes	Yes
+Dyadic Group Clustering		Yes	Yes	Yes	Yes	Yes	Yes
+StdErr LAL		0.867	1.072	0.792	0.478	0.423	0.751
+\textit{Mean}(Dep. Var.)		-1.151	1.474	0.000210	-0.267	-0.267	-0.281
+\textit{Std.Dev.}(Dep. Var.)		1.034	0.730	0.834	1.415	1.415	1.393

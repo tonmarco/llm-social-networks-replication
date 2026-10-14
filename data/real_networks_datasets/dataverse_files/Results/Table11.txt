@@ -1,0 +1,19 @@
+		(1)	(2)	(3)	(4)
+VARIABLES	LABELS				
+					
+IG	IG	-0.1728***		-0.0813**	
+		(0.0453)		(0.0382)	
+LUL	LUL		-0.8984***		-0.5471**
+			(0.2294)		(0.2783)
+Constant	Constant	0.7334***	0.7344***	-0.7261***	-0.7262***
+		(0.0796)	(0.0785)	(0.1578)	(0.1573)
+					
+Observations		21,054	21,054	31,272	31,272
+R-squared		0.0132	0.0038	0.0099	0.0089
+IV		No	Yes	No	Yes
+Controls		yes	yes	yes	yes
+Double Group Clustering		Yes	Yes	Yes	Yes
+StdErr IG		0.0594		0.0606	
+\textit{Mean}(Dep. Var.)		0.548	0.548	-0.816	-0.816
+\textit{Std.Dev.}(Dep. Var.)		1.097	1.097	1.338	1.338
+StdErr LUL			0.304		0.422

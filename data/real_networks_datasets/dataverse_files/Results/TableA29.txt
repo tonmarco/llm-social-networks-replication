@@ -1,0 +1,18 @@
+		(1)	(2)	(3)	(4)	(5)	(6)	(7)
+VARIABLES	LABELS							
+								
+LUL	LUL	-0.8391***	-0.9682***	-0.9419***	-0.9293***	-0.9673***	-0.9601***	-0.9834***
+		(0.2835)	(0.2766)	(0.2766)	(0.2751)	(0.2759)	(0.2768)	(0.2775)
+Constant	Constant	-0.1818***	-0.0985***	-0.1049***	-0.1122***	-0.1113***	-0.1019***	-0.0925***
+		(0.0213)	(0.0214)	(0.0213)	(0.0211)	(0.0214)	(0.0211)	(0.0214)
+								
+Observations		51,040	51,040	51,681	52,003	51,360	52,003	51,360
+R-squared		-0.0010	-0.0016	-0.0015	-0.0006	-0.0009	-0.0006	-0.0014
+Dropped Nationality		ALGERIENNE	ALLEMANDE	BELGE	ESPAGNOLE	ITALIENNE	MALGACHE	MAROCAINE
+IV		Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Controls		Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Dyadic Group Clustering		Yes	Yes	Yes	Yes	Yes	Yes	Yes
+StdErr IG		0.324	0.318	0.314	0.312	0.315	0.315	0.317
+p-value		0.00955	0.00233	0.00273	0.00288	0.00215	0.00230	0.00194
+\textit{Mean}(Dep. Var.)		-0.288	-0.259	-0.263	-0.272	-0.270	-0.267	-0.262
+\textit{Std.Dev.}(Dep. Var.)		1.399	1.414	1.412	1.411	1.421	1.411	1.412

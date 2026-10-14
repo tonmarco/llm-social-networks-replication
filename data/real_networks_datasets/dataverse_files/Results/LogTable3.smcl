@@ -1,0 +1,345 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogTable3.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}31 Dec 2025, 18:04:54
+{txt}
+{com}. /// TABLE 3 - Balance test
+> 
+. // Panel A
+. cap drop IGmeet
+{txt}
+{com}. egen IGmeet = group(IGno_i1 IGno_i2)
+{res}{txt}(26,500 missing values generated)
+
+{com}. reg IG $Xvar if $condition, cluster(IGmeet)
+
+{txt}Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(15, 2690)       =  {res}     0.61
+                                                {txt}Prob > F          = {res}    0.8710
+                                                {txt}R-squared         = {res}    0.0004
+                                                {txt}Root MSE          =    {res}  .1359
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}SEX {c |}{col 14}{res}{space 2} .0006039{col 26}{space 2} .0020785{col 37}{space 1}    0.29{col 46}{space 3}0.771{col 54}{space 4}-.0034718{col 67}{space 3} .0046796
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0018351{col 26}{space 2} .0038977{col 37}{space 1}   -0.47{col 46}{space 3}0.638{col 54}{space 4}-.0094778{col 67}{space 3} .0058076
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.0066266{col 26}{space 2} .0076425{col 37}{space 1}   -0.87{col 46}{space 3}0.386{col 54}{space 4}-.0216125{col 67}{space 3} .0083592
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2}-.0000897{col 26}{space 2}   .00305{col 37}{space 1}   -0.03{col 46}{space 3}0.977{col 54}{space 4}-.0060702{col 67}{space 3} .0058908
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .0084671{col 26}{space 2}  .014751{col 37}{space 1}    0.57{col 46}{space 3}0.566{col 54}{space 4}-.0204573{col 67}{space 3} .0373915
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0025082{col 26}{space 2} .0071294{col 37}{space 1}    0.35{col 46}{space 3}0.725{col 54}{space 4}-.0114715{col 67}{space 3} .0164878
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0054835{col 26}{space 2} .0063065{col 37}{space 1}    0.87{col 46}{space 3}0.385{col 54}{space 4}-.0068826{col 67}{space 3} .0178496
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} -.002353{col 26}{space 2} .0010986{col 37}{space 1}   -2.14{col 46}{space 3}0.032{col 54}{space 4}-.0045071{col 67}{space 3}-.0001988
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-3.29e-07{col 26}{space 2} 4.54e-07{col 37}{space 1}   -0.73{col 46}{space 3}0.468{col 54}{space 4}-1.22e-06{col 67}{space 3} 5.61e-07
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2}-.0021429{col 26}{space 2} .0023112{col 37}{space 1}   -0.93{col 46}{space 3}0.354{col 54}{space 4}-.0066748{col 67}{space 3}  .002389
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} .0012274{col 26}{space 2} .0021197{col 37}{space 1}    0.58{col 46}{space 3}0.563{col 54}{space 4} -.002929{col 67}{space 3} .0053839
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.0004993{col 26}{space 2} .0039409{col 37}{space 1}   -0.13{col 46}{space 3}0.899{col 54}{space 4}-.0082269{col 67}{space 3} .0072282
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} .0000606{col 26}{space 2} .0013025{col 37}{space 1}    0.05{col 46}{space 3}0.963{col 54}{space 4}-.0024934{col 67}{space 3} .0026147
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0033612{col 26}{space 2} .0077599{col 37}{space 1}   -0.43{col 46}{space 3}0.665{col 54}{space 4}-.0185772{col 67}{space 3} .0118548
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .0047731{col 26}{space 2} .0048086{col 37}{space 1}    0.99{col 46}{space 3}0.321{col 54}{space 4}-.0046558{col 67}{space 3} .0142019
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  .021155{col 26}{space 2} .0050036{col 37}{space 1}    4.23{col 46}{space 3}0.000{col 54}{space 4} .0113438{col 67}{space 3} .0309662
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. outreg2 using "$path/Results/Table3A.tex", tex replace label addstat(F-stat, e(F)) ctitle(" ") nonotes dec(4)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3A.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3A.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3A.txt", label"':seeout}
+
+{com}. 
+. // Panel B
+. local first = 1
+{txt}
+{com}. foreach var of varlist DiffPP $Xvar {c -(}
+{txt}  2{com}.    reg IG `var' if $condition, cluster(IGmeet)
+{txt}  3{com}.    if `first' == 1 {c -(}
+{txt}  4{com}.        outreg2 using  "$path/Results/Table3B.tex", replace dec(3) keep(`var')
+{txt}  5{com}.        local first = 0
+{txt}  6{com}.    {c )-}
+{txt}  7{com}.    else {c -(}
+{txt}  8{com}.        outreg2 using  "$path/Results/Table3B.tex", append dec(3) keep(`var')
+{txt}  9{com}.    {c )-}
+{txt} 10{com}. {c )-}
+
+{txt}Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     1.81
+                                                {txt}Prob > F          = {res}    0.1790
+                                                {txt}R-squared         = {res}    0.0001
+                                                {txt}Root MSE          =    {res}  .1359
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}DiffPP {c |}{col 14}{res}{space 2} .0009153{col 26}{space 2} .0006809{col 37}{space 1}    1.34{col 46}{space 3}0.179{col 54}{space 4}-.0004198{col 67}{space 3} .0022505
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0168159{col 26}{space 2} .0028318{col 37}{space 1}    5.94{col 46}{space 3}0.000{col 54}{space 4} .0112633{col 67}{space 3} .0223685
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     0.34
+                                                {txt}Prob > F          = {res}    0.5575
+                                                {txt}R-squared         = {res}    0.0000
+                                                {txt}Root MSE          =    {res} .13591
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}SEX {c |}{col 14}{res}{space 2}-.0006654{col 26}{space 2} .0011343{col 37}{space 1}   -0.59{col 46}{space 3}0.557{col 54}{space 4}-.0028895{col 67}{space 3} .0015587
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0191646{col 26}{space 2} .0033665{col 37}{space 1}    5.69{col 46}{space 3}0.000{col 54}{space 4} .0125634{col 67}{space 3} .0257658
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     0.30
+                                                {txt}Prob > F          = {res}    0.5817
+                                                {txt}R-squared         = {res}    0.0000
+                                                {txt}Root MSE          =    {res} .13591
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0014472{col 26}{space 2} .0026268{col 37}{space 1}   -0.55{col 46}{space 3}0.582{col 54}{space 4} -.006598{col 67}{space 3} .0037036
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0193105{col 26}{space 2}   .00348{col 37}{space 1}    5.55{col 46}{space 3}0.000{col 54}{space 4} .0124868{col 67}{space 3} .0261341
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     1.22
+                                                {txt}Prob > F          = {res}    0.2699
+                                                {txt}R-squared         = {res}    0.0000
+                                                {txt}Root MSE          =    {res}  .1359
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}NAT1 {c |}{col 14}{res}{space 2}-.0082602{col 26}{space 2} .0074853{col 37}{space 1}   -1.10{col 46}{space 3}0.270{col 54}{space 4}-.0229377{col 67}{space 3} .0064174
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0188985{col 26}{space 2} .0031986{col 37}{space 1}    5.91{col 46}{space 3}0.000{col 54}{space 4} .0126264{col 67}{space 3} .0251705
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     0.01
+                                                {txt}Prob > F          = {res}    0.9206
+                                                {txt}R-squared         = {res}    0.0000
+                                                {txt}Root MSE          =    {res} .13591
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}ADM {c |}{col 14}{res}{space 2} .0002995{col 26}{space 2} .0030042{col 37}{space 1}    0.10{col 46}{space 3}0.921{col 54}{space 4}-.0055912{col 67}{space 3} .0061902
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0186155{col 26}{space 2} .0039512{col 37}{space 1}    4.71{col 46}{space 3}0.000{col 54}{space 4} .0108679{col 67}{space 3} .0263632
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     0.43
+                                                {txt}Prob > F          = {res}    0.5123
+                                                {txt}R-squared         = {res}    0.0001
+                                                {txt}Root MSE          =    {res}  .1359
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}ADPR {c |}{col 14}{res}{space 2} .0098293{col 26}{space 2} .0149973{col 37}{space 1}    0.66{col 46}{space 3}0.512{col 54}{space 4} -.019578{col 67}{space 3} .0392366
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0186992{col 26}{space 2} .0031702{col 37}{space 1}    5.90{col 46}{space 3}0.000{col 54}{space 4}  .012483{col 67}{space 3} .0249154
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     0.39
+                                                {txt}Prob > F          = {res}    0.5316
+                                                {txt}R-squared         = {res}    0.0001
+                                                {txt}Root MSE          =    {res}  .1359
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}DEPB {c |}{col 14}{res}{space 2} .0045202{col 26}{space 2}  .007224{col 37}{space 1}    0.63{col 46}{space 3}0.532{col 54}{space 4} -.009645{col 67}{space 3} .0186853
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0185472{col 26}{space 2} .0031358{col 37}{space 1}    5.91{col 46}{space 3}0.000{col 54}{space 4} .0123983{col 67}{space 3}  .024696
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     0.72
+                                                {txt}Prob > F          = {res}    0.3974
+                                                {txt}R-squared         = {res}    0.0001
+                                                {txt}Root MSE          =    {res}  .1359
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}REGBAC {c |}{col 14}{res}{space 2}  .003052{col 26}{space 2} .0036055{col 37}{space 1}    0.85{col 46}{space 3}0.397{col 54}{space 4}-.0040178{col 67}{space 3} .0101217
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0180619{col 26}{space 2} .0031541{col 37}{space 1}    5.73{col 46}{space 3}0.000{col 54}{space 4} .0118771{col 67}{space 3} .0242466
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     3.89
+                                                {txt}Prob > F          = {res}    0.0488
+                                                {txt}R-squared         = {res}    0.0001
+                                                {txt}Root MSE          =    {res}  .1359
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}SERIEBAC {c |}{col 14}{res}{space 2}-.0022098{col 26}{space 2} .0011208{col 37}{space 1}   -1.97{col 46}{space 3}0.049{col 54}{space 4}-.0044075{col 67}{space 3} -.000012
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0196685{col 26}{space 2} .0033071{col 37}{space 1}    5.95{col 46}{space 3}0.000{col 54}{space 4} .0131838{col 67}{space 3} .0261532
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     0.39
+                                                {txt}Prob > F          = {res}    0.5342
+                                                {txt}R-squared         = {res}    0.0000
+                                                {txt}Root MSE          =    {res} .13591
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}DiffDR {c |}{col 14}{res}{space 2}-2.43e-07{col 26}{space 2} 3.91e-07{col 37}{space 1}   -0.62{col 46}{space 3}0.534{col 54}{space 4}-1.01e-06{col 67}{space 3} 5.23e-07
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0197339{col 26}{space 2} .0037062{col 37}{space 1}    5.32{col 46}{space 3}0.000{col 54}{space 4} .0124667{col 67}{space 3} .0270011
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     0.28
+                                                {txt}Prob > F          = {res}    0.5982
+                                                {txt}R-squared         = {res}    0.0000
+                                                {txt}Root MSE          =    {res} .13591
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}NOFEE {c |}{col 14}{res}{space 2}-.0010979{col 26}{space 2} .0020833{col 37}{space 1}   -0.53{col 46}{space 3}0.598{col 54}{space 4} -.005183{col 67}{space 3} .0029872
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0195092{col 26}{space 2} .0036211{col 37}{space 1}    5.39{col 46}{space 3}0.000{col 54}{space 4} .0124089{col 67}{space 3} .0266096
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     0.40
+                                                {txt}Prob > F          = {res}    0.5257
+                                                {txt}R-squared         = {res}    0.0000
+                                                {txt}Root MSE          =    {res} .13591
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}PARI {c |}{col 14}{res}{space 2} .0013795{col 26}{space 2} .0021739{col 37}{space 1}    0.63{col 46}{space 3}0.526{col 54}{space 4}-.0028831{col 67}{space 3} .0056422
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0182106{col 26}{space 2}  .003121{col 37}{space 1}    5.83{col 46}{space 3}0.000{col 54}{space 4} .0120909{col 67}{space 3} .0243303
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     0.03
+                                                {txt}Prob > F          = {res}    0.8740
+                                                {txt}R-squared         = {res}    0.0000
+                                                {txt}Root MSE          =    {res} .13591
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}ZIP {c |}{col 14}{res}{space 2}-.0006449{col 26}{space 2}  .004066{col 37}{space 1}   -0.16{col 46}{space 3}0.874{col 54}{space 4}-.0086177{col 67}{space 3} .0073278
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0188406{col 26}{space 2} .0031815{col 37}{space 1}    5.92{col 46}{space 3}0.000{col 54}{space 4} .0126021{col 67}{space 3}  .025079
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     0.03
+                                                {txt}Prob > F          = {res}    0.8541
+                                                {txt}R-squared         = {res}    0.0000
+                                                {txt}Root MSE          =    {res} .13591
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}Paris {c |}{col 14}{res}{space 2} .0002469{col 26}{space 2} .0013427{col 37}{space 1}    0.18{col 46}{space 3}0.854{col 54}{space 4} -.002386{col 67}{space 3} .0028798
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0186995{col 26}{space 2} .0032284{col 37}{space 1}    5.79{col 46}{space 3}0.000{col 54}{space 4} .0123691{col 67}{space 3} .0250299
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     0.43
+                                                {txt}Prob > F          = {res}    0.5129
+                                                {txt}R-squared         = {res}    0.0001
+                                                {txt}Root MSE          =    {res}  .1359
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}IDFBAC {c |}{col 14}{res}{space 2} .0026262{col 26}{space 2} .0040131{col 37}{space 1}    0.65{col 46}{space 3}0.513{col 54}{space 4} -.005243{col 67}{space 3} .0104953
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0182175{col 26}{space 2}  .003194{col 37}{space 1}    5.70{col 46}{space 3}0.000{col 54}{space 4} .0119546{col 67}{space 3} .0244804
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}    52,326
+                                                {txt}F(1, 2690)        =  {res}     0.91
+                                                {txt}Prob > F          = {res}    0.3405
+                                                {txt}R-squared         = {res}    0.0000
+                                                {txt}Root MSE          =    {res}  .1359
+
+{txt}{ralign 78:(Std. err. adjusted for {res:2,691} clusters in {res:IGmeet})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}          IG{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}PRO1 {c |}{col 14}{res}{space 2} .0046036{col 26}{space 2}  .004829{col 37}{space 1}    0.95{col 46}{space 3}0.341{col 54}{space 4}-.0048654{col 67}{space 3} .0140726
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0186807{col 26}{space 2} .0031851{col 37}{space 1}    5.86{col 46}{space 3}0.000{col 54}{space 4} .0124351{col 67}{space 3} .0249263
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table3B.txt""':seeout}
+
+{com}. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogTable3.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}31 Dec 2025, 18:05:07
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

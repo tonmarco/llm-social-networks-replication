@@ -1,0 +1,3913 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_vDec1/Codes/Create/Codebook.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}31 Dec 2025, 07:13:52
+{txt}
+{com}. use "$path/Data/Raw/base_complete_1314_i1.dta", clear
+{txt}
+{com}. 
+. codebook
+
+{txt}{hline}
+{res}ID_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}int{txt})
+
+{col 18}Range: [{res}1{txt},{res}1718{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}543{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:862.204}
+{txt}{col 14}Std. dev.: {res}{ralign 7:502.562}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:161}{ralign 10:     416}{ralign 10:     870}{ralign 10:    1298}{ralign 10:    1554}
+
+{txt}{hline}
+{res}uid_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}10040{txt},{res}99972{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}543{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:54078.8}
+{txt}{col 14}Std. dev.: {res}{ralign 7:25604.5}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:19006}{ralign 10:   31689}{ralign 10:   54327}{ralign 10:   76492}{ralign 10:   89790}
+
+{txt}{hline}
+{res}betweeness_cent_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}double{txt})
+
+{col 18}Range: [{res}0{txt},{res}12440.03{txt}]{col 55}Units: {res}1.000e-06
+{col 10}{txt}Unique values: {res}542{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:2626.58}
+{txt}{col 14}Std. dev.: {res}{ralign 7:1863.73}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:581.192}{ralign 10: 1285.93}{ralign 10: 2262.35}{ralign 10: 3514.12}{ralign 10: 4939.76}
+
+{txt}{hline}
+{res}eigen_bonacich_cent_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}double{txt})
+
+{col 18}Range: [{res}.00105744{txt},{res}.10177214{txt}]{col 55}Units: {res}1.000e-12
+{col 10}{txt}Unique values: {res}543{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:.034896}
+{txt}{col 14}Std. dev.: {res}{ralign 7:.020512}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:.010772}{ralign 10: .018712}{ralign 10: .031913}{ralign 10: .046977}{ralign 10: .063528}
+
+{txt}{hline}
+{res}katz_bonacich_cent_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}double{txt})
+
+{col 18}Range: [{res}1.3060107{txt},{res}6.5548671{txt}]{col 55}Units: {res}1.000e-10
+{col 10}{txt}Unique values: {res}543{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:3.59646}
+{txt}{col 14}Std. dev.: {res}{ralign 7:1.02334}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:2.28183}{ralign 10: 2.88239}{ralign 10: 3.54045}{ralign 10: 4.23504}{ralign 10: 4.93777}
+
+{txt}{hline}
+{res}Anonymat_i1{right:Anonymat}
+{txt}{hline}
+
+{col 19}Type: String ({res}str7{txt})
+
+{col 10}Unique values: {res}543{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"ETUD243"
+{col 25}"ETUD374"
+{col 25}"ETUD528"
+{col 25}"ETUD661"
+
+{txt}{hline}
+{res}Semestrepdagogique_i1{right:Semestre pédagogique}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}201310{txt},{res}201310{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}201310
+
+{txt}{hline}
+{res}Libellenseignement_i1{right:Libellé enseignement}
+{txt}{hline}
+
+{col 19}Type: String ({res}str9{txt})
+
+{col 10}Unique values: {res}43{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"GROUPE 17"
+{col 25}"GROUPE 25"
+{col 25}"GROUPE 32"
+{col 25}"GROUPE 40"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}Libellunitpdagogique_i1{right:Libellé unité pédagogique}
+{txt}{hline}
+
+{col 19}Type: String ({res}str21{txt})
+
+{col 10}Unique values: {res}43{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"GROUPE 17"
+{col 25}"GROUPE 25"
+{col 25}"GROUPE 32"
+{col 25}"GROUPE 40"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}Programmeactuel_i1{right:Programme actuel}
+{txt}{hline}
+
+{col 19}Type: String ({res}str5{txt})
+
+{col 10}Unique values: {res}5{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       381{col 32}"BA"
+{col 20}        31{col 32}"BAAFR"
+{col 20}        28{col 32}"BAP1"
+{col 20}        78{col 32}"BAP4"
+{col 20}        25{col 32}"BAP6"
+
+{txt}{hline}
+{res}Revenutotaux20132014_i1{right:Revenu totaux
+2013-2014}
+{txt}{hline}
+
+{col 19}Type: String ({res}str10{txt})
+
+{col 10}Unique values: {res}365{col 51}{txt}Missing "": {res}178{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}"1217572"
+{col 25}"347100"
+{col 25}"65942"
+
+{txt}{hline}
+{res}Nb_part_ScPo20132014_i1{right:Nb_part_ScPo
+2013-2014}
+{txt}{hline}
+
+{col 19}Type: String ({res}str3{txt})
+
+{col 10}Unique values: {res}15{col 51}{txt}Missing "": {res}154{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}"2,5"
+{col 25}"3"
+{col 25}"3,5"
+
+{txt}{hline}
+{res}Revenutotaux20142015_i1{right:Revenu totaux
+2014-2015}
+{txt}{hline}
+
+{col 19}Type: String ({res}str6{txt})
+
+{col 10}Unique values: {res}328{col 51}{txt}Missing "": {res}215{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}"100007"
+{col 25}"202006"
+{col 25}"65718"
+
+{txt}{hline}
+{res}Nb_part_ScPo201320142_i1{right:Nb_part_ScPo
+2013-20142}
+{txt}{hline}
+
+{col 19}Type: String ({res}str4{txt}), but longest is str3
+
+{col 10}Unique values: {res}16{col 51}{txt}Missing "": {res}214{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}"1,0"
+{col 25}"3,0"
+{col 25}"3,5"
+
+{txt}{hline}
+{res}Codepostal_adressePR_i1{right:Code postal_adresse PR}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}2100{txt},{res}97111{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}181{col 51}{txt}Missing .: {res}1{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:77514.2}
+{txt}{col 14}Std. dev.: {res}{ralign 7:14300.4}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:75004}{ralign 10:   75007}{ralign 10:   75015}{ralign 10:   91700}{ralign 10:   93230}
+
+{txt}{hline}
+{res}Groupestage_integration_i1{right:Groupe stage_integration}
+{txt}{hline}
+
+{col 19}Type: String ({res}str4{txt})
+
+{col 10}Unique values: {res}53{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"ST16"
+{col 25}"ST27"
+{col 25}"ST37"
+{col 25}"ST47"
+
+{txt}{hline}
+{res}name_i1{right:name}
+{txt}{hline}
+
+{col 19}Type: String ({res}str36{txt})
+
+{col 10}Unique values: {res}543{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"CATALA Lea"
+{col 25}"GANDEGA Bamby"
+{col 25}"LENOIR Constance"
+{col 25}"RATSARAZAKA-RATSIMANDRESY Niry"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}email_i1{right:email}
+{txt}{hline}
+
+{col 19}Type: String ({res}str47{txt})
+
+{col 10}Unique values: {res}543{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"claire.petreault@sciencespo.fr"
+{col 25}"heloise.voisin@sciencespo.fr"
+{col 25}"lucie.rey@sciencespo.fr"
+{col 25}"oumkaltoum.tahirijotey@sciencespo.fr"
+
+{txt}{hline}
+{res}pass_i1{right:pass}
+{txt}{hline}
+
+{col 19}Type: String ({res}str4{txt})
+
+{col 10}Unique values: {res}543{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"2636"
+{col 25}"4261"
+{col 25}"6104"
+{col 25}"8126"
+
+{txt}{hline}
+{res}done_i1{right:done}
+{txt}{hline}
+
+{col 19}Type: String ({res}str1{txt})
+
+{col 10}Unique values: {res}1{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}"0"
+
+{txt}{hline}
+{res}promo_i1{right:promo}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}2{txt},{res}2{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}2
+
+{txt}{hline}
+{res}group_i1{right:group}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}46{txt},{res}88{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}43{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:67.1768}
+{txt}{col 14}Std. dev.: {res}{ralign 7:12.3959}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:50}{ralign 10:      56}{ralign 10:      67}{ralign 10:      78}{ralign 10:      85}
+
+{txt}{hline}
+{res}agree_i1{right:agree}
+{txt}{hline}
+
+{col 19}Type: String ({res}str18{txt})
+
+{col 10}Unique values: {res}539{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"14/3/2014 20:05:24"
+{col 25}"4/3/2014 10:17:00"
+{col 25}"4/3/2014 14:05:08"
+{col 25}"5/3/2014 17:20:20"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}intro_i1{right:intro}
+{txt}{hline}
+
+{col 19}Type: String ({res}str18{txt})
+
+{col 10}Unique values: {res}543{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"14/3/2014 20:05:26"
+{col 25}"4/3/2014 10:17:30"
+{col 25}"4/3/2014 14:05:45"
+{col 25}"5/3/2014 17:20:26"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q1_1uid_i1{right:q1_1uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}10040{txt},{res}99972{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}383{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:53291.7}
+{txt}{col 14}Std. dev.: {res}{ralign 7:26138.4}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:18921}{ralign 10:   30379}{ralign 10:   52514}{ralign 10:   77260}{ralign 10:   89463}
+
+{txt}{hline}
+{res}q1_2uid_i1{right:q1_2uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}10040{txt},{res}99991{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}390{col 51}{txt}Missing .: {res}4{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:54313.5}
+{txt}{col 14}Std. dev.: {res}{ralign 7:26059}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:19211}{ralign 10:   31510}{ralign 10:   54459}{ralign 10:   77260}{ralign 10:   91126}
+
+{txt}{hline}
+{res}q1_3uid_i1{right:q1_3uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}10040{txt},{res}99991{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}355{col 51}{txt}Missing .: {res}4{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:55442}
+{txt}{col 14}Std. dev.: {res}{ralign 7:26892.6}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:18781}{ralign 10:   30463}{ralign 10:   54459}{ralign 10:   80846}{ralign 10:   91277}
+
+{txt}{hline}
+{res}q1_4uid_i1{right:q1_4uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}10709{txt},{res}99991{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}378{col 51}{txt}Missing .: {res}21{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:55353.6}
+{txt}{col 14}Std. dev.: {res}{ralign 7:25927.5}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:19583}{ralign 10:   32124}{ralign 10:   55806}{ralign 10:   78776}{ralign 10:   90892}
+
+{txt}{hline}
+{res}q1_5uid_i1{right:q1_5uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}10040{txt},{res}99972{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}358{col 51}{txt}Missing .: {res}44{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:54177.5}
+{txt}{col 14}Std. dev.: {res}{ralign 7:26014.3}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:19952}{ralign 10:   30379}{ralign 10:   53702}{ralign 10:   78000}{ralign 10:   90117}
+
+{txt}{hline}
+{res}q1_6uid_i1{right:q1_6uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}10040{txt},{res}99991{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}355{col 51}{txt}Missing .: {res}70{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:55761.4}
+{txt}{col 14}Std. dev.: {res}{ralign 7:26937}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:19583}{ralign 10:   31552}{ralign 10:   56055}{ralign 10:   80545}{ralign 10:   92496}
+
+{txt}{hline}
+{res}q1_7uid_i1{right:q1_7uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}10149{txt},{res}99972{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}328{col 51}{txt}Missing .: {res}103{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:55092.3}
+{txt}{col 14}Std. dev.: {res}{ralign 7:25553.4}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:19211}{ralign 10: 32615.5}{ralign 10: 55576.5}{ralign 10:   76960}{ralign 10:   90353}
+
+{txt}{hline}
+{res}q1_8uid_i1{right:q1_8uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}10694{txt},{res}99972{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}293{col 51}{txt}Missing .: {res}143{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:54805.9}
+{txt}{col 14}Std. dev.: {res}{ralign 7:26844.7}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:19074}{ralign 10:   28995}{ralign 10:   54554}{ralign 10: 79928.5}{ralign 10: 91186.5}
+
+{txt}{hline}
+{res}q1_9uid_i1{right:q1_9uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}10755{txt},{res}99627{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}268{col 51}{txt}Missing .: {res}187{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:54590.7}
+{txt}{col 14}Std. dev.: {res}{ralign 7:25448.8}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:19583}{ralign 10:   31966}{ralign 10: 53778.5}{ralign 10:   77894}{ralign 10:   88996}
+
+{txt}{hline}
+{res}q1_10uid_i1{right:q1_10uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}11996{txt},{res}99991{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}242{col 51}{txt}Missing .: {res}235{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:55077.4}
+{txt}{col 14}Std. dev.: {res}{ralign 7:24274.2}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:21413}{ralign 10: 33834.5}{ralign 10:   53868}{ralign 10: 76564.5}{ralign 10:   88996}
+
+{txt}{hline}
+{res}q1_none_i1{right:q1_none}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q1_i1{right:q1}
+{txt}{hline}
+
+{col 19}Type: String ({res}str18{txt})
+
+{col 10}Unique values: {res}542{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"14/3/2014 20:07:59"
+{col 25}"4/3/2014 10:22:12"
+{col 25}"4/3/2014 14:09:17"
+{col 25}"5/3/2014 17:55:04"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q1_1if_i1{right:q1_1if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}7{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}7{col 51}{txt}Missing .: {res}21{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       173{col 32}1
+{col 20}       193{col 32}2
+{col 20}        14{col 32}3
+{col 20}        14{col 32}4
+{col 20}        18{col 32}5
+{col 20}        78{col 32}6
+{col 20}        32{col 32}7
+{col 20}        21{col 32}.
+
+{txt}{hline}
+{res}q1_2if_i1{right:q1_2if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}7{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}7{col 51}{txt}Missing .: {res}21{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       155{col 32}1
+{col 20}       217{col 32}2
+{col 20}        22{col 32}3
+{col 20}        14{col 32}4
+{col 20}        31{col 32}5
+{col 20}        35{col 32}6
+{col 20}        48{col 32}7
+{col 20}        21{col 32}.
+
+{txt}{hline}
+{res}q1_3if_i1{right:q1_3if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}7{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}7{col 51}{txt}Missing .: {res}22{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       105{col 32}1
+{col 20}       252{col 32}2
+{col 20}        19{col 32}3
+{col 20}        32{col 32}4
+{col 20}        32{col 32}5
+{col 20}        36{col 32}6
+{col 20}        45{col 32}7
+{col 20}        22{col 32}.
+
+{txt}{hline}
+{res}q1_4if_i1{right:q1_4if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}7{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}7{col 51}{txt}Missing .: {res}45{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       107{col 32}1
+{col 20}       229{col 32}2
+{col 20}        18{col 32}3
+{col 20}        27{col 32}4
+{col 20}        37{col 32}5
+{col 20}        24{col 32}6
+{col 20}        56{col 32}7
+{col 20}        45{col 32}.
+
+{txt}{hline}
+{res}q1_5if_i1{right:q1_5if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}7{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}7{col 51}{txt}Missing .: {res}67{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        93{col 32}1
+{col 20}       226{col 32}2
+{col 20}        21{col 32}3
+{col 20}        25{col 32}4
+{col 20}        23{col 32}5
+{col 20}        26{col 32}6
+{col 20}        62{col 32}7
+{col 20}        67{col 32}.
+
+{txt}{hline}
+{res}q1_6if_i1{right:q1_6if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}7{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}7{col 51}{txt}Missing .: {res}92{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        70{col 32}1
+{col 20}       219{col 32}2
+{col 20}        20{col 32}3
+{col 20}        30{col 32}4
+{col 20}        31{col 32}5
+{col 20}        26{col 32}6
+{col 20}        55{col 32}7
+{col 20}        92{col 32}.
+
+{txt}{hline}
+{res}q1_7if_i1{right:q1_7if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}7{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}7{col 51}{txt}Missing .: {res}125{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        72{col 32}1
+{col 20}       187{col 32}2
+{col 20}        18{col 32}3
+{col 20}        29{col 32}4
+{col 20}        35{col 32}5
+{col 20}        29{col 32}6
+{col 20}        48{col 32}7
+{col 20}       125{col 32}.
+
+{txt}{hline}
+{res}q1_8if_i1{right:q1_8if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}7{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}7{col 51}{txt}Missing .: {res}161{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        71{col 32}1
+{col 20}       164{col 32}2
+{col 20}        13{col 32}3
+{col 20}        30{col 32}4
+{col 20}        38{col 32}5
+{col 20}        20{col 32}6
+{col 20}        46{col 32}7
+{col 20}       161{col 32}.
+
+{txt}{hline}
+{res}q1_9if_i1{right:q1_9if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}7{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}7{col 51}{txt}Missing .: {res}204{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        57{col 32}1
+{col 20}       138{col 32}2
+{col 20}        15{col 32}3
+{col 20}        28{col 32}4
+{col 20}        35{col 32}5
+{col 20}        16{col 32}6
+{col 20}        50{col 32}7
+{col 20}       204{col 32}.
+
+{txt}{hline}
+{res}q1_10if_i1{right:q1_10if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}7{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}7{col 51}{txt}Missing .: {res}248{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        42{col 32}1
+{col 20}       115{col 32}2
+{col 20}        15{col 32}3
+{col 20}        31{col 32}4
+{col 20}        38{col 32}5
+{col 20}        15{col 32}6
+{col 20}        39{col 32}7
+{col 20}       248{col 32}.
+
+{txt}{hline}
+{res}q1_1cb_i1{right:q1_1cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}5{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}5{col 51}{txt}Missing .: {res}31{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        67{col 32}1
+{col 20}        16{col 32}2
+{col 20}         9{col 32}3
+{col 20}       350{col 32}4
+{col 20}        70{col 32}5
+{col 20}        31{col 32}.
+
+{txt}{hline}
+{res}q1_2cb_i1{right:q1_2cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}5{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}5{col 51}{txt}Missing .: {res}36{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        78{col 32}1
+{col 20}        26{col 32}2
+{col 20}         8{col 32}3
+{col 20}       324{col 32}4
+{col 20}        71{col 32}5
+{col 20}        36{col 32}.
+
+{txt}{hline}
+{res}q1_3cb_i1{right:q1_3cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}5{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}5{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        86{col 32}1
+{col 20}        23{col 32}2
+{col 20}        12{col 32}3
+{col 20}       316{col 32}4
+{col 20}        73{col 32}5
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q1_4cb_i1{right:q1_4cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}5{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}5{col 51}{txt}Missing .: {res}58{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        77{col 32}1
+{col 20}        16{col 32}2
+{col 20}        13{col 32}3
+{col 20}       300{col 32}4
+{col 20}        79{col 32}5
+{col 20}        58{col 32}.
+
+{txt}{hline}
+{res}q1_5cb_i1{right:q1_5cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}5{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}5{col 51}{txt}Missing .: {res}79{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        87{col 32}1
+{col 20}        28{col 32}2
+{col 20}         9{col 32}3
+{col 20}       264{col 32}4
+{col 20}        76{col 32}5
+{col 20}        79{col 32}.
+
+{txt}{hline}
+{res}q1_6cb_i1{right:q1_6cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}5{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}5{col 51}{txt}Missing .: {res}104{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        72{col 32}1
+{col 20}        20{col 32}2
+{col 20}         6{col 32}3
+{col 20}       261{col 32}4
+{col 20}        80{col 32}5
+{col 20}       104{col 32}.
+
+{txt}{hline}
+{res}q1_7cb_i1{right:q1_7cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}5{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}5{col 51}{txt}Missing .: {res}137{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        73{col 32}1
+{col 20}        13{col 32}2
+{col 20}         7{col 32}3
+{col 20}       227{col 32}4
+{col 20}        86{col 32}5
+{col 20}       137{col 32}.
+
+{txt}{hline}
+{res}q1_8cb_i1{right:q1_8cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}5{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}5{col 51}{txt}Missing .: {res}172{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        71{col 32}1
+{col 20}        18{col 32}2
+{col 20}         6{col 32}3
+{col 20}       200{col 32}4
+{col 20}        76{col 32}5
+{col 20}       172{col 32}.
+
+{txt}{hline}
+{res}q1_9cb_i1{right:q1_9cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}5{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}5{col 51}{txt}Missing .: {res}211{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        62{col 32}1
+{col 20}        17{col 32}2
+{col 20}         3{col 32}3
+{col 20}       182{col 32}4
+{col 20}        68{col 32}5
+{col 20}       211{col 32}.
+
+{txt}{hline}
+{res}q1_10cb_i1{right:q1_10cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}5{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}5{col 51}{txt}Missing .: {res}255{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        41{col 32}1
+{col 20}        14{col 32}2
+{col 20}         8{col 32}3
+{col 20}       165{col 32}4
+{col 20}        60{col 32}5
+{col 20}       255{col 32}.
+
+{txt}{hline}
+{res}q1_1at_i1{right:q1_1at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}24{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        43{col 32}1
+{col 20}        54{col 32}2
+{col 20}        78{col 32}3
+{col 20}       344{col 32}4
+{col 20}        24{col 32}.
+
+{txt}{hline}
+{res}q1_2at_i1{right:q1_2at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}24{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        84{col 32}1
+{col 20}        75{col 32}2
+{col 20}       107{col 32}3
+{col 20}       253{col 32}4
+{col 20}        24{col 32}.
+
+{txt}{hline}
+{res}q1_3at_i1{right:q1_3at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}25{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       115{col 32}1
+{col 20}       109{col 32}2
+{col 20}        99{col 32}3
+{col 20}       195{col 32}4
+{col 20}        25{col 32}.
+
+{txt}{hline}
+{res}q1_4at_i1{right:q1_4at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}47{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       119{col 32}1
+{col 20}       113{col 32}2
+{col 20}       116{col 32}3
+{col 20}       148{col 32}4
+{col 20}        47{col 32}.
+
+{txt}{hline}
+{res}q1_5at_i1{right:q1_5at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}70{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       151{col 32}1
+{col 20}       103{col 32}2
+{col 20}       109{col 32}3
+{col 20}       110{col 32}4
+{col 20}        70{col 32}.
+
+{txt}{hline}
+{res}q1_6at_i1{right:q1_6at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}95{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       132{col 32}1
+{col 20}       123{col 32}2
+{col 20}       105{col 32}3
+{col 20}        88{col 32}4
+{col 20}        95{col 32}.
+
+{txt}{hline}
+{res}q1_7at_i1{right:q1_7at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}128{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       151{col 32}1
+{col 20}       103{col 32}2
+{col 20}        87{col 32}3
+{col 20}        74{col 32}4
+{col 20}       128{col 32}.
+
+{txt}{hline}
+{res}q1_8at_i1{right:q1_8at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}163{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       150{col 32}1
+{col 20}       105{col 32}2
+{col 20}        60{col 32}3
+{col 20}        65{col 32}4
+{col 20}       163{col 32}.
+
+{txt}{hline}
+{res}q1_9at_i1{right:q1_9at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}206{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       130{col 32}1
+{col 20}        90{col 32}2
+{col 20}        65{col 32}3
+{col 20}        52{col 32}4
+{col 20}       206{col 32}.
+
+{txt}{hline}
+{res}q1_10at_i1{right:q1_10at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}250{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       130{col 32}1
+{col 20}        68{col 32}2
+{col 20}        52{col 32}3
+{col 20}        43{col 32}4
+{col 20}       250{col 32}.
+
+{txt}{hline}
+{res}q1_1fr_i1{right:q1_1fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}26{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        17{col 32}1
+{col 20}        71{col 32}2
+{col 20}       155{col 32}3
+{col 20}       274{col 32}4
+{col 20}        26{col 32}.
+
+{txt}{hline}
+{res}q1_2fr_i1{right:q1_2fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}26{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        17{col 32}1
+{col 20}       134{col 32}2
+{col 20}       202{col 32}3
+{col 20}       164{col 32}4
+{col 20}        26{col 32}.
+
+{txt}{hline}
+{res}q1_3fr_i1{right:q1_3fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}27{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        34{col 32}1
+{col 20}       180{col 32}2
+{col 20}       198{col 32}3
+{col 20}       104{col 32}4
+{col 20}        27{col 32}.
+
+{txt}{hline}
+{res}q1_4fr_i1{right:q1_4fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}49{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        23{col 32}1
+{col 20}       218{col 32}2
+{col 20}       180{col 32}3
+{col 20}        73{col 32}4
+{col 20}        49{col 32}.
+
+{txt}{hline}
+{res}q1_5fr_i1{right:q1_5fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}70{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        42{col 32}1
+{col 20}       242{col 32}2
+{col 20}       138{col 32}3
+{col 20}        51{col 32}4
+{col 20}        70{col 32}.
+
+{txt}{hline}
+{res}q1_6fr_i1{right:q1_6fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}95{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        46{col 32}1
+{col 20}       250{col 32}2
+{col 20}       112{col 32}3
+{col 20}        40{col 32}4
+{col 20}        95{col 32}.
+
+{txt}{hline}
+{res}q1_7fr_i1{right:q1_7fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}128{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        53{col 32}1
+{col 20}       219{col 32}2
+{col 20}       107{col 32}3
+{col 20}        36{col 32}4
+{col 20}       128{col 32}.
+
+{txt}{hline}
+{res}q1_8fr_i1{right:q1_8fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}164{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        60{col 32}1
+{col 20}       212{col 32}2
+{col 20}        81{col 32}3
+{col 20}        26{col 32}4
+{col 20}       164{col 32}.
+
+{txt}{hline}
+{res}q1_9fr_i1{right:q1_9fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}208{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        53{col 32}1
+{col 20}       193{col 32}2
+{col 20}        81{col 32}3
+{col 20}         8{col 32}4
+{col 20}       208{col 32}.
+
+{txt}{hline}
+{res}q1_10fr_i1{right:q1_10fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}252{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        51{col 32}1
+{col 20}       177{col 32}2
+{col 20}        51{col 32}3
+{col 20}        12{col 32}4
+{col 20}       252{col 32}.
+
+{txt}{hline}
+{res}q1b_i1{right:q1b}
+{txt}{hline}
+
+{col 19}Type: String ({res}str18{txt})
+
+{col 10}Unique values: {res}519{col 51}{txt}Missing "": {res}21{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"14/3/2014 18:43:43"
+{col 25}"19/3/2014 00:27:04"
+{col 25}"4/3/2014 14:08:16"
+{col 25}"5/3/2014 17:55:28"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q1_nbclose_i1{right:q1_nbclose}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}50{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}36{col 51}{txt}Missing .: {res}24{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:13.9094}
+{txt}{col 14}Std. dev.: {res}{ralign 7:10.5152}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:3}{ralign 10:       6}{ralign 10:      10}{ralign 10:      20}{ralign 10:      30}
+
+{txt}{hline}
+{res}q1_nbvclose_i1{right:q1_nbvclose}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}30{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}24{col 51}{txt}Missing .: {res}24{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:6.17919}
+{txt}{col 14}Std. dev.: {res}{ralign 7:4.23133}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:2}{ralign 10:       3}{ralign 10:       5}{ralign 10:       8}{ralign 10:      10}
+
+{txt}{hline}
+{res}q1c_i1{right:q1c}
+{txt}{hline}
+
+{col 19}Type: String ({res}str18{txt})
+
+{col 10}Unique values: {res}517{col 51}{txt}Missing "": {res}24{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"14/3/2014 18:24:35"
+{col 25}"18/3/2014 19:00:30"
+{col 25}"4/3/2014 14:01:32"
+{col 25}"5/3/2014 17:28:46"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q2_1_i1{right:q2_1}
+{txt}{hline}
+
+{col 19}Type: String ({res}str14{txt})
+
+{col 10}Unique values: {res}1{col 51}{txt}Missing "": {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       542{col 32}""
+{col 20}         1{col 32}"VOISIN Heloise"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q2_1uid_i1{right:q2_1uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}int{txt})
+
+{col 18}Range: [{res}30202{txt},{res}30202{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}30202
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_2_i1{right:q2_2}
+{txt}{hline}
+
+{col 19}Type: String ({res}str16{txt})
+
+{col 10}Unique values: {res}1{col 51}{txt}Missing "": {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       542{col 32}""
+{col 20}         1{col 32}"VOISARD Eleonore"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q2_2uid_i1{right:q2_2uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}59080{txt},{res}59080{txt}]{col 55}Units: {res}10
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}59080
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_3_i1{right:q2_3}
+{txt}{hline}
+
+{col 19}Type: String ({res}str11{txt})
+
+{col 10}Unique values: {res}1{col 51}{txt}Missing "": {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       542{col 32}""
+{col 20}         1{col 32}"FERTIL Yann"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q2_3uid_i1{right:q2_3uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}97120{txt},{res}97120{txt}]{col 55}Units: {res}10
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}97120
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_4_i1{right:q2_4}
+{txt}{hline}
+
+{col 19}Type: String ({res}str1{txt}), but longest is str0
+
+{col 10}Unique values: {res}0{col 51}{txt}Missing "": {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}""
+
+{txt}{hline}
+{res}q2_4uid_i1{right:q2_4uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_5_i1{right:q2_5}
+{txt}{hline}
+
+{col 19}Type: String ({res}str1{txt}), but longest is str0
+
+{col 10}Unique values: {res}0{col 51}{txt}Missing "": {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}""
+
+{txt}{hline}
+{res}q2_5uid_i1{right:q2_5uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_6_i1{right:q2_6}
+{txt}{hline}
+
+{col 19}Type: String ({res}str1{txt}), but longest is str0
+
+{col 10}Unique values: {res}0{col 51}{txt}Missing "": {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}""
+
+{txt}{hline}
+{res}q2_6uid_i1{right:q2_6uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_7_i1{right:q2_7}
+{txt}{hline}
+
+{col 19}Type: String ({res}str1{txt}), but longest is str0
+
+{col 10}Unique values: {res}0{col 51}{txt}Missing "": {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}""
+
+{txt}{hline}
+{res}q2_7uid_i1{right:q2_7uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_8_i1{right:q2_8}
+{txt}{hline}
+
+{col 19}Type: String ({res}str1{txt}), but longest is str0
+
+{col 10}Unique values: {res}0{col 51}{txt}Missing "": {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}""
+
+{txt}{hline}
+{res}q2_8uid_i1{right:q2_8uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_9_i1{right:q2_9}
+{txt}{hline}
+
+{col 19}Type: String ({res}str1{txt}), but longest is str0
+
+{col 10}Unique values: {res}0{col 51}{txt}Missing "": {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}""
+
+{txt}{hline}
+{res}q2_9uid_i1{right:q2_9uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_10_i1{right:q2_10}
+{txt}{hline}
+
+{col 19}Type: String ({res}str1{txt}), but longest is str0
+
+{col 10}Unique values: {res}0{col 51}{txt}Missing "": {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}""
+
+{txt}{hline}
+{res}q2_10uid_i1{right:q2_10uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_none_i1{right:q2_none}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_i1{right:q2}
+{txt}{hline}
+
+{col 19}Type: String ({res}str17{txt})
+
+{col 10}Unique values: {res}1{col 51}{txt}Missing "": {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       542{col 32}""
+{col 20}         1{col 32}"9/4/2014 05:43:17"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q2_1if_i1{right:q2_1if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}10{txt},{res}10{txt}]{col 55}Units: {res}10
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}10
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_2if_i1{right:q2_2if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}10{txt},{res}10{txt}]{col 55}Units: {res}10
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}10
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_3if_i1{right:q2_3if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}10{txt},{res}10{txt}]{col 55}Units: {res}10
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}10
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_4if_i1{right:q2_4if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_5if_i1{right:q2_5if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_6if_i1{right:q2_6if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_7if_i1{right:q2_7if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_8if_i1{right:q2_8if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_9if_i1{right:q2_9if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_10if_i1{right:q2_10if}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_1cb_i1{right:q2_1cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}4{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}4
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_2cb_i1{right:q2_2cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}4{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}4
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_3cb_i1{right:q2_3cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}4{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}4
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_4cb_i1{right:q2_4cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_5cb_i1{right:q2_5cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_6cb_i1{right:q2_6cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_7cb_i1{right:q2_7cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_8cb_i1{right:q2_8cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_9cb_i1{right:q2_9cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_10cb_i1{right:q2_10cb}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_1at_i1{right:q2_1at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}4{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}4
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_2at_i1{right:q2_2at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}4{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}4
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_3at_i1{right:q2_3at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}4{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}4
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_4at_i1{right:q2_4at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_5at_i1{right:q2_5at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_6at_i1{right:q2_6at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_7at_i1{right:q2_7at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_8at_i1{right:q2_8at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_9at_i1{right:q2_9at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_10at_i1{right:q2_10at}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_1fr_i1{right:q2_1fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}4{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}4
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_2fr_i1{right:q2_2fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}4{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}4
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_3fr_i1{right:q2_3fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}4{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}4
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_4fr_i1{right:q2_4fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_5fr_i1{right:q2_5fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_6fr_i1{right:q2_6fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_7fr_i1{right:q2_7fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_8fr_i1{right:q2_8fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_9fr_i1{right:q2_9fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2_10fr_i1{right:q2_10fr}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q2b_i1{right:q2b}
+{txt}{hline}
+
+{col 19}Type: String ({res}str17{txt})
+
+{col 10}Unique values: {res}1{col 51}{txt}Missing "": {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       542{col 32}""
+{col 20}         1{col 32}"9/4/2014 05:44:12"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q2_nbvclose_i1{right:q2_nbvclose}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}22{txt},{res}22{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}22
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2_nbclose_i1{right:q2_nbclose}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}33{txt},{res}33{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}33
+{col 20}       542{col 32}.
+
+{txt}{hline}
+{res}q2c_i1{right:q2c}
+{txt}{hline}
+
+{col 19}Type: String ({res}str17{txt})
+
+{col 10}Unique values: {res}1{col 51}{txt}Missing "": {res}542{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       542{col 32}""
+{col 20}         1{col 32}"9/4/2014 05:44:35"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q3_1_i1{right:q3_1}
+{txt}{hline}
+
+{col 19}Type: String ({res}str49{txt})
+
+{col 10}Unique values: {res}105{col 51}{txt}Missing "": {res}220{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}""
+{col 25}"BDA"
+{col 25}"Rhinoceros"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q3_1uid_i1{right:q3_1uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}int{txt})
+
+{col 18}Range: [{res}1{txt},{res}9915{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}85{col 51}{txt}Missing .: {res}220{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:5905.79}
+{txt}{col 14}Std. dev.: {res}{ralign 7:3104.3}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:1858}{ralign 10:    3601}{ralign 10:    6402}{ralign 10:    8546}{ralign 10:    9438}
+
+{txt}{hline}
+{res}q3_2_i1{right:q3_2}
+{txt}{hline}
+
+{col 19}Type: String ({res}str43{txt})
+
+{col 10}Unique values: {res}97{col 51}{txt}Missing "": {res}356{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}""
+{col 25}""
+{col 25}"Centre Saint Guillaume"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q3_2uid_i1{right:q3_2uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}int{txt})
+
+{col 18}Range: [{res}0{txt},{res}9991{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}77{col 51}{txt}Missing .: {res}220{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:3068.78}
+{txt}{col 14}Std. dev.: {res}{ralign 7:3642.16}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:0}{ralign 10:       0}{ralign 10:      17}{ralign 10:    6723}{ralign 10:    9281}
+
+{txt}{hline}
+{res}q3_3_i1{right:q3_3}
+{txt}{hline}
+
+{col 19}Type: String ({res}str43{txt})
+
+{col 10}Unique values: {res}65{col 51}{txt}Missing "": {res}450{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}""
+{col 25}""
+{col 25}""
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q3_3uid_i1{right:q3_3uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}int{txt})
+
+{col 18}Range: [{res}0{txt},{res}9857{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}61{col 51}{txt}Missing .: {res}220{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:1644.28}
+{txt}{col 14}Std. dev.: {res}{ralign 7:3111.63}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:0}{ralign 10:       0}{ralign 10:       0}{ralign 10:      28}{ralign 10:    8085}
+
+{txt}{hline}
+{res}q3_4_i1{right:q3_4}
+{txt}{hline}
+
+{col 19}Type: String ({res}str43{txt})
+
+{col 10}Unique values: {res}34{col 51}{txt}Missing "": {res}497{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}""
+{col 25}""
+{col 25}""
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q3_4uid_i1{right:q3_4uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}int{txt})
+
+{col 18}Range: [{res}0{txt},{res}9567{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}32{col 51}{txt}Missing .: {res}220{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:841.034}
+{txt}{col 14}Std. dev.: {res}{ralign 7:2323.68}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:0}{ralign 10:       0}{ralign 10:       0}{ralign 10:       0}{ralign 10:    4593}
+
+{txt}{hline}
+{res}q3_5_i1{right:q3_5}
+{txt}{hline}
+
+{col 19}Type: String ({res}str29{txt})
+
+{col 10}Unique values: {res}14{col 51}{txt}Missing "": {res}526{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}""
+{col 25}""
+{col 25}""
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q3_5uid_i1{right:q3_5uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}int{txt})
+
+{col 18}Range: [{res}0{txt},{res}9740{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}16{col 51}{txt}Missing .: {res}220{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:347.183}
+{txt}{col 14}Std. dev.: {res}{ralign 7:1635.31}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:0}{ralign 10:       0}{ralign 10:       0}{ralign 10:       0}{ralign 10:       0}
+
+{txt}{hline}
+{res}q3_6_i1{right:q3_6}
+{txt}{hline}
+
+{col 19}Type: String ({res}str1{txt}), but longest is str0
+
+{col 10}Unique values: {res}0{col 51}{txt}Missing "": {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}""
+
+{txt}{hline}
+{res}q3_6uid_i1{right:q3_6uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q3_7_i1{right:q3_7}
+{txt}{hline}
+
+{col 19}Type: String ({res}str1{txt}), but longest is str0
+
+{col 10}Unique values: {res}0{col 51}{txt}Missing "": {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}""
+
+{txt}{hline}
+{res}q3_7uid_i1{right:q3_7uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q3_8_i1{right:q3_8}
+{txt}{hline}
+
+{col 19}Type: String ({res}str1{txt}), but longest is str0
+
+{col 10}Unique values: {res}0{col 51}{txt}Missing "": {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}""
+
+{txt}{hline}
+{res}q3_8uid_i1{right:q3_8uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q3_9_i1{right:q3_9}
+{txt}{hline}
+
+{col 19}Type: String ({res}str1{txt}), but longest is str0
+
+{col 10}Unique values: {res}0{col 51}{txt}Missing "": {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}""
+
+{txt}{hline}
+{res}q3_9uid_i1{right:q3_9uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q3_10_i1{right:q3_10}
+{txt}{hline}
+
+{col 19}Type: String ({res}str1{txt}), but longest is str0
+
+{col 10}Unique values: {res}0{col 51}{txt}Missing "": {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}""
+
+{txt}{hline}
+{res}q3_10uid_i1{right:q3_10uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q3_none1_i1{right:q3_none1}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}1{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}353{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       190{col 32}1
+{col 20}       353{col 32}.
+
+{txt}{hline}
+{res}q3_none2_i1{right:q3_none2}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q3_i1{right:q3}
+{txt}{hline}
+
+{col 19}Type: String ({res}str18{txt})
+
+{col 10}Unique values: {res}511{col 51}{txt}Missing "": {res}31{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"14/3/2014 18:00:10"
+{col 25}"18/3/2014 11:32:34"
+{col 25}"4/3/2014 14:00:04"
+{col 25}"5/3/2014 17:10:29"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q4a_i1{right:q4a}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}10{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}9{col 51}{txt}Missing .: {res}84{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         6{col 32}1
+{col 20}        31{col 32}2
+{col 20}        54{col 32}3
+{col 20}        67{col 32}4
+{col 20}       114{col 32}5
+{col 20}        84{col 32}6
+{col 20}        67{col 32}7
+{col 20}        35{col 32}8
+{col 20}         1{col 32}10
+{col 20}        84{col 32}.
+
+{txt}{hline}
+{res}q4b_i1{right:q4b}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}10{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}10{col 51}{txt}Missing .: {res}93{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:5.14}
+{txt}{col 14}Std. dev.: {res}{ralign 7:1.94248}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:3}{ralign 10:       4}{ralign 10:       5}{ralign 10:       7}{ralign 10:       8}
+
+{txt}{hline}
+{res}q4c_i1{right:q4c}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q4d_i1{right:q4d}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q4_i1{right:q4}
+{txt}{hline}
+
+{col 19}Type: String ({res}str18{txt})
+
+{col 10}Unique values: {res}511{col 51}{txt}Missing "": {res}32{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"14/3/2014 18:00:04"
+{col 25}"17/3/2014 22:47:14"
+{col 25}"4/3/2014 14:00:44"
+{col 25}"5/3/2014 17:11:07"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q5a_i1{right:q5a}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}2{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}2{col 51}{txt}Missing .: {res}39{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        34{col 32}1
+{col 20}       470{col 32}2
+{col 20}        39{col 32}.
+
+{txt}{hline}
+{res}q5a_p1_i1{right:q5a_p1}
+{txt}{hline}
+
+{col 19}Type: String ({res}str40{txt})
+
+{col 10}Unique values: {res}19{col 51}{txt}Missing "": {res}509{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}""
+{col 25}""
+{col 25}""
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q5a_p1b_i1{right:q5a_p1b}
+{txt}{hline}
+
+{col 19}Type: String ({res}str21{txt})
+
+{col 10}Unique values: {res}17{col 51}{txt}Missing "": {res}509{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}""
+{col 25}""
+{col 25}""
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q5a_p2_i1{right:q5a_p2}
+{txt}{hline}
+
+{col 19}Type: String ({res}str16{txt})
+
+{col 10}Unique values: {res}2{col 51}{txt}Missing "": {res}541{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       541{col 32}""
+{col 20}         1{col 32}"Parti Socialiste"
+{col 20}         1{col 32}"front de gauche"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q5a_p2b_i1{right:q5a_p2b}
+{txt}{hline}
+
+{col 19}Type: String ({res}str16{txt})
+
+{col 10}Unique values: {res}2{col 51}{txt}Missing "": {res}541{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       541{col 32}""
+{col 20}         1{col 32}"2"
+{col 20}         1{col 32}"2012-aujourd'hui"
+
+{txt}{hline}
+{res}q5b_i1{right:q5b}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}2{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}2{col 51}{txt}Missing .: {res}38{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        52{col 32}1
+{col 20}       453{col 32}2
+{col 20}        38{col 32}.
+
+{txt}{hline}
+{res}q5b_p1_i1{right:q5b_p1}
+{txt}{hline}
+
+{col 19}Type: String ({res}str42{txt})
+
+{col 10}Unique values: {res}23{col 51}{txt}Missing "": {res}491{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}""
+{col 25}""
+{col 25}""
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q5b_p1b_i1{right:q5b_p1b}
+{txt}{hline}
+
+{col 19}Type: String ({res}str17{txt})
+
+{col 10}Unique values: {res}29{col 51}{txt}Missing "": {res}491{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}""
+{col 25}""
+{col 25}""
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q5c_1_i1{right:q5c_1}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q5c_2_i1{right:q5c_2}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q5d_i1{right:q5d}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}.{txt},{res}.{txt}]{col 55}Units: {res}.
+{col 10}{txt}Unique values: {res}0{col 51}{txt}Missing .: {res}543{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}.
+
+{txt}{hline}
+{res}q5_i1{right:q5}
+{txt}{hline}
+
+{col 19}Type: String ({res}str18{txt})
+
+{col 10}Unique values: {res}508{col 51}{txt}Missing "": {res}32{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"14/3/2014 18:00:11"
+{col 25}"17/3/2014 22:47:40"
+{col 25}"4/3/2014 14:00:59"
+{col 25}"5/3/2014 17:12:17"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q6a1_i1{right:q6a1}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}2{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}2{col 51}{txt}Missing .: {res}81{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       253{col 32}1
+{col 20}       209{col 32}2
+{col 20}        81{col 32}.
+
+{txt}{hline}
+{res}q6a2_i1{right:q6a2}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}10{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}10{col 51}{txt}Missing .: {res}36{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:6.65878}
+{txt}{col 14}Std. dev.: {res}{ralign 7:1.74793}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:4}{ralign 10:       6}{ralign 10:       7}{ralign 10:       8}{ralign 10:       9}
+
+{txt}{hline}
+{res}q6b1_i1{right:q6b1}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}3{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}3{col 51}{txt}Missing .: {res}72{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       144{col 32}1
+{col 20}       278{col 32}2
+{col 20}        49{col 32}3
+{col 20}        72{col 32}.
+
+{txt}{hline}
+{res}q6b2_i1{right:q6b2}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}10{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}10{col 51}{txt}Missing .: {res}48{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:3.83636}
+{txt}{col 14}Std. dev.: {res}{ralign 7:2.61255}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:1}{ralign 10:       2}{ralign 10:       3}{ralign 10:       6}{ralign 10:       8}
+
+{txt}{hline}
+{res}q6c_1_i1{right:q6c_1}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}3{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}3{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       287{col 32}1
+{col 20}       210{col 32}2
+{col 20}        13{col 32}3
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6c_2_i1{right:q6c_2}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}3{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}3{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       184{col 32}1
+{col 20}       258{col 32}2
+{col 20}        68{col 32}3
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6c_3_i1{right:q6c_3}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}3{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}3{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       324{col 32}1
+{col 20}       161{col 32}2
+{col 20}        25{col 32}3
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6c_4_i1{right:q6c_4}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       122{col 32}1
+{col 20}       293{col 32}2
+{col 20}        87{col 32}3
+{col 20}         8{col 32}4
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6c_5_i1{right:q6c_5}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}4{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        37{col 32}1
+{col 20}       104{col 32}2
+{col 20}       269{col 32}3
+{col 20}       100{col 32}4
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6d_1_i1{right:q6d_1}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}0{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       510{col 32}0
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6d_2_i1{right:q6d_2}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}0{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       510{col 32}0
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6d_3_i1{right:q6d_3}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}0{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       510{col 32}0
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6d_4_i1{right:q6d_4}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}0{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       510{col 32}0
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6d_5_i1{right:q6d_5}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}0{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       510{col 32}0
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6e_i1{right:q6e}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}10{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}10{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:8.21373}
+{txt}{col 14}Std. dev.: {res}{ralign 7:2.15313}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:5}{ralign 10:       8}{ralign 10:       9}{ralign 10:      10}{ralign 10:      10}
+
+{txt}{hline}
+{res}q6f_1_i1{right:q6f_1}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}1{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}2{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        78{col 32}0
+{col 20}       432{col 32}1
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6f_2_i1{right:q6f_2}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}1{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}2{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       138{col 32}0
+{col 20}       372{col 32}1
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6f_3_i1{right:q6f_3}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}1{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}2{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       303{col 32}0
+{col 20}       207{col 32}1
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6f_4_i1{right:q6f_4}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}1{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}2{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       179{col 32}0
+{col 20}       331{col 32}1
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6f_5_i1{right:q6f_5}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}1{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}2{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       295{col 32}0
+{col 20}       215{col 32}1
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6f_6_i1{right:q6f_6}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}1{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}2{col 51}{txt}Missing .: {res}33{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       473{col 32}0
+{col 20}        37{col 32}1
+{col 20}        33{col 32}.
+
+{txt}{hline}
+{res}q6f_6txt_i1{right:q6f_6txt}
+{txt}{hline}
+
+{col 19}Type: String ({res}str101{txt})
+
+{col 10}Unique values: {res}62{col 51}{txt}Missing "": {res}481{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}""
+{col 25}""
+{col 25}""
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}q6_i1{right:q6}
+{txt}{hline}
+
+{col 19}Type: String ({res}str18{txt})
+
+{col 10}Unique values: {res}508{col 51}{txt}Missing "": {res}33{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"14/3/2014 18:01:42"
+{col 25}"17/3/2014 22:54:23"
+{col 25}"4/3/2014 14:03:09"
+{col 25}"5/3/2014 17:15:22"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}dtime_i1{right:dtime}
+{txt}{hline}
+
+{col 19}Type: String ({res}str18{txt})
+
+{col 10}Unique values: {res}541{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"14/3/2014 20:14:37"
+{col 25}"4/3/2014 10:31:42"
+{col 25}"4/3/2014 14:16:33"
+{col 25}"5/3/2014 18:02:06"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}non_fini_i1{right:non_fini}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}1{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}2{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       510{col 32}0
+{col 20}        33{col 32}1
+
+{txt}{hline}
+{res}Sexetudiant_i1{right:Sexe étudiant}
+{txt}{hline}
+
+{col 19}Type: String ({res}str1{txt})
+
+{col 10}Unique values: {res}2{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       330{col 32}"F"
+{col 20}       213{col 32}"M"
+
+{txt}{hline}
+{res}Libellnationalit1_i1{right:Libellé nationalité 1}
+{txt}{hline}
+
+{col 19}Type: String ({res}str13{txt}), but longest is str12
+
+{col 10}Unique values: {res}14{col 51}{txt}Missing "": {res}3{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"FRANCAISE"
+{col 25}"FRANCAISE"
+{col 25}"FRANCAISE"
+{col 25}"FRANCAISE"
+
+{txt}{hline}
+{res}Libellnationalit2_i1{right:Libellé nationalité 2}
+{txt}{hline}
+
+{col 19}Type: String ({res}str14{txt})
+
+{col 10}Unique values: {res}30{col 51}{txt}Missing "": {res}470{txt}/{res}543
+
+{txt}{col 15}Examples: {res}""
+{col 25}""
+{col 25}""
+{col 25}""
+
+{txt}{hline}
+{res}Libellstatutadministratif_i1{right:Libellé statut administratif}
+{txt}{hline}
+
+{col 19}Type: String ({res}str24{txt})
+
+{col 10}Unique values: {res}4{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       126{col 32}"Dossier incomplet"
+{col 20}         2{col 32}"Dossier web complet"
+{col 20}         2{col 32}"En attente d'inscription"
+{col 20}       413{col 32}"Inscrit"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}LibellTypeadmission_i1{right:Libellé Type admission}
+{txt}{hline}
+
+{col 19}Type: String ({res}str30{txt})
+
+{col 10}Unique values: {res}8{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        93{col 32}"Admission convent. prioritaire"
+{col 20}       397{col 32}"Examen d'entrée Bac 0"
+{col 20}        17{col 32}"Proc. Internationale College"
+{col 20}         7{col 32}"Procédure DCU / UCL"
+{col 20}         4{col 32}"Procédure Paris I"
+{col 20}        16{col 32}"Procédure Paris IV"
+{col 20}         8{col 32}"Procédure Paris VI"
+{col 20}         1{col 32}"Special Program"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}Annedanslediplme_i1{right:Année dans le diplôme}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}1{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}1
+
+{txt}{hline}
+{res}Libellspcialit_i1{right:Libellé spécialité}
+{txt}{hline}
+
+{col 19}Type: String ({res}str11{txt})
+
+{col 10}Unique values: {res}1{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}"Non définie"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}Libellspcialit2_i1{right:Libellé spécialité 2}
+{txt}{hline}
+
+{col 19}Type: String ({res}str11{txt})
+
+{col 10}Unique values: {res}1{col 51}{txt}Missing "": {res}536{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       536{col 32}""
+{col 20}         7{col 32}"Non définie"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}Campustudiant_i1{right:Campus étudiant}
+{txt}{hline}
+
+{col 19}Type: String ({res}str5{txt})
+
+{col 10}Unique values: {res}1{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}"Paris"
+
+{txt}{hline}
+{res}Codeniveauprogcycle_i1{right:Code niveau prog (cycle)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}1{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}1
+
+{txt}{hline}
+{res}EffectifRel_i1{right:Effectif Réel}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}14{txt},{res}21{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}7{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        22{col 32}14
+{col 20}         8{col 32}15
+{col 20}        43{col 32}17
+{col 20}        62{col 32}18
+{col 20}       215{col 32}19
+{col 20}       167{col 32}20
+{col 20}        26{col 32}21
+
+{txt}{hline}
+{res}CSPniv3parent1_i1{right:CSP niv3 parent 1}
+{txt}{hline}
+
+{col 19}Type: String ({res}str60{txt})
+
+{col 10}Unique values: {res}31{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"Cadres administratifs et commerciaux d'entreprise"
+{col 25}"Commerçants et assimilés"
+{col 25}"Ingénieurs et cadres techniques d'entreprise"
+{col 25}"Professions de l'information, des arts et des
+{col 25}spectacles"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}CSPniv3parent2_i1{right:CSP niv 3 parent 2}
+{txt}{hline}
+
+{col 19}Type: String ({res}str60{txt})
+
+{col 10}Unique values: {res}30{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"Cadres administratifs et commerciaux d'entreprise"
+{col 25}"Employés administratifs"
+{col 25}"Ouvriers qualifiés"
+{col 25}"Professions intermédiaires admin. et commerciales
+{col 25}des entrep"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}SrieBaccalauratLib_i1{right:Série Baccalauréat Lib}
+{txt}{hline}
+
+{col 19}Type: String ({res}str30{txt})
+
+{col 10}Unique values: {res}12{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"ES   Economique et social"
+{col 25}"ES   Economique et social"
+{col 25}"S    Scientifique"
+{col 25}"S    Scientifique"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}Mentiontrsbien_i1{right:Mention très bien}
+{txt}{hline}
+
+{col 19}Type: String ({res}str3{txt})
+
+{col 10}Unique values: {res}2{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       116{col 32}"Non"
+{col 20}       427{col 32}"Oui"
+
+{txt}{hline}
+{res}Droitsconstatscumuls_i1{right:Droits constatés (cumulés)}
+{txt}{hline}
+
+{col 19}Type: String ({res}str8{txt})
+
+{col 10}Unique values: {res}13{col 51}{txt}Missing "": {res}47{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"0"
+{col 25}"1 100,00"
+{col 25}"4 240,00"
+{col 25}"6 400,00"
+
+{txt}{hline}
+{res}merge_bis_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+{ralign 22:Label}: {res:_merge}
+
+{col 18}Range: [{res}3{txt},{res}3{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.   Numeric  Label
+{col 20}{res}       543{col 32}       3{col 42}{txt}matched (3)
+
+{txt}{hline}
+{res}_merge_cent{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+{ralign 22:Label}: {res:_merge}
+
+{col 18}Range: [{res}3{txt},{res}3{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.   Numeric  Label
+{col 20}{res}       543{col 32}       3{col 42}{txt}matched (3)
+
+{txt}{hline}
+{res}intro1_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: String ({res}str9{txt})
+
+{col 10}Unique values: {res}22{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"14/3/2014"
+{col 25}"4/3/2014"
+{col 25}"4/3/2014"
+{col 25}"5/3/2014"
+
+{txt}{hline}
+{res}intro2_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: String ({res}str8{txt})
+
+{col 10}Unique values: {res}538{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"11:16:13"
+{col 25}"13:49:13"
+{col 25}"16:23:00"
+{col 25}"18:45:06"
+
+{txt}{hline}
+{res}intro11_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}4{txt},{res}19{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}16{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:8.81215}
+{txt}{col 14}Std. dev.: {res}{ralign 7:4.88103}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:4}{ralign 10:       4}{ralign 10:       7}{ralign 10:      14}{ralign 10:      15}
+
+{txt}{hline}
+{res}intro12_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}3{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}2{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       503{col 32}3
+{col 20}        40{col 32}4
+
+{txt}{hline}
+{res}intro13_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}int{txt})
+
+{col 18}Range: [{res}2014{txt},{res}2014{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}2014
+
+{txt}{hline}
+{res}intro21_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}23{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}24{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:14.4107}
+{txt}{col 14}Std. dev.: {res}{ralign 7:4.66941}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:10}{ralign 10:      11}{ralign 10:      15}{ralign 10:      18}{ralign 10:      20}
+
+{txt}{hline}
+{res}intro22_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}59{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}60{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:28.6004}
+{txt}{col 14}Std. dev.: {res}{ralign 7:16.8112}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:6}{ralign 10:      15}{ralign 10:      28}{ralign 10:      43}{ralign 10:      52}
+
+{txt}{hline}
+{res}intro23_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}59{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}60{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:29.8637}
+{txt}{col 14}Std. dev.: {res}{ralign 7:16.7468}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:7}{ralign 10:      15}{ralign 10:      31}{ralign 10:      44}{ralign 10:      53}
+
+{txt}{hline}
+{res}t_st_fr_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}float{txt})
+
+{col 18}Range: [{res}353{txt},{res}86074{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}538{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:53624.3}
+{txt}{col 14}Std. dev.: {res}{ralign 7:16793.8}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:37149}{ralign 10:   42243}{ralign 10:   55123}{ralign 10:   64990}{ralign 10:   74687}
+
+{txt}{hline}
+{res}d_st_fr_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}float{txt})
+
+{col 18}Range: [{res}63{txt},{res}104{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}22{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:70.0958}
+{txt}{col 14}Std. dev.: {res}{ralign 7:9.51296}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:63}{ralign 10:      63}{ralign 10:      66}{ralign 10:      73}{ralign 10:      77}
+
+{txt}{hline}
+{res}q11_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: String ({res}str9{txt})
+
+{col 10}Unique values: {res}22{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"14/3/2014"
+{col 25}"4/3/2014"
+{col 25}"4/3/2014"
+{col 25}"5/3/2014"
+
+{txt}{hline}
+{res}q12_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: String ({res}str8{txt})
+
+{col 10}Unique values: {res}539{col 51}{txt}Missing "": {res}0{txt}/{res}543
+
+{txt}{col 15}Examples: {res}"11:21:13"
+{col 25}"13:51:48"
+{col 25}"16:27:42"
+{col 25}"18:49:20"
+
+{txt}{hline}
+{res}q111_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}4{txt},{res}19{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}16{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:8.8011}
+{txt}{col 14}Std. dev.: {res}{ralign 7:4.86772}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:4}{ralign 10:       4}{ralign 10:       7}{ralign 10:      14}{ralign 10:      15}
+
+{txt}{hline}
+{res}q112_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}3{txt},{res}4{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}2{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       502{col 32}3
+{col 20}        41{col 32}4
+
+{txt}{hline}
+{res}q113_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}int{txt})
+
+{col 18}Range: [{res}2014{txt},{res}2014{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       543{col 32}2014
+
+{txt}{hline}
+{res}q121_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}23{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}24{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:14.4843}
+{txt}{col 14}Std. dev.: {res}{ralign 7:4.63693}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:10}{ralign 10:      11}{ralign 10:      15}{ralign 10:      18}{ralign 10:      20}
+
+{txt}{hline}
+{res}q122_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}59{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}60{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:29.8508}
+{txt}{col 14}Std. dev.: {res}{ralign 7:16.753}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:7}{ralign 10:      16}{ralign 10:      29}{ralign 10:      44}{ralign 10:      54}
+
+{txt}{hline}
+{res}q123_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}0{txt},{res}59{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}60{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:28.8564}
+{txt}{col 14}Std. dev.: {res}{ralign 7:17.2078}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:5}{ralign 10:      14}{ralign 10:      29}{ralign 10:      43}{ralign 10:      53}
+
+{txt}{hline}
+{res}t_f_fr_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}float{txt})
+
+{col 18}Range: [{res}687{txt},{res}86135{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}539{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:53963.6}
+{txt}{col 14}Std. dev.: {res}{ralign 7:16683.9}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:37374}{ralign 10:   42469}{ralign 10:   55764}{ralign 10:   65194}{ralign 10:   74812}
+
+{txt}{hline}
+{res}d_f_fr_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}float{txt})
+
+{col 18}Range: [{res}63{txt},{res}104{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}22{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:70.1418}
+{txt}{col 14}Std. dev.: {res}{ralign 7:9.58301}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:63}{ralign 10:      63}{ralign 10:      66}{ralign 10:      73}{ralign 10:      77}
+
+{txt}{hline}
+{res}time_fr_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}float{txt})
+
+{col 18}Range: [{res}26{txt},{res}13025{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}288{col 51}{txt}Missing .: {res}3{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:283.957}
+{txt}{col 14}Std. dev.: {res}{ralign 7:753.75}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:90.5}{ralign 10:     119}{ralign 10:     163}{ralign 10:   277.5}{ralign 10:     412}
+
+{txt}{hline}
+{res}numfriends_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}float{txt})
+
+{col 18}Range: [{res}3{txt},{res}10{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}8{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}        21{col 32}3
+{col 20}        20{col 32}4
+{col 20}        27{col 32}5
+{col 20}        37{col 32}6
+{col 20}        35{col 32}7
+{col 20}        52{col 32}8
+{col 20}        52{col 32}9
+{col 20}       299{col 32}10
+
+{txt}{hline}
+{res}timepfr_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}float{txt})
+
+{col 18}Range: [{res}4.6999998{txt},{res}1302.5{txt}]{col 55}Units: {res}1.000e-07
+{col 10}{txt}Unique values: {res}392{col 51}{txt}Missing .: {res}3{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:33.5813}
+{txt}{col 14}Std. dev.: {res}{ralign 7:76.34}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:10.725}{ralign 10: 14.4722}{ralign 10:    20.7}{ralign 10:    32.4}{ralign 10:    50.3}
+
+{txt}{hline}
+{res}new_id_i1{right:group(uid)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}float{txt})
+
+{col 18}Range: [{res}1{txt},{res}799{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}543{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:399.703}
+{txt}{col 14}Std. dev.: {res}{ralign 7:229.364}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:75}{ralign 10:     205}{ralign 10:     412}{ralign 10:     592}{ralign 10:     713}
+
+{txt}{hline}
+{res}code_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}float{txt})
+
+{col 18}Range: [{res}0{txt},{res}1{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}2{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       239{col 32}0
+{col 20}       304{col 32}1
+
+{txt}{hline}
+{res}new_zip_i1{right:group(Codepostal_adressePR)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}float{txt})
+
+{col 18}Range: [{res}1{txt},{res}227{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}181{col 51}{txt}Missing .: {res}1{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:104.749}
+{txt}{col 14}Std. dev.: {res}{ralign 7:49.4093}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:72}{ralign 10:      75}{ralign 10:      83}{ralign 10:     147}{ralign 10:     186}
+
+{txt}{hline}
+{res}departmentbac_i1{right:Département obtention bac Lib}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+{ralign 22:Label}: {res:departmentbac}
+
+{col 18}Range: [{res}1{txt},{res}84{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}75{col 51}{txt}Missing .: {res}27{txt}/{res}543
+
+{txt}{ralign 23: Examples:}{col 25}{res}33{col 31}{txt}HAUTS-DE-SEINE
+{ralign 23: }{col 25}{res}54{col 31}{txt}NORD
+{ralign 23: }{col 25}{res}58{col 31}{txt}PAS-DE-CALAIS
+{ralign 23: }{col 25}{res}72{col 31}{txt}SOMME
+
+{txt}{hline}
+{res}new_depb_i1{right:group(departmentbac)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}float{txt})
+
+{col 18}Range: [{res}1{txt},{res}84{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}75{col 51}{txt}Missing .: {res}27{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:51.0562}
+{txt}{col 14}Std. dev.: {res}{ralign 7:21.488}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:21}{ralign 10:      33}{ralign 10:      57}{ralign 10:      68}{ralign 10:      76}
+
+{txt}{hline}
+{res}regionbac_i1{right:Région d'obtention bac}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+{ralign 22:Label}: {res:regionbac}
+
+{col 18}Range: [{res}1{txt},{res}24{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}24{col 51}{txt}Missing .: {res}28{txt}/{res}543
+
+{txt}{ralign 23: Examples:}{col 25}{res}12{col 31}{txt}Ile de France
+{ralign 23: }{col 25}{res}12{col 31}{txt}Ile de France
+{ralign 23: }{col 25}{res}12{col 31}{txt}Ile de France
+{ralign 23: }{col 25}{res}20{col 31}{txt}Poitou-Charentes
+
+{txt}{hline}
+{res}new_regb_i1{right:group(regionbac)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}float{txt})
+
+{col 18}Range: [{res}1{txt},{res}24{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}24{col 51}{txt}Missing .: {res}28{txt}/{res}543
+
+{txt}{col 19}Mean: {res}{ralign 7:13.4602}
+{txt}{col 14}Std. dev.: {res}{ralign 7:4.98791}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:8}{ralign 10:      12}{ralign 10:      12}{ralign 10:      17}{ralign 10:      22}
+
+{txt}{hline}
+{res}program1_i1{right:Libellé programme}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+{ralign 22:Label}: {res:program1}
+
+{col 18}Range: [{res}1{txt},{res}5{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}5{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.   Numeric  Label
+{col 20}{res}       381{col 32}       1{col 42}{txt}Programme Collège Univ. Scpo
+{col 20}{res}        31{col 32}       2{col 42}{txt}Programme DCU Europe-Afrique
+{col 20}{res}        28{col 32}       3{col 42}{txt}Programme DCU double cursus P1
+{col 20}{res}        78{col 32}       4{col 42}{txt}Programme DCU double cursus P4
+{col 20}{res}        25{col 32}       5{col 42}{txt}Programme DCU double cursus P6
+
+{txt}{hline}
+{res}program2_i1{right:Libellé programme 2}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+{ralign 22:Label}: {res:program2}
+
+{col 18}Range: [{res}1{txt},{res}1{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}536{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.   Numeric  Label
+{col 20}{res}         7{col 32}       1{col 42}{txt}Double diplôme CU UCL (London)
+{col 20}{res}       536{col 32}       .{col 42}
+
+{txt}{hline}
+{res}new_pro1_i1{right:group(program1)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}float{txt})
+
+{col 18}Range: [{res}1{txt},{res}5{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}5{col 51}{txt}Missing .: {res}0{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}       381{col 32}1
+{col 20}        31{col 32}2
+{col 20}        28{col 32}3
+{col 20}        78{col 32}4
+{col 20}        25{col 32}5
+
+{txt}{hline}
+{res}new_pro2_i1{right:group(program2)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}float{txt})
+
+{col 18}Range: [{res}1{txt},{res}1{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}1{col 51}{txt}Missing .: {res}536{txt}/{res}543
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         7{col 32}1
+{col 20}       536{col 32}.
+
+{txt}{hline}
+{res}nat1_i1{right:Libellé nationalité 1}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+{ralign 22:Label}: {res:nat1}
+
+{col 18}Range: [{res}1{txt},{res}27{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}14{col 51}{txt}Missing .: {res}3{txt}/{res}543
+
+{txt}{ralign 23: Examples:}{col 25}{res}12{col 31}{txt}FRANCAISE
+{ralign 23: }{col 25}{res}12{col 31}{txt}FRANCAISE
+{ralign 23: }{col 25}{res}12{col 31}{txt}FRANCAISE
+{ralign 23: }{col 25}{res}12{col 31}{txt}FRANCAISE
+
+{txt}{hline}
+{res}nat2_i1{right:Libellé nationalité 2}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+{ralign 22:Label}: {res:nat2}
+
+{col 18}Range: [{res}1{txt},{res}33{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}30{col 51}{txt}Missing .: {res}470{txt}/{res}543
+
+{txt}{ralign 23: Examples:}{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+
+{txt}{hline}
+{res}s1_i1{right:q3_1}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+{ralign 22:Label}: {res:s1}
+
+{col 18}Range: [{res}1{txt},{res}105{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}105{col 51}{txt}Missing .: {res}220{txt}/{res}543
+
+{txt}{ralign 23: Examples:}{col 25}{res}33{col 31}{txt}BDA
+{ralign 23: }{col 25}{res}74{col 31}{txt}Rhinoceros
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+
+{txt}{hline}
+{res}s2_i1{right:q3_2}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+{ralign 22:Label}: {res:s2}
+
+{col 18}Range: [{res}1{txt},{res}98{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}97{col 51}{txt}Missing .: {res}356{txt}/{res}543
+
+{txt}{ralign 23: Examples:}{col 25}{res}56{col 31}{txt}Le Mouvement des Jeunes Socialistes
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+
+{txt}{hline}
+{res}s3_i1{right:q3_3}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+{ralign 22:Label}: {res:s3}
+
+{col 18}Range: [{res}1{txt},{res}67{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}65{col 51}{txt}Missing .: {res}450{txt}/{res}543
+
+{txt}{ralign 23: Examples:}{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+
+{txt}{hline}
+{res}s4_i1{right:q3_4}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+{ralign 22:Label}: {res:s4}
+
+{col 18}Range: [{res}2{txt},{res}35{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}34{col 51}{txt}Missing .: {res}497{txt}/{res}543
+
+{txt}{ralign 23: Examples:}{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+
+{txt}{hline}
+{res}s5_i1{right:q3_5}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+{ralign 22:Label}: {res:s5}
+
+{col 18}Range: [{res}1{txt},{res}14{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}14{col 51}{txt}Missing .: {res}526{txt}/{res}543
+
+{txt}{ralign 23: Examples:}{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+{ralign 23: }{col 25}{res}.{col 31}{txt}
+
+{com}. 
+. use "$path/Data/Raw/2015_individual_i1.dta", clear
+{txt}
+{com}. 
+. codebook
+
+{txt}{hline}
+{res}uid_i1{right:uid}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}long{txt})
+
+{col 18}Range: [{res}10218{txt},{res}99972{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}333{col 51}{txt}Missing .: {res}0{txt}/{res}333
+
+{txt}{col 19}Mean: {res}{ralign 7:54201.9}
+{txt}{col 14}Std. dev.: {res}{ralign 7:25733.8}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:18897}{ralign 10:   32065}{ralign 10:   54592}{ralign 10:   77055}{ralign 10:   89405}
+
+{txt}{hline}
+{res}polposnow_15_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}10{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}10{col 51}{txt}Missing .: {res}103{txt}/{res}333
+
+{txt}{col 19}Mean: {res}{ralign 7:4.92174}
+{txt}{col 14}Std. dev.: {res}{ralign 7:1.7886}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:3}{ralign 10:       4}{ralign 10:       5}{ralign 10:       6}{ralign 10:       7}
+
+{txt}{hline}
+{res}polpos_15_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}10{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}10{col 51}{txt}Missing .: {res}100{txt}/{res}333
+
+{txt}{col 19}Mean: {res}{ralign 7:4.98283}
+{txt}{col 14}Std. dev.: {res}{ralign 7:1.64517}
+
+{txt}{col 12}Percentiles: {col 25}{ralign 7:10%}{ralign 10:25%}{ralign 10:50%}{ralign 10:75%}{ralign 10:90%}
+{res}{col 25}{ralign 7:3}{ralign 10:       4}{ralign 10:       5}{ralign 10:       6}{ralign 10:       7}
+
+{txt}{hline}
+{res}polpos2013_15_i1{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric ({res}byte{txt})
+
+{col 18}Range: [{res}1{txt},{res}9{txt}]{col 55}Units: {res}1
+{col 10}{txt}Unique values: {res}9{col 51}{txt}Missing .: {res}103{txt}/{res}333
+
+{txt}{col 13}Tabulation: Freq.  Value
+{col 20}{res}         1{col 32}1
+{col 20}         8{col 32}2
+{col 20}        36{col 32}3
+{col 20}        51{col 32}4
+{col 20}        39{col 32}5
+{col 20}        35{col 32}6
+{col 20}        27{col 32}7
+{col 20}        30{col 32}8
+{col 20}         3{col 32}9
+{col 20}       103{col 32}.
+{txt}
+{com}. 
+. cap log close
+{smcl}
+{com}{sf}{ul off}

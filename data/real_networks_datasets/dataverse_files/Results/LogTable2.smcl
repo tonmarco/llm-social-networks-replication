@@ -1,0 +1,535 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogTable2.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}31 Dec 2025, 18:03:14
+{txt}
+{com}. /// TABLE 2 - Permutation test
+> 
+. cap program drop W_B_Cat
+{txt}
+{com}. program W_B_Cat, rclass
+{txt}  1{com}.         args varname groupname
+{txt}  2{com}.         
+.         tempvar sd_w sd_b sd tagvar ratio gg
+{txt}  3{com}.         
+.         bysort `groupname': egen `gg' = count(`varname')
+{txt}  4{com}. 
+.         xi i.`varname', pre(_II_)
+{txt}  5{com}.         gen `sd_w' = .
+{txt}  6{com}.         gen `sd_b' = .
+{txt}  7{com}.         gen `sd' = .
+{txt}  8{com}.         gen `ratio'=.
+{txt}  9{com}.         foreach subvarname of varlist _II_* {c -(}
+{txt} 10{com}.                 xtsum `subvarname', i(`groupname')
+{txt} 11{com}.                 replace `sd_w' = r(sd_w) if `subvarname'==1
+{txt} 12{com}.                 replace `sd_b' = r(sd_b) if `subvarname'==1
+{txt} 13{com}.                 *replace `sd' = r(sd) if `subvarname'==1
+.                 replace `ratio' = `sd_w'/`sd_b'
+{txt} 14{com}.         {c )-}
+{txt} 15{com}.         drop _II_*
+{txt} 16{com}.         egen `tagvar' = tag(`varname')
+{txt} 17{com}.         sum `ratio' [aw=`gg'] if `tagvar'==1, meanonly
+{txt} 18{com}.         scalar Ratio = r(mean)
+{txt} 19{com}.         return scalar W_B_Cat = `=Ratio' // This is the mean of the ratios `SD_W'/`=SD_B' 
+{txt} 20{com}. end
+{txt}
+{com}. 
+. cap program drop W_B_SD
+{txt}
+{com}. program W_B_SD, rclass
+{txt}  1{com}.         args varname groupname 
+{txt}  2{com}.         cap drop sd_`varname' 
+{txt}  3{com}.         xtsum `varname', i(`groupname')
+{txt}  4{com}.         scalar sd_w = r(sd_w)
+{txt}  5{com}.         scalar sd_b = r(sd_b)
+{txt}  6{com}.         scalar sd = r(sd)
+{txt}  7{com}.         return scalar w_b_sd_ratio = sd_w/sd_b // This is the ratio of within standard deviation/between standard deviation
+{txt}  8{com}. end
+{txt}
+{com}. 
+. preserve
+{txt}
+{com}. keep if $condition 
+{txt}(241,980 observations deleted)
+
+{com}. egen tag_i1=tag(uid_i1)
+{txt}
+{com}. 
+. cap drop sample
+{txt}
+{com}. quietly reg DiffPPa LUL DiffPP $Xvar 
+{txt}
+{com}. gen sample=e(sample)
+{txt}
+{com}. 
+. reg polposnow_i1 polpos_i1 if tag_i1==1
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       323
+{txt}{hline 13}{c +}{hline 34}   F(1, 321)       = {res}   561.82
+{txt}       Model {c |} {res} 597.973227         1  597.973227   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 341.655256       321  1.06434659   {txt}R-squared       ={res}    0.6364
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6353
+{txt}       Total {c |} {res} 939.628483       322  2.91810088   {txt}Root MSE        =   {res} 1.0317
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}polposnow_i1{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}polpos_i1 {c |}{col 14}{res}{space 2} .7097749{col 26}{space 2} .0299448{col 37}{space 1}   23.70{col 46}{space 3}0.000{col 54}{space 4}  .650862{col 67}{space 3} .7686877
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 1.434631{col 26}{space 2} .1650352{col 37}{space 1}    8.69{col 46}{space 3}0.000{col 54}{space 4} 1.109944{col 67}{space 3} 1.759318
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. predict resid_i1, resid
+{txt}
+{com}. gen Dpolpos_i1 = polposnow_i1 - polpos_i1
+{txt}
+{com}. keep if tag_i1==1
+{txt}(52,003 observations deleted)
+
+{com}. *keep sample Dpolpos_i1 polposnow_i1 resid_i1 polpos_i1 IGno_i1 LettFirst_i1 uid_i1 droits_i1 sex_i1 nat1_i1 nat2_i1 admission_i1 program1_i1 program2_i1 parent1_i1 seriebac_i1 mention_i1 departmentbac_i1 regionbac_i1 Codepostal_adressePR_i1
+. keep if IGno_i1~=.
+{txt}(0 observations deleted)
+
+{com}. 
+. 
+. // Permutation test of group asignment randomness for initial political opinions
+. permute IGno_i1 W_SD_Post=r(w_b_sd_ratio) , reps(300) seed(142857): W_B_SD polpos_i1 IGno_i1 
+{res}{txt}(running {bf:W_B_SD} on estimation sample)
+
+{p 0 9 2}
+warning: {bf:W_B_SD} does not set {bf:e(sample)}, so no 
+observations will be excluded from the permutations because of 
+missing values or other reasons. To exclude observations, press 
+Break, save the data, drop any observations that are to be excluded, 
+and rerun {bf:permute}.{p_end}
+{res}
+{text}Permutations ({result:300}){text}: {res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}10{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}20{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}30{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}40{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}50{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}60{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}70{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}80{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}90{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}100{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}110{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}120{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}130{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}140{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}150{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}160{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}170{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}180{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}190{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}200{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}210{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}220{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}230{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}240{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}250{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}260{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}270{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}280{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}290{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}300{text} done
+{res}
+{txt}Monte Carlo permutation results{col 52}Number of observations = {res}323
+{txt}Permutation variable: {res}IGno_i1{txt}{col 52}Number of permutations = {res}300
+{p2colset 7 16 20 2}{...}
+
+{txt}{p2col :Command:}{res:W_B_SD polpos_i1 IGno_i1}{p_end}
+{p2colset 5 16 20 2}{...}
+{p2col :W_SD_Post:}{res:r(w_b_sd_ratio)}{p_end}
+
+{hline 13}{c TT}{hline 65}
+{col 14}{c |}{col 62}{help j_permute_error:Monte Carlo error}
+{col 14}{c |}{col 61}{hline 19}
+{col 12}T{col 14}{c |}{col 19}T(obs){col 32}Test{col 43}c{col 51}n{col 58}p{col 61}SE(p)   [95% CI(p)]
+{hline 13}{c +}{hline 65}
+{space 3}W_SD_Post {c |}{res}{space 1}  2.28232      lower     243     300{space 2}.8100{space 2}.0226{space 2}.7610{space 2}.8528
+{txt}{col 14}{c |}{res}{space 10}      upper      57     300{space 2}.1900{space 2}.0226{space 2}.1472{space 2}.2390
+{txt}{col 14}{c |}{res}{space 10}  two-sided{space 16}{space 2}.3800{space 2}.0280{space 2}.3251{space 2}.4349
+{txt}{hline 13}{c BT}{hline 65}
+Notes: For lower one-sided test, c = #{T <= T(obs)} and p = p_lower = c/n.
+       For upper one-sided test, c = #{T >= T(obs)} and p = p_upper = c/n.
+       For two-sided test, p = 2*min(p_lower, p_upper); SE and CI {help j_permute_approx:approximate}.
+
+{com}. 
+. 
+. // Permutation test of group asignment randomness for initial tuition fees
+. permute IGno_i1 W_SD_Post=r(w_b_sd_ratio) , reps(300) seed(142857): W_B_SD droits_i1 IGno_i1 
+{res}{txt}(running {bf:W_B_SD} on estimation sample)
+
+{p 0 9 2}
+warning: {bf:W_B_SD} does not set {bf:e(sample)}, so no 
+observations will be excluded from the permutations because of 
+missing values or other reasons. To exclude observations, press 
+Break, save the data, drop any observations that are to be excluded, 
+and rerun {bf:permute}.{p_end}
+{res}
+{text}Permutations ({result:300}){text}: {res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}10{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}20{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}30{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}40{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}50{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}60{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}70{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}80{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}90{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}100{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}110{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}120{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}130{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}140{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}150{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}160{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}170{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}180{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}190{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}200{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}210{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}220{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}230{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}240{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}250{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}260{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}270{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}280{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}290{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}300{text} done
+{res}
+{txt}Monte Carlo permutation results{col 52}Number of observations = {res}323
+{txt}Permutation variable: {res}IGno_i1{txt}{col 52}Number of permutations = {res}300
+{p2colset 7 16 20 2}{...}
+
+{txt}{p2col :Command:}{res:W_B_SD droits_i1 IGno_i1}{p_end}
+{p2colset 5 16 20 2}{...}
+{p2col :W_SD_Post:}{res:r(w_b_sd_ratio)}{p_end}
+
+{hline 13}{c TT}{hline 65}
+{col 14}{c |}{col 62}{help j_permute_error:Monte Carlo error}
+{col 14}{c |}{col 61}{hline 19}
+{col 12}T{col 14}{c |}{col 19}T(obs){col 32}Test{col 43}c{col 51}n{col 58}p{col 61}SE(p)   [95% CI(p)]
+{hline 13}{c +}{hline 65}
+{space 3}W_SD_Post {c |}{res}{space 1} 1.842245      lower      42     300{space 2}.1400{space 2}.0200{space 2}.1028{space 2}.1845
+{txt}{col 14}{c |}{res}{space 10}      upper     258     300{space 2}.8600{space 2}.0200{space 2}.8155{space 2}.8972
+{txt}{col 14}{c |}{res}{space 10}  two-sided{space 16}{space 2}.2800{space 2}.0259{space 2}.2292{space 2}.3308
+{txt}{hline 13}{c BT}{hline 65}
+Notes: For lower one-sided test, c = #{T <= T(obs)} and p = p_lower = c/n.
+       For upper one-sided test, c = #{T >= T(obs)} and p = p_upper = c/n.
+       For two-sided test, p = 2*min(p_lower, p_upper); SE and CI {help j_permute_approx:approximate}.
+
+{com}. 
+. // Permutation test of group asignment randomness for category variables
+. gen admispr_i1 = (admission_i1==1)
+{txt}
+{com}. foreach var in sex admispr {c -(}
+{txt}  2{com}.         di ""
+{txt}  3{com}.         di "Permutation test for " "`var'"
+{txt}  4{com}.         di ""
+{txt}  5{com}.         permute IGno_i1 W_SD_Post=r(w_b_sd_ratio), reps(300) seed(142857): W_B_SD `var'_i1 IGno_i1
+{txt}  6{com}. {c )-}
+
+Permutation test for sex
+
+{res}{txt}(running {bf:W_B_SD} on estimation sample)
+
+{p 0 9 2}
+warning: {bf:W_B_SD} does not set {bf:e(sample)}, so no 
+observations will be excluded from the permutations because of 
+missing values or other reasons. To exclude observations, press 
+Break, save the data, drop any observations that are to be excluded, 
+and rerun {bf:permute}.{p_end}
+{res}
+{text}Permutations ({result:300}){text}: {res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}10{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}20{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}30{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}40{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}50{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}60{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}70{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}80{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}90{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}100{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}110{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}120{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}130{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}140{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}150{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}160{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}170{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}180{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}190{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}200{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}210{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}220{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}230{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}240{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}250{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}260{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}270{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}280{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}290{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}300{text} done
+{res}
+{txt}Monte Carlo permutation results{col 52}Number of observations = {res}323
+{txt}Permutation variable: {res}IGno_i1{txt}{col 52}Number of permutations = {res}300
+{p2colset 7 16 20 2}{...}
+
+{txt}{p2col :Command:}{res:W_B_SD sex_i1 IGno_i1}{p_end}
+{p2colset 5 16 20 2}{...}
+{p2col :W_SD_Post:}{res:r(w_b_sd_ratio)}{p_end}
+
+{hline 13}{c TT}{hline 65}
+{col 14}{c |}{col 62}{help j_permute_error:Monte Carlo error}
+{col 14}{c |}{col 61}{hline 19}
+{col 12}T{col 14}{c |}{col 19}T(obs){col 32}Test{col 43}c{col 51}n{col 58}p{col 61}SE(p)   [95% CI(p)]
+{hline 13}{c +}{hline 65}
+{space 3}W_SD_Post {c |}{res}{space 1} 1.953891      lower      75     300{space 2}.2500{space 2}.0250{space 2}.2020{space 2}.3030
+{txt}{col 14}{c |}{res}{space 10}      upper     225     300{space 2}.7500{space 2}.0250{space 2}.6970{space 2}.7980
+{txt}{col 14}{c |}{res}{space 10}  two-sided{space 16}{space 2}.5000{space 2}.0289{space 2}.4434{space 2}.5566
+{txt}{hline 13}{c BT}{hline 65}
+Notes: For lower one-sided test, c = #{T <= T(obs)} and p = p_lower = c/n.
+       For upper one-sided test, c = #{T >= T(obs)} and p = p_upper = c/n.
+       For two-sided test, p = 2*min(p_lower, p_upper); SE and CI {help j_permute_approx:approximate}.
+
+Permutation test for admispr
+
+{res}{txt}(running {bf:W_B_SD} on estimation sample)
+
+{p 0 9 2}
+warning: {bf:W_B_SD} does not set {bf:e(sample)}, so no 
+observations will be excluded from the permutations because of 
+missing values or other reasons. To exclude observations, press 
+Break, save the data, drop any observations that are to be excluded, 
+and rerun {bf:permute}.{p_end}
+{res}
+{text}Permutations ({result:300}){text}: {res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}10{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}20{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}30{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}40{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}50{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}60{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}70{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}80{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}90{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}100{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}110{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}120{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}130{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}140{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}150{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}160{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}170{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}180{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}190{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}200{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}210{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}220{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}230{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}240{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}250{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}260{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}270{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}280{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}290{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}300{text} done
+{res}
+{txt}Monte Carlo permutation results{col 52}Number of observations = {res}323
+{txt}Permutation variable: {res}IGno_i1{txt}{col 52}Number of permutations = {res}300
+{p2colset 7 16 20 2}{...}
+
+{txt}{p2col :Command:}{res:W_B_SD admispr_i1 IGno_i1}{p_end}
+{p2colset 5 16 20 2}{...}
+{p2col :W_SD_Post:}{res:r(w_b_sd_ratio)}{p_end}
+
+{hline 13}{c TT}{hline 65}
+{col 14}{c |}{col 62}{help j_permute_error:Monte Carlo error}
+{col 14}{c |}{col 61}{hline 19}
+{col 12}T{col 14}{c |}{col 19}T(obs){col 32}Test{col 43}c{col 51}n{col 58}p{col 61}SE(p)   [95% CI(p)]
+{hline 13}{c +}{hline 65}
+{space 3}W_SD_Post {c |}{res}{space 1} 1.752916      lower      50     300{space 2}.1667{space 2}.0215{space 2}.1263{space 2}.2138
+{txt}{col 14}{c |}{res}{space 10}      upper     250     300{space 2}.8333{space 2}.0215{space 2}.7862{space 2}.8737
+{txt}{col 14}{c |}{res}{space 10}  two-sided{space 16}{space 2}.3333{space 2}.0272{space 2}.2800{space 2}.3867
+{txt}{hline 13}{c BT}{hline 65}
+Notes: For lower one-sided test, c = #{T <= T(obs)} and p = p_lower = c/n.
+       For upper one-sided test, c = #{T >= T(obs)} and p = p_upper = c/n.
+       For two-sided test, p = 2*min(p_lower, p_upper); SE and CI {help j_permute_approx:approximate}.
+
+{com}. 
+. 
+. foreach var in nat2 admission program1 parent1 seriebac departmentbac regionbac Codepostal_adressePR {c -(}
+{txt}  2{com}.         di ""
+{txt}  3{com}.         di "Permutation test for " "`var'"
+{txt}  4{com}.         di ""
+{txt}  5{com}.         permute IGno_i1 Within_Between_links =r(W_B_Cat), reps(300) seed(142857): W_B_Cat `var'_i1 IGno_i1
+{txt}  6{com}. {c )-}
+
+Permutation test for nat2
+
+{res}{txt}(running {bf:W_B_Cat} on estimation sample)
+
+{p 0 9 2}
+warning: {bf:W_B_Cat} does not set {bf:e(sample)}, so no 
+observations will be excluded from the permutations because of 
+missing values or other reasons. To exclude observations, press 
+Break, save the data, drop any observations that are to be excluded, 
+and rerun {bf:permute}.{p_end}
+{res}
+{text}Permutations ({result:300}){text}: {res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}10{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}20{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}30{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}40{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}50{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}60{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}70{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}80{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}90{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}100{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}110{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}120{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}130{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}140{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}150{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}160{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}170{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}180{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}190{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}200{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}210{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}220{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}230{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}240{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}250{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}260{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}270{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}280{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}290{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}300{text} done
+{res}
+{txt}Monte Carlo permutation results{col 52}Number of observations = {res}323
+{txt}Permutation variable: {res}IGno_i1{txt}{col 52}Number of permutations = {res}300
+{p2colset 7 16 20 2}{...}
+
+{txt}{p2col :Command:}{res:W_B_Cat nat2_i1 IGno_i1}{p_end}
+{p2colset 1 16 20 2}{...}
+{p2col :Within_Betw~s:}{res:r(W_B_Cat)}{p_end}
+
+{hline 13}{c TT}{hline 65}
+{col 14}{c |}{col 62}{help j_permute_error:Monte Carlo error}
+{col 14}{c |}{col 61}{hline 19}
+{col 12}T{col 14}{c |}{col 19}T(obs){col 32}Test{col 43}c{col 51}n{col 58}p{col 61}SE(p)   [95% CI(p)]
+{hline 13}{c +}{hline 65}
+Within_Bet~s {c |}{res}{space 1} 1.212876      lower     238     300{space 2}.7933{space 2}.0234{space 2}.7430{space 2}.8377
+{txt}{col 14}{c |}{res}{space 10}      upper      62     300{space 2}.2067{space 2}.0234{space 2}.1623{space 2}.2570
+{txt}{col 14}{c |}{res}{space 10}  two-sided{space 16}{space 2}.4133{space 2}.0284{space 2}.3576{space 2}.4691
+{txt}{hline 13}{c BT}{hline 65}
+Notes: For lower one-sided test, c = #{T <= T(obs)} and p = p_lower = c/n.
+       For upper one-sided test, c = #{T >= T(obs)} and p = p_upper = c/n.
+       For two-sided test, p = 2*min(p_lower, p_upper); SE and CI {help j_permute_approx:approximate}.
+
+Permutation test for admission
+
+{res}{txt}(running {bf:W_B_Cat} on estimation sample)
+
+{p 0 9 2}
+warning: {bf:W_B_Cat} does not set {bf:e(sample)}, so no 
+observations will be excluded from the permutations because of 
+missing values or other reasons. To exclude observations, press 
+Break, save the data, drop any observations that are to be excluded, 
+and rerun {bf:permute}.{p_end}
+{res}
+{text}Permutations ({result:300}){text}: {res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}10{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}20{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}30{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}40{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}50{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}60{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}70{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}80{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}90{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}100{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}110{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}120{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}130{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}140{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}150{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}160{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}170{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}180{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}190{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}200{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}210{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}220{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}230{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}240{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}250{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}260{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}270{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}280{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}290{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}300{text} done
+{res}
+{txt}Monte Carlo permutation results{col 52}Number of observations = {res}323
+{txt}Permutation variable: {res}IGno_i1{txt}{col 52}Number of permutations = {res}300
+{p2colset 7 16 20 2}{...}
+
+{txt}{p2col :Command:}{res:W_B_Cat admission_i1 IGno_i1}{p_end}
+{p2colset 1 16 20 2}{...}
+{p2col :Within_Betw~s:}{res:r(W_B_Cat)}{p_end}
+
+{hline 13}{c TT}{hline 65}
+{col 14}{c |}{col 62}{help j_permute_error:Monte Carlo error}
+{col 14}{c |}{col 61}{hline 19}
+{col 12}T{col 14}{c |}{col 19}T(obs){col 32}Test{col 43}c{col 51}n{col 58}p{col 61}SE(p)   [95% CI(p)]
+{hline 13}{c +}{hline 65}
+Within_Bet~s {c |}{res}{space 1} 2.531183      lower     156     300{space 2}.5200{space 2}.0288{space 2}.4618{space 2}.5778
+{txt}{col 14}{c |}{res}{space 10}      upper     144     300{space 2}.4800{space 2}.0288{space 2}.4222{space 2}.5382
+{txt}{col 14}{c |}{res}{space 10}  two-sided{space 16}{space 2}.9600{space 2}.0113{space 2}.9378{space 2}.9822
+{txt}{hline 13}{c BT}{hline 65}
+Notes: For lower one-sided test, c = #{T <= T(obs)} and p = p_lower = c/n.
+       For upper one-sided test, c = #{T >= T(obs)} and p = p_upper = c/n.
+       For two-sided test, p = 2*min(p_lower, p_upper); SE and CI {help j_permute_approx:approximate}.
+
+Permutation test for program1
+
+{res}{txt}(running {bf:W_B_Cat} on estimation sample)
+
+{p 0 9 2}
+warning: {bf:W_B_Cat} does not set {bf:e(sample)}, so no 
+observations will be excluded from the permutations because of 
+missing values or other reasons. To exclude observations, press 
+Break, save the data, drop any observations that are to be excluded, 
+and rerun {bf:permute}.{p_end}
+{res}
+{text}Permutations ({result:300}){text}: {res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}10{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}20{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}30{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}40{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}50{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}60{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}70{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}80{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}90{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}100{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}110{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}120{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}130{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}140{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}150{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}160{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}170{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}180{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}190{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}200{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}210{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}220{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}230{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}240{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}250{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}260{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}270{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}280{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}290{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}300{text} done
+{res}
+{txt}Monte Carlo permutation results{col 52}Number of observations = {res}323
+{txt}Permutation variable: {res}IGno_i1{txt}{col 52}Number of permutations = {res}300
+{p2colset 7 16 20 2}{...}
+
+{txt}{p2col :Command:}{res:W_B_Cat program1_i1 IGno_i1}{p_end}
+{p2colset 1 16 20 2}{...}
+{p2col :Within_Betw~s:}{res:r(W_B_Cat)}{p_end}
+
+{hline 13}{c TT}{hline 65}
+{col 14}{c |}{col 62}{help j_permute_error:Monte Carlo error}
+{col 14}{c |}{col 61}{hline 19}
+{col 12}T{col 14}{c |}{col 19}T(obs){col 32}Test{col 43}c{col 51}n{col 58}p{col 61}SE(p)   [95% CI(p)]
+{hline 13}{c +}{hline 65}
+Within_Bet~s {c |}{res}{space 1} 2.185424      lower     138     300{space 2}.4600{space 2}.0288{space 2}.4026{space 2}.5182
+{txt}{col 14}{c |}{res}{space 10}      upper     162     300{space 2}.5400{space 2}.0288{space 2}.4818{space 2}.5974
+{txt}{col 14}{c |}{res}{space 10}  two-sided{space 16}{space 2}.9200{space 2}.0157{space 2}.8893{space 2}.9507
+{txt}{hline 13}{c BT}{hline 65}
+Notes: For lower one-sided test, c = #{T <= T(obs)} and p = p_lower = c/n.
+       For upper one-sided test, c = #{T >= T(obs)} and p = p_upper = c/n.
+       For two-sided test, p = 2*min(p_lower, p_upper); SE and CI {help j_permute_approx:approximate}.
+
+Permutation test for parent1
+
+{res}{txt}(running {bf:W_B_Cat} on estimation sample)
+
+{p 0 9 2}
+warning: {bf:W_B_Cat} does not set {bf:e(sample)}, so no 
+observations will be excluded from the permutations because of 
+missing values or other reasons. To exclude observations, press 
+Break, save the data, drop any observations that are to be excluded, 
+and rerun {bf:permute}.{p_end}
+{res}
+{text}Permutations ({result:300}){text}: {res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}10{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}20{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}30{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}40{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}50{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}60{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}70{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}80{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}90{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}100{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}110{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}120{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}130{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}140{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}150{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}160{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}170{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}180{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}190{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}200{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}210{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}220{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}230{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}240{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}250{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}260{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}270{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}280{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}290{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}300{text} done
+{res}
+{txt}Monte Carlo permutation results{col 52}Number of observations = {res}323
+{txt}Permutation variable: {res}IGno_i1{txt}{col 52}Number of permutations = {res}300
+{p2colset 7 16 20 2}{...}
+
+{txt}{p2col :Command:}{res:W_B_Cat parent1_i1 IGno_i1}{p_end}
+{p2colset 1 16 20 2}{...}
+{p2col :Within_Betw~s:}{res:r(W_B_Cat)}{p_end}
+
+{hline 13}{c TT}{hline 65}
+{col 14}{c |}{col 62}{help j_permute_error:Monte Carlo error}
+{col 14}{c |}{col 61}{hline 19}
+{col 12}T{col 14}{c |}{col 19}T(obs){col 32}Test{col 43}c{col 51}n{col 58}p{col 61}SE(p)   [95% CI(p)]
+{hline 13}{c +}{hline 65}
+Within_Bet~s {c |}{res}{space 1} 2.323262      lower      69     300{space 2}.2300{space 2}.0243{space 2}.1836{space 2}.2818
+{txt}{col 14}{c |}{res}{space 10}      upper     231     300{space 2}.7700{space 2}.0243{space 2}.7182{space 2}.8164
+{txt}{col 14}{c |}{res}{space 10}  two-sided{space 16}{space 2}.4600{space 2}.0288{space 2}.4036{space 2}.5164
+{txt}{hline 13}{c BT}{hline 65}
+Notes: For lower one-sided test, c = #{T <= T(obs)} and p = p_lower = c/n.
+       For upper one-sided test, c = #{T >= T(obs)} and p = p_upper = c/n.
+       For two-sided test, p = 2*min(p_lower, p_upper); SE and CI {help j_permute_approx:approximate}.
+
+Permutation test for seriebac
+
+{res}{txt}(running {bf:W_B_Cat} on estimation sample)
+
+{p 0 9 2}
+warning: {bf:W_B_Cat} does not set {bf:e(sample)}, so no 
+observations will be excluded from the permutations because of 
+missing values or other reasons. To exclude observations, press 
+Break, save the data, drop any observations that are to be excluded, 
+and rerun {bf:permute}.{p_end}
+{res}
+{text}Permutations ({result:300}){text}: {res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}10{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}20{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}30{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}40{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}50{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}60{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}70{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}80{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}90{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}100{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}110{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}120{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}130{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}140{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}150{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}160{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}170{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}180{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}190{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}200{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}210{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}220{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}230{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}240{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}250{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}260{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}270{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}280{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}290{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}300{text} done
+{res}
+{txt}Monte Carlo permutation results{col 52}Number of observations = {res}323
+{txt}Permutation variable: {res}IGno_i1{txt}{col 52}Number of permutations = {res}300
+{p2colset 7 16 20 2}{...}
+
+{txt}{p2col :Command:}{res:W_B_Cat seriebac_i1 IGno_i1}{p_end}
+{p2colset 1 16 20 2}{...}
+{p2col :Within_Betw~s:}{res:r(W_B_Cat)}{p_end}
+
+{hline 13}{c TT}{hline 65}
+{col 14}{c |}{col 62}{help j_permute_error:Monte Carlo error}
+{col 14}{c |}{col 61}{hline 19}
+{col 12}T{col 14}{c |}{col 19}T(obs){col 32}Test{col 43}c{col 51}n{col 58}p{col 61}SE(p)   [95% CI(p)]
+{hline 13}{c +}{hline 65}
+Within_Bet~s {c |}{res}{space 1} 2.462973      lower     168     300{space 2}.5600{space 2}.0287{space 2}.5018{space 2}.6170
+{txt}{col 14}{c |}{res}{space 10}      upper     132     300{space 2}.4400{space 2}.0287{space 2}.3830{space 2}.4982
+{txt}{col 14}{c |}{res}{space 10}  two-sided{space 16}{space 2}.8800{space 2}.0188{space 2}.8432{space 2}.9168
+{txt}{hline 13}{c BT}{hline 65}
+Notes: For lower one-sided test, c = #{T <= T(obs)} and p = p_lower = c/n.
+       For upper one-sided test, c = #{T >= T(obs)} and p = p_upper = c/n.
+       For two-sided test, p = 2*min(p_lower, p_upper); SE and CI {help j_permute_approx:approximate}.
+
+Permutation test for departmentbac
+
+{res}{txt}(running {bf:W_B_Cat} on estimation sample)
+
+{p 0 9 2}
+warning: {bf:W_B_Cat} does not set {bf:e(sample)}, so no 
+observations will be excluded from the permutations because of 
+missing values or other reasons. To exclude observations, press 
+Break, save the data, drop any observations that are to be excluded, 
+and rerun {bf:permute}.{p_end}
+{res}
+{text}Permutations ({result:300}){text}: {res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}10{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}20{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}30{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}40{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}50{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}60{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}70{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}80{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}90{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}100{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}110{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}120{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}130{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}140{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}150{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}160{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}170{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}180{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}190{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}200{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}210{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}220{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}230{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}240{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}250{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}260{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}270{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}280{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}290{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}300{text} done
+{res}
+{txt}Monte Carlo permutation results{col 52}Number of observations = {res}323
+{txt}Permutation variable: {res}IGno_i1{txt}{col 52}Number of permutations = {res}300
+{p2colset 7 16 20 2}{...}
+
+{txt}{p2col :Command:}{res:W_B_Cat departmentbac_i1 IGno_i1}{p_end}
+{p2colset 1 16 20 2}{...}
+{p2col :Within_Betw~s:}{res:r(W_B_Cat)}{p_end}
+
+{hline 13}{c TT}{hline 65}
+{col 14}{c |}{col 62}{help j_permute_error:Monte Carlo error}
+{col 14}{c |}{col 61}{hline 19}
+{col 12}T{col 14}{c |}{col 19}T(obs){col 32}Test{col 43}c{col 51}n{col 58}p{col 61}SE(p)   [95% CI(p)]
+{hline 13}{c +}{hline 65}
+Within_Bet~s {c |}{res}{space 1}  2.72844      lower     298     300{space 2}.9933{space 2}.0047{space 2}.9761{space 2}.9992
+{txt}{col 14}{c |}{res}{space 10}      upper       2     300{space 2}.0067{space 2}.0047{space 2}.0008{space 2}.0239
+{txt}{col 14}{c |}{res}{space 10}  two-sided{space 16}{space 2}.0133{space 2}.0066{space 2}.0004{space 2}.0263
+{txt}{hline 13}{c BT}{hline 65}
+Notes: For lower one-sided test, c = #{T <= T(obs)} and p = p_lower = c/n.
+       For upper one-sided test, c = #{T >= T(obs)} and p = p_upper = c/n.
+       For two-sided test, p = 2*min(p_lower, p_upper); SE and CI {help j_permute_approx:approximate}.
+
+Permutation test for regionbac
+
+{res}{txt}(running {bf:W_B_Cat} on estimation sample)
+
+{p 0 9 2}
+warning: {bf:W_B_Cat} does not set {bf:e(sample)}, so no 
+observations will be excluded from the permutations because of 
+missing values or other reasons. To exclude observations, press 
+Break, save the data, drop any observations that are to be excluded, 
+and rerun {bf:permute}.{p_end}
+{res}
+{text}Permutations ({result:300}){text}: {res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}10{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}20{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}30{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}40{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}50{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}60{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}70{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}80{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}90{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}100{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}110{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}120{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}130{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}140{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}150{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}160{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}170{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}180{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}190{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}200{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}210{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}220{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}230{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}240{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}250{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}260{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}270{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}280{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}290{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}300{text} done
+{res}
+{txt}Monte Carlo permutation results{col 52}Number of observations = {res}323
+{txt}Permutation variable: {res}IGno_i1{txt}{col 52}Number of permutations = {res}300
+{p2colset 7 16 20 2}{...}
+
+{txt}{p2col :Command:}{res:W_B_Cat regionbac_i1 IGno_i1}{p_end}
+{p2colset 1 16 20 2}{...}
+{p2col :Within_Betw~s:}{res:r(W_B_Cat)}{p_end}
+
+{hline 13}{c TT}{hline 65}
+{col 14}{c |}{col 62}{help j_permute_error:Monte Carlo error}
+{col 14}{c |}{col 61}{hline 19}
+{col 12}T{col 14}{c |}{col 19}T(obs){col 32}Test{col 43}c{col 51}n{col 58}p{col 61}SE(p)   [95% CI(p)]
+{hline 13}{c +}{hline 65}
+Within_Bet~s {c |}{res}{space 1} 2.528977      lower     279     300{space 2}.9300{space 2}.0147{space 2}.8950{space 2}.9561
+{txt}{col 14}{c |}{res}{space 10}      upper      21     300{space 2}.0700{space 2}.0147{space 2}.0439{space 2}.1050
+{txt}{col 14}{c |}{res}{space 10}  two-sided{space 16}{space 2}.1400{space 2}.0200{space 2}.1007{space 2}.1793
+{txt}{hline 13}{c BT}{hline 65}
+Notes: For lower one-sided test, c = #{T <= T(obs)} and p = p_lower = c/n.
+       For upper one-sided test, c = #{T >= T(obs)} and p = p_upper = c/n.
+       For two-sided test, p = 2*min(p_lower, p_upper); SE and CI {help j_permute_approx:approximate}.
+
+Permutation test for Codepostal_adressePR
+
+{res}{txt}(running {bf:W_B_Cat} on estimation sample)
+
+{p 0 9 2}
+warning: {bf:W_B_Cat} does not set {bf:e(sample)}, so no 
+observations will be excluded from the permutations because of 
+missing values or other reasons. To exclude observations, press 
+Break, save the data, drop any observations that are to be excluded, 
+and rerun {bf:permute}.{p_end}
+{res}
+{text}Permutations ({result:300}){text}: {res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}10{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}20{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}30{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}40{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}50{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}60{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}70{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}80{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}90{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}100{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}110{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}120{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}130{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}140{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}150{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}160{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}170{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}180{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}190{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}200{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}210{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}220{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}230{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}240{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}250{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}260{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}270{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}280{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}290{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}.{res}{text}300{text} done
+{res}
+{txt}Monte Carlo permutation results{col 52}Number of observations = {res}323
+{txt}Permutation variable: {res}IGno_i1{txt}{col 52}Number of permutations = {res}300
+{p2colset 7 16 20 2}{...}
+
+{txt}{p2col :Command:}{res:W_B_Cat Codepostal_adressePR_i1 IGno_i1}{p_end}
+{p2colset 1 16 20 2}{...}
+{p2col :Within_Betw~s:}{res:r(W_B_Cat)}{p_end}
+
+{hline 13}{c TT}{hline 65}
+{col 14}{c |}{col 62}{help j_permute_error:Monte Carlo error}
+{col 14}{c |}{col 61}{hline 19}
+{col 12}T{col 14}{c |}{col 19}T(obs){col 32}Test{col 43}c{col 51}n{col 58}p{col 61}SE(p)   [95% CI(p)]
+{hline 13}{c +}{hline 65}
+Within_Bet~s {c |}{res}{space 1} 2.788416      lower     272     300{space 2}.9067{space 2}.0168{space 2}.8679{space 2}.9371
+{txt}{col 14}{c |}{res}{space 10}      upper      28     300{space 2}.0933{space 2}.0168{space 2}.0629{space 2}.1321
+{txt}{col 14}{c |}{res}{space 10}  two-sided{space 16}{space 2}.1867{space 2}.0225{space 2}.1426{space 2}.2308
+{txt}{hline 13}{c BT}{hline 65}
+Notes: For lower one-sided test, c = #{T <= T(obs)} and p = p_lower = c/n.
+       For upper one-sided test, c = #{T >= T(obs)} and p = p_upper = c/n.
+       For two-sided test, p = 2*min(p_lower, p_upper); SE and CI {help j_permute_approx:approximate}.
+
+{com}. 
+. 
+. restore
+{txt}
+{com}. 
+. 
+. 
+. cap log close
+{smcl}
+{com}{sf}{ul off}

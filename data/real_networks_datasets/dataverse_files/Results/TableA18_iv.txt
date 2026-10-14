@@ -1,0 +1,20 @@
+		(1)	(2)	(3)	(4)	(5)	(6)
+VARIABLES	LABELS						
+							
+IG	IG	0.0128	-0.0158	-0.0424*	-0.0110	0.0312	
+		(0.0341)	(0.0269)	(0.0245)	(0.0090)	(0.0263)	
+SameAlphaHypGroupIV	SameAlphaHypGroupIV						0.5686***
+							(0.0048)
+Constant	Constant	0.5881***	0.1489***	0.1786***	0.0258***	0.1804***	0.0107***
+		(0.0091)	(0.0072)	(0.0065)	(0.0024)	(0.0070)	(0.0023)
+							
+Observations		31,272	31,272	31,272	31,272	31,272	31,272
+R-squared		0.0162	0.0021	0.0064	0.0033	0.0074	0.3086
+IV		Same Hyp. Group	Same Hyp. Group	Same Hyp. Group	Same Hyp. Group	Same Hyp. Group	No
+Controls		Yes	Yes	Yes	Yes	Yes	Yes
+Dyadic Group Clustering		Yes	Yes	Yes	Yes	Yes	Yes
+StdErr IG		0.0287	0.0159	0.0227	0.00776	0.0254	
+\textit{Mean}(Dep. Var.)		0.671	0.162	0.130	0.0155	0.154	0.0198
+\textit{Std.Dev.}(Dep. Var.)		0.470	0.368	0.337	0.124	0.361	0.139
+StdErr IV							0.0389
+Kleibergen-Paap Weak IV F-stat							213.2

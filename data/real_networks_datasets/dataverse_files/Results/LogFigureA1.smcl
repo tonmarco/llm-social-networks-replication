@@ -1,0 +1,605 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogFigureA1.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}31 Dec 2025, 18:20:18
+{txt}
+{com}. 
+. //////  ROBUSTNESS CHECKS
+> ******* New check using Intensity of Friendship
+. 
+. cap drop sample
+{txt}
+{com}. quietly reg DiffPPa LUL2 IG DiffPP $Xvar // GG
+{txt}
+{com}. gen sample=e(sample)
+{txt}
+{com}. 
+. cap drop FrIntens
+{txt}
+{com}. gen FrIntens = 0 if $condition 
+{txt}(241,980 missing values generated)
+
+{com}. forval i = 1/4 {c -(}
+{txt}  2{com}.         cap rename str_fr_`i' Intens`i'plus
+{txt}  3{com}.         local i1 = `i'-1
+{txt}  4{com}.         if `i'>1{c -(}
+{txt}  5{com}.                 gen Intens`i1' = Intens`i1'plus - Intens`i'plus
+{txt}  6{com}.         {c )-}
+{txt}  7{com}.         replace FrIntens = `i' if Intens`i'plus==1
+{txt}  8{com}. {c )-}
+{txt}(4,618 real changes made)
+(4,192 real changes made)
+(2,360 real changes made)
+(1,148 real changes made)
+
+{com}. gen Intens4 = Intens4plus
+{txt}
+{com}. 
+. forval i = 1/4 {c -(}
+{txt}  2{com}.         cap drop Resid`i'
+{txt}  3{com}.         reg Intens`i' IG $Xvar if $condition
+{txt}  4{com}.         predict Resid`i', resid
+{txt}  5{com}. {c )-}
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}    52,326
+{txt}{hline 13}{c +}{hline 34}   F(16, 52309)    = {res}    44.68
+{txt}       Model {c |} {res} 1.27843696        16   .07990231   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 93.5490866    52,309  .001788394   {txt}R-squared       ={res}    0.0135
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0132
+{txt}       Total {c |} {res} 94.8275236    52,325  .001812279   {txt}Root MSE        =   {res} .04229
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}     Intens1{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}IG {c |}{col 14}{res}{space 2} .0353468{col 26}{space 2} .0013606{col 37}{space 1}   25.98{col 46}{space 3}0.000{col 54}{space 4}   .03268{col 67}{space 3} .0380136
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0007911{col 26}{space 2} .0005155{col 37}{space 1}    1.53{col 46}{space 3}0.125{col 54}{space 4}-.0002193{col 67}{space 3} .0018015
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0003962{col 26}{space 2}  .000547{col 37}{space 1}   -0.72{col 46}{space 3}0.469{col 54}{space 4}-.0014683{col 67}{space 3}  .000676
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.0015184{col 26}{space 2} .0019748{col 37}{space 1}   -0.77{col 46}{space 3}0.442{col 54}{space 4} -.005389{col 67}{space 3} .0023523
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0000743{col 26}{space 2} .0004171{col 37}{space 1}    0.18{col 46}{space 3}0.859{col 54}{space 4}-.0007433{col 67}{space 3} .0008919
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2}-.0020442{col 26}{space 2} .0016784{col 37}{space 1}   -1.22{col 46}{space 3}0.223{col 54}{space 4}-.0053339{col 67}{space 3} .0012455
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}-.0002333{col 26}{space 2} .0008734{col 37}{space 1}   -0.27{col 46}{space 3}0.789{col 54}{space 4}-.0019452{col 67}{space 3} .0014786
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0020977{col 26}{space 2} .0014016{col 37}{space 1}    1.50{col 46}{space 3}0.135{col 54}{space 4}-.0006495{col 67}{space 3} .0048449
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2}-.0003566{col 26}{space 2} .0003814{col 37}{space 1}   -0.93{col 46}{space 3}0.350{col 54}{space 4}-.0011042{col 67}{space 3}  .000391
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} 5.11e-09{col 26}{space 2} 7.26e-08{col 37}{space 1}    0.07{col 46}{space 3}0.944{col 54}{space 4}-1.37e-07{col 67}{space 3} 1.47e-07
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0002673{col 26}{space 2} .0004242{col 37}{space 1}    0.63{col 46}{space 3}0.529{col 54}{space 4}-.0005641{col 67}{space 3} .0010987
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} -.000068{col 26}{space 2} .0003797{col 37}{space 1}   -0.18{col 46}{space 3}0.858{col 54}{space 4}-.0008122{col 67}{space 3} .0006761
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .0010227{col 26}{space 2} .0011968{col 37}{space 1}    0.85{col 46}{space 3}0.393{col 54}{space 4}-.0013231{col 67}{space 3} .0033685
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} .0003931{col 26}{space 2} .0003759{col 37}{space 1}    1.05{col 46}{space 3}0.296{col 54}{space 4}-.0003437{col 67}{space 3} .0011298
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0019168{col 26}{space 2} .0014145{col 37}{space 1}   -1.36{col 46}{space 3}0.175{col 54}{space 4}-.0046893{col 67}{space 3} .0008556
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .0055195{col 26}{space 2} .0010653{col 37}{space 1}    5.18{col 46}{space 3}0.000{col 54}{space 4} .0034315{col 67}{space 3} .0076075
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0003837{col 26}{space 2}  .000631{col 37}{space 1}    0.61{col 46}{space 3}0.543{col 54}{space 4} -.000853{col 67}{space 3} .0016205
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}(112,404 missing values generated)
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}    52,326
+{txt}{hline 13}{c +}{hline 34}   F(16, 52309)    = {res}    72.58
+{txt}       Model {c |} {res} 7.80721643        16  .487951027   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 351.688407    52,309  .006723287   {txt}R-squared       ={res}    0.0217
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0214
+{txt}       Total {c |} {res} 359.495624    52,325  .006870437   {txt}Root MSE        =   {res}   .082
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}     Intens2{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}IG {c |}{col 14}{res}{space 2} .0566633{col 26}{space 2} .0026381{col 37}{space 1}   21.48{col 46}{space 3}0.000{col 54}{space 4} .0514926{col 67}{space 3}  .061834
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0037788{col 26}{space 2} .0009996{col 37}{space 1}    3.78{col 46}{space 3}0.000{col 54}{space 4} .0018196{col 67}{space 3} .0057379
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0032356{col 26}{space 2} .0010606{col 37}{space 1}   -3.05{col 46}{space 3}0.002{col 54}{space 4}-.0053145{col 67}{space 3}-.0011567
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2} .0027364{col 26}{space 2}  .003829{col 37}{space 1}    0.71{col 46}{space 3}0.475{col 54}{space 4}-.0047684{col 67}{space 3} .0102412
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0011662{col 26}{space 2} .0008088{col 37}{space 1}    1.44{col 46}{space 3}0.149{col 54}{space 4} -.000419{col 67}{space 3} .0027514
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .0086872{col 26}{space 2} .0032543{col 37}{space 1}    2.67{col 46}{space 3}0.008{col 54}{space 4} .0023087{col 67}{space 3} .0150657
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0016917{col 26}{space 2} .0016935{col 37}{space 1}    1.00{col 46}{space 3}0.318{col 54}{space 4}-.0016275{col 67}{space 3} .0050109
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0056807{col 26}{space 2} .0027177{col 37}{space 1}    2.09{col 46}{space 3}0.037{col 54}{space 4} .0003541{col 67}{space 3} .0110074
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0033277{col 26}{space 2} .0007396{col 37}{space 1}    4.50{col 46}{space 3}0.000{col 54}{space 4} .0018782{col 67}{space 3} .0047773
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-2.46e-08{col 26}{space 2} 1.41e-07{col 37}{space 1}   -0.17{col 46}{space 3}0.862{col 54}{space 4}-3.01e-07{col 67}{space 3} 2.51e-07
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0017044{col 26}{space 2} .0008225{col 37}{space 1}    2.07{col 46}{space 3}0.038{col 54}{space 4} .0000923{col 67}{space 3} .0033165
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.0006941{col 26}{space 2} .0007362{col 37}{space 1}   -0.94{col 46}{space 3}0.346{col 54}{space 4} -.002137{col 67}{space 3} .0007488
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} -.000092{col 26}{space 2} .0023206{col 37}{space 1}   -0.04{col 46}{space 3}0.968{col 54}{space 4}-.0046404{col 67}{space 3} .0044563
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0008253{col 26}{space 2} .0007288{col 37}{space 1}   -1.13{col 46}{space 3}0.257{col 54}{space 4}-.0022538{col 67}{space 3} .0006032
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0036178{col 26}{space 2} .0027426{col 37}{space 1}   -1.32{col 46}{space 3}0.187{col 54}{space 4}-.0089933{col 67}{space 3} .0017578
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .0512748{col 26}{space 2} .0020655{col 37}{space 1}   24.82{col 46}{space 3}0.000{col 54}{space 4} .0472263{col 67}{space 3} .0553233
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0002573{col 26}{space 2} .0012235{col 37}{space 1}    0.21{col 46}{space 3}0.833{col 54}{space 4}-.0021407{col 67}{space 3} .0026553
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}(112,404 missing values generated)
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}    52,326
+{txt}{hline 13}{c +}{hline 34}   F(16, 52309)    = {res}    61.66
+{txt}       Model {c |} {res} 4.47757357        16  .279848348   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 237.393943    52,309    .0045383   {txt}R-squared       ={res}    0.0185
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0182
+{txt}       Total {c |} {res} 241.871517    52,325  .004622485   {txt}Root MSE        =   {res} .06737
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}     Intens3{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}IG {c |}{col 14}{res}{space 2} .0383438{col 26}{space 2} .0021674{col 37}{space 1}   17.69{col 46}{space 3}0.000{col 54}{space 4} .0340956{col 67}{space 3}  .042592
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0031695{col 26}{space 2} .0008212{col 37}{space 1}    3.86{col 46}{space 3}0.000{col 54}{space 4} .0015599{col 67}{space 3} .0047791
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0026223{col 26}{space 2} .0008714{col 37}{space 1}   -3.01{col 46}{space 3}0.003{col 54}{space 4}-.0043303{col 67}{space 3}-.0009143
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.0017485{col 26}{space 2} .0031458{col 37}{space 1}   -0.56{col 46}{space 3}0.578{col 54}{space 4}-.0079144{col 67}{space 3} .0044174
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0024087{col 26}{space 2} .0006645{col 37}{space 1}    3.62{col 46}{space 3}0.000{col 54}{space 4} .0011063{col 67}{space 3} .0037111
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2}-.0005814{col 26}{space 2} .0026737{col 37}{space 1}   -0.22{col 46}{space 3}0.828{col 54}{space 4}-.0058219{col 67}{space 3} .0046591
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0017875{col 26}{space 2} .0013913{col 37}{space 1}    1.28{col 46}{space 3}0.199{col 54}{space 4}-.0009395{col 67}{space 3} .0045145
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2}-.0002046{col 26}{space 2} .0022328{col 37}{space 1}   -0.09{col 46}{space 3}0.927{col 54}{space 4}-.0045809{col 67}{space 3} .0041718
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0008641{col 26}{space 2} .0006076{col 37}{space 1}    1.42{col 46}{space 3}0.155{col 54}{space 4}-.0003268{col 67}{space 3} .0020551
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-3.73e-07{col 26}{space 2} 1.16e-07{col 37}{space 1}   -3.23{col 46}{space 3}0.001{col 54}{space 4}-6.00e-07{col 67}{space 3}-1.46e-07
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0000286{col 26}{space 2} .0006758{col 37}{space 1}    0.04{col 46}{space 3}0.966{col 54}{space 4}-.0012958{col 67}{space 3} .0013531
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} .0007438{col 26}{space 2} .0006048{col 37}{space 1}    1.23{col 46}{space 3}0.219{col 54}{space 4}-.0004417{col 67}{space 3} .0019292
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .0034975{col 26}{space 2} .0019066{col 37}{space 1}    1.83{col 46}{space 3}0.067{col 54}{space 4}-.0002394{col 67}{space 3} .0072344
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0005038{col 26}{space 2} .0005988{col 37}{space 1}   -0.84{col 46}{space 3}0.400{col 54}{space 4}-.0016775{col 67}{space 3} .0006698
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0000655{col 26}{space 2} .0022533{col 37}{space 1}   -0.03{col 46}{space 3}0.977{col 54}{space 4} -.004482{col 67}{space 3}  .004351
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .0414214{col 26}{space 2}  .001697{col 37}{space 1}   24.41{col 46}{space 3}0.000{col 54}{space 4} .0380952{col 67}{space 3} .0447476
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0010758{col 26}{space 2} .0010052{col 37}{space 1}    1.07{col 46}{space 3}0.285{col 54}{space 4}-.0008944{col 67}{space 3}  .003046
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}(112,404 missing values generated)
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}    52,326
+{txt}{hline 13}{c +}{hline 34}   F(16, 52309)    = {res}    56.91
+{txt}       Model {c |} {res} 3.98600154        16  .249125096   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 228.967559    52,309  .004377212   {txt}R-squared       ={res}    0.0171
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0168
+{txt}       Total {c |} {res}  232.95356    52,325  .004452051   {txt}Root MSE        =   {res} .06616
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}     Intens4{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}IG {c |}{col 14}{res}{space 2} .0343062{col 26}{space 2} .0021286{col 37}{space 1}   16.12{col 46}{space 3}0.000{col 54}{space 4} .0301341{col 67}{space 3} .0384783
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0043529{col 26}{space 2} .0008065{col 37}{space 1}    5.40{col 46}{space 3}0.000{col 54}{space 4} .0027721{col 67}{space 3} .0059337
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0018994{col 26}{space 2} .0008558{col 37}{space 1}   -2.22{col 46}{space 3}0.026{col 54}{space 4}-.0035768{col 67}{space 3} -.000222
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2} .0003061{col 26}{space 2} .0030895{col 37}{space 1}    0.10{col 46}{space 3}0.921{col 54}{space 4}-.0057494{col 67}{space 3} .0063616
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0012095{col 26}{space 2} .0006526{col 37}{space 1}    1.85{col 46}{space 3}0.064{col 54}{space 4}-.0000695{col 67}{space 3} .0024886
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .0072609{col 26}{space 2} .0026258{col 37}{space 1}    2.77{col 46}{space 3}0.006{col 54}{space 4} .0021142{col 67}{space 3} .0124076
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0072053{col 26}{space 2} .0013664{col 37}{space 1}    5.27{col 46}{space 3}0.000{col 54}{space 4} .0045271{col 67}{space 3} .0098835
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0020703{col 26}{space 2} .0021928{col 37}{space 1}    0.94{col 46}{space 3}0.345{col 54}{space 4}-.0022277{col 67}{space 3} .0063682
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0014132{col 26}{space 2} .0005967{col 37}{space 1}    2.37{col 46}{space 3}0.018{col 54}{space 4} .0002436{col 67}{space 3} .0025828
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-5.90e-08{col 26}{space 2} 1.14e-07{col 37}{space 1}   -0.52{col 46}{space 3}0.603{col 54}{space 4}-2.82e-07{col 67}{space 3} 1.64e-07
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} -.000603{col 26}{space 2} .0006637{col 37}{space 1}   -0.91{col 46}{space 3}0.364{col 54}{space 4}-.0019038{col 67}{space 3} .0006977
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} .0002753{col 26}{space 2}  .000594{col 37}{space 1}    0.46{col 46}{space 3}0.643{col 54}{space 4}-.0008889{col 67}{space 3} .0014396
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .0104185{col 26}{space 2} .0018724{col 37}{space 1}    5.56{col 46}{space 3}0.000{col 54}{space 4} .0067486{col 67}{space 3} .0140885
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} .0003567{col 26}{space 2} .0005881{col 37}{space 1}    0.61{col 46}{space 3}0.544{col 54}{space 4}-.0007959{col 67}{space 3} .0015094
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0002357{col 26}{space 2}  .002213{col 37}{space 1}   -0.11{col 46}{space 3}0.915{col 54}{space 4}-.0045731{col 67}{space 3} .0041017
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .0368785{col 26}{space 2} .0016666{col 37}{space 1}   22.13{col 46}{space 3}0.000{col 54}{space 4} .0336119{col 67}{space 3} .0401451
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0012628{col 26}{space 2} .0009872{col 37}{space 1}   -1.28{col 46}{space 3}0.201{col 54}{space 4}-.0031978{col 67}{space 3} .0006721
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}(112,404 missing values generated)
+
+{com}. 
+. forval i = 1/4 {c -(}
+{txt}  2{com}.         cap drop Resid`i'plus
+{txt}  3{com}.         reg Intens`i'plus IG $Xvar if $condition
+{txt}  4{com}.         predict Resid`i'plus, resid
+{txt}  5{com}. {c )-}
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}    52,326
+{txt}{hline 13}{c +}{hline 34}   F(16, 52309)    = {res}   224.51
+{txt}       Model {c |} {res} 58.9470533        16  3.68419083   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 858.381388    52,309  .016409822   {txt}R-squared       ={res}    0.0643
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0640
+{txt}       Total {c |} {res} 917.328441    52,325  .017531361   {txt}Root MSE        =   {res}  .1281
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} Intens1plus{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}IG {c |}{col 14}{res}{space 2} .1646602{col 26}{space 2} .0041215{col 37}{space 1}   39.95{col 46}{space 3}0.000{col 54}{space 4} .1565821{col 67}{space 3} .1727383
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0120923{col 26}{space 2} .0015616{col 37}{space 1}    7.74{col 46}{space 3}0.000{col 54}{space 4} .0090315{col 67}{space 3}  .015153
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0081534{col 26}{space 2}  .001657{col 37}{space 1}   -4.92{col 46}{space 3}0.000{col 54}{space 4}-.0114012{col 67}{space 3}-.0049056
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.0002244{col 26}{space 2} .0059819{col 37}{space 1}   -0.04{col 46}{space 3}0.970{col 54}{space 4} -.011949{col 67}{space 3} .0115003
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0048587{col 26}{space 2} .0012635{col 37}{space 1}    3.85{col 46}{space 3}0.000{col 54}{space 4} .0023822{col 67}{space 3} .0073353
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .0133225{col 26}{space 2} .0050842{col 37}{space 1}    2.62{col 46}{space 3}0.009{col 54}{space 4} .0033575{col 67}{space 3} .0232876
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0104513{col 26}{space 2} .0026457{col 37}{space 1}    3.95{col 46}{space 3}0.000{col 54}{space 4} .0052657{col 67}{space 3} .0156368
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0096441{col 26}{space 2} .0042458{col 37}{space 1}    2.27{col 46}{space 3}0.023{col 54}{space 4} .0013224{col 67}{space 3} .0179659
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0052485{col 26}{space 2} .0011554{col 37}{space 1}    4.54{col 46}{space 3}0.000{col 54}{space 4} .0029839{col 67}{space 3} .0075131
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-4.52e-07{col 26}{space 2} 2.20e-07{col 37}{space 1}   -2.05{col 46}{space 3}0.040{col 54}{space 4}-8.83e-07{col 67}{space 3}-2.05e-08
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0013973{col 26}{space 2}  .001285{col 37}{space 1}    1.09{col 46}{space 3}0.277{col 54}{space 4}-.0011213{col 67}{space 3} .0039158
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}  .000257{col 26}{space 2} .0011501{col 37}{space 1}    0.22{col 46}{space 3}0.823{col 54}{space 4}-.0019972{col 67}{space 3} .0025112
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .0148467{col 26}{space 2} .0036254{col 37}{space 1}    4.10{col 46}{space 3}0.000{col 54}{space 4} .0077409{col 67}{space 3} .0219525
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0005794{col 26}{space 2} .0011386{col 37}{space 1}   -0.51{col 46}{space 3}0.611{col 54}{space 4}-.0028111{col 67}{space 3} .0016524
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0058359{col 26}{space 2} .0042848{col 37}{space 1}   -1.36{col 46}{space 3}0.173{col 54}{space 4} -.014234{col 67}{space 3} .0025623
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .1350941{col 26}{space 2}  .003227{col 37}{space 1}   41.86{col 46}{space 3}0.000{col 54}{space 4} .1287692{col 67}{space 3}  .141419
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0004541{col 26}{space 2} .0019114{col 37}{space 1}    0.24{col 46}{space 3}0.812{col 54}{space 4}-.0032924{col 67}{space 3} .0042005
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}(112,404 missing values generated)
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}    52,326
+{txt}{hline 13}{c +}{hline 34}   F(16, 52309)    = {res}   194.29
+{txt}       Model {c |} {res} 46.3083798        16  2.89427374   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 779.239015    52,309  .014896844   {txt}R-squared       ={res}    0.0561
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0558
+{txt}       Total {c |} {res} 825.547395    52,325  .015777303   {txt}Root MSE        =   {res} .12205
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} Intens2plus{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}IG {c |}{col 14}{res}{space 2} .1293134{col 26}{space 2} .0039269{col 37}{space 1}   32.93{col 46}{space 3}0.000{col 54}{space 4} .1216167{col 67}{space 3} .1370101
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0113012{col 26}{space 2} .0014879{col 37}{space 1}    7.60{col 46}{space 3}0.000{col 54}{space 4} .0083849{col 67}{space 3} .0142174
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0077573{col 26}{space 2} .0015788{col 37}{space 1}   -4.91{col 46}{space 3}0.000{col 54}{space 4}-.0108517{col 67}{space 3}-.0046628
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}  .001294{col 26}{space 2} .0056995{col 37}{space 1}    0.23{col 46}{space 3}0.820{col 54}{space 4}-.0098771{col 67}{space 3} .0124651
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0047845{col 26}{space 2} .0012039{col 37}{space 1}    3.97{col 46}{space 3}0.000{col 54}{space 4} .0024248{col 67}{space 3} .0071441
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .0153668{col 26}{space 2} .0048441{col 37}{space 1}    3.17{col 46}{space 3}0.002{col 54}{space 4} .0058722{col 67}{space 3} .0248613
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0106845{col 26}{space 2} .0025208{col 37}{space 1}    4.24{col 46}{space 3}0.000{col 54}{space 4} .0057438{col 67}{space 3} .0156252
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0075465{col 26}{space 2} .0040453{col 37}{space 1}    1.87{col 46}{space 3}0.062{col 54}{space 4}-.0003824{col 67}{space 3} .0154753
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0056051{col 26}{space 2} .0011009{col 37}{space 1}    5.09{col 46}{space 3}0.000{col 54}{space 4} .0034474{col 67}{space 3} .0077628
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-4.57e-07{col 26}{space 2} 2.10e-07{col 37}{space 1}   -2.18{col 46}{space 3}0.029{col 54}{space 4}-8.68e-07{col 67}{space 3}-4.60e-08
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2}   .00113{col 26}{space 2} .0012243{col 37}{space 1}    0.92{col 46}{space 3}0.356{col 54}{space 4}-.0012697{col 67}{space 3} .0035296
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}  .000325{col 26}{space 2} .0010958{col 37}{space 1}    0.30{col 46}{space 3}0.767{col 54}{space 4}-.0018228{col 67}{space 3} .0024728
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}  .013824{col 26}{space 2} .0034542{col 37}{space 1}    4.00{col 46}{space 3}0.000{col 54}{space 4} .0070537{col 67}{space 3} .0205943
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0009724{col 26}{space 2} .0010849{col 37}{space 1}   -0.90{col 46}{space 3}0.370{col 54}{space 4}-.0030988{col 67}{space 3}  .001154
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} -.003919{col 26}{space 2} .0040824{col 37}{space 1}   -0.96{col 46}{space 3}0.337{col 54}{space 4}-.0119207{col 67}{space 3} .0040826
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .1295746{col 26}{space 2} .0030746{col 37}{space 1}   42.14{col 46}{space 3}0.000{col 54}{space 4} .1235484{col 67}{space 3} .1356009
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0000703{col 26}{space 2} .0018212{col 37}{space 1}    0.04{col 46}{space 3}0.969{col 54}{space 4}-.0034992{col 67}{space 3} .0036398
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}(112,404 missing values generated)
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}    52,326
+{txt}{hline 13}{c +}{hline 34}   F(16, 52309)    = {res}   117.94
+{txt}       Model {c |} {res} 16.4575929        16  1.02859955   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res}  456.19411    52,309   .00872114   {txt}R-squared       ={res}    0.0348
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0345
+{txt}       Total {c |} {res} 472.651703    52,325     .009033   {txt}Root MSE        =   {res} .09339
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} Intens3plus{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}IG {c |}{col 14}{res}{space 2}   .07265{col 26}{space 2} .0030046{col 37}{space 1}   24.18{col 46}{space 3}0.000{col 54}{space 4}  .066761{col 67}{space 3} .0785391
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0075224{col 26}{space 2} .0011384{col 37}{space 1}    6.61{col 46}{space 3}0.000{col 54}{space 4} .0052911{col 67}{space 3} .0097537
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0045217{col 26}{space 2}  .001208{col 37}{space 1}   -3.74{col 46}{space 3}0.000{col 54}{space 4}-.0068893{col 67}{space 3} -.002154
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.0014424{col 26}{space 2} .0043609{col 37}{space 1}   -0.33{col 46}{space 3}0.741{col 54}{space 4}-.0099898{col 67}{space 3}  .007105
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0036183{col 26}{space 2} .0009211{col 37}{space 1}    3.93{col 46}{space 3}0.000{col 54}{space 4} .0018128{col 67}{space 3} .0054237
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .0066795{col 26}{space 2} .0037064{col 37}{space 1}    1.80{col 46}{space 3}0.072{col 54}{space 4}-.0005851{col 67}{space 3} .0139442
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0089928{col 26}{space 2} .0019287{col 37}{space 1}    4.66{col 46}{space 3}0.000{col 54}{space 4} .0052125{col 67}{space 3} .0127731
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0018657{col 26}{space 2} .0030952{col 37}{space 1}    0.60{col 46}{space 3}0.547{col 54}{space 4}-.0042009{col 67}{space 3} .0079324
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0022774{col 26}{space 2} .0008423{col 37}{space 1}    2.70{col 46}{space 3}0.007{col 54}{space 4} .0006264{col 67}{space 3} .0039283
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-4.32e-07{col 26}{space 2} 1.60e-07{col 37}{space 1}   -2.70{col 46}{space 3}0.007{col 54}{space 4}-7.47e-07{col 67}{space 3}-1.18e-07
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2}-.0005744{col 26}{space 2} .0009368{col 37}{space 1}   -0.61{col 46}{space 3}0.540{col 54}{space 4}-.0024104{col 67}{space 3} .0012617
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} .0010191{col 26}{space 2} .0008384{col 37}{space 1}    1.22{col 46}{space 3}0.224{col 54}{space 4}-.0006243{col 67}{space 3} .0026624
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}  .013916{col 26}{space 2}  .002643{col 37}{space 1}    5.27{col 46}{space 3}0.000{col 54}{space 4} .0087358{col 67}{space 3} .0190962
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0001471{col 26}{space 2} .0008301{col 37}{space 1}   -0.18{col 46}{space 3}0.859{col 54}{space 4}-.0017741{col 67}{space 3} .0014799
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0003013{col 26}{space 2} .0031236{col 37}{space 1}   -0.10{col 46}{space 3}0.923{col 54}{space 4}-.0064236{col 67}{space 3} .0058211
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .0782999{col 26}{space 2} .0023525{col 37}{space 1}   33.28{col 46}{space 3}0.000{col 54}{space 4} .0736889{col 67}{space 3} .0829108
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} -.000187{col 26}{space 2} .0013935{col 37}{space 1}   -0.13{col 46}{space 3}0.893{col 54}{space 4}-.0029182{col 67}{space 3} .0025442
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}(112,404 missing values generated)
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}    52,326
+{txt}{hline 13}{c +}{hline 34}   F(16, 52309)    = {res}    56.91
+{txt}       Model {c |} {res} 3.98600154        16  .249125096   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 228.967559    52,309  .004377212   {txt}R-squared       ={res}    0.0171
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0168
+{txt}       Total {c |} {res}  232.95356    52,325  .004452051   {txt}Root MSE        =   {res} .06616
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} Intens4plus{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}IG {c |}{col 14}{res}{space 2} .0343062{col 26}{space 2} .0021286{col 37}{space 1}   16.12{col 46}{space 3}0.000{col 54}{space 4} .0301341{col 67}{space 3} .0384783
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0043529{col 26}{space 2} .0008065{col 37}{space 1}    5.40{col 46}{space 3}0.000{col 54}{space 4} .0027721{col 67}{space 3} .0059337
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0018994{col 26}{space 2} .0008558{col 37}{space 1}   -2.22{col 46}{space 3}0.026{col 54}{space 4}-.0035768{col 67}{space 3} -.000222
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2} .0003061{col 26}{space 2} .0030895{col 37}{space 1}    0.10{col 46}{space 3}0.921{col 54}{space 4}-.0057494{col 67}{space 3} .0063616
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0012095{col 26}{space 2} .0006526{col 37}{space 1}    1.85{col 46}{space 3}0.064{col 54}{space 4}-.0000695{col 67}{space 3} .0024886
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .0072609{col 26}{space 2} .0026258{col 37}{space 1}    2.77{col 46}{space 3}0.006{col 54}{space 4} .0021142{col 67}{space 3} .0124076
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0072053{col 26}{space 2} .0013664{col 37}{space 1}    5.27{col 46}{space 3}0.000{col 54}{space 4} .0045271{col 67}{space 3} .0098835
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0020703{col 26}{space 2} .0021928{col 37}{space 1}    0.94{col 46}{space 3}0.345{col 54}{space 4}-.0022277{col 67}{space 3} .0063682
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0014132{col 26}{space 2} .0005967{col 37}{space 1}    2.37{col 46}{space 3}0.018{col 54}{space 4} .0002436{col 67}{space 3} .0025828
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-5.90e-08{col 26}{space 2} 1.14e-07{col 37}{space 1}   -0.52{col 46}{space 3}0.603{col 54}{space 4}-2.82e-07{col 67}{space 3} 1.64e-07
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} -.000603{col 26}{space 2} .0006637{col 37}{space 1}   -0.91{col 46}{space 3}0.364{col 54}{space 4}-.0019038{col 67}{space 3} .0006977
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} .0002753{col 26}{space 2}  .000594{col 37}{space 1}    0.46{col 46}{space 3}0.643{col 54}{space 4}-.0008889{col 67}{space 3} .0014396
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .0104185{col 26}{space 2} .0018724{col 37}{space 1}    5.56{col 46}{space 3}0.000{col 54}{space 4} .0067486{col 67}{space 3} .0140885
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} .0003567{col 26}{space 2} .0005881{col 37}{space 1}    0.61{col 46}{space 3}0.544{col 54}{space 4}-.0007959{col 67}{space 3} .0015094
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0002357{col 26}{space 2}  .002213{col 37}{space 1}   -0.11{col 46}{space 3}0.915{col 54}{space 4}-.0045731{col 67}{space 3} .0041017
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .0368785{col 26}{space 2} .0016666{col 37}{space 1}   22.13{col 46}{space 3}0.000{col 54}{space 4} .0336119{col 67}{space 3} .0401451
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0012628{col 26}{space 2} .0009872{col 37}{space 1}   -1.28{col 46}{space 3}0.201{col 54}{space 4}-.0031978{col 67}{space 3} .0006721
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}(112,404 missing values generated)
+
+{com}. 
+. 
+. // Rebuild it - Dec 3 2025
+. reg Intens2plus IG $Xvar if $condition
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}    52,326
+{txt}{hline 13}{c +}{hline 34}   F(16, 52309)    = {res}   194.29
+{txt}       Model {c |} {res} 46.3083798        16  2.89427374   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 779.239015    52,309  .014896844   {txt}R-squared       ={res}    0.0561
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0558
+{txt}       Total {c |} {res} 825.547395    52,325  .015777303   {txt}Root MSE        =   {res} .12205
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} Intens2plus{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}IG {c |}{col 14}{res}{space 2} .1293134{col 26}{space 2} .0039269{col 37}{space 1}   32.93{col 46}{space 3}0.000{col 54}{space 4} .1216167{col 67}{space 3} .1370101
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0113012{col 26}{space 2} .0014879{col 37}{space 1}    7.60{col 46}{space 3}0.000{col 54}{space 4} .0083849{col 67}{space 3} .0142174
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0077573{col 26}{space 2} .0015788{col 37}{space 1}   -4.91{col 46}{space 3}0.000{col 54}{space 4}-.0108517{col 67}{space 3}-.0046628
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}  .001294{col 26}{space 2} .0056995{col 37}{space 1}    0.23{col 46}{space 3}0.820{col 54}{space 4}-.0098771{col 67}{space 3} .0124651
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0047845{col 26}{space 2} .0012039{col 37}{space 1}    3.97{col 46}{space 3}0.000{col 54}{space 4} .0024248{col 67}{space 3} .0071441
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .0153668{col 26}{space 2} .0048441{col 37}{space 1}    3.17{col 46}{space 3}0.002{col 54}{space 4} .0058722{col 67}{space 3} .0248613
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0106845{col 26}{space 2} .0025208{col 37}{space 1}    4.24{col 46}{space 3}0.000{col 54}{space 4} .0057438{col 67}{space 3} .0156252
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0075465{col 26}{space 2} .0040453{col 37}{space 1}    1.87{col 46}{space 3}0.062{col 54}{space 4}-.0003824{col 67}{space 3} .0154753
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0056051{col 26}{space 2} .0011009{col 37}{space 1}    5.09{col 46}{space 3}0.000{col 54}{space 4} .0034474{col 67}{space 3} .0077628
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-4.57e-07{col 26}{space 2} 2.10e-07{col 37}{space 1}   -2.18{col 46}{space 3}0.029{col 54}{space 4}-8.68e-07{col 67}{space 3}-4.60e-08
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2}   .00113{col 26}{space 2} .0012243{col 37}{space 1}    0.92{col 46}{space 3}0.356{col 54}{space 4}-.0012697{col 67}{space 3} .0035296
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}  .000325{col 26}{space 2} .0010958{col 37}{space 1}    0.30{col 46}{space 3}0.767{col 54}{space 4}-.0018228{col 67}{space 3} .0024728
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}  .013824{col 26}{space 2} .0034542{col 37}{space 1}    4.00{col 46}{space 3}0.000{col 54}{space 4} .0070537{col 67}{space 3} .0205943
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0009724{col 26}{space 2} .0010849{col 37}{space 1}   -0.90{col 46}{space 3}0.370{col 54}{space 4}-.0030988{col 67}{space 3}  .001154
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} -.003919{col 26}{space 2} .0040824{col 37}{space 1}   -0.96{col 46}{space 3}0.337{col 54}{space 4}-.0119207{col 67}{space 3} .0040826
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .1295746{col 26}{space 2} .0030746{col 37}{space 1}   42.14{col 46}{space 3}0.000{col 54}{space 4} .1235484{col 67}{space 3} .1356009
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0000703{col 26}{space 2} .0018212{col 37}{space 1}    0.04{col 46}{space 3}0.969{col 54}{space 4}-.0034992{col 67}{space 3} .0036398
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. reg Intens1 IG $Xvar if $condition
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}    52,326
+{txt}{hline 13}{c +}{hline 34}   F(16, 52309)    = {res}    44.68
+{txt}       Model {c |} {res} 1.27843696        16   .07990231   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 93.5490866    52,309  .001788394   {txt}R-squared       ={res}    0.0135
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0132
+{txt}       Total {c |} {res} 94.8275236    52,325  .001812279   {txt}Root MSE        =   {res} .04229
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}     Intens1{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}IG {c |}{col 14}{res}{space 2} .0353468{col 26}{space 2} .0013606{col 37}{space 1}   25.98{col 46}{space 3}0.000{col 54}{space 4}   .03268{col 67}{space 3} .0380136
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0007911{col 26}{space 2} .0005155{col 37}{space 1}    1.53{col 46}{space 3}0.125{col 54}{space 4}-.0002193{col 67}{space 3} .0018015
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0003962{col 26}{space 2}  .000547{col 37}{space 1}   -0.72{col 46}{space 3}0.469{col 54}{space 4}-.0014683{col 67}{space 3}  .000676
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.0015184{col 26}{space 2} .0019748{col 37}{space 1}   -0.77{col 46}{space 3}0.442{col 54}{space 4} -.005389{col 67}{space 3} .0023523
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0000743{col 26}{space 2} .0004171{col 37}{space 1}    0.18{col 46}{space 3}0.859{col 54}{space 4}-.0007433{col 67}{space 3} .0008919
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2}-.0020442{col 26}{space 2} .0016784{col 37}{space 1}   -1.22{col 46}{space 3}0.223{col 54}{space 4}-.0053339{col 67}{space 3} .0012455
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}-.0002333{col 26}{space 2} .0008734{col 37}{space 1}   -0.27{col 46}{space 3}0.789{col 54}{space 4}-.0019452{col 67}{space 3} .0014786
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0020977{col 26}{space 2} .0014016{col 37}{space 1}    1.50{col 46}{space 3}0.135{col 54}{space 4}-.0006495{col 67}{space 3} .0048449
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2}-.0003566{col 26}{space 2} .0003814{col 37}{space 1}   -0.93{col 46}{space 3}0.350{col 54}{space 4}-.0011042{col 67}{space 3}  .000391
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} 5.11e-09{col 26}{space 2} 7.26e-08{col 37}{space 1}    0.07{col 46}{space 3}0.944{col 54}{space 4}-1.37e-07{col 67}{space 3} 1.47e-07
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0002673{col 26}{space 2} .0004242{col 37}{space 1}    0.63{col 46}{space 3}0.529{col 54}{space 4}-.0005641{col 67}{space 3} .0010987
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} -.000068{col 26}{space 2} .0003797{col 37}{space 1}   -0.18{col 46}{space 3}0.858{col 54}{space 4}-.0008122{col 67}{space 3} .0006761
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .0010227{col 26}{space 2} .0011968{col 37}{space 1}    0.85{col 46}{space 3}0.393{col 54}{space 4}-.0013231{col 67}{space 3} .0033685
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} .0003931{col 26}{space 2} .0003759{col 37}{space 1}    1.05{col 46}{space 3}0.296{col 54}{space 4}-.0003437{col 67}{space 3} .0011298
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0019168{col 26}{space 2} .0014145{col 37}{space 1}   -1.36{col 46}{space 3}0.175{col 54}{space 4}-.0046893{col 67}{space 3} .0008556
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .0055195{col 26}{space 2} .0010653{col 37}{space 1}    5.18{col 46}{space 3}0.000{col 54}{space 4} .0034315{col 67}{space 3} .0076075
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0003837{col 26}{space 2}  .000631{col 37}{space 1}    0.61{col 46}{space 3}0.543{col 54}{space 4} -.000853{col 67}{space 3} .0016205
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. global pi1 = 0.1293134
+{txt}
+{com}. global pi2 = 0.0353468
+{txt}
+{com}. global pistar = $pi1/$pi2
+{txt}
+{com}. di "pi_star = $pistar"
+{res}pi_star = 3.658418866771532
+{txt}
+{com}. 
+. reg ChangePP Intens2plus Resid2plus Intens1 $Xvar if $condition
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}    52,326
+{txt}{hline 13}{c +}{hline 34}   F(18, 52307)    = {res}    15.56
+{txt}       Model {c |} {res} 558.180163        18   31.010009   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res}  104219.56    52,307  1.99245913   {txt}R-squared       ={res}    0.0053
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0050
+{txt}       Total {c |} {res}  104777.74    52,325  2.00244128   {txt}Root MSE        =   {res} 1.4115
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    ChangePP{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 1}Intens2plus {c |}{col 14}{res}{space 2}-1.198854{col 26}{space 2}  .353457{col 37}{space 1}   -3.39{col 46}{space 3}0.001{col 54}{space 4}-1.891634{col 67}{space 3}-.5060755
+{txt}{space 2}Resid2plus {c |}{col 14}{res}{space 2} 1.124088{col 26}{space 2} .3572091{col 37}{space 1}    3.15{col 46}{space 3}0.002{col 54}{space 4} .4239546{col 67}{space 3} 1.824221
+{txt}{space 5}Intens1 {c |}{col 14}{res}{space 2}-.0947624{col 26}{space 2} .1459922{col 37}{space 1}   -0.65{col 46}{space 3}0.516{col 54}{space 4}-.3809084{col 67}{space 3} .1913836
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0649757{col 26}{space 2} .0176685{col 37}{space 1}    3.68{col 46}{space 3}0.000{col 54}{space 4} .0303454{col 67}{space 3} .0996061
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.1165597{col 26}{space 2}  .018475{col 37}{space 1}   -6.31{col 46}{space 3}0.000{col 54}{space 4}-.1527708{col 67}{space 3}-.0803485
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.3745791{col 26}{space 2} .0659152{col 37}{space 1}   -5.68{col 46}{space 3}0.000{col 54}{space 4}-.5037735{col 67}{space 3}-.2453847
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0277752{col 26}{space 2} .0140247{col 37}{space 1}    1.98{col 46}{space 3}0.048{col 54}{space 4} .0002866{col 67}{space 3} .0552639
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .2312863{col 26}{space 2} .0563263{col 37}{space 1}    4.11{col 46}{space 3}0.000{col 54}{space 4} .1208863{col 67}{space 3} .3416864
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}-.0011575{col 26}{space 2} .0294115{col 37}{space 1}   -0.04{col 46}{space 3}0.969{col 54}{space 4}-.0588042{col 67}{space 3} .0564893
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2}-.0001063{col 26}{space 2} .0468734{col 37}{space 1}   -0.00{col 46}{space 3}0.998{col 54}{space 4}-.0919786{col 67}{space 3} .0917659
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2}-.0164846{col 26}{space 2} .0128693{col 37}{space 1}   -1.28{col 46}{space 3}0.200{col 54}{space 4}-.0417087{col 67}{space 3} .0087394
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-.0000248{col 26}{space 2} 2.43e-06{col 37}{space 1}  -10.21{col 46}{space 3}0.000{col 54}{space 4}-.0000296{col 67}{space 3}-.0000201
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2}-.0833554{col 26}{space 2}  .014162{col 37}{space 1}   -5.89{col 46}{space 3}0.000{col 54}{space 4} -.111113{col 67}{space 3}-.0555979
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.0384832{col 26}{space 2} .0126741{col 37}{space 1}   -3.04{col 46}{space 3}0.002{col 54}{space 4}-.0633245{col 67}{space 3}-.0136419
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .0381592{col 26}{space 2} .0402414{col 37}{space 1}    0.95{col 46}{space 3}0.343{col 54}{space 4}-.0407144{col 67}{space 3} .1170328
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0334692{col 26}{space 2} .0125517{col 37}{space 1}   -2.67{col 46}{space 3}0.008{col 54}{space 4}-.0580706{col 67}{space 3}-.0088678
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} .0945904{col 26}{space 2} .0472384{col 37}{space 1}    2.00{col 46}{space 3}0.045{col 54}{space 4} .0020027{col 67}{space 3} .1871781
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .2554593{col 26}{space 2}  .058086{col 37}{space 1}    4.40{col 46}{space 3}0.000{col 54}{space 4} .1416102{col 67}{space 3} .3693083
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.1063641{col 26}{space 2} .0210632{col 37}{space 1}   -5.05{col 46}{space 3}0.000{col 54}{space 4}-.1476482{col 67}{space 3}-.0650799
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. /*
+>  Intens2plus |  -1.198854    .353457    -3.39   0.001    -1.891634   -.5060755
+>   Resid2plus |   1.124088   .3572091     3.15   0.002     .4239546    1.824221
+>      Intens1 |  -.0947624   .1459922    -0.65   0.516    -.3809084    .1913836
+> */
+. global coeff_nu2 = 1.124088
+{txt}
+{com}. global coeff_L1 = -.0947624
+{txt}
+{com}. global coeff_L2 = -1.198854
+{txt}
+{com}. 
+. global gamma = 1 // = B1/B2
+{txt}
+{com}. global delta = 1 // = (beta_0 pi_0)/(beta_1 pi_1)
+{txt}
+{com}. 
+. global B1 = ($delta * $pistar * $coeff_L1 + $coeff_nu2)/(($delta +1)* $pistar  + 1/$gamma)
+{txt}
+{com}. global B2 = $B1/$gamma
+{txt}
+{com}. 
+. global beta1 = $coeff_L1 - $B1
+{txt}
+{com}. global beta2 = $coeff_L2 + ($coeff_nu2 - $B2)
+{txt}
+{com}. 
+. di "B1=" $B1
+{res}B1=.09347392
+{txt}
+{com}. di "beta_1=" $beta1
+{res}beta_1=-.18823632
+{txt}
+{com}. di "beta_2=" $beta2
+{res}beta_2=-.16823992
+{txt}
+{com}. // B1=.4583849
+. // beta_1=-.3361487
+. // beta_2=-.56536
+. 
+. cap drop gamma
+{txt}
+{com}. gen gamma = _n/50 in 12/100
+{txt}(294,217 missing values generated)
+
+{com}. forval i = 1(1)20{c -(}
+{txt}  2{com}.         global delta = `i'/10
+{txt}  3{com}.         cap drop B1 B2
+{txt}  4{com}.         gen B1 = ($delta * $pistar * $coeff_L1 + $coeff_nu2)/(($delta +1)* $pistar  + 1/gamma)
+{txt}  5{com}.         gen B2 = B1/gamma
+{txt}  6{com}.         cap drop beta1_`i' beta2_`i'
+{txt}  7{com}.         gen beta1_`i' = $coeff_L1 - B1
+{txt}  8{com}.         gen beta2_`i' = $coeff_L2 + ($coeff_nu2 - B2)
+{txt}  9{com}. {c )-}
+{txt}(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+(294,217 missing values generated)
+
+{com}. 
+. twoway (line beta2_1 gamma) (line beta2_4 gamma) (line beta2_7 gamma) (line beta2_10 gamma) (line beta2_15 gamma) (line beta2_20 gamma) in 12/100, ///
+>         xtitle(gamma) title("Coefficient beta_2 of L_2 as a function of delta and gamma", size(medium)) legend(order(1 "delta = 0.1" 2 "delta = 0.4" 3 "delta = 0.7" 4 "delta = 1" 5 "delta = 1.5" 6 "delta = 2")) ///
+>         graphregion(color(white)) bgcolor(white) 
+{res}{txt}
+{com}. graph save "$path/Results/Beta2_by_DeltaGamma", replace
+{res}{txt}file {bf:/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Beta2_by_DeltaGamma.gph} saved
+
+{com}. cap erase "$path/Results/Beta2_by_DeltaGamma.pdf"
+{txt}
+{com}. graph export "$path/Results/Beta2_by_DeltaGamma.pdf", as(pdf) replace
+{txt}{p 0 4 2}
+file {bf}
+/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Beta2_by_DeltaGamma.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}. twoway (line beta1_1 gamma) (line beta1_4 gamma) (line beta1_7 gamma) (line beta1_10 gamma) (line beta1_15 gamma) (line beta1_20 gamma) in 12/100, ///
+>         xtitle(gamma) title("Coefficient beta_1 of L_1 as a function of delta and gamma", size(medium)) legend(order(1 "delta = 0.1" 2 "delta = 0.4" 3 "delta = 0.7" 4 "delta = 1" 5 "delta = 1.5" 6 "delta = 2")) ///
+>         graphregion(color(white)) bgcolor(white)
+{res}{txt}
+{com}. graph save "$path/Results/Beta1_by_DeltaGamma", replace
+{res}{txt}file {bf:/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Beta1_by_DeltaGamma.gph} saved
+
+{com}. cap erase "$path/Results/Beta1_by_DeltaGamma.pdf"
+{txt}
+{com}. graph export "$path/Results/Beta1_by_DeltaGamma.pdf", as(pdf) replace
+{txt}{p 0 4 2}
+file {bf}
+/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Beta1_by_DeltaGamma.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}. 
+. //global bias = (($ratiopi + $gamma) * $coeff_L1 - $coeff_nu2_wL1)*(1+1/$delta) *$ratiopi /((1+1/$delta) *$ratiopi + $gamma)
+. //
+. // cap drop delta
+. // cap drop bias*
+. // gen delta = _n/50 in 45/100
+. // global gamma = 1
+. // gen bias1 = (($ratiopi + $gamma) * $coeff_L1 - $coeff_nu2_wL1)*(1+1/delta) *$ratiopi /((1+1/delta) *$ratiopi + $gamma)
+. // global gamma = 1.1
+. // gen bias11 = (($ratiopi + $gamma) * $coeff_L1 - $coeff_nu2_wL1)*(1+1/delta) *$ratiopi /((1+1/delta) *$ratiopi + $gamma)
+. // global gamma = 1.2
+. // gen bias12 = (($ratiopi + $gamma) * $coeff_L1 - $coeff_nu2_wL1)*(1+1/delta) *$ratiopi /((1+1/delta) *$ratiopi + $gamma)
+. // global gamma = 1.3
+. // gen bias13 = (($ratiopi + $gamma) * $coeff_L1 - $coeff_nu2_wL1)*(1+1/delta) *$ratiopi /((1+1/delta) *$ratiopi + $gamma)
+. // global gamma = 1.4
+. // gen bias14 = (($ratiopi + $gamma) * $coeff_L1 - $coeff_nu2_wL1)*(1+1/delta) *$ratiopi /((1+1/delta) *$ratiopi + $gamma)
+. // global gamma = 1.5
+. // gen bias15 = (($ratiopi + $gamma) * $coeff_L1 - $coeff_nu2_wL1)*(1+1/delta) *$ratiopi /((1+1/delta) *$ratiopi + $gamma)
+. // global gamma = 0.9
+. // gen bias09 = (($ratiopi + $gamma) * $coeff_L1 - $coeff_nu2_wL1)*(1+1/delta) *$ratiopi /((1+1/delta) *$ratiopi + $gamma)
+. //
+. //
+. // twoway (line bias1 delta) (line bias11 delta) (line bias12 delta) (line bias13 delta) (line bias09 delta, lpattern(dash)) in 45/100, ///
+. //      xtitle(Delta) title("Size of bias in different cases", size(medium)) legend(order(1 "Gamma = 1" 2 "Gamma = 1.1" 3 "Gamma = 1.2" 4 "Gamma = 1.3" 5 "Gamma = 0.9"))
+. 
+. log close // FIgure A1
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogFigureA1.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}31 Dec 2025, 18:20:21
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

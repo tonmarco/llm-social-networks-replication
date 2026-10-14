@@ -1,0 +1,270 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogTable6.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}31 Dec 2025, 18:11:46
+{txt}
+{com}. 
+. // TABLE 6: Descriptive statistics of friendships
+. *** Panel A
+. * probability of correct answer: meeting
+. cap drop correct_meet
+{txt}
+{com}. gen correct_meet = 0 if LAL==1
+{txt}(292,178 missing values generated)
+
+{com}. replace correct_meet = 1 if LAL==1 & meet_i1==meet_i2 
+{txt}(1,594 real changes made)
+
+{com}. * probability of correct answer: time
+. cap drop correct_time
+{txt}
+{com}. gen correct_time = 0 if LAL==1
+{txt}(292,178 missing values generated)
+
+{com}. replace correct_time = 1 if LAL==1 & time_i1==time_i2 
+{txt}(966 real changes made)
+
+{com}. * probability of correct answer: activity
+. cap drop correct_activity
+{txt}
+{com}. gen correct_activity = 0 if LAL==1
+{txt}(292,178 missing values generated)
+
+{com}. replace correct_activity = 1 if LAL==1 & activity_i1==activity_i2 
+{txt}(1,136 real changes made)
+
+{com}. * probability of correct answer: strength
+. cap drop correct_strength
+{txt}
+{com}. gen correct_strength = 0 if LAL==1
+{txt}(292,178 missing values generated)
+
+{com}. replace correct_strength = 1 if LAL==1 & strength_i1==strength_i2  
+{txt}(1,062 real changes made)
+
+{com}. * full sample
+. estpost summarize fr_i1 rec correct_meet correct_time correct_activity correct_strength if uid_i1>uid_i2
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:fr_i1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:  8.52457}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.531977}}}{space 1}{space 1}{ralign 9:{res:{sf: 2.128844}}}{space 1}{space 1}{ralign 9:{res:{sf:        3}}}{space 1}{space 1}{ralign 9:{res:{sf:       10}}}{space 1}{space 1}{ralign 9:{res:{sf:  1254416}}}{space 1}
+{space 0}{space 0}{ralign 12:rec}{space 1}{c |}{space 1}{ralign 9:{res:{sf:     2309}}}{space 1}{space 1}{ralign 9:{res:{sf:     2309}}}{space 1}{space 1}{ralign 9:{res:{sf: .4608055}}}{space 1}{space 1}{ralign 9:{res:{sf: .2485714}}}{space 1}{space 1}{ralign 9:{res:{sf: .4985694}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     1064}}}{space 1}
+{space 0}{space 0}{ralign 12:correct_meet}{space 1}{c |}{space 1}{ralign 9:{res:{sf:     1064}}}{space 1}{space 1}{ralign 9:{res:{sf:     1064}}}{space 1}{space 1}{ralign 9:{res:{sf: .7490602}}}{space 1}{space 1}{ralign 9:{res:{sf: .1881459}}}{space 1}{space 1}{ralign 9:{res:{sf: .4337578}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      797}}}{space 1}
+{space 0}{space 0}{ralign 12:correct_time}{space 1}{c |}{space 1}{ralign 9:{res:{sf:     1064}}}{space 1}{space 1}{ralign 9:{res:{sf:     1064}}}{space 1}{space 1}{ralign 9:{res:{sf: .4539474}}}{space 1}{space 1}{ralign 9:{res:{sf: .2481123}}}{space 1}{space 1}{ralign 9:{res:{sf: .4981088}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      483}}}{space 1}
+{space 0}{space 0}{ralign 12:correct_ac~y}{space 1}{c |}{space 1}{ralign 9:{res:{sf:     1064}}}{space 1}{space 1}{ralign 9:{res:{sf:     1064}}}{space 1}{space 1}{ralign 9:{res:{sf: .5338346}}}{space 1}{space 1}{ralign 9:{res:{sf: .2490893}}}{space 1}{space 1}{ralign 9:{res:{sf: .4990885}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      568}}}{space 1}
+{space 0}{space 0}{ralign 12:correct_st~h}{space 1}{c |}{space 1}{ralign 9:{res:{sf:     1064}}}{space 1}{space 1}{ralign 9:{res:{sf:     1064}}}{space 1}{space 1}{ralign 9:{res:{sf: .4990602}}}{space 1}{space 1}{ralign 9:{res:{sf: .2502343}}}{space 1}{space 1}{ralign 9:{res:{sf: .5002342}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      531}}}{space 1}
+
+{com}. estimates store panel_a_full
+{txt}
+{com}. * benchmark sample
+. estpost summarize fr_i1 rec correct_meet correct_time correct_activity correct_strength if $condition
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:fr_i1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: 8.652028}}}{space 1}{space 1}{ralign 9:{res:{sf: 3.900623}}}{space 1}{space 1}{ralign 9:{res:{sf:    1.975}}}{space 1}{space 1}{ralign 9:{res:{sf:        3}}}{space 1}{space 1}{ralign 9:{res:{sf:       10}}}{space 1}{space 1}{ralign 9:{res:{sf:   452726}}}{space 1}
+{space 0}{space 0}{ralign 12:rec}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      934}}}{space 1}{space 1}{ralign 9:{res:{sf:      934}}}{space 1}{space 1}{ralign 9:{res:{sf: .4775161}}}{space 1}{space 1}{ralign 9:{res:{sf: .2497619}}}{space 1}{space 1}{ralign 9:{res:{sf: .4997618}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      446}}}{space 1}
+{space 0}{space 0}{ralign 12:correct_meet}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      446}}}{space 1}{space 1}{ralign 9:{res:{sf:      446}}}{space 1}{space 1}{ralign 9:{res:{sf: .8139013}}}{space 1}{space 1}{ralign 9:{res:{sf: .1518063}}}{space 1}{space 1}{ralign 9:{res:{sf: .3896233}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      363}}}{space 1}
+{space 0}{space 0}{ralign 12:correct_time}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      446}}}{space 1}{space 1}{ralign 9:{res:{sf:      446}}}{space 1}{space 1}{ralign 9:{res:{sf: .4977578}}}{space 1}{space 1}{ralign 9:{res:{sf: .2505568}}}{space 1}{space 1}{ralign 9:{res:{sf: .5005564}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      222}}}{space 1}
+{space 0}{space 0}{ralign 12:correct_ac~y}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      446}}}{space 1}{space 1}{ralign 9:{res:{sf:      446}}}{space 1}{space 1}{ralign 9:{res:{sf: .5941704}}}{space 1}{space 1}{ralign 9:{res:{sf: .2416738}}}{space 1}{space 1}{ralign 9:{res:{sf: .4916033}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      265}}}{space 1}
+{space 0}{space 0}{ralign 12:correct_st~h}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      446}}}{space 1}{space 1}{ralign 9:{res:{sf:      446}}}{space 1}{space 1}{ralign 9:{res:{sf: .5358744}}}{space 1}{space 1}{ralign 9:{res:{sf: .2492719}}}{space 1}{space 1}{ralign 9:{res:{sf: .4992714}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      239}}}{space 1}
+
+{com}. estimates store panel_a_benchmark
+{txt}
+{com}. * Create the table
+. esttab panel_a_full panel_a_benchmark using "$path/Results/Table6_panel_a.tex", replace ///
+>     cells("mean(fmt(3)) sd(fmt(3)) count(fmt(0))") ///
+>     title("Panel B: Dyadic Dependent Variables") ///
+>     mtitles("Full Sample" "Benchmark Sample") ///
+>     label booktabs ///
+>     addnotes("Statistics in (1) are computed on the full sample of data available for each variable," ///
+>              "while statistics in (2) are computed on the benchmark sample.")
+{res}{txt}(output written to {browse  `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table6_panel_a.tex"'})
+
+{com}. 
+. *** Panel B
+. sum degree_i1 if uid_i1>uid_i2, d
+
+                   {txt}Degree for individual 1
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        3              3
+{txt} 5%    {res}        5              3
+{txt}10%    {res}        7              3       {txt}Obs         {res}    147,153
+{txt}25%    {res}        9              3       {txt}Sum of wgt. {res}    147,153
+
+{txt}50%    {res}       11                      {txt}Mean          {res}  10.7645
+                        {txt}Largest       Std. dev.     {res} 3.119577
+{txt}75%    {res}       13             19
+{txt}90%    {res}       14             19       {txt}Variance      {res} 9.731758
+{txt}95%    {res}       16             19       {txt}Skewness      {res}-.1883963
+{txt}99%    {res}       18             19       {txt}Kurtosis      {res} 3.185051
+{txt}
+{com}. scalar avg_degree = `r(mean)'
+{txt}
+{com}. scalar var_degree = `r(Var)'
+{txt}
+{com}. scalar med_degree = `r(p50)'
+{txt}
+{com}. scalar max_degree = `r(max)'
+{txt}
+{com}. scalar min_degree = `r(min)'
+{txt}
+{com}. 
+. sum path if uid_i1>uid_i2, d
+
+                        {txt}Shortest Path
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        2              1
+{txt}10%    {res}        2              1       {txt}Obs         {res}    147,153
+{txt}25%    {res}        3              1       {txt}Sum of wgt. {res}    147,153
+
+{txt}50%    {res}        4                      {txt}Mean          {res} 3.464571
+                        {txt}Largest       Std. dev.     {res} .8296009
+{txt}75%    {res}        4              6
+{txt}90%    {res}        4              6       {txt}Variance      {res} .6882376
+{txt}95%    {res}        5              6       {txt}Skewness      {res}-.3516452
+{txt}99%    {res}        5              7       {txt}Kurtosis      {res} 3.263405
+{txt}
+{com}. scalar diameter = `r(max)'
+{txt}
+{com}. scalar avg_path = `r(mean)'
+{txt}
+{com}. 
+. sum eigen_bonacich_cent_i1 if uid_i1>uid_i2, d
+
+                   {txt}eigen_bonacich_cent_i1
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}  .003044       .0010574
+{txt} 5%    {res} .0071889       .0010574
+{txt}10%    {res} .0107766       .0010574       {txt}Obs         {res}    147,153
+{txt}25%    {res} .0186871       .0010574       {txt}Sum of wgt. {res}    147,153
+
+{txt}50%    {res} .0322421                      {txt}Mean          {res}  .035272
+                        {txt}Largest       Std. dev.     {res}  .020987
+{txt}75%    {res} .0474211       .1017721
+{txt}90%    {res} .0662706       .1017721       {txt}Variance      {res} .0004405
+{txt}95%    {res} .0767582       .1017721       {txt}Skewness      {res} .7434937
+{txt}99%    {res} .0934207       .1017721       {txt}Kurtosis      {res}  3.07721
+{txt}
+{com}. scalar avg_eigen = `r(mean)'
+{txt}
+{com}. scalar std_eigen = `r(sd)'
+{txt}
+{com}. 
+. matrix scalars_matrix = (avg_degree \ var_degree \ med_degree \ max_degree\ min_degree \ diameter \ avg_path \ avg_eigen \ std_eigen)
+{txt}
+{com}. matrix rownames scalars_matrix = Mean_degree Variance_degree Median_degree Max_degree Min_degree Diameter Average_pathlength Avg_eigen_centrality StdErr_eigen_centrality
+{txt}
+{com}. 
+. estout matrix(scalars_matrix) using "$path/Results/Table6_panel_b.tex", ///
+>     style(tex) replace ///
+>     mlabels(none) collabels(none) ///
+>     prehead("\begin{c -(}tabular{c )-}{c -(}lr{c )-}" "\toprule") ///
+>     posthead("\midrule") ///
+>     prefoot("\bottomrule") ///
+>     postfoot("\end{c -(}tabular{c )-}")
+{res}{txt}(output written to {browse  `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table6_panel_b.tex"'})
+
+{com}. 
+. 
+. *** Panel C
+.         * mere relationship
+. cap drop LUL1
+{txt}
+{com}. gen LUL1 = 0
+{txt}
+{com}. replace LUL1 = 1 if LULint==1
+{txt}(489 real changes made)
+
+{com}.         * firendship link
+. cap drop LUL2
+{txt}
+{com}. gen LUL2 = 0
+{txt}
+{com}. replace LUL2 = 1 if LULint==2
+{txt}(2,096 real changes made)
+
+{com}.         * close firendship
+. cap drop LUL3
+{txt}
+{com}. gen LUL3 = 0
+{txt}
+{com}. replace LUL3 = 1 if LULint==3
+{txt}(1,209 real changes made)
+
+{com}.         * very close friendship
+. cap drop LUL4
+{txt}
+{com}. gen LUL4 = 0
+{txt}
+{com}. replace LUL4 = 1 if LULint==4
+{txt}(648 real changes made)
+
+{com}. 
+. cap drop path1 path2 path3
+{txt}
+{com}. gen path1 = (path==1)
+{txt}
+{com}. gen path2 = (path==2)
+{txt}
+{com}. gen path3 = (path==3)
+{txt}
+{com}. 
+. * full sample
+. estpost summarize LUL path1 path2 path3 LUL1 LUL2 LUL3 LUL4 IG if uid_i1>uid_i2
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:LUL}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .0156912}}}{space 1}{space 1}{ralign 9:{res:{sf:  .015445}}}{space 1}{space 1}{ralign 9:{res:{sf: .1242781}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     2309}}}{space 1}
+{space 0}{space 0}{ralign 12:path1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .0156912}}}{space 1}{space 1}{ralign 9:{res:{sf:  .015445}}}{space 1}{space 1}{ralign 9:{res:{sf: .1242781}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     2309}}}{space 1}
+{space 0}{space 0}{ralign 12:path2}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .0930188}}}{space 1}{space 1}{ralign 9:{res:{sf: .0843669}}}{space 1}{space 1}{ralign 9:{res:{sf: .2904598}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    13688}}}{space 1}
+{space 0}{space 0}{ralign 12:path3}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .3802505}}}{space 1}{space 1}{ralign 9:{res:{sf: .2356617}}}{space 1}{space 1}{ralign 9:{res:{sf:   .48545}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    55955}}}{space 1}
+{space 0}{space 0}{ralign 12:LUL1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .0016378}}}{space 1}{space 1}{ralign 9:{res:{sf: .0016351}}}{space 1}{space 1}{ralign 9:{res:{sf: .0404361}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      241}}}{space 1}
+{space 0}{space 0}{ralign 12:LUL2}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .0071626}}}{space 1}{space 1}{ralign 9:{res:{sf: .0071114}}}{space 1}{space 1}{ralign 9:{res:{sf: .0843289}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     1054}}}{space 1}
+{space 0}{space 0}{ralign 12:LUL3}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .0041182}}}{space 1}{space 1}{ralign 9:{res:{sf: .0041012}}}{space 1}{space 1}{ralign 9:{res:{sf: .0640409}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      606}}}{space 1}
+{space 0}{space 0}{ralign 12:LUL4}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .0021746}}}{space 1}{space 1}{ralign 9:{res:{sf: .0021699}}}{space 1}{space 1}{ralign 9:{res:{sf: .0465821}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      320}}}{space 1}
+{space 0}{space 0}{ralign 12:IG}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .0167377}}}{space 1}{space 1}{ralign 9:{res:{sf: .0164576}}}{space 1}{space 1}{ralign 9:{res:{sf: .1282873}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     2463}}}{space 1}
+
+{com}. estimates store panel_c_full
+{txt}
+{com}. * benchmark sample
+. estpost summarize LUL path1 path2 path3 LUL1 LUL2 LUL3 LUL4 IG if $condition
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:LUL}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .0178496}}}{space 1}{space 1}{ralign 9:{res:{sf: .0175314}}}{space 1}{space 1}{ralign 9:{res:{sf:  .132406}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      934}}}{space 1}
+{space 0}{space 0}{ralign 12:path1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .0178496}}}{space 1}{space 1}{ralign 9:{res:{sf: .0175314}}}{space 1}{space 1}{ralign 9:{res:{sf:  .132406}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      934}}}{space 1}
+{space 0}{space 0}{ralign 12:path2}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .1014601}}}{space 1}{space 1}{ralign 9:{res:{sf: .0911677}}}{space 1}{space 1}{ralign 9:{res:{sf: .3019398}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     5309}}}{space 1}
+{space 0}{space 0}{ralign 12:path3}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .4081145}}}{space 1}{space 1}{ralign 9:{res:{sf: .2415617}}}{space 1}{space 1}{ralign 9:{res:{sf: .4914892}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    21355}}}{space 1}
+{space 0}{space 0}{ralign 12:LUL1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .0020449}}}{space 1}{space 1}{ralign 9:{res:{sf: .0020407}}}{space 1}{space 1}{ralign 9:{res:{sf: .0451744}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      107}}}{space 1}
+{space 0}{space 0}{ralign 12:LUL2}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .0076253}}}{space 1}{space 1}{ralign 9:{res:{sf: .0075673}}}{space 1}{space 1}{ralign 9:{res:{sf: .0869901}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      399}}}{space 1}
+{space 0}{space 0}{ralign 12:LUL3}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .0047204}}}{space 1}{space 1}{ralign 9:{res:{sf: .0046982}}}{space 1}{space 1}{ralign 9:{res:{sf: .0685435}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      247}}}{space 1}
+{space 0}{space 0}{ralign 12:LUL4}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .0031915}}}{space 1}{space 1}{ralign 9:{res:{sf: .0031814}}}{space 1}{space 1}{ralign 9:{res:{sf: .0564039}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      167}}}{space 1}
+{space 0}{space 0}{ralign 12:IG}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .0188243}}}{space 1}{space 1}{ralign 9:{res:{sf: .0184703}}}{space 1}{space 1}{ralign 9:{res:{sf: .1359055}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      985}}}{space 1}
+
+{com}. estimates store panel_c_benchmark
+{txt}
+{com}. * Create the table
+. esttab panel_c_full panel_c_benchmark using "$path/Results/Table6_panel_c.tex", replace ///
+>     cells("mean(fmt(4)) sd(fmt(4)) count(fmt(0))") ///
+>     title("Panel B: Dyadic Dependent Variables") ///
+>     mtitles("Full Sample" "Benchmark Sample") ///
+>     label booktabs ///
+>     addnotes("Statistics in (1) are computed on the full sample of data available for each variable," ///
+>              "while statistics in (2) are computed on the benchmark sample.")
+{res}{txt}(output written to {browse  `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table6_panel_c.tex"'})
+
+{com}. 
+. log close  // Table 6
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogTable6.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}31 Dec 2025, 18:11:48
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

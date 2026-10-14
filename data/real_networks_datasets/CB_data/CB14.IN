@@ -1,0 +1,41 @@
+@1[general information about SIENA project <CB14:]
+2 [number of waves]
+90 [number of actors]
+1 [number of dependent network variables]
+1 [number of dependent actor variables]
+1 [number of files with constant actor covariates]
+0 [number of exogenous changing actor covariates]
+1 [number of constant dyadic covariates]
+0 [number of exogenous changing dyadic covariates]
+0 [indicator for file with composition change directives]
+
+@2[network files in temporal order; names follow:]
+n34_14.dat
+1 [code for tie]
+9 [code for missing]
+hn34_14.dat
+1 [code for tie]
+9 [code for missing]
+friendship
+
+@3[files with dependent actor variables, and their names:]
+cbc14.dat
+9 [code for missing]
+delinquency
+
+@4[files with constant actor covariates:]
+cbe14.dat
+3 [number of covariates in this file; names follow:]
+9 [code for missing]
+gender
+9 [code for missing]
+crimi DEP!
+9 [code for missing]
+imp. s.f.
+
+@6[files with constant dyadic covariates, and their names:]
+cbe14.sim
+9 [code for missing]
+same ethnicity
+
+

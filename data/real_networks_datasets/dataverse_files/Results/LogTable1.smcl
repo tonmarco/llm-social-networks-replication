@@ -1,0 +1,157 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogTable1.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}31 Dec 2025, 18:03:12
+{txt}
+{com}. 
+. /// TABLE 1
+> 
+. *** Panel A - requires individual data
+. preserve
+{txt}
+{com}. use "$path/Data/Raw/base_complete_1314.dta", clear
+{txt}
+{com}. foreach var in q4a q4b {c -(}
+{txt}  2{com}. replace `var'=. if `var'==99
+{txt}  3{com}. {c )-}
+{txt}(57 real changes made, 57 to missing)
+(66 real changes made, 66 to missing)
+
+{com}. estpost summarize q4a q4b
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:q4a}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      472}}}{space 1}{space 1}{ralign 9:{res:{sf:      472}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.044492}}}{space 1}{space 1}{ralign 9:{res:{sf: 3.078696}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.754621}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:       10}}}{space 1}{space 1}{ralign 9:{res:{sf:     2381}}}{space 1}
+{space 0}{space 0}{ralign 12:q4b}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      463}}}{space 1}{space 1}{ralign 9:{res:{sf:      463}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.107991}}}{space 1}{space 1}{ralign 9:{res:{sf: 3.832468}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.957669}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:       10}}}{space 1}{space 1}{ralign 9:{res:{sf:     2365}}}{space 1}
+
+{com}. estimates store panel_a_1
+{txt}
+{com}. use "$path/Data/Analysis/recall_data.dta", clear
+{txt}
+{com}. estpost summarize actual_15
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:actual_15}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      282}}}{space 1}{space 1}{ralign 9:{res:{sf:      282}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.847518}}}{space 1}{space 1}{ralign 9:{res:{sf: 3.296951}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.815751}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:       10}}}{space 1}{space 1}{ralign 9:{res:{sf:     1367}}}{space 1}
+
+{com}. estimates store panel_a_2
+{txt}
+{com}. use "$path/Data/Raw/base_complete_1314_i1.dta", clear
+{txt}
+{com}. gen asso=0
+{txt}
+{com}. replace asso=1 if q3_1uid_i1!=.
+{txt}(323 real changes made)
+
+{com}. replace asso=. if q3_1uid_i1==0
+{txt}(0 real changes made)
+
+{com}. estpost summarize asso
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:asso}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      543}}}{space 1}{space 1}{ralign 9:{res:{sf:      543}}}{space 1}{space 1}{ralign 9:{res:{sf: .5948435}}}{space 1}{space 1}{ralign 9:{res:{sf: .2414494}}}{space 1}{space 1}{ralign 9:{res:{sf:  .491375}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      323}}}{space 1}
+
+{com}. estimates store panel_a_3
+{txt}
+{com}. restore                          
+{txt}
+{com}. 
+. 
+. preserve
+{txt}
+{com}. keep if $condition
+{txt}(241,980 observations deleted)
+
+{com}. bysort uid_i1: gen t=_n
+{txt}
+{com}. keep if t==1
+{txt}(52,003 observations deleted)
+
+{com}. gen asso=0
+{txt}
+{com}. replace asso=1 if q3_1uid_i1!=.
+{txt}(216 real changes made)
+
+{com}. replace asso=. if q3_1uid_i1==0
+{txt}(0 real changes made)
+
+{com}. estpost summarize polposnow_i1 polpos_i1 polposnow_15_i1 asso
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:polposnow_i1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      323}}}{space 1}{space 1}{ralign 9:{res:{sf:      323}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.102167}}}{space 1}{space 1}{ralign 9:{res:{sf: 2.918101}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.708245}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:       10}}}{space 1}{space 1}{ralign 9:{res:{sf:     1648}}}{space 1}
+{space 0}{space 0}{ralign 12:polpos_i1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      323}}}{space 1}{space 1}{ralign 9:{res:{sf:      323}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.167183}}}{space 1}{space 1}{ralign 9:{res:{sf: 3.686249}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.919961}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:       10}}}{space 1}{space 1}{ralign 9:{res:{sf:     1669}}}{space 1}
+{space 0}{space 0}{ralign 12:polposn~5_i1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      153}}}{space 1}{space 1}{ralign 9:{res:{sf:      153}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.895425}}}{space 1}{space 1}{ralign 9:{res:{sf: 2.923203}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.709738}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        9}}}{space 1}{space 1}{ralign 9:{res:{sf:      749}}}{space 1}
+{space 0}{space 0}{ralign 12:asso}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      323}}}{space 1}{space 1}{ralign 9:{res:{sf:      323}}}{space 1}{space 1}{ralign 9:{res:{sf: .6687307}}}{space 1}{space 1}{ralign 9:{res:{sf: .2222179}}}{space 1}{space 1}{ralign 9:{res:{sf:    .4714}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      216}}}{space 1}
+
+{com}. estimates store panel_a_benchmark
+{txt}
+{com}. restore                  
+{txt}
+{com}. 
+. 
+. *** Panel B: Dyadic Variables  
+. estpost summarize DiffPPa DiffPP DiffPPa_15 SameSports SameNonSports SameAsso_Type_Pol SameAsso_Type_Ply SameAsso_Type_Iden if uid_i1>uid_i2
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:DiffPPa}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   105111}}}{space 1}{space 1}{ralign 9:{res:{sf:   105111}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.931805}}}{space 1}{space 1}{ralign 9:{res:{sf: 2.151015}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.466634}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        9}}}{space 1}{space 1}{ralign 9:{res:{sf:   203054}}}{space 1}
+{space 0}{space 0}{ralign 12:DiffPP}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   101025}}}{space 1}{space 1}{ralign 9:{res:{sf:   101025}}}{space 1}{space 1}{ralign 9:{res:{sf: 2.210611}}}{space 1}{space 1}{ralign 9:{res:{sf: 2.659683}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.630853}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        9}}}{space 1}{space 1}{ralign 9:{res:{sf:   223327}}}{space 1}
+{space 0}{space 0}{ralign 12:DiffPPa_15}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    26335}}}{space 1}{space 1}{ralign 9:{res:{sf:    26335}}}{space 1}{space 1}{ralign 9:{res:{sf: 2.009569}}}{space 1}{space 1}{ralign 9:{res:{sf: 2.359899}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.536196}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        9}}}{space 1}{space 1}{ralign 9:{res:{sf:    52922}}}{space 1}
+{space 0}{space 0}{ralign 12:SameSports}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52003}}}{space 1}{space 1}{ralign 9:{res:{sf:    52003}}}{space 1}{space 1}{ralign 9:{res:{sf: .5995231}}}{space 1}{space 1}{ralign 9:{res:{sf: .2400998}}}{space 1}{space 1}{ralign 9:{res:{sf: .4899998}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    31177}}}{space 1}
+{space 0}{space 0}{ralign 12:SameNonSpo~s}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52003}}}{space 1}{space 1}{ralign 9:{res:{sf:    52003}}}{space 1}{space 1}{ralign 9:{res:{sf: .0278253}}}{space 1}{space 1}{ralign 9:{res:{sf: .0270516}}}{space 1}{space 1}{ralign 9:{res:{sf: .1644737}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     1447}}}{space 1}
+{space 0}{space 0}{ralign 12:SameAsso_T~l}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52003}}}{space 1}{space 1}{ralign 9:{res:{sf:    52003}}}{space 1}{space 1}{ralign 9:{res:{sf: .0169798}}}{space 1}{space 1}{ralign 9:{res:{sf: .0166918}}}{space 1}{space 1}{ralign 9:{res:{sf: .1291967}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      883}}}{space 1}
+{space 0}{space 0}{ralign 12:SameAsso_T~y}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52003}}}{space 1}{space 1}{ralign 9:{res:{sf:    52003}}}{space 1}{space 1}{ralign 9:{res:{sf: .0077688}}}{space 1}{space 1}{ralign 9:{res:{sf: .0077086}}}{space 1}{space 1}{ralign 9:{res:{sf: .0877985}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      404}}}{space 1}
+{space 0}{space 0}{ralign 12:SameAsso_T~n}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52003}}}{space 1}{space 1}{ralign 9:{res:{sf:    52003}}}{space 1}{space 1}{ralign 9:{res:{sf: .0052689}}}{space 1}{space 1}{ralign 9:{res:{sf: .0052413}}}{space 1}{space 1}{ralign 9:{res:{sf: .0723966}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      274}}}{space 1}
+
+{com}. estimates store panel_b_full
+{txt}
+{com}. 
+. estpost summarize DiffPPa DiffPP DiffPPa_15 SameSports SameNonSports SameAsso_Type_Pol SameAsso_Type_Ply SameAsso_Type_Iden if $condition
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:DiffPPa}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.926843}}}{space 1}{space 1}{ralign 9:{res:{sf: 2.157285}}}{space 1}{space 1}{ralign 9:{res:{sf:  1.46877}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        9}}}{space 1}{space 1}{ralign 9:{res:{sf:   100824}}}{space 1}
+{space 0}{space 0}{ralign 12:DiffPP}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: 2.194129}}}{space 1}{space 1}{ralign 9:{res:{sf: 2.626202}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.620556}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        9}}}{space 1}{space 1}{ralign 9:{res:{sf:   114810}}}{space 1}
+{space 0}{space 0}{ralign 12:DiffPPa_15}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    11628}}}{space 1}{space 1}{ralign 9:{res:{sf:    11628}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.925697}}}{space 1}{space 1}{ralign 9:{res:{sf: 2.138282}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.462286}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        8}}}{space 1}{space 1}{ralign 9:{res:{sf:    22392}}}{space 1}
+{space 0}{space 0}{ralign 12:SameSports}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    23436}}}{space 1}{space 1}{ralign 9:{res:{sf:    23436}}}{space 1}{space 1}{ralign 9:{res:{sf: .5860215}}}{space 1}{space 1}{ralign 9:{res:{sf: .2426107}}}{space 1}{space 1}{ralign 9:{res:{sf: .4925552}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    13734}}}{space 1}
+{space 0}{space 0}{ralign 12:SameNonSpo~s}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    23436}}}{space 1}{space 1}{ralign 9:{res:{sf:    23436}}}{space 1}{space 1}{ralign 9:{res:{sf: .0340928}}}{space 1}{space 1}{ralign 9:{res:{sf: .0329319}}}{space 1}{space 1}{ralign 9:{res:{sf: .1814716}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      799}}}{space 1}
+{space 0}{space 0}{ralign 12:SameAsso_T~l}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    23436}}}{space 1}{space 1}{ralign 9:{res:{sf:    23436}}}{space 1}{space 1}{ralign 9:{res:{sf: .0228708}}}{space 1}{space 1}{ralign 9:{res:{sf: .0223487}}}{space 1}{space 1}{ralign 9:{res:{sf: .1494947}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      536}}}{space 1}
+{space 0}{space 0}{ralign 12:SameAsso_T~y}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    23436}}}{space 1}{space 1}{ralign 9:{res:{sf:    23436}}}{space 1}{space 1}{ralign 9:{res:{sf: .0077232}}}{space 1}{space 1}{ralign 9:{res:{sf: .0076638}}}{space 1}{space 1}{ralign 9:{res:{sf: .0875434}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      181}}}{space 1}
+{space 0}{space 0}{ralign 12:SameAsso_T~n}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    23436}}}{space 1}{space 1}{ralign 9:{res:{sf:    23436}}}{space 1}{space 1}{ralign 9:{res:{sf: .0037549}}}{space 1}{space 1}{ralign 9:{res:{sf:  .003741}}}{space 1}{space 1}{ralign 9:{res:{sf: .0611634}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:       88}}}{space 1}
+
+{com}. estimates store panel_b_benchmark
+{txt}
+{com}. 
+. * Create the table
+. esttab panel_a_1 panel_a_2 panel_a_3 panel_a_benchmark using "$path/Results/Table1_panel_a.tex", replace ///
+>     cells("mean(fmt(3)) sd(fmt(3)) count(fmt(0))") ///
+>     title("Panel A: Monadic Dependent Variables") ///
+>     mtitles("Full Sample" "Benchmark Sample") ///
+>     label booktabs ///
+>     addnotes("Statistics in (1) are computed on the full sample of data available for each variable," ///
+>              "while statistics in (2) are computed on the benchmark sample.")
+{res}{txt}(output written to {browse  `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table1_panel_a.tex"'})
+
+{com}. 
+. esttab panel_b_full panel_b_benchmark using "$path/Results/Table1_panel_b.tex", replace ///
+>     cells("mean(fmt(3)) sd(fmt(3)) count(fmt(0))") ///
+>     title("Panel B: Dyadic Dependent Variables") ///
+>     mtitles("Full Sample" "Benchmark Sample") ///
+>     label booktabs ///
+>     addnotes("Statistics in (1) are computed on the full sample of data available for each variable," ///
+>              "while statistics in (2) are computed on the benchmark sample.")
+{res}{txt}(output written to {browse  `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Table1_panel_b.tex"'})
+
+{com}. 
+. log close // Table 1
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogTable1.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}31 Dec 2025, 18:03:13
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

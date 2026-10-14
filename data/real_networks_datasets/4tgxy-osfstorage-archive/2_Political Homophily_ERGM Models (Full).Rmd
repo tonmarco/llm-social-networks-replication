@@ -1,0 +1,374 @@
+---
+title: "ERGM Models"
+author: "Benjamin Oosterhoff"
+date: "1/25/2020"
+output: html_document
+---
+```{r ERGM, warning=FALSE, message=FALSE, echo=FALSE}
+library(statnet)
+library(ergm)
+library(mice)
+
+#PULL OUT THE COLUMNES WE NEED
+elist2 <- elist %>% 
+           select(c(ID, FRIEND, LIKE))
+
+#CREATE NETWORK OBJECT
+net <- network(elist2,matrix.type="edgelist", directed=FALSE)
+
+#symmetrize the network and rebuild
+net_strong <- symmetrize(net,rule="strong") #only include cases when BOTH nominate, returns adjacency matrix
+net_strong <- network(net_strong,matrix.type="adjacency", directed=FALSE) 
+summary(net_strong, print.adj = FALSE) #CHECK THE NETWORK-SHOULD HAVE 213 VERTICES
+
+```
+
+```{r Data Attachment}
+#attach attributes to network object from imputated datasets
+net_strong%v%"RWA" <- as.numeric(NAI$RWA)
+net_strong%v%"SDO" <- as.numeric(NAI$SDO)
+net_strong%v%"PAT" <- as.numeric(NAI$PAT)
+net_strong%v%"ENV" <- as.numeric(NAI$ENV)
+net_strong%v%"IMM" <- as.numeric(NAI$IMM)
+net_strong%v%"IAP" <- as.numeric(NAI$IAP)
+net_strong%v%"SAP" <- as.numeric(NAI$SAP)
+net_strong%v%"Trump" <- as.numeric(NAI$Trump)
+net_strong%v%"Obama" <- as.numeric(NAI$Obama)
+net_strong%v%"Gender" <- as.character(NAI$Gender)
+net_strong%v%"Grade" <- as.character(NAI$Grade)
+net_strong%v%"Income" <- as.numeric(NAI$income)
+net_strong%v%"pedu" <- as.numeric(NAI$pedu)
+net_strong%v%"RWH" <- as.character(NAI$Race_1)
+net_strong%v%"ETH" <- as.character(NAI$Ethnicity)
+net_strong%v%"RWA_A" <- as.numeric(NAI$RWA_A)
+net_strong%v%"RWA_C" <- as.numeric(NAI$RWA_C)
+net_strong%v%"RWA_T" <- as.numeric(NAI$RWA_T)
+net_strong%v%"SDO_AE" <- as.numeric(NAI$SDO_AE)
+net_strong%v%"SDO_D" <- as.numeric(NAI$SDO_D)
+
+summary(net_strong, print.adj = FALSE) #check that it attached in the right format 
+
+#pre-reg model 1####
+ergm_model_preregFINALm1 <- ergm(net_strong ~ edges +
+    esp(0) +
+    esp(1) +
+    esp(2) +
+    esp(3)+  
+    gwdegree(1.5, fixed=T) +
+    nodematch('Gender') + 
+    nodematch('Grade') +  
+    nodematch('RWH') +  
+    nodematch('ETH') +  
+    absdiff('Income') +
+    absdiff('pedu') +
+    absdiff('RWA') + 
+    absdiff('SDO') + 
+    absdiff('PAT'),
+    control=control.ergm(seed=40, parallel=6, MCMC.samplesize=50000, MCMC.interval=5000, MCMC.burnin=50000,  MCMLE.maxit=30))
+
+#chech model fit diagnostics
+mcmc.diagnostics(ergm_model_preregFINALm1)
+
+modfit1 <- gof(ergm_model_preregFINALm1,
+GOF = ~degree + distance + espartners + triadcensus,
+burnin=1e+5, interval = 1e+5)
+
+png(file="GOF_plot1.jpeg")
+par(mfrow=c(3,2))
+plot(modfit1,cex.axis=1.6,cex.label=1.6)
+dev.off()
+
+
+```
+
+````{r }
+#pre-reg model 2####
+ergm_model_preregFINALm2 <- ergm(net_strong ~ edges +
+    esp(0) +
+    esp(1) +
+    esp(2) +
+    esp(3)+  
+    gwdegree(1.5, fixed=T) +
+    nodematch('Gender') + 
+    nodematch('Grade') +  
+    nodematch('RWH') +  
+    nodematch('ETH') +  
+    absdiff('Income') +
+    absdiff('pedu') +
+    absdiff('RWA') + 
+    absdiff('SDO') + 
+    absdiff('PAT') +
+    absdiff('ENV') + 
+    absdiff('IMM') + 
+    absdiff('IAP') + 
+    absdiff('SAP') + 
+    absdiff('Trump') + 
+    absdiff('Obama'),
+    control=control.ergm(seed=40, parallel=6, MCMC.samplesize=50000, MCMC.interval=5000, MCMC.burnin=50000,  MCMLE.maxit=30))
+
+#chech model fit diagnostics
+mcmc.diagnostics(ergm_model_preregFINALm2)
+
+modfit2 <- gof(ergm_model_preregFINALm1,
+GOF = ~degree + distance + espartners + triadcensus,
+burnin=1e+5, interval = 1e+5)
+
+png(file="GOF_plot2.jpeg")
+par(mfrow=c(3,2))
+plot(modfit2,cex.axis=1.6,cex.label=1.6)
+dev.off()
+
+#findings from model 2
+summary(ergm_model_preregFINALm1)
+
+```
+
+```{r Exploratory Models }
+
+#Exploratory Truncated
+ergm_model_exp_small_final <- ergm(net_strong ~ edges +
+    esp(0) +
+    esp(1) +
+    esp(2) +
+    esp(3)+  
+    gwdegree(1.5, fixed=T) +
+    nodematch('Gender') + 
+    nodematch('Grade') +  
+    nodematch('RWH') +  
+    nodematch('ETH') +  
+    absdiff('Income') +
+    absdiff('pedu') +
+    absdiff('RWA_A') +
+    absdiff('RWA_C') +
+    absdiff('RWA_T') +
+    absdiff('SDO_AE') + 
+    absdiff('SDO_D') +
+    absdiff('PAT'),
+    control=control.ergm(seed=40, parallel=6, MCMC.samplesize=50000, MCMC.interval=5000, MCMC.burnin=50000,  MCMLE.maxit=30))
+
+#chech model fit diagnostics
+mcmc.diagnostics(ergm_model_exp_small_final)
+
+modfit3 <- gof(ergm_model_exp_small_final,
+GOF = ~degree + distance + espartners + triadcensus,
+burnin=1e+5, interval = 1e+5)
+
+png(file="GOF_plot3.jpeg")
+par(mfrow=c(3,2))
+plot(modfit3,cex.axis=1.6,cex.label=1.6)
+dev.off()
+
+#findings from model 2
+summary(ergm_model_exp_small_final)
+
+#Exploratory Full Model 
+ergm_model_expfinal <- ergm(net_strong ~ edges +
+    esp(0) +
+    esp(1) +
+    esp(2) +
+    esp(3)+  
+    gwdegree(1.5, fixed=T) +
+    nodematch('Gender') + 
+    nodematch('Grade') +  
+    nodematch('RWH') +  
+    nodematch('ETH') +  
+    absdiff('Income') +
+    absdiff('pedu') +
+    absdiff('RWA_A') +
+    absdiff('RWA_C') +
+    absdiff('RWA_T') +
+    absdiff('SDO_AE') + 
+    absdiff('SDO_D') + 
+    absdiff('PAT') +
+    absdiff('ENV') + 
+    absdiff('IMM') + 
+    absdiff('IAP') + 
+    absdiff('SAP') + 
+    absdiff('Trump') + 
+    absdiff('Obama'),
+    control=control.ergm(seed=40, parallel=6, MCMC.samplesize=50000, MCMC.interval=5000, MCMC.burnin=50000,  MCMLE.maxit=30))
+
+#chech model fit diagnostics
+mcmc.diagnostics(ergm_model_expfinal)
+
+modfit1m3 <- gof(ergm_model_expfinal,
+GOF = ~degree + distance + espartners + triadcensus,
+burnin=1e+5, interval = 1e+5)
+
+png(file="GOF_plot4.jpeg")
+par(mfrow=c(3,2))
+plot(modfit1m3,cex.axis=1.6,cex.label=1.6)
+dev.off()
+
+#findings from model 2
+summary(ergm_model_expfinal)
+
+
+```
+
+```{r Tables}
+round_df <- function(x, digits) {
+    # round all numeric variables
+    # x: data frame 
+    # digits: number of digits to round
+    numeric_columns <- sapply(x, mode) == 'numeric'
+    x[numeric_columns] <-  round(x[numeric_columns], digits)
+    x
+} #Round function
+
+#Descriptive Table 1####
+apa.cor.table(NAI, filename = "Table 1 (political network_sub).doc", table.number = 1,
+              show.conf.interval=FALSE, landscape = TRUE)
+
+
+#ERGM TABLES 2-4####
+#--Exponentiate the values in put into WORD
+Table1 <- broom::tidy(ergm_model_preregFINALm1, exponentiate=TRUE, conf.int=TRUE) #Export Model as tibble
+Table1 <- round_df(Table1, 2) #Round to 2 decimal places 
+Table1_ft <-   flextable::flextable(Table1) #create flextable to export to word
+save_as_docx(Table1_ft, path="Table_1.docx") #export to word. 
+
+Table2 <- broom::tidy(ergm_model_preregFINALm2, exponentiate=TRUE, conf.int=TRUE) #Export Model as tibble
+Table2 <- round_df(Table2, 2) #Round to 2 decimal places 
+Table2_ft <-   flextable::flextable(Table2) #create flextable to export to word
+save_as_docx(Table2_ft, path="Table_2.docx") #export to word. 
+
+Table3 <- broom::tidy(ergm_model_exp_small_final, exponentiate=TRUE, conf.int=TRUE) #Export Model as tibble
+Table3 <- round_df(Table3, 2) #Round to 2 decimal places 
+Table3_ft <-   flextable::flextable(Table3) #create flextable to export to word
+flextable::save_as_docx(Table3_ft, path="Table_3.docx") #export to word. 
+
+Table4 <- broom::tidy(ergm_model_expfinal, exponentiate=TRUE, conf.int=TRUE) #Export Model as tibble
+Table4 <- round_df(Table4, 2) #Round to 2 decimal places 
+Table4_ft <-   flextable::flextable(Table4) #create flextable to export to word
+save_as_docx(Table4_ft, path="Table_4.docx") #export to word. 
+
+
+```
+
+```{r Figure 1}
+
+#Network for Patriotism
+node_colors2 <- rep("",213)
+for(i in 1:213){
+  if(get.node.attr(net_strong,"PAT")[i] < 6){
+    node_colors2[i] <- "red"}
+  if(get.node.attr(net_strong,"PAT")[i] < 5){
+    node_colors2[i] <- "rosybrown1"}
+    if(get.node.attr(net_strong,"PAT")[i] == 6){
+    node_colors2[i] <- "red4"}
+  if(get.node.attr(net_strong,"PAT")[i] == "999"){
+    node_colors2[i] <- "grey"}
+  
+}
+node_colors2
+
+set.seed(100)
+pdf(file="Network1.pdf")
+plot.network(net_strong, # our network object
+             vertex.col = node_colors2, # color nodes by patriotism
+             displaylabels = F,
+             xlab = "Early Adolescents' Peer Network \nBy Levels of Patriotism" # show the node names
+             )
+dev.off()
+
+node_colors3 <- rep("",213)
+for(i in 1:213){
+  if(get.node.attr(net_strong,"RWA")[i] < 4.5){
+    node_colors3[i] <- "deepskyblue3"}
+    if(get.node.attr(net_strong,"RWA")[i] == 4.5){
+    node_colors3[i] <- "lightskyblue1"}
+  if(get.node.attr(net_strong,"RWA")[i] < 3.5){
+    node_colors3[i] <- "grey93"}
+    if(get.node.attr(net_strong,"RWA")[i] > 4.5){
+    node_colors3[i] <- "blue4"}
+  if(get.node.attr(net_strong,"RWA")[i] == "999"){
+    node_colors3[i] <- "grey"}
+  
+}
+
+hist(NDAT$RWA)
+
+set.seed(100)
+pdf(file="Network2.pdf")
+plot.network(net_strong, # our network object
+             vertex.col = node_colors3, # color nodes by patriotism
+             displaylabels = F,
+             xlab = "Early Adolescents' Peer Network \nBy Levels of RWA" # show the node names
+             )
+dev.off()
+
+node_colors4 <- rep("",213)
+for(i in 1:213){
+  if(get.node.attr(net_strong,"IMM")[i] < 4.5){
+    node_colors4[i] <- "darkseagreen1"}
+    if(get.node.attr(net_strong,"IMM")[i] == 4.5){
+    node_colors4[i] <- "darkseagreen1"}
+  if(get.node.attr(net_strong,"IMM")[i] < 3){
+    node_colors4[i] <- "grey93"}
+    if(get.node.attr(net_strong,"IMM")[i] > 4.5){
+    node_colors4[i] <- "darkgreen"}
+  if(get.node.attr(net_strong,"IMM")[i] == "999"){
+    node_colors4[i] <- "grey"}
+  
+}
+
+hist(NDAT$IMM)
+
+set.seed(100)
+pdf(file="Network3.pdf")
+plot.network(net_strong, # our network object
+             vertex.col = node_colors4, # color nodes by patriotism
+             displaylabels = F,
+             xlab = "Early Adolescents' Peer Network \nBy Levels of Immigration Attitudes" # show the node names
+             )
+dev.off()
+
+```
+
+```{r Figure 1}
+NAI2 <- NAI %>% select(.,RWA, SDO, PAT, ENV, IMM, IAP, SAP, Trump, Obama)
+
+label <- c("RWA", "SDO", "PAT", "ENV", "IMM", "IAP", "SAP", "Trump", "Obama")
+
+n  <- NAI2 %>% 
+  gather(KEY, score, label) 
+
+n$KEY[n$KEY == "PAT"] <- "Patriotism"
+n$KEY[n$KEY == "ENV"] <- "Environmentalism"
+n$KEY[n$KEY == "IMM"] <- "Immigration"
+n$KEY[n$KEY == "IAP"] <- "Internal Att. Poverty"
+n$KEY[n$KEY == "SAP"] <- "Social Att. Poverty"
+
+
+n <- n %>%
+  mutate(KEY = fct_relevel(KEY, levels = "Obama", "Trump", "Social Att. Poverty", "Internal Att. Poverty","Immigration", "Environmentalism", "Patriotism", "SDO", "RWA")) %>% 
+  rename(Attitude=KEY)
+
+
+fig1 <- ggplot(n, aes(x = score, y = Attitude, fill = stat(x))) +
+  ggridges::geom_density_ridges_gradient(scale = 3, rel_min_height = 0.01)+
+  scale_fill_viridis_c(name="Intensity", option = "E") +
+  theme_classic()
+
+fig1a <- fig1 +  labs(title="Variability in Early Adolescents Political Attitudes", x="Attitude Intensity", y="Attitude") +
+    theme(legend.position = "none",
+#        text = element_text(size=15),
+        axis.title.x = element_text(margin = unit(c(5, 0, 0, 0), "mm")),
+        axis.title.y = element_text(margin = unit(c(0, 5, 0, 0), "mm"))
+  )
+
+fig1a
+
+fig1 <- ggplot(n, aes(x = score, y = Attitude, fill = stat(x))) +
+  ggridges::geom_density_ridges(
+    jittered_points = TRUE, quantile_lines = TRUE, scale = 0.9, alpha = 0.7,
+    vline_size = 1, vline_color = "red",
+    point_size = 0.4, point_alpha = 1,
+    position = position_raincloud(adjust_vlines = TRUE)
+  )
+
+cowplot::save_plot("plotridge.png", fig1a, base_width=6, base_height = 6)
+
+```
+

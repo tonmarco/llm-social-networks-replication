@@ -1,0 +1,60 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogFigure1.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}31 Dec 2025, 18:03:13
+{txt}
+{com}. 
+. preserve
+{txt}
+{com}. use "$path/Data/Raw/base_complete_1314_i1.dta", clear
+{txt}
+{com}.         
+. * Create the histogram with both time periods
+.  
+. histogram q4b_i1 if  q4a_i1~=., discrete ///
+>         yline(0.05(0.05)0.30, lcolor(gs14) lpattern(solid) lwidth(vthin)) ///
+>     lcolor(none) lwidth(thin) fcolor(ltblue) barwidth(0.9) ///
+>     addplot( ///
+>         histogram q4a_i1 if q4b_i1~=., discrete ///
+>             fcolor(gs10) lcolor(dkgray) lwidth(thin) barwidth(0.6) ///
+>     ) ///
+>     xtitle("Political position") ytitle("Density") ///
+>     legend(order(1 "Pre-Sciences Po (Aug 2013)" ///
+>                  2 "Survey time (Mar 2014)") ///
+>            position(6) rows(1) size(small)) ///
+>     scheme(s1mono) plotregion(margin(b+2)) graphregion(color(white))
+{txt}(start={res}1{txt}, width={res}1{txt})
+{p 0 4 2}
+{txt}(note:  named style
+dkgray not found in class
+color,  default attributes used)
+{p_end}
+{p 0 4 2}
+{txt}(note:  named style
+dkgray not found in class
+color,  default attributes used)
+{p_end}
+{res}{txt}
+{com}. * Save the graph
+. graph export "$path/Results/Figure1.png", replace width(800) height(600)
+{txt}{p 0 4 2}
+file {bf}
+/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/Figure1.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. restore                  
+{txt}
+{com}. 
+. log close // Figure 1
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogFigure1.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}31 Dec 2025, 18:03:14
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

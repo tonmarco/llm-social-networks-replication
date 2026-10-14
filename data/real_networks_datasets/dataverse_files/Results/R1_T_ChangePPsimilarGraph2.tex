@@ -1,0 +1,23 @@
+\documentclass[]{article}
+\setlength{\pdfpagewidth}{8.5in} \setlength{\pdfpageheight}{11in}
+\begin{document}
+\begin{tabular}{lcccc} \hline
+ & (1) & (2) & (3) & (4) \\
+VARIABLES &  &  &  &  \\ \hline
+ &  &  &  &  \\
+LUL & -0.8706** & -0.7440** & -0.4591 & -0.3132 \\
+ & (0.4412) & (0.3565) & (0.5341) & (0.4567) \\
+Constant & 1.3117*** & 0.4129*** & -0.2657*** & -1.0304*** \\
+ & (0.0389) & (0.0297) & (0.0370) & (0.0331) \\
+ &  &  &  &  \\
+Observations & 7,422 & 13,632 & 11,225 & 20,047 \\
+R-squared & 0.0161 & 0.0037 & 0.0044 & 0.0148 \\
+IV & Yes & Yes & Yes & Yes \\
+Controls & Yes & Yes & Yes & Yes \\
+Dyadic Group Clustering & Yes & Yes & Yes & Yes \\
+Condition & DiffPP==0 & DiffPP==1 & DiffPP==2 & DiffPP$>$=3 \\
+StdErr LUL & 0.326 & 0.338 & 0.597 & 0.502 \\
+\textit{Mean}(Dep. Var.) & 1.105 & 0.245 & -0.349 & -1.078 \\
+ \textit{Std.Dev.}(Dep. Var.) & 0.984 & 1.035 & 1.155 & 1.362 \\ \hline
+\end{tabular}
+\end{document}

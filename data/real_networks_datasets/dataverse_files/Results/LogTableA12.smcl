@@ -1,0 +1,86 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogTableA12.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}31 Dec 2025, 18:34:06
+{txt}
+{com}. 
+. preserve
+{txt}
+{com}. * load individual data containing polictical opinions
+. use "$path/Data/Analysis/recall_data.dta", clear
+{txt}
+{com}. * create new variables
+. gen rbias = recalled_14 -  actual_14
+{txt}(582 missing values generated)
+
+{com}. gen abs_rbias = abs(recalled_14 -  actual_14)
+{txt}(582 missing values generated)
+
+{com}. gen diff_act1514 = actual_15 - actual_14
+{txt}(584 missing values generated)
+
+{com}. * select sample
+. cap drop sample
+{txt}
+{com}. qui reg rbias diff_act1514
+{txt}
+{com}. gen sample = e(sample)
+{txt}
+{com}. * specification (1)
+. reg abs_rbias actual_15 actual_14 if sample, cluster(group)
+
+{txt}Linear regression                               Number of obs     = {res}       216
+                                                {txt}F(2, 42)          =  {res}     0.06
+                                                {txt}Prob > F          = {res}    0.9432
+                                                {txt}R-squared         = {res}    0.0005
+                                                {txt}Root MSE          =    {res} .76893
+
+{txt}{ralign 78:(Std. err. adjusted for {res:43} clusters in {res:group})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}   abs_rbias{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}actual_15 {c |}{col 14}{res}{space 2} .0042609{col 26}{space 2} .1159648{col 37}{space 1}    0.04{col 46}{space 3}0.971{col 54}{space 4}-.2297656{col 67}{space 3} .2382874
+{txt}{space 3}actual_14 {c |}{col 14}{res}{space 2} .0060918{col 26}{space 2} .1373047{col 37}{space 1}    0.04{col 46}{space 3}0.965{col 54}{space 4}-.2710004{col 67}{space 3}  .283184
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .6147053{col 26}{space 2} .2240324{col 37}{space 1}    2.74{col 46}{space 3}0.009{col 54}{space 4} .1625895{col 67}{space 3} 1.066821
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. outreg2 using "$path/Results/TableA12.tex", tex replace label addtext(Group Clustering, Yes ) ctitle(" ") nonotes 
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA12.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA12.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA12.txt", label"':seeout}
+
+{com}. * specification (2)
+. reg rbias diff_act1514 if sample, cluster(group)  
+
+{txt}Linear regression                               Number of obs     = {res}       216
+                                                {txt}F(1, 42)          =  {res}   172.27
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.4304
+                                                {txt}Root MSE          =    {res}  .7648
+
+{txt}{ralign 78:(Std. err. adjusted for {res:43} clusters in {res:group})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}       rbias{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+diff_act1514 {c |}{col 14}{res}{space 2} .5738648{col 26}{space 2}  .043723{col 37}{space 1}   13.13{col 46}{space 3}0.000{col 54}{space 4} .4856282{col 67}{space 3} .6621014
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0070762{col 26}{space 2} .0677219{col 37}{space 1}    0.10{col 46}{space 3}0.917{col 54}{space 4}-.1295921{col 67}{space 3} .1437445
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. outreg2 using "$path/Results/TableA12.tex", tex append label addtext(Group Clustering, Yes ) ctitle(" ") nonotes 
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA12.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA12.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA12.txt", label"':seeout}
+
+{com}. restore
+{txt}
+{com}. 
+. log close // Table A12
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogTableA12.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}31 Dec 2025, 18:34:07
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

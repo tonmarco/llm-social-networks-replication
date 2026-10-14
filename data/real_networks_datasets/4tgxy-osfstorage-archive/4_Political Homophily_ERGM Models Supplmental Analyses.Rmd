@@ -1,0 +1,160 @@
+---
+title: "ERGM Models"
+author: "[redacted for review]"
+date: "1/25/2020"
+output: html_document
+---
+```{r ERGM, warning=FALSE, message=FALSE, echo=FALSE}
+library(statnet)
+library(ergm)
+library(mice)
+
+#PULL OUT THE COLUMNES WE NEED
+elist2 <- elist %>% 
+           select(c(ID, FRIEND, LIKE))
+
+#CREATE NETWORK OBJECT
+net <- network(elist2,matrix.type="edgelist", directed=FALSE)
+
+#symmetrize the network and rebuild
+net_strong <- symmetrize(net,rule="strong") #only include cases when BOTH nominate, returns adjacency matrix
+net_strong <- network(net_strong,matrix.type="adjacency", directed=FALSE) 
+summary(net_strong, print.adj = FALSE) #CHECK THE NETWORK-SHOULD HAVE 213 VERTICES
+
+```
+
+```{r Data Attachment}
+#attach attributes to network object from imputated datasets
+net_strong%v%"RWA" <- as.numeric(NAI$RWA)
+net_strong%v%"SDO" <- as.numeric(NAI$SDO)
+net_strong%v%"PAT" <- as.numeric(NAI$PAT)
+net_strong%v%"ENV" <- as.numeric(NAI$ENV)
+net_strong%v%"IMM" <- as.numeric(NAI$IMM)
+net_strong%v%"IAP" <- as.numeric(NAI$IAP)
+net_strong%v%"SAP" <- as.numeric(NAI$SAP)
+net_strong%v%"Trump" <- as.numeric(NAI$Trump)
+net_strong%v%"Obama" <- as.numeric(NAI$Obama)
+net_strong%v%"Gender" <- as.character(NAI$Gender)
+net_strong%v%"Grade" <- as.character(NAI$Grade)
+net_strong%v%"Income" <- as.numeric(NAI$income)
+net_strong%v%"pedu" <- as.numeric(NAI$pedu)
+net_strong%v%"RWH" <- as.character(NAI$Race_1)
+net_strong%v%"ETH" <- as.character(NAI$Ethnicity)
+net_strong%v%"RWA_A" <- as.numeric(NAI$RWA_A)
+net_strong%v%"RWA_C" <- as.numeric(NAI$RWA_C)
+net_strong%v%"RWA_T" <- as.numeric(NAI$RWA_T)
+net_strong%v%"SDO_AE" <- as.numeric(NAI$SDO_AE)
+net_strong%v%"SDO_D" <- as.numeric(NAI$SDO_D)
+
+summary(net_strong, print.adj = FALSE) #check that it attached in the right format 
+
+```
+
+```{r Exploratory Models }
+
+#Exploratory Truncated
+ergm_model_exp_small_final <- ergm(net_strong ~ edges +
+    esp(0) +
+    esp(1) +
+    esp(2) +
+    esp(3)+  
+    gwdegree(1.5, fixed=T) +
+    nodematch('Gender') + 
+    nodematch('Grade') +  
+    nodematch('RWH') +  
+    nodematch('ETH') +  
+    absdiff('Income') +
+    absdiff('pedu') +
+    absdiff('RWA_A') +
+    absdiff('RWA_C') +
+    absdiff('RWA_T') +
+    absdiff('SDO_AE') + 
+    absdiff('SDO_D') +
+    absdiff('PAT'),
+    control=control.ergm(seed=40, parallel=6, MCMC.samplesize=50000, MCMC.interval=5000, MCMC.burnin=50000,  MCMLE.maxit=30))
+
+#chech model fit diagnostics
+mcmc.diagnostics(ergm_model_exp_small_final)
+
+modfit3 <- gof(ergm_model_exp_small_final,
+GOF = ~degree + distance + espartners + triadcensus,
+burnin=1e+5, interval = 1e+5)
+
+png(file="GOF_plot3.jpeg")
+par(mfrow=c(3,2))
+plot(modfit3,cex.axis=1.6,cex.label=1.6)
+dev.off()
+
+#findings from model 2
+summary(ergm_model_exp_small_final)
+
+#Exploratory Full Model 
+ergm_model_expfinal <- ergm(net_strong ~ edges +
+    esp(0) +
+    esp(1) +
+    esp(2) +
+    esp(3)+  
+    gwdegree(1.5, fixed=T) +
+    nodematch('Gender') + 
+    nodematch('Grade') +  
+    nodematch('RWH') +  
+    nodematch('ETH') +  
+    absdiff('Income') +
+    absdiff('pedu') +
+    absdiff('RWA_A') +
+    absdiff('RWA_C') +
+    absdiff('RWA_T') +
+    absdiff('SDO_AE') + 
+    absdiff('SDO_D') + 
+    absdiff('PAT') +
+    absdiff('ENV') + 
+    absdiff('IMM') + 
+    absdiff('IAP') + 
+    absdiff('SAP') + 
+    absdiff('Trump') + 
+    absdiff('Obama'),
+    control=control.ergm(seed=40, parallel=6, MCMC.samplesize=50000, MCMC.interval=5000, MCMC.burnin=50000,  MCMLE.maxit=30))
+
+#chech model fit diagnostics
+mcmc.diagnostics(ergm_model_expfinal)
+
+modfit1m3 <- gof(ergm_model_expfinal,
+GOF = ~degree + distance + espartners + triadcensus,
+burnin=1e+5, interval = 1e+5)
+
+png(file="GOF_plot4.jpeg")
+par(mfrow=c(3,2))
+plot(modfit1m3,cex.axis=1.6,cex.label=1.6)
+dev.off()
+
+#findings from model 2
+summary(ergm_model_expfinal)
+
+
+```
+
+```{r Tables}
+round_df <- function(x, digits) {
+    # round all numeric variables
+    # x: data frame 
+    # digits: number of digits to round
+    numeric_columns <- sapply(x, mode) == 'numeric'
+    x[numeric_columns] <-  round(x[numeric_columns], digits)
+    x
+} #Round function
+
+#ERGM TABLES 2-4####
+#--Exponentiate the values in put into WORD
+Table3 <- broom::tidy(ergm_model_exp_small_final, exponentiate=TRUE, conf.int=TRUE) #Export Model as tibble
+Table3 <- round_df(Table3, 2) #Round to 2 decimal places 
+Table3_ft <-   flextable::flextable(Table3) #create flextable to export to word
+flextable::save_as_docx(Table3_ft, path="Table_3.docx") #export to word. 
+
+Table4 <- broom::tidy(ergm_model_expfinal, exponentiate=TRUE, conf.int=TRUE) #Export Model as tibble
+Table4 <- round_df(Table4, 2) #Round to 2 decimal places 
+Table4_ft <-   flextable::flextable(Table4) #create flextable to export to word
+save_as_docx(Table4_ft, path="Table_4.docx") #export to word. 
+
+
+```
+

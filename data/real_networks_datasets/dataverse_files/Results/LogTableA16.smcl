@@ -1,0 +1,1945 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogTableA16.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}31 Dec 2025, 18:41:32
+{txt}
+{com}. 
+. // First IV w.r.t. IG 
+. * run specification (1)
+. ivreg2 CONV2_Long (LUL=IG) $Xvar if $condition, noid
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   11628
+{txt}{col 55}F( 16, 11611) = {res}   21.23
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 2820.138545{txt}{col 55}Centered R2   = {res}  0.0262
+{txt}Total (uncentered) SS   = {res}        4809{txt}{col 55}Uncentered R2 = {res}  0.4290
+{txt}Residual SS             = {res} 2746.163855{txt}{col 55}Root MSE      = {res}    .486
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}  CONV2_Long{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2} .2113043{col 26}{space 2} .1932166{col 37}{space 1}    1.09{col 46}{space 3}0.274{col 54}{space 4}-.1673933{col 67}{space 3} .5900019
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}-.0428489{col 26}{space 2} .0127304{col 37}{space 1}   -3.37{col 46}{space 3}0.001{col 54}{space 4}   -.0678{col 67}{space 3}-.0178978
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2} .0986311{col 26}{space 2} .0135589{col 37}{space 1}    7.27{col 46}{space 3}0.000{col 54}{space 4} .0720561{col 67}{space 3} .1252061
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.4478586{col 26}{space 2}  .050369{col 37}{space 1}   -8.89{col 46}{space 3}0.000{col 54}{space 4}-.5465801{col 67}{space 3}-.3491371
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0683009{col 26}{space 2} .0105607{col 37}{space 1}    6.47{col 46}{space 3}0.000{col 54}{space 4} .0476023{col 67}{space 3} .0889996
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2}-.2606158{col 26}{space 2} .0558227{col 37}{space 1}   -4.67{col 46}{space 3}0.000{col 54}{space 4}-.3700264{col 67}{space 3}-.1512052
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}  .056614{col 26}{space 2} .0192719{col 37}{space 1}    2.94{col 46}{space 3}0.003{col 54}{space 4} .0188417{col 67}{space 3} .0943863
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0708606{col 26}{space 2} .0378753{col 37}{space 1}    1.87{col 46}{space 3}0.061{col 54}{space 4}-.0033736{col 67}{space 3} .1450949
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2}-.0108242{col 26}{space 2} .0092237{col 37}{space 1}   -1.17{col 46}{space 3}0.241{col 54}{space 4}-.0289022{col 67}{space 3} .0072538
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-4.00e-06{col 26}{space 2} 1.88e-06{col 37}{space 1}   -2.12{col 46}{space 3}0.034{col 54}{space 4}-7.69e-06{col 67}{space 3}-3.10e-07
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2}-.0184043{col 26}{space 2} .0107979{col 37}{space 1}   -1.70{col 46}{space 3}0.088{col 54}{space 4}-.0395677{col 67}{space 3} .0027592
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} .0209466{col 26}{space 2} .0094279{col 37}{space 1}    2.22{col 46}{space 3}0.026{col 54}{space 4} .0024682{col 67}{space 3}  .039425
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .0909229{col 26}{space 2} .0302545{col 37}{space 1}    3.01{col 46}{space 3}0.003{col 54}{space 4} .0316251{col 67}{space 3} .1502207
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} .0060744{col 26}{space 2} .0091666{col 37}{space 1}    0.66{col 46}{space 3}0.508{col 54}{space 4}-.0118919{col 67}{space 3} .0240407
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.1921786{col 26}{space 2} .0380446{col 37}{space 1}   -5.05{col 46}{space 3}0.000{col 54}{space 4}-.2667446{col 67}{space 3}-.1176125
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2}-.0594095{col 26}{space 2}   .04224{col 37}{space 1}   -1.41{col 46}{space 3}0.160{col 54}{space 4}-.1421983{col 67}{space 3} .0233793
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .4012106{col 26}{space 2} .0154688{col 37}{space 1}   25.94{col 46}{space 3}0.000{col 54}{space 4} .3708922{col 67}{space 3}  .431529
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. IVdyadic CONV2_Long LUL $Xvar if $condition, iv(IG) groups(IGno_i1 IGno_i2)
+LHS: CONV2_Long
+RHS: LUL SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Covariates: SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Groups: IGno_i1 IGno_i2
+IV: IG
+Group i1: IGno_i1
+Group i2: IGno_i2
+{txt}(282,678 observations deleted)
+  {res}11,628
+Nvar 17
+N 11628
+  Beta:
+
+{txt}{hline}
+{res}timer report
+{txt}  1.       1.43 /        1 = {res:    1.426}
+{txt}{hline}
+  {res}Diagonal of V:
+        {txt}          1
+     {c TLC}{hline 15}{c TRC}
+   1 {c |}  {res}.0286306082{txt}  {c |}
+   2 {c |}  {res}.0015897394{txt}  {c |}
+   3 {c |}  {res}  .00677243{txt}  {c |}
+   4 {c |}  {res}.0022650705{txt}  {c |}
+   5 {c |}  {res}.0037632566{txt}  {c |}
+   6 {c |}  {res}.0091923754{txt}  {c |}
+   7 {c |}  {res}.0010805458{txt}  {c |}
+   8 {c |}  {res}.0021521941{txt}  {c |}
+   9 {c |}  {res}.0003615644{txt}  {c |}
+  10 {c |}  {res}4.16235e-11{txt}  {c |}
+  11 {c |}  {res}.0012986031{txt}  {c |}
+  12 {c |}  {res}.0003646541{txt}  {c |}
+  13 {c |}  {res}.0012443446{txt}  {c |}
+  14 {c |}  {res}.0002283028{txt}  {c |}
+  15 {c |}  {res}.0045196428{txt}  {c |}
+  16 {c |}  {res}.0035179705{txt}  {c |}
+  17 {c |}  {res}.0047707737{txt}  {c |}
+     {c BLC}{hline 15}{c BRC}
+  {res}eValues:
+       {txt}           1              2              3              4              5              6              7              8              9             10             11             12             13             14
+    {c TLC}{hline 211}
+  1 {c |}  {res} .0307959021    .0125528799    .0100535727    .0072955232    .0041881688    .0025910103    .0014445298    .0011130012    .0007454981    .0004501276     .000325081    .0001879294    .0000846389    .0000199312
+{txt}    {c BLC}{hline 211}
+                 15             16             17
+     {hline 46}{c TRC}
+  1    {res}-3.18763e-12   -.0000249462   -.0000707719{txt}  {c |}
+     {hline 46}{c BRC}
+  {res}Adjustment factor i
+  1
+  Standard errors:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res} .169205816   .0398715359   .0822947753   .0475927565    .061345388    .095876876   .0328716569   .0463917462   .0190148476   6.45163e-06   .0360361361    .019095919   .0352752692   .0151096925   .0672282889
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res} .059312482   .0690707873{txt}  {c |}
+     {hline 29}{c BRC}
+  {res}p-values:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.2117381554   .2825207789   .2307186266             0   .2655437865   .0065631364   .0850197915   .1266515444    .569187122   .5350189638   .6095489869   .2726793005   .0099510587    .687668729   .0042551924
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.3165196272   6.29645e-09{txt}  {c |}
+     {hline 29}{c BRC}
+F-stat for all: 14.092486
+F-stat for first coefficient: 1.55950198
+  {res}1
+F-stat for IVed coefficients: 1.55950198
+{txt}
+{com}. local stderr_LUL = e(StdErr)[1,1]
+{txt}
+{com}. local depvar = e(depvar)
+{txt}
+{com}. sum `depvar' if e(sample)
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 2}CONV2_Long {c |}{res}     11,628    .4135707    .4924945          0          1
+{txt}
+{com}. local MeanDepVar = r(mean)
+{txt}
+{com}. local StDevDepVar = r(sd)
+{txt}
+{com}. outreg2 using "$path/Results/TableA16a.tex", tex replace label addtext(IV, Yes, Controls, Yes, Dyadic Group Clustering, Yes) addstat(StdErr LUL, `stderr_LUL', \textit{c -(}Mean{c )-}(Dep. Var.), `MeanDepVar', \textit{c -(}Std.Dev.{c )-}(Dep. Var.), `StDevDepVar') ctitle(" ") nonotes dec(4) keep(LUL)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.txt", label"':seeout}
+
+{com}. 
+. * run specification (2)
+. ivreg2 CONVS2_Long (LUL=IG) $Xvar if $condition, noid
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   11628
+{txt}{col 55}F( 16, 11611) = {res}    4.56
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 889.9163227{txt}{col 55}Centered R2   = {res}  0.0017
+{txt}Total (uncentered) SS   = {res}         971{txt}{col 55}Uncentered R2 = {res}  0.0851
+{txt}Residual SS             = {res} 888.4159557{txt}{col 55}Root MSE      = {res}   .2764
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} CONVS2_Long{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2} .1621755{col 26}{space 2} .1098979{col 37}{space 1}    1.48{col 46}{space 3}0.140{col 54}{space 4}-.0532204{col 67}{space 3} .3775715
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0174807{col 26}{space 2} .0072408{col 37}{space 1}    2.41{col 46}{space 3}0.016{col 54}{space 4}  .003289{col 67}{space 3} .0316725
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0280383{col 26}{space 2} .0077121{col 37}{space 1}   -3.64{col 46}{space 3}0.000{col 54}{space 4}-.0431537{col 67}{space 3} -.012923
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.0873284{col 26}{space 2} .0286489{col 37}{space 1}   -3.05{col 46}{space 3}0.002{col 54}{space 4}-.1434793{col 67}{space 3}-.0311775
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2}-.0089738{col 26}{space 2} .0060067{col 37}{space 1}   -1.49{col 46}{space 3}0.135{col 54}{space 4}-.0207468{col 67}{space 3} .0027992
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2}-.0735779{col 26}{space 2} .0317509{col 37}{space 1}   -2.32{col 46}{space 3}0.020{col 54}{space 4}-.1358085{col 67}{space 3}-.0113472
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}-.0143361{col 26}{space 2} .0109615{col 37}{space 1}   -1.31{col 46}{space 3}0.191{col 54}{space 4}-.0358203{col 67}{space 3}  .007148
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2}  .009988{col 26}{space 2} .0215428{col 37}{space 1}    0.46{col 46}{space 3}0.643{col 54}{space 4}-.0322351{col 67}{space 3}  .052211
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2}-.0136895{col 26}{space 2} .0052462{col 37}{space 1}   -2.61{col 46}{space 3}0.009{col 54}{space 4}-.0239719{col 67}{space 3}-.0034071
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} 3.99e-07{col 26}{space 2} 1.07e-06{col 37}{space 1}    0.37{col 46}{space 3}0.710{col 54}{space 4}-1.70e-06{col 67}{space 3} 2.50e-06
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0100008{col 26}{space 2} .0061416{col 37}{space 1}    1.63{col 46}{space 3}0.103{col 54}{space 4}-.0020366{col 67}{space 3} .0220381
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.0010199{col 26}{space 2} .0053624{col 37}{space 1}   -0.19{col 46}{space 3}0.849{col 54}{space 4}-.0115301{col 67}{space 3} .0094903
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .0327676{col 26}{space 2} .0172082{col 37}{space 1}    1.90{col 46}{space 3}0.057{col 54}{space 4}-.0009598{col 67}{space 3} .0664951
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} .0181004{col 26}{space 2} .0052138{col 37}{space 1}    3.47{col 46}{space 3}0.001{col 54}{space 4} .0078816{col 67}{space 3} .0283193
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}  -.02609{col 26}{space 2}  .021639{col 37}{space 1}   -1.21{col 46}{space 3}0.228{col 54}{space 4}-.0685017{col 67}{space 3} .0163218
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2}-.0089793{col 26}{space 2} .0240253{col 37}{space 1}   -0.37{col 46}{space 3}0.709{col 54}{space 4} -.056068{col 67}{space 3} .0381094
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0829745{col 26}{space 2} .0087984{col 37}{space 1}    9.43{col 46}{space 3}0.000{col 54}{space 4}   .06573{col 67}{space 3}  .100219
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. IVdyadic CONVS2_Long LUL $Xvar if $condition, iv(IG) groups(IGno_i1 IGno_i2)
+LHS: CONVS2_Long
+RHS: LUL SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Covariates: SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Groups: IGno_i1 IGno_i2
+IV: IG
+Group i1: IGno_i1
+Group i2: IGno_i2
+{txt}(282,678 observations deleted)
+  {res}11,628
+Nvar 17
+N 11628
+  Beta:
+
+{txt}{hline}
+{res}timer report
+{txt}  1.       1.34 /        1 = {res:    1.341}
+{txt}{hline}
+  {res}Diagonal of V:
+        {txt}          1
+     {c TLC}{hline 15}{c TRC}
+   1 {c |}  {res}.0117142299{txt}  {c |}
+   2 {c |}  {res}.0003961212{txt}  {c |}
+   3 {c |}  {res}.0009257642{txt}  {c |}
+   4 {c |}  {res}.0004825838{txt}  {c |}
+   5 {c |}  {res}.0005274555{txt}  {c |}
+   6 {c |}  {res}.0003678542{txt}  {c |}
+   7 {c |}  {res}.0002481544{txt}  {c |}
+   8 {c |}  {res} .000698611{txt}  {c |}
+   9 {c |}  {res}.0000705692{txt}  {c |}
+  10 {c |}  {res}5.41760e-12{txt}  {c |}
+  11 {c |}  {res}.0002964706{txt}  {c |}
+  12 {c |}  {res}.0001194904{txt}  {c |}
+  13 {c |}  {res}.0005571092{txt}  {c |}
+  14 {c |}  {res} .000147701{txt}  {c |}
+  15 {c |}  {res}.0014122633{txt}  {c |}
+  16 {c |}  {res}.0005517757{txt}  {c |}
+  17 {c |}  {res}.0008450598{txt}  {c |}
+     {c BLC}{hline 15}{c BRC}
+  {res}eValues:
+       {txt}           1              2              3              4              5              6              7              8              9             10             11             12             13             14
+    {c TLC}{hline 211}
+  1 {c |}  {res} .0120128789    .0026831064    .0011636659    .0010661867    .0007540442    .0005660573    .0003523307    .0003040846     .000236909    .0001337896    .0000569958    .0000455584    .0000116025    9.58443e-07
+{txt}    {c BLC}{hline 211}
+                 15             16             17
+     {hline 46}{c TRC}
+  1    {res}-2.31208e-14   -6.33166e-06   -.0000206234{txt}  {c |}
+     {hline 46}{c BRC}
+  {res}Adjustment factor i
+  1
+  Standard errors:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.1082322962   .0199027945   .0304263739   .0219677897   .0229663989   .0191795262   .0157529161   .0264312505   .0084005459   2.32757e-06   .0172183221   .0109311672   .0236031613   .0121532309   .0375800915
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.0234899065    .029069913{txt}  {c |}
+     {hline 29}{c BRC}
+  {res}p-values:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.1340287661   .3797776262   .3567818192   .0000702931   .6959934281    .000124916   .3627905204   .7055165695   .1031870751   .8639868851   .5613603762   .9256635301   .1650539383   .1363945581   .4875257682
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.7022670737   .0043130801{txt}  {c |}
+     {hline 29}{c BRC}
+F-stat for all: 2.15207464
+F-stat for first coefficient: 2.24520937
+  {res}1
+F-stat for IVed coefficients: 2.24520937
+{txt}
+{com}. local stderr_LUL = e(StdErr)[1,1]
+{txt}
+{com}. local depvar = e(depvar)
+{txt}
+{com}. sum `depvar' if e(sample)
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 1}CONVS2_Long {c |}{res}     11,628    .0835053    .2766564          0          1
+{txt}
+{com}. local MeanDepVar = r(mean)
+{txt}
+{com}. local StDevDepVar = r(sd)
+{txt}
+{com}. outreg2 using "$path/Results/TableA16a.tex", tex append label addtext(IV, Yes, Controls, Yes, Dyadic Group Clustering, Yes) addstat(StdErr LUL, `stderr_LUL', \textit{c -(}Mean{c )-}(Dep. Var.), `MeanDepVar', \textit{c -(}Std.Dev.{c )-}(Dep. Var.), `StDevDepVar') ctitle(" ") nonotes dec(4) keep(LUL)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.txt", label"':seeout}
+
+{com}. 
+. * run specification (3)
+. ivreg2 DIVW_Long (LUL=IG) $Xvar if $condition, noid
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   11628
+{txt}{col 55}F( 16, 11611) = {res}    8.83
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 2701.451668{txt}{col 55}Centered R2   = {res}  0.0122
+{txt}Total (uncentered) SS   = {res}        4268{txt}{col 55}Uncentered R2 = {res}  0.3748
+{txt}Residual SS             = {res} 2668.451489{txt}{col 55}Root MSE      = {res}    .479
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   DIVW_Long{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-.0315857{col 26}{space 2} .1904631{col 37}{space 1}   -0.17{col 46}{space 3}0.868{col 54}{space 4}-.4048866{col 67}{space 3} .3417151
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}-.0432641{col 26}{space 2}  .012549{col 37}{space 1}   -3.45{col 46}{space 3}0.001{col 54}{space 4}-.0678597{col 67}{space 3}-.0186686
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}  .068667{col 26}{space 2} .0133657{col 37}{space 1}    5.14{col 46}{space 3}0.000{col 54}{space 4} .0424707{col 67}{space 3} .0948633
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.2411677{col 26}{space 2} .0496512{col 37}{space 1}   -4.86{col 46}{space 3}0.000{col 54}{space 4}-.3384824{col 67}{space 3}-.1438531
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0851356{col 26}{space 2} .0104102{col 37}{space 1}    8.18{col 46}{space 3}0.000{col 54}{space 4} .0647319{col 67}{space 3} .1055393
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .0206731{col 26}{space 2} .0550272{col 37}{space 1}    0.38{col 46}{space 3}0.707{col 54}{space 4}-.0871783{col 67}{space 3} .1285245
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0377976{col 26}{space 2} .0189973{col 37}{space 1}    1.99{col 46}{space 3}0.047{col 54}{space 4} .0005636{col 67}{space 3} .0750316
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0575592{col 26}{space 2} .0373356{col 37}{space 1}    1.54{col 46}{space 3}0.123{col 54}{space 4}-.0156172{col 67}{space 3} .1307356
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0127421{col 26}{space 2} .0090922{col 37}{space 1}    1.40{col 46}{space 3}0.161{col 54}{space 4}-.0050783{col 67}{space 3} .0305625
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-5.05e-07{col 26}{space 2} 1.86e-06{col 37}{space 1}   -0.27{col 46}{space 3}0.786{col 54}{space 4}-4.14e-06{col 67}{space 3} 3.13e-06
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2}-.0380468{col 26}{space 2}  .010644{col 37}{space 1}   -3.57{col 46}{space 3}0.000{col 54}{space 4}-.0589087{col 67}{space 3} -.017185
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.0078133{col 26}{space 2} .0092936{col 37}{space 1}   -0.84{col 46}{space 3}0.401{col 54}{space 4}-.0260284{col 67}{space 3} .0104017
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.0710743{col 26}{space 2} .0298234{col 37}{space 1}   -2.38{col 46}{space 3}0.017{col 54}{space 4}-.1295271{col 67}{space 3}-.0126216
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0205817{col 26}{space 2}  .009036{col 37}{space 1}   -2.28{col 46}{space 3}0.023{col 54}{space 4} -.038292{col 67}{space 3}-.0028715
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0649934{col 26}{space 2} .0375024{col 37}{space 1}   -1.73{col 46}{space 3}0.083{col 54}{space 4}-.1384968{col 67}{space 3}   .00851
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2}-.0611952{col 26}{space 2}  .041638{col 37}{space 1}   -1.47{col 46}{space 3}0.142{col 54}{space 4}-.1428042{col 67}{space 3} .0204138
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .3437179{col 26}{space 2} .0152484{col 37}{space 1}   22.54{col 46}{space 3}0.000{col 54}{space 4} .3138316{col 67}{space 3} .3736042
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. IVdyadic DIVW_Long LUL $Xvar if $condition, iv(IG) groups(IGno_i1 IGno_i2)
+LHS: DIVW_Long
+RHS: LUL SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Covariates: SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Groups: IGno_i1 IGno_i2
+IV: IG
+Group i1: IGno_i1
+Group i2: IGno_i2
+{txt}(282,678 observations deleted)
+  {res}11,628
+Nvar 17
+N 11628
+  Beta:
+
+{txt}{hline}
+{res}timer report
+{txt}  1.       1.32 /        1 = {res:     1.32}
+{txt}{hline}
+  {res}Diagonal of V:
+        {txt}          1
+     {c TLC}{hline 15}{c TRC}
+   1 {c |}  {res}.0436510802{txt}  {c |}
+   2 {c |}  {res}.0007212866{txt}  {c |}
+   3 {c |}  {res}.0046521756{txt}  {c |}
+   4 {c |}  {res}.0019379416{txt}  {c |}
+   5 {c |}  {res}.0025624998{txt}  {c |}
+   6 {c |}  {res}.0100349851{txt}  {c |}
+   7 {c |}  {res}.0018772421{txt}  {c |}
+   8 {c |}  {res}.0040153924{txt}  {c |}
+   9 {c |}  {res}.0002859306{txt}  {c |}
+  10 {c |}  {res}4.12124e-11{txt}  {c |}
+  11 {c |}  {res}.0015152504{txt}  {c |}
+  12 {c |}  {res}.0006732412{txt}  {c |}
+  13 {c |}  {res}.0011697268{txt}  {c |}
+  14 {c |}  {res}.0001596937{txt}  {c |}
+  15 {c |}  {res} .009134378{txt}  {c |}
+  16 {c |}  {res}.0034515667{txt}  {c |}
+  17 {c |}  {res}.0055458471{txt}  {c |}
+     {c BLC}{hline 15}{c BRC}
+  {res}eValues:
+       {txt}           1              2              3              4              5              6              7              8              9             10             11             12             13             14
+    {c TLC}{hline 211}
+  1 {c |}  {res} .0469160264    .0135700035    .0118860448    .0057275107    .0053427243    .0026379729    .0020855752    .0015804706    .0008234116    .0003722429    .0002344242    .0001765591    .0001078589    .0000388732
+{txt}    {c BLC}{hline 211}
+                 15             16             17
+     {hline 46}{c TRC}
+  1    {res} 1.86506e-06   -1.43270e-10   -.0001133253{txt}  {c |}
+     {hline 46}{c BRC}
+  {res}Adjustment factor i
+  1
+  Standard errors:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.2089284093   .0268567801   .0682068587   .0440220579   .0506211402   .1001747726   .0433271524    .063367124   .0169094817   6.41968e-06   .0389262172   .0259468913   .0342012692   .0126369957   .0955739399
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res} .058750036   .0744704444{txt}  {c |}
+     {hline 29}{c BRC}
+  {res}p-values:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.8798339869   .1071969536   .3140570016   4.29338e-08   .0926037635   .8365019287   .3830032894   .3636960486   .4511199042   .9373110264   .3283665595    .763316842   .0376983188   .1033789754   .4964837913
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.2975876862   3.92160e-06{txt}  {c |}
+     {hline 29}{c BRC}
+F-stat for all: 37.9582357
+F-stat for first coefficient: .022855293
+  {res}1
+F-stat for IVed coefficients: .022855293
+{txt}
+{com}. local stderr_LUL = e(StdErr)[1,1]
+{txt}
+{com}. local depvar = e(depvar)
+{txt}
+{com}. sum `depvar' if e(sample)
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 3}DIVW_Long {c |}{res}     11,628    .3670451    .4820197          0          1
+{txt}
+{com}. local MeanDepVar = r(mean)
+{txt}
+{com}. local StDevDepVar = r(sd)
+{txt}
+{com}. outreg2 using "$path/Results/TableA16a.tex", tex append label addtext(IV, Yes, Controls, Yes, Dyadic Group Clustering, Yes) addstat(StdErr LUL, `stderr_LUL', \textit{c -(}Mean{c )-}(Dep. Var.), `MeanDepVar', \textit{c -(}Std.Dev.{c )-}(Dep. Var.), `StDevDepVar') ctitle(" ") nonotes dec(4) keep(LUL)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.txt", label"':seeout}
+
+{com}. 
+. * run specification (4)
+. ivreg2 DIVS_Long (LUL=IG) $Xvar if $condition, noid
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   11628
+{txt}{col 55}F( 16, 11611) = {res}    8.82
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 636.7003784{txt}{col 55}Centered R2   = {res}  0.0109
+{txt}Total (uncentered) SS   = {res}         676{txt}{col 55}Uncentered R2 = {res}  0.0684
+{txt}Residual SS             = {res} 629.7870934{txt}{col 55}Root MSE      = {res}   .2327
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   DIVS_Long{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2} .0482697{col 26}{space 2} .0925291{col 37}{space 1}    0.52{col 46}{space 3}0.602{col 54}{space 4}-.1330839{col 67}{space 3} .2296233
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0203831{col 26}{space 2} .0060964{col 37}{space 1}    3.34{col 46}{space 3}0.001{col 54}{space 4} .0084343{col 67}{space 3} .0323319
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2} -.044172{col 26}{space 2} .0064932{col 37}{space 1}   -6.80{col 46}{space 3}0.000{col 54}{space 4}-.0568984{col 67}{space 3}-.0314455
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.0136196{col 26}{space 2} .0241211{col 37}{space 1}   -0.56{col 46}{space 3}0.572{col 54}{space 4}-.0608962{col 67}{space 3} .0336569
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} -.010528{col 26}{space 2} .0050574{col 37}{space 1}   -2.08{col 46}{space 3}0.037{col 54}{space 4}-.0204404{col 67}{space 3}-.0006157
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2}   .07456{col 26}{space 2} .0267328{col 37}{space 1}    2.79{col 46}{space 3}0.005{col 54}{space 4} .0221646{col 67}{space 3} .1269554
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0023235{col 26}{space 2} .0092291{col 37}{space 1}    0.25{col 46}{space 3}0.801{col 54}{space 4}-.0157652{col 67}{space 3} .0204122
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2}-.0184729{col 26}{space 2}  .018138{col 37}{space 1}   -1.02{col 46}{space 3}0.308{col 54}{space 4}-.0540228{col 67}{space 3}  .017077
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2}-.0042845{col 26}{space 2} .0044171{col 37}{space 1}   -0.97{col 46}{space 3}0.332{col 54}{space 4}-.0129418{col 67}{space 3} .0043729
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} 1.77e-06{col 26}{space 2} 9.02e-07{col 37}{space 1}    1.96{col 46}{space 3}0.050{col 54}{space 4} 2.30e-09{col 67}{space 3} 3.54e-06
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0119775{col 26}{space 2}  .005171{col 37}{space 1}    2.32{col 46}{space 3}0.021{col 54}{space 4} .0018426{col 67}{space 3} .0221124
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.0030464{col 26}{space 2} .0045149{col 37}{space 1}   -0.67{col 46}{space 3}0.500{col 54}{space 4}-.0118955{col 67}{space 3} .0058027
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.0054678{col 26}{space 2} .0144885{col 37}{space 1}   -0.38{col 46}{space 3}0.706{col 54}{space 4}-.0338648{col 67}{space 3} .0229292
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} -.006614{col 26}{space 2} .0043898{col 37}{space 1}   -1.51{col 46}{space 3}0.132{col 54}{space 4}-.0152178{col 67}{space 3} .0019898
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} .0565352{col 26}{space 2} .0182191{col 37}{space 1}    3.10{col 46}{space 3}0.002{col 54}{space 4} .0208265{col 67}{space 3}  .092244
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2}-.0201368{col 26}{space 2} .0202282{col 37}{space 1}   -1.00{col 46}{space 3}0.320{col 54}{space 4}-.0597833{col 67}{space 3} .0195098
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0517477{col 26}{space 2} .0074078{col 37}{space 1}    6.99{col 46}{space 3}0.000{col 54}{space 4} .0372286{col 67}{space 3} .0662668
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. IVdyadic DIVS_Long LUL $Xvar if $condition, iv(IG) groups(IGno_i1 IGno_i2)
+LHS: DIVS_Long
+RHS: LUL SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Covariates: SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Groups: IGno_i1 IGno_i2
+IV: IG
+Group i1: IGno_i1
+Group i2: IGno_i2
+{txt}(282,678 observations deleted)
+  {res}11,628
+Nvar 17
+N 11628
+  Beta:
+
+{txt}{hline}
+{res}timer report
+{txt}  1.       1.35 /        1 = {res:    1.347}
+{txt}{hline}
+  {res}Diagonal of V:
+        {txt}          1
+     {c TLC}{hline 15}{c TRC}
+   1 {c |}  {res}.0062295411{txt}  {c |}
+   2 {c |}  {res}.0003358555{txt}  {c |}
+   3 {c |}  {res}.0008824401{txt}  {c |}
+   4 {c |}  {res}.0000440582{txt}  {c |}
+   5 {c |}  {res}.0002567947{txt}  {c |}
+   6 {c |}  {res}.0034704091{txt}  {c |}
+   7 {c |}  {res}.0001307744{txt}  {c |}
+   8 {c |}  {res}.0001400697{txt}  {c |}
+   9 {c |}  {res}.0000633853{txt}  {c |}
+  10 {c |}  {res}5.09781e-12{txt}  {c |}
+  11 {c |}  {res}.0001206147{txt}  {c |}
+  12 {c |}  {res} .000067693{txt}  {c |}
+  13 {c |}  {res}.0001160061{txt}  {c |}
+  14 {c |}  {res}.0000122327{txt}  {c |}
+  15 {c |}  {res} .000641341{txt}  {c |}
+  16 {c |}  {res}.0002780769{txt}  {c |}
+  17 {c |}  {res}.0005333325{txt}  {c |}
+     {c BLC}{hline 15}{c BRC}
+  {res}eValues:
+       {txt}           1              2              3              4              5              6              7              8              9             10             11             12             13             14
+    {c TLC}{hline 211}
+  1 {c |}  {res}  .006532188    .0041593167    .0012406743     .000653781    .0003262834    .0002195981    .0001419847    .0000747899    .0000578778    .0000356891    .0000281729    7.80222e-06    1.21167e-11   -3.94482e-06
+{txt}    {c BLC}{hline 211}
+                 15             16             17
+     {hline 46}{c TRC}
+  1    {res}-.0000156787   -.0000229753    -.000112934{txt}  {c |}
+     {hline 46}{c BRC}
+  {res}Adjustment factor i
+  1
+  Standard errors:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.0789274422    .018326361   .0297058941   .0066376347   .0160248159   .0589101787   .0114356617   .0118351063   .0079614891   2.25783e-06   .0109824738   .0082275762    .010770612   .0034975325   .0253247121
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.0166756375   .0230939935{txt}  {c |}
+     {hline 29}{c BRC}
+  {res}p-values:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.5408216195   .2660401766   .1370207325   .0401812079   .5111922432   .2056365301   .8389940356   .1185577414   .5904746187     .43293215   .2754488342   .7111854702   .6116916878   .0586183352   .0255877008
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.2272179633    .025042676{txt}  {c |}
+     {hline 29}{c BRC}
+F-stat for all: -.373506717
+F-stat for first coefficient: .374019107
+  {res}1
+F-stat for IVed coefficients: .374019107
+{txt}
+{com}. local stderr_LUL = e(StdErr)[1,1]
+{txt}
+{com}. local depvar = e(depvar)
+{txt}
+{com}. sum `depvar' if e(sample)
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 3}DIVS_Long {c |}{res}     11,628    .0581355    .2340096          0          1
+{txt}
+{com}. local MeanDepVar = r(mean)
+{txt}
+{com}. local StDevDepVar = r(sd)
+{txt}
+{com}. outreg2 using "$path/Results/TableA16a.tex", tex append label addtext(IV, Yes, Controls, Yes, Dyadic Group Clustering, Yes) addstat(StdErr LUL, `stderr_LUL', \textit{c -(}Mean{c )-}(Dep. Var.), `MeanDepVar', \textit{c -(}Std.Dev.{c )-}(Dep. Var.), `StDevDepVar') ctitle(" ") nonotes dec(4) keep(LUL)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.txt", label"':seeout}
+
+{com}. 
+. * run specification (5)
+. ivreg2 COMOV_Long (LUL=IG) $Xvar if $condition, noid
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   11628
+{txt}{col 55}F( 16, 11611) = {res}    8.88
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 2036.246302{txt}{col 55}Centered R2   = {res}  0.0118
+{txt}Total (uncentered) SS   = {res}        2632{txt}{col 55}Uncentered R2 = {res}  0.2355
+{txt}Residual SS             = {res} 2012.220937{txt}{col 55}Root MSE      = {res}    .416
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}  COMOV_Long{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-.0577298{col 26}{space 2} .1653937{col 37}{space 1}   -0.35{col 46}{space 3}0.727{col 54}{space 4}-.3818956{col 67}{space 3}  .266436
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0338691{col 26}{space 2} .0108972{col 37}{space 1}    3.11{col 46}{space 3}0.002{col 54}{space 4} .0125109{col 67}{space 3} .0552273
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2} -.062991{col 26}{space 2} .0116065{col 37}{space 1}   -5.43{col 46}{space 3}0.000{col 54}{space 4}-.0857392{col 67}{space 3}-.0402427
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}  .183595{col 26}{space 2}  .043116{col 37}{space 1}    4.26{col 46}{space 3}0.000{col 54}{space 4} .0990892{col 67}{space 3} .2681008
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2}-.0359468{col 26}{space 2}   .00904{col 37}{space 1}   -3.98{col 46}{space 3}0.000{col 54}{space 4}-.0536649{col 67}{space 3}-.0182287
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .0104359{col 26}{space 2} .0477844{col 37}{space 1}    0.22{col 46}{space 3}0.827{col 54}{space 4}-.0832197{col 67}{space 3} .1040915
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}-.0663339{col 26}{space 2} .0164968{col 37}{space 1}   -4.02{col 46}{space 3}0.000{col 54}{space 4} -.098667{col 67}{space 3}-.0340008
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2}-.0271582{col 26}{space 2} .0324213{col 37}{space 1}   -0.84{col 46}{space 3}0.402{col 54}{space 4}-.0907028{col 67}{space 3} .0363865
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2}-.0033216{col 26}{space 2} .0078955{col 37}{space 1}   -0.42{col 46}{space 3}0.674{col 54}{space 4}-.0187964{col 67}{space 3} .0121532
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} 2.75e-06{col 26}{space 2} 1.61e-06{col 37}{space 1}    1.71{col 46}{space 3}0.088{col 54}{space 4}-4.10e-07{col 67}{space 3} 5.91e-06
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0300419{col 26}{space 2}  .009243{col 37}{space 1}    3.25{col 46}{space 3}0.001{col 54}{space 4} .0119259{col 67}{space 3} .0481578
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} .0043337{col 26}{space 2} .0080703{col 37}{space 1}    0.54{col 46}{space 3}0.591{col 54}{space 4}-.0114838{col 67}{space 3} .0201512
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.0257945{col 26}{space 2} .0258979{col 37}{space 1}   -1.00{col 46}{space 3}0.319{col 54}{space 4}-.0765535{col 67}{space 3} .0249645
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} .0071806{col 26}{space 2} .0078467{col 37}{space 1}    0.92{col 46}{space 3}0.360{col 54}{space 4}-.0081986{col 67}{space 3} .0225597
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} .1013304{col 26}{space 2} .0325662{col 37}{space 1}    3.11{col 46}{space 3}0.002{col 54}{space 4} .0375018{col 67}{space 3} .1651591
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .0567421{col 26}{space 2} .0361575{col 37}{space 1}    1.57{col 46}{space 3}0.117{col 54}{space 4}-.0141253{col 67}{space 3} .1276094
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .2060445{col 26}{space 2} .0132414{col 37}{space 1}   15.56{col 46}{space 3}0.000{col 54}{space 4} .1800919{col 67}{space 3} .2319971
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. IVdyadic COMOV_Long LUL $Xvar if $condition, iv(IG) groups(IGno_i1 IGno_i2)
+LHS: COMOV_Long
+RHS: LUL SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Covariates: SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Groups: IGno_i1 IGno_i2
+IV: IG
+Group i1: IGno_i1
+Group i2: IGno_i2
+{txt}(282,678 observations deleted)
+  {res}11,628
+Nvar 17
+N 11628
+  Beta:
+
+{txt}{hline}
+{res}timer report
+{txt}  1.       1.27 /        1 = {res:    1.269}
+{txt}{hline}
+  {res}Diagonal of V:
+        {txt}           1
+     {c TLC}{hline 16}{c TRC}
+   1 {c |}  {res} .0145599481{txt}  {c |}
+   2 {c |}  {res} .0007846931{txt}  {c |}
+   3 {c |}  {res} .0033749492{txt}  {c |}
+   4 {c |}  {res}-.0007403732{txt}  {c |}
+   5 {c |}  {res} .0013169463{txt}  {c |}
+   6 {c |}  {res} .0046518691{txt}  {c |}
+   7 {c |}  {res} .0006051753{txt}  {c |}
+   8 {c |}  {res} .0011064409{txt}  {c |}
+   9 {c |}  {res}  .000223585{txt}  {c |}
+  10 {c |}  {res} 1.26561e-11{txt}  {c |}
+  11 {c |}  {res} .0011556638{txt}  {c |}
+  12 {c |}  {res}   .00032382{txt}  {c |}
+  13 {c |}  {res} .0007472166{txt}  {c |}
+  14 {c |}  {res} .0001120001{txt}  {c |}
+  15 {c |}  {res} .0031060175{txt}  {c |}
+  16 {c |}  {res} .0037243695{txt}  {c |}
+  17 {c |}  {res} .0023028172{txt}  {c |}
+     {c BLC}{hline 16}{c BRC}
+  {res}eValues:
+       {txt}           1              2              3              4              5              6              7              8              9             10             11             12             13             14
+    {c TLC}{hline 211}
+  1 {c |}  {res} .0175110097      .00726239    .0048335896    .0031901069    .0018106369    .0016083523    .0009168145    .0006112438    .0003165864    .0002617465    .0001726633    .0001395772     .000043888    1.56955e-12
+{txt}    {c BLC}{hline 211}
+                 15             16             17
+     {hline 46}{c TRC}
+  1    {res}-.0000178958   -.0000246196   -.0012809517{txt}  {c |}
+     {hline 46}{c BRC}
+  {res}Adjustment factor i
+  .31
+  Standard errors:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.1206823423   .0282277826   .0581717884   .0029092915   .0364146162   .0684169411   .0248963567   .0334007141   .0152493311   3.62365e-06   .0340312352   .0180062796   .0279644597   .0109460443   .0557947741
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.0610446418   .0479903718{txt}  {c |}
+     {hline 29}{c BRC}
+  {res}p-values:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.6323927615   .2301972196    .278877831             0    .323567015   .8787657789    .007712552   .4161595873   .8275684969   .4477592979   .3773584721   .8098054937   .3563188401   .5118257729   .0693508583
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.3526209756   .0000175914{txt}  {c |}
+     {hline 29}{c BRC}
+F-stat for all: -2.6892655
+F-stat for first coefficient: .228829952
+  {res}1
+F-stat for IVed coefficients: .228829952
+{txt}
+{com}. local stderr_LUL = e(StdErr)[1,1]
+{txt}
+{com}. local depvar = e(depvar)
+{txt}
+{com}. sum `depvar' if e(sample)
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 2}COMOV_Long {c |}{res}     11,628    .2263502    .4184864          0          1
+{txt}
+{com}. local MeanDepVar = r(mean)
+{txt}
+{com}. local StDevDepVar = r(sd)
+{txt}
+{com}. outreg2 using "$path/Results/TableA16a.tex", tex append label addtext(IV, Yes, Controls, Yes, Dyadic Group Clustering, Yes) addstat(StdErr LUL, `stderr_LUL', \textit{c -(}Mean{c )-}(Dep. Var.), `MeanDepVar', \textit{c -(}Std.Dev.{c )-}(Dep. Var.), `StDevDepVar') ctitle(" ") nonotes dec(4) keep(LUL)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.txt", label"':seeout}
+
+{com}. 
+. * run specification (6)
+. ivreg2 ChangePP_Long (LUL=IG) $Xvar if $condition, noid
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   11628
+{txt}{col 55}F( 16, 11611) = {res}    7.42
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 28913.86997{txt}{col 55}Centered R2   = {res}  0.0089
+{txt}Total (uncentered) SS   = {res}       29028{txt}{col 55}Uncentered R2 = {res}  0.0128
+{txt}Residual SS             = {res} 28655.45443{txt}{col 55}Root MSE      = {res}    1.57
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}ChangePP_L~g{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-.5904866{col 26}{space 2} .6241441{col 37}{space 1}   -0.95{col 46}{space 3}0.344{col 54}{space 4}-1.813787{col 67}{space 3} .6328134
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}-.0259353{col 26}{space 2} .0411228{col 37}{space 1}   -0.63{col 46}{space 3}0.528{col 54}{space 4}-.1065345{col 67}{space 3} .0546638
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0402047{col 26}{space 2} .0437992{col 37}{space 1}   -0.92{col 46}{space 3}0.359{col 54}{space 4}-.1260495{col 67}{space 3} .0456401
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2} 1.112233{col 26}{space 2} .1627062{col 37}{space 1}    6.84{col 46}{space 3}0.000{col 54}{space 4} .7933348{col 67}{space 3} 1.431131
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0857833{col 26}{space 2} .0341142{col 37}{space 1}    2.51{col 46}{space 3}0.012{col 54}{space 4} .0189207{col 67}{space 3} .1526458
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .7569278{col 26}{space 2} .1803232{col 37}{space 1}    4.20{col 46}{space 3}0.000{col 54}{space 4} .4035007{col 67}{space 3} 1.110355
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}  .005586{col 26}{space 2} .0622537{col 37}{space 1}    0.09{col 46}{space 3}0.929{col 54}{space 4}-.1164291{col 67}{space 3} .1276011
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2}-.0549316{col 26}{space 2}  .122348{col 37}{space 1}   -0.45{col 46}{space 3}0.653{col 54}{space 4}-.2947292{col 67}{space 3}  .184866
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0340137{col 26}{space 2}  .029795{col 37}{space 1}    1.14{col 46}{space 3}0.254{col 54}{space 4}-.0243834{col 67}{space 3} .0924109
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-1.95e-06{col 26}{space 2} 6.09e-06{col 37}{space 1}   -0.32{col 46}{space 3}0.748{col 54}{space 4}-.0000139{col 67}{space 3} 9.97e-06
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} -.049909{col 26}{space 2} .0348802{col 37}{space 1}   -1.43{col 46}{space 3}0.152{col 54}{space 4}-.1182729{col 67}{space 3} .0184549
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.0186202{col 26}{space 2} .0304548{col 37}{space 1}   -0.61{col 46}{space 3}0.541{col 54}{space 4}-.0783106{col 67}{space 3} .0410702
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.2673458{col 26}{space 2} .0977307{col 37}{space 1}   -2.74{col 46}{space 3}0.006{col 54}{space 4}-.4588943{col 67}{space 3}-.0757972
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0648489{col 26}{space 2} .0296108{col 37}{space 1}   -2.19{col 46}{space 3}0.029{col 54}{space 4}-.1228851{col 67}{space 3}-.0068127
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} .2229693{col 26}{space 2} .1228948{col 37}{space 1}    1.81{col 46}{space 3}0.070{col 54}{space 4}-.0179001{col 67}{space 3} .4638386
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .0362697{col 26}{space 2}  .136447{col 37}{space 1}    0.27{col 46}{space 3}0.790{col 54}{space 4}-.2311615{col 67}{space 3} .3037009
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.1140093{col 26}{space 2} .0499687{col 37}{space 1}   -2.28{col 46}{space 3}0.023{col 54}{space 4}-.2119462{col 67}{space 3}-.0160724
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}IG
+{hline 78}
+
+{com}. IVdyadic ChangePP_Long LUL $Xvar if $condition, iv(IG) groups(IGno_i1 IGno_i2)
+LHS: ChangePP_Long
+RHS: LUL SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Covariates: SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Groups: IGno_i1 IGno_i2
+IV: IG
+Group i1: IGno_i1
+Group i2: IGno_i2
+{txt}(282,678 observations deleted)
+  {res}11,628
+Nvar 17
+N 11628
+  Beta:
+
+{txt}{hline}
+{res}timer report
+{txt}  1.       1.44 /        1 = {res:    1.435}
+{txt}{hline}
+  {res}Diagonal of V:
+        {txt}          1
+     {c TLC}{hline 15}{c TRC}
+   1 {c |}  {res}.2016653167{txt}  {c |}
+   2 {c |}  {res}.0144482916{txt}  {c |}
+   3 {c |}  {res}.0533375789{txt}  {c |}
+   4 {c |}  {res}.0197769473{txt}  {c |}
+   5 {c |}  {res}.0306476852{txt}  {c |}
+   6 {c |}  {res}.1535623943{txt}  {c |}
+   7 {c |}  {res}.0090827625{txt}  {c |}
+   8 {c |}  {res}.0193710333{txt}  {c |}
+   9 {c |}  {res}.0033292687{txt}  {c |}
+  10 {c |}  {res}3.26908e-10{txt}  {c |}
+  11 {c |}  {res}.0103238177{txt}  {c |}
+  12 {c |}  {res}.0048923945{txt}  {c |}
+  13 {c |}  {res}.0190809288{txt}  {c |}
+  14 {c |}  {res}.0016872773{txt}  {c |}
+  15 {c |}  {res}.0366179934{txt}  {c |}
+  16 {c |}  {res}.0352486817{txt}  {c |}
+  17 {c |}  {res}.0539604528{txt}  {c |}
+     {c BLC}{hline 15}{c BRC}
+  {res}eValues:
+       {txt}           1              2              3              4              5              6              7              8              9             10             11             12             13             14
+    {c TLC}{hline 211}
+  1 {c |}  {res} .2778702389    .1285651502    .0915652914     .069775197    .0245194404    .0203183539    .0162827797     .016031007    .0103058739    .0065544456    .0026781112    .0022051627    .0016751819     .000902677
+{txt}    {c BLC}{hline 211}
+                 15             16             17
+     {hline 46}{c TRC}
+  1    {res} .0001359074    1.64227e-10   -.0023519937{txt}  {c |}
+     {hline 46}{c BRC}
+  {res}Adjustment factor i
+  1
+  Standard errors:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.4490716165   .1202010466   .2309492995   .1406305347   .1750648027   .3918703794   .0953035282   .1391798597   .0576998154   .0000180806   .1016061894   .0699456536   .1381337352   .0410764807   .1913582854
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.1877463228   .2322938931{txt}  {c |}
+     {hline 29}{c BRC}
+  {res}p-values:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res} .188541788   .8291700027   .8617991068   2.66454e-15   .6241278398   .0534117545   .9532605954   .6930785122   .5555296224      .9139028   .6232846399   .7900774483   .0529396887   .1143966739   .2439409902
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.8468142883   .6235694949{txt}  {c |}
+     {hline 29}{c BRC}
+F-stat for all: .216095141
+F-stat for first coefficient: 1.7289755
+  {res}1
+F-stat for IVed coefficients: 1.7289755
+{txt}
+{com}. local stderr_LUL = e(StdErr)[1,1]
+{txt}
+{com}. local depvar = e(depvar)
+{txt}
+{com}. sum `depvar' if e(sample)
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+ChangePP_L~g {c |}{res}     11,628   -.0990712    1.576955         -5          6
+{txt}
+{com}. local MeanDepVar = r(mean)
+{txt}
+{com}. local StDevDepVar = r(sd)
+{txt}
+{com}. outreg2 using "$path/Results/TableA16a.tex", tex append label addtext(IV, Yes, Controls, Yes, Dyadic Group Clustering, Yes) addstat(StdErr LUL, `stderr_LUL', \textit{c -(}Mean{c )-}(Dep. Var.), `MeanDepVar', \textit{c -(}Std.Dev.{c )-}(Dep. Var.), `StDevDepVar') ctitle(" ") nonotes dec(4) keep(LUL)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.txt", label"':seeout}
+
+{com}. 
+. // First stage - same for all specifications
+. ivreg2 LUL IG $Xvar if $condition & ChangePP_Long!=., noid
+{res}
+{txt}OLS estimation
+{hline 14}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   11628
+{txt}{col 55}F( 16, 11611) = {res}   76.14
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 207.1712246{txt}{col 55}Centered R2   = {res}  0.0950
+{txt}Total (uncentered) SS   = {res}         211{txt}{col 55}Uncentered R2 = {res}  0.1114
+{txt}Residual SS             = {res} 187.4984373{txt}{col 55}Root MSE      = {res}    .127
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         LUL{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}IG {c |}{col 14}{res}{space 2} .1690276{col 26}{space 2} .0085337{col 37}{space 1}   19.81{col 46}{space 3}0.000{col 54}{space 4} .1523019{col 67}{space 3} .1857534
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0120534{col 26}{space 2} .0032708{col 37}{space 1}    3.69{col 46}{space 3}0.000{col 54}{space 4} .0056427{col 67}{space 3} .0184641
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0073737{col 26}{space 2} .0035233{col 37}{space 1}   -2.09{col 46}{space 3}0.036{col 54}{space 4}-.0142791{col 67}{space 3}-.0004682
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.0008099{col 26}{space 2} .0131616{col 37}{space 1}   -0.06{col 46}{space 3}0.951{col 54}{space 4}-.0266062{col 67}{space 3} .0249863
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0034836{col 26}{space 2} .0027557{col 37}{space 1}    1.26{col 46}{space 3}0.206{col 54}{space 4}-.0019176{col 67}{space 3} .0088847
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .0071502{col 26}{space 2} .0145773{col 37}{space 1}    0.49{col 46}{space 3}0.624{col 54}{space 4}-.0214207{col 67}{space 3} .0357212
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0146793{col 26}{space 2} .0049716{col 37}{space 1}    2.95{col 46}{space 3}0.003{col 54}{space 4} .0049352{col 67}{space 3} .0244234
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0122084{col 26}{space 2} .0098737{col 37}{space 1}    1.24{col 46}{space 3}0.216{col 54}{space 4}-.0071437{col 67}{space 3} .0315604
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0030944{col 26}{space 2} .0024069{col 37}{space 1}    1.29{col 46}{space 3}0.199{col 54}{space 4}-.0016231{col 67}{space 3} .0078118
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-8.40e-07{col 26}{space 2} 4.91e-07{col 37}{space 1}   -1.71{col 46}{space 3}0.087{col 54}{space 4}-1.80e-06{col 67}{space 3} 1.21e-07
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0010347{col 26}{space 2}  .002821{col 37}{space 1}    0.37{col 46}{space 3}0.714{col 54}{space 4}-.0044943{col 67}{space 3} .0065638
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.0016137{col 26}{space 2} .0024625{col 37}{space 1}   -0.66{col 46}{space 3}0.512{col 54}{space 4}-.0064402{col 67}{space 3} .0032127
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}  .015325{col 26}{space 2} .0078593{col 37}{space 1}    1.95{col 46}{space 3}0.051{col 54}{space 4}-.0000789{col 67}{space 3}  .030729
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}  .001473{col 26}{space 2} .0023939{col 37}{space 1}    0.62{col 46}{space 3}0.538{col 54}{space 4} -.003219{col 67}{space 3}  .006165
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0140716{col 26}{space 2} .0099101{col 37}{space 1}   -1.42{col 46}{space 3}0.156{col 54}{space 4} -.033495{col 67}{space 3} .0053519
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .1766576{col 26}{space 2} .0064308{col 37}{space 1}   27.47{col 46}{space 3}0.000{col 54}{space 4} .1640534{col 67}{space 3} .1892618
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0023586{col 26}{space 2} .0040348{col 37}{space 1}    0.58{col 46}{space 3}0.559{col 54}{space 4}-.0055495{col 67}{space 3} .0102668
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+Included instruments:{col 23}IG SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+{hline 78}
+
+{com}. IVdyadic LUL IG $Xvar if $condition & ChangePP_Long!=., iv(IG) groups(IGno_i1 IGno_i2)
+LHS: LUL
+RHS: IG SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Covariates: SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Groups: IGno_i1 IGno_i2
+IV: IG
+Group i1: IGno_i1
+Group i2: IGno_i2
+{txt}(282,678 observations deleted)
+  {res}11,628
+Nvar 17
+N 11628
+  Beta:
+
+{txt}{hline}
+{res}timer report
+{txt}  1.       1.38 /        1 = {res:    1.381}
+{txt}{hline}
+  {res}Diagonal of V:
+        {txt}          1
+     {c TLC}{hline 15}{c TRC}
+   1 {c |}  {res}.0008278264{txt}  {c |}
+   2 {c |}  {res}9.40557e-06{txt}  {c |}
+   3 {c |}  {res}.0000196844{txt}  {c |}
+   4 {c |}  {res}4.80212e-06{txt}  {c |}
+   5 {c |}  {res}5.58929e-06{txt}  {c |}
+   6 {c |}  {res}.0002482415{txt}  {c |}
+   7 {c |}  {res}.0000354261{txt}  {c |}
+   8 {c |}  {res} .000165805{txt}  {c |}
+   9 {c |}  {res}9.79364e-06{txt}  {c |}
+  10 {c |}  {res}2.47220e-13{txt}  {c |}
+  11 {c |}  {res}.0000111075{txt}  {c |}
+  12 {c |}  {res}3.20487e-06{txt}  {c |}
+  13 {c |}  {res}.0001002597{txt}  {c |}
+  14 {c |}  {res}8.75323e-06{txt}  {c |}
+  15 {c |}  {res}.0001794122{txt}  {c |}
+  16 {c |}  {res}.0013212697{txt}  {c |}
+  17 {c |}  {res}.0000328722{txt}  {c |}
+     {c BLC}{hline 15}{c BRC}
+  {res}eValues:
+       {txt}           1              2              3              4              5              6              7              8              9             10             11             12             13             14
+    {c TLC}{hline 211}
+  1 {c |}  {res}  .001361372    .0008728123    .0003833756    .0001929718    .0000823365    .0000340346    .0000316656    .0000173776    7.71500e-06    4.57365e-06    1.51282e-06    8.12945e-07    4.13521e-07   -4.88865e-15
+{txt}    {c BLC}{hline 211}
+                 15             16             17
+     {hline 46}{c TRC}
+  1    {res}-8.55377e-07   -2.85333e-06   -3.81164e-06{txt}  {c |}
+     {hline 46}{c BRC}
+  {res}Adjustment factor i
+  1
+  Standard errors:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.0287719724   .0030668503    .004436716   .0021913745   .0023641679   .0157556815   .0059519812    .012876531   .0031294794   4.97213e-07   .0033327885   .0017902154   .0100129742   .0029585866   .0133944852
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.0363492742   .0057334326{txt}  {c |}
+     {hline 29}{c BRC}
+  {res}p-values:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}4.23528e-09   .0000848684   .0965189695   .7116777409    .140619968   .6499586504   .0136520279   .3430725248   .3227732034   .0910775544   .7561998511   .3673641281   .1258887183   .6185674988   .2934656383
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}1.17383e-06   .6807902087{txt}  {c |}
+     {hline 29}{c BRC}
+F-stat for all: 7.24731446
+F-stat for first coefficient: 34.5124776
+  {res}1
+F-stat for IVed coefficients: 34.5124776
+{txt}
+{com}. local stderr_IV = e(StdErr)[1,1]
+{txt}
+{com}. local F_KP = e(F_1)
+{txt}
+{com}. local depvar = e(depvar)
+{txt}
+{com}. sum `depvar' if e(sample)
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}LUL {c |}{res}     11,628    .0181459    .1334845          0          1
+{txt}
+{com}. local MeanDepVar = r(mean)
+{txt}
+{com}. local StDevDepVar = r(sd)
+{txt}
+{com}. outreg2 using "$path/Results/TableA16a.tex", tex append label addtext(IV, No, Controls, Yes, Dyadic Group Clustering, Yes) addstat(StdErr IV, `stderr_IV', Kleibergen-Paap Weak IV F-stat, `F_KP', \textit{c -(}Mean{c )-}(Dep. Var.), `MeanDepVar', \textit{c -(}Std.Dev.{c )-}(Dep. Var.), `StDevDepVar') ctitle(" ") nonotes dec(4) keep(IG)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16a.txt", label"':seeout}
+
+{com}. 
+. 
+. // IV
+. *
+. ivreg2 CONV2_Long (LUL=SameAlphaHypGroupIV) $Xvar if $condition, noid
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   11628
+{txt}{col 55}F( 16, 11611) = {res}   21.19
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 2820.138545{txt}{col 55}Centered R2   = {res}  0.0257
+{txt}Total (uncentered) SS   = {res}        4809{txt}{col 55}Uncentered R2 = {res}  0.4286
+{txt}Residual SS             = {res} 2747.726635{txt}{col 55}Root MSE      = {res}   .4861
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}  CONV2_Long{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2} .2324545{col 26}{space 2} .2802316{col 37}{space 1}    0.83{col 46}{space 3}0.407{col 54}{space 4}-.3167895{col 67}{space 3} .7816984
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}-.0431026{col 26}{space 2} .0129646{col 37}{space 1}   -3.32{col 46}{space 3}0.001{col 54}{space 4}-.0685127{col 67}{space 3}-.0176925
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2} .0987873{col 26}{space 2} .0136453{col 37}{space 1}    7.24{col 46}{space 3}0.000{col 54}{space 4}  .072043{col 67}{space 3} .1255315
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.4478873{col 26}{space 2} .0503841{col 37}{space 1}   -8.89{col 46}{space 3}0.000{col 54}{space 4}-.5466384{col 67}{space 3}-.3491362
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0682395{col 26}{space 2} .0105802{col 37}{space 1}    6.45{col 46}{space 3}0.000{col 54}{space 4} .0475027{col 67}{space 3} .0889763
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2}-.2608452{col 26}{space 2}  .055882{col 37}{space 1}   -4.67{col 46}{space 3}0.000{col 54}{space 4}-.3703719{col 67}{space 3}-.1513185
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0562774{col 26}{space 2} .0195461{col 37}{space 1}    2.88{col 46}{space 3}0.004{col 54}{space 4} .0179676{col 67}{space 3} .0945871
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0705766{col 26}{space 2} .0379839{col 37}{space 1}    1.86{col 46}{space 3}0.063{col 54}{space 4}-.0038705{col 67}{space 3} .1450238
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2}-.0108777{col 26}{space 2} .0092406{col 37}{space 1}   -1.18{col 46}{space 3}0.239{col 54}{space 4}-.0289889{col 67}{space 3} .0072335
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-3.99e-06{col 26}{space 2} 1.89e-06{col 37}{space 1}   -2.11{col 46}{space 3}0.035{col 54}{space 4}-7.69e-06{col 67}{space 3}-2.77e-07
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2}-.0184253{col 26}{space 2} .0108028{col 37}{space 1}   -1.71{col 46}{space 3}0.088{col 54}{space 4}-.0395985{col 67}{space 3} .0027479
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} .0209762{col 26}{space 2} .0094349{col 37}{space 1}    2.22{col 46}{space 3}0.026{col 54}{space 4} .0024841{col 67}{space 3} .0394682
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .0905639{col 26}{space 2} .0304585{col 37}{space 1}    2.97{col 46}{space 3}0.003{col 54}{space 4} .0308664{col 67}{space 3} .1502615
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} .0060414{col 26}{space 2} .0091747{col 37}{space 1}    0.66{col 46}{space 3}0.510{col 54}{space 4}-.0119407{col 67}{space 3} .0240235
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.1918492{col 26}{space 2} .0381864{col 37}{space 1}   -5.02{col 46}{space 3}0.000{col 54}{space 4}-.2666932{col 67}{space 3}-.1170053
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2}-.0631674{col 26}{space 2} .0555437{col 37}{space 1}   -1.14{col 46}{space 3}0.255{col 54}{space 4} -.172031{col 67}{space 3} .0456962
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .4010844{col 26}{space 2} .0155205{col 37}{space 1}   25.84{col 46}{space 3}0.000{col 54}{space 4} .3706648{col 67}{space 3} .4315041
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}SameAlphaHypGroupIV
+{hline 78}
+
+{com}. IVdyadic CONV2_Long LUL $Xvar if $condition, iv(SameAlphaHypGroupIV) groups(IGno_i1 IGno_i2)
+LHS: CONV2_Long
+RHS: LUL SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Covariates: SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Groups: IGno_i1 IGno_i2
+IV: SameAlphaHypGroupIV
+Group i1: IGno_i1
+Group i2: IGno_i2
+{txt}(282,678 observations deleted)
+  {res}11,628
+Nvar 17
+N 11628
+  Beta:
+
+{txt}{hline}
+{res}timer report
+{txt}  1.       1.37 /        1 = {res:    1.372}
+{txt}{hline}
+  {res}Diagonal of V:
+        {txt}          1
+     {c TLC}{hline 15}{c TRC}
+   1 {c |}  {res}.0842284404{txt}  {c |}
+   2 {c |}  {res}.0017065847{txt}  {c |}
+   3 {c |}  {res}.0069012039{txt}  {c |}
+   4 {c |}  {res}.0022715987{txt}  {c |}
+   5 {c |}  {res} .003777259{txt}  {c |}
+   6 {c |}  {res}.0090753643{txt}  {c |}
+   7 {c |}  {res} .000942458{txt}  {c |}
+   8 {c |}  {res}.0021615706{txt}  {c |}
+   9 {c |}  {res}.0003642186{txt}  {c |}
+  10 {c |}  {res}4.18381e-11{txt}  {c |}
+  11 {c |}  {res} .001291698{txt}  {c |}
+  12 {c |}  {res}.0003652904{txt}  {c |}
+  13 {c |}  {res}.0011815906{txt}  {c |}
+  14 {c |}  {res} .000229878{txt}  {c |}
+  15 {c |}  {res}.0044925621{txt}  {c |}
+  16 {c |}  {res}.0056750461{txt}  {c |}
+  17 {c |}  {res}.0047835793{txt}  {c |}
+     {c BLC}{hline 15}{c BRC}
+  {res}eValues:
+       {txt}           1              2              3              4              5              6              7              8              9             10             11             12             13             14
+    {c TLC}{hline 211}
+  1 {c |}  {res}    .0905417     .012138869    .0090503778    .0072084508    .0041946912    .0025594916    .0014564876    .0009553616    .0006205859    .0004032894    .0002383696    .0001154489     .000080715   -2.98655e-12
+{txt}    {c BLC}{hline 211}
+                 15             16             17
+     {hline 46}{c TRC}
+  1    {res}-.0000161998   -.0000231522   -.0000761435{txt}  {c |}
+     {hline 46}{c BRC}
+  {res}Adjustment factor i
+  1
+  Standard errors:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.2902213645   .0413108301   .0830734849    .047661291   .0614594097   .0952647066   .0306994792   .0464926944   .0190845116   6.46824e-06   .0359402005   .0191125708    .034374273   .0151617286   .0670265773
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.0753329017   .0691634247{txt}  {c |}
+     {hline 29}{c BRC}
+  {res}p-values:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.4231572942    .296775505   .2343786472             0   .2668620787   .0061793446   .0667773271   .1290104881    .568693176   .5378278646   .6081852879   .2724200392   .0084225994   .6902867545   .0042059758
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.4017444777   6.66785e-09{txt}  {c |}
+     {hline 29}{c BRC}
+F-stat for all: -13.1667512
+F-stat for first coefficient: .641530028
+  {res}1
+F-stat for IVed coefficients: .641530028
+{txt}
+{com}. local stderr_LUL = e(StdErr)[1,1]
+{txt}
+{com}. local depvar = e(depvar)
+{txt}
+{com}. sum `depvar' if e(sample)
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 2}CONV2_Long {c |}{res}     11,628    .4135707    .4924945          0          1
+{txt}
+{com}. local MeanDepVar = r(mean)
+{txt}
+{com}. local StDevDepVar = r(sd)
+{txt}
+{com}. outreg2 using "$path/Results/TableA16_iv.tex", tex replace label addtext(IV, Same Hyp. Group, Controls, Yes, Dyadic Group Clustering, Yes) addstat(StdErr LUL, `stderr_LUL', \textit{c -(}Mean{c )-}(Dep. Var.), `MeanDepVar', \textit{c -(}Std.Dev.{c )-}(Dep. Var.), `StDevDepVar') ctitle(" ") nonotes dec(4) keep(LUL)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.txt", label"':seeout}
+
+{com}. 
+. *
+. ivreg2 CONVS2_Long (LUL=SameAlphaHypGroupIV) $Xvar if $condition, noid
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   11628
+{txt}{col 55}F( 16, 11611) = {res}    4.46
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 889.9163227{txt}{col 55}Centered R2   = {res}  0.0051
+{txt}Total (uncentered) SS   = {res}         971{txt}{col 55}Uncentered R2 = {res}  0.0881
+{txt}Residual SS             = {res} 885.4118728{txt}{col 55}Root MSE      = {res}   .2759
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} CONVS2_Long{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2} .0898443{col 26}{space 2} .1590754{col 37}{space 1}    0.56{col 46}{space 3}0.572{col 54}{space 4}-.2219378{col 67}{space 3} .4016264
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0183484{col 26}{space 2} .0073594{col 37}{space 1}    2.49{col 46}{space 3}0.013{col 54}{space 4} .0039242{col 67}{space 3} .0327726
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0285724{col 26}{space 2} .0077458{col 37}{space 1}   -3.69{col 46}{space 3}0.000{col 54}{space 4} -.043754{col 67}{space 3}-.0133908
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.0872303{col 26}{space 2} .0286009{col 37}{space 1}   -3.05{col 46}{space 3}0.002{col 54}{space 4} -.143287{col 67}{space 3}-.0311736
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2}-.0087636{col 26}{space 2} .0060059{col 37}{space 1}   -1.46{col 46}{space 3}0.145{col 54}{space 4} -.020535{col 67}{space 3} .0030078
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2}-.0727933{col 26}{space 2} .0317218{col 37}{space 1}   -2.29{col 46}{space 3}0.022{col 54}{space 4}-.1349669{col 67}{space 3}-.0106197
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}-.0131848{col 26}{space 2} .0110955{col 37}{space 1}   -1.19{col 46}{space 3}0.235{col 54}{space 4}-.0349315{col 67}{space 3}  .008562
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0109592{col 26}{space 2} .0215618{col 37}{space 1}    0.51{col 46}{space 3}0.611{col 54}{space 4}-.0313013{col 67}{space 3} .0532196
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2}-.0135063{col 26}{space 2} .0052455{col 37}{space 1}   -2.57{col 46}{space 3}0.010{col 54}{space 4}-.0237873{col 67}{space 3}-.0032254
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} 3.40e-07{col 26}{space 2} 1.07e-06{col 37}{space 1}    0.32{col 46}{space 3}0.752{col 54}{space 4}-1.77e-06{col 67}{space 3} 2.44e-06
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0100727{col 26}{space 2} .0061323{col 37}{space 1}    1.64{col 46}{space 3}0.100{col 54}{space 4}-.0019464{col 67}{space 3} .0220918
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.0011211{col 26}{space 2} .0053558{col 37}{space 1}   -0.21{col 46}{space 3}0.834{col 54}{space 4}-.0116183{col 67}{space 3}  .009376
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} .0339953{col 26}{space 2}   .01729{col 37}{space 1}    1.97{col 46}{space 3}0.049{col 54}{space 4} .0001076{col 67}{space 3}  .067883
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} .0182132{col 26}{space 2} .0052081{col 37}{space 1}    3.50{col 46}{space 3}0.000{col 54}{space 4} .0080056{col 67}{space 3} .0284209
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0272163{col 26}{space 2} .0216768{col 37}{space 1}   -1.26{col 46}{space 3}0.209{col 54}{space 4} -.069702{col 67}{space 3} .0152694
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .0038722{col 26}{space 2} .0315297{col 37}{space 1}    0.12{col 46}{space 3}0.902{col 54}{space 4} -.057925{col 67}{space 3} .0656694
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  .083406{col 26}{space 2} .0088103{col 37}{space 1}    9.47{col 46}{space 3}0.000{col 54}{space 4}  .066138{col 67}{space 3} .1006739
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}SameAlphaHypGroupIV
+{hline 78}
+
+{com}. IVdyadic CONVS2_Long LUL $Xvar if $condition, iv(SameAlphaHypGroupIV) groups(IGno_i1 IGno_i2)
+LHS: CONVS2_Long
+RHS: LUL SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Covariates: SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Groups: IGno_i1 IGno_i2
+IV: SameAlphaHypGroupIV
+Group i1: IGno_i1
+Group i2: IGno_i2
+{txt}(282,678 observations deleted)
+  {res}11,628
+Nvar 17
+N 11628
+  Beta:
+
+{txt}{hline}
+{res}timer report
+{txt}  1.       1.35 /        1 = {res:    1.346}
+{txt}{hline}
+  {res}Diagonal of V:
+        {txt}          1
+     {c TLC}{hline 15}{c TRC}
+   1 {c |}  {res}.0222678228{txt}  {c |}
+   2 {c |}  {res}.0004056249{txt}  {c |}
+   3 {c |}  {res}.0009322951{txt}  {c |}
+   4 {c |}  {res} .000482645{txt}  {c |}
+   5 {c |}  {res}  .00053115{txt}  {c |}
+   6 {c |}  {res} .000364224{txt}  {c |}
+   7 {c |}  {res}.0002398793{txt}  {c |}
+   8 {c |}  {res}.0007238235{txt}  {c |}
+   9 {c |}  {res}.0000703956{txt}  {c |}
+  10 {c |}  {res}5.20530e-12{txt}  {c |}
+  11 {c |}  {res}.0002978091{txt}  {c |}
+  12 {c |}  {res}.0001177599{txt}  {c |}
+  13 {c |}  {res}.0005157595{txt}  {c |}
+  14 {c |}  {res}.0001471535{txt}  {c |}
+  15 {c |}  {res}.0014646558{txt}  {c |}
+  16 {c |}  {res}.0013907278{txt}  {c |}
+  17 {c |}  {res} .000840881{txt}  {c |}
+     {c BLC}{hline 15}{c BRC}
+  {res}eValues:
+       {txt}           1              2              3              4              5              6              7              8              9             10             11             12             13             14
+    {c TLC}{hline 211}
+  1 {c |}  {res} .0233271624    .0027246537    .0013124667    .0010857957    .0007417466    .0005210109    .0003789972    .0002634163    .0002317586    .0001292426    .0000539195    .0000375307    .0000120136    1.51175e-06
+{txt}    {c BLC}{hline 211}
+                 15             16             17
+     {hline 46}{c TRC}
+  1    {res}-2.84182e-14   -6.04464e-06    -.000022575{txt}  {c |}
+     {hline 46}{c BRC}
+  {res}Adjustment factor i
+  1
+  Standard errors:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.1492240691   .0201401305   .0305335071   .0219691831   .0230466907   .0190846538    .015488036    .026903969   .0083902099   2.28151e-06    .017257146   .0108517217   .0227103396   .0121306834   .0382708217
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.0372924636   .0289979476{txt}  {c |}
+     {hline 29}{c BRC}
+  {res}p-values:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.5471231684   .3622754966   .3493903507   .0000716994     .70375722   .0001366074   .3946098507   .6837550253   .1074470224   .8816464665   .5594346109   .9177132232   .1344167948   .1332474912   .4769907865
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.9173013809   .0040240397{txt}  {c |}
+     {hline 29}{c BRC}
+F-stat for all: 2.2157274
+F-stat for first coefficient: .362496199
+  {res}1
+F-stat for IVed coefficients: .362496199
+{txt}
+{com}. local stderr_LUL = e(StdErr)[1,1]
+{txt}
+{com}. local depvar = e(depvar)
+{txt}
+{com}. sum `depvar' if e(sample)
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 1}CONVS2_Long {c |}{res}     11,628    .0835053    .2766564          0          1
+{txt}
+{com}. local MeanDepVar = r(mean)
+{txt}
+{com}. local StDevDepVar = r(sd)
+{txt}
+{com}. outreg2 using "$path/Results/TableA16_iv.tex", tex append label addtext(IV, Same Hyp. Group, Controls, Yes, Dyadic Group Clustering, Yes) addstat(StdErr LUL, `stderr_LUL', \textit{c -(}Mean{c )-}(Dep. Var.), `MeanDepVar', \textit{c -(}Std.Dev.{c )-}(Dep. Var.), `StDevDepVar') ctitle(" ") nonotes dec(4) keep(LUL)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.txt", label"':seeout}
+
+{com}. 
+. *
+. ivreg2 DIVW_Long (LUL=SameAlphaHypGroupIV) $Xvar if $condition, noid
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   11628
+{txt}{col 55}F( 16, 11611) = {res}    8.84
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 2701.451668{txt}{col 55}Centered R2   = {res}  0.0111
+{txt}Total (uncentered) SS   = {res}        4268{txt}{col 55}Uncentered R2 = {res}  0.3741
+{txt}Residual SS             = {res} 2671.471742{txt}{col 55}Root MSE      = {res}   .4793
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   DIVW_Long{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-.1892057{col 26}{space 2} .2763158{col 37}{space 1}   -0.68{col 46}{space 3}0.494{col 54}{space 4}-.7307747{col 67}{space 3} .3523633
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}-.0413734{col 26}{space 2} .0127834{col 37}{space 1}   -3.24{col 46}{space 3}0.001{col 54}{space 4}-.0664284{col 67}{space 3}-.0163183
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2} .0675032{col 26}{space 2} .0134546{col 37}{space 1}    5.02{col 46}{space 3}0.000{col 54}{space 4} .0411326{col 67}{space 3} .0938737
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2} -.240954{col 26}{space 2} .0496801{col 37}{space 1}   -4.85{col 46}{space 3}0.000{col 54}{space 4}-.3383252{col 67}{space 3}-.1435828
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0855937{col 26}{space 2} .0104323{col 37}{space 1}    8.20{col 46}{space 3}0.000{col 54}{space 4} .0651466{col 67}{space 3} .1060407
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .0223828{col 26}{space 2} .0551011{col 37}{space 1}    0.41{col 46}{space 3}0.685{col 54}{space 4}-.0856134{col 67}{space 3}  .130379
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0403065{col 26}{space 2}  .019273{col 37}{space 1}    2.09{col 46}{space 3}0.036{col 54}{space 4} .0025321{col 67}{space 3} .0780809
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} .0596756{col 26}{space 2} .0374532{col 37}{space 1}    1.59{col 46}{space 3}0.111{col 54}{space 4}-.0137312{col 67}{space 3} .1330825
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0131412{col 26}{space 2} .0091114{col 37}{space 1}    1.44{col 46}{space 3}0.149{col 54}{space 4}-.0047169{col 67}{space 3} .0309993
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-6.34e-07{col 26}{space 2} 1.87e-06{col 37}{space 1}   -0.34{col 46}{space 3}0.734{col 54}{space 4}-4.29e-06{col 67}{space 3} 3.02e-06
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2}-.0378902{col 26}{space 2} .0106519{col 37}{space 1}   -3.56{col 46}{space 3}0.000{col 54}{space 4}-.0587675{col 67}{space 3}-.0170129
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} -.008034{col 26}{space 2}  .009303{col 37}{space 1}   -0.86{col 46}{space 3}0.388{col 54}{space 4}-.0262676{col 67}{space 3} .0101997
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2} -.068399{col 26}{space 2} .0300329{col 37}{space 1}   -2.28{col 46}{space 3}0.023{col 54}{space 4}-.1272624{col 67}{space 3}-.0095357
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} -.020336{col 26}{space 2} .0090465{col 37}{space 1}   -2.25{col 46}{space 3}0.025{col 54}{space 4}-.0380668{col 67}{space 3}-.0026051
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2}-.0674479{col 26}{space 2} .0376528{col 37}{space 1}   -1.79{col 46}{space 3}0.073{col 54}{space 4} -.141246{col 67}{space 3} .0063502
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2}  -.03319{col 26}{space 2} .0547675{col 37}{space 1}   -0.61{col 46}{space 3}0.545{col 54}{space 4}-.1405324{col 67}{space 3} .0741524
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .3446582{col 26}{space 2} .0153036{col 37}{space 1}   22.52{col 46}{space 3}0.000{col 54}{space 4} .3146636{col 67}{space 3} .3746528
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}SameAlphaHypGroupIV
+{hline 78}
+
+{com}. IVdyadic DIVW_Long LUL $Xvar if $condition, iv(SameAlphaHypGroupIV) groups(IGno_i1 IGno_i2)
+LHS: DIVW_Long
+RHS: LUL SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Covariates: SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Groups: IGno_i1 IGno_i2
+IV: SameAlphaHypGroupIV
+Group i1: IGno_i1
+Group i2: IGno_i2
+{txt}(282,678 observations deleted)
+  {res}11,628
+Nvar 17
+N 11628
+  Beta:
+
+{txt}{hline}
+{res}timer report
+{txt}  1.       1.53 /        1 = {res:    1.535}
+{txt}{hline}
+  {res}Diagonal of V:
+        {txt}          1
+     {c TLC}{hline 15}{c TRC}
+   1 {c |}  {res}.0445640404{txt}  {c |}
+   2 {c |}  {res}.0007545963{txt}  {c |}
+   3 {c |}  {res}.0047097286{txt}  {c |}
+   4 {c |}  {res}.0019172275{txt}  {c |}
+   5 {c |}  {res}.0025607656{txt}  {c |}
+   6 {c |}  {res}.0100525041{txt}  {c |}
+   7 {c |}  {res}.0018149635{txt}  {c |}
+   8 {c |}  {res}.0038918452{txt}  {c |}
+   9 {c |}  {res} .000288202{txt}  {c |}
+  10 {c |}  {res}4.12782e-11{txt}  {c |}
+  11 {c |}  {res} .001519368{txt}  {c |}
+  12 {c |}  {res}.0006705401{txt}  {c |}
+  13 {c |}  {res}.0010312278{txt}  {c |}
+  14 {c |}  {res} .000159104{txt}  {c |}
+  15 {c |}  {res}.0089625744{txt}  {c |}
+  16 {c |}  {res}.0023238795{txt}  {c |}
+  17 {c |}  {res} .005563356{txt}  {c |}
+     {c BLC}{hline 15}{c BRC}
+  {res}eValues:
+       {txt}           1              2              3              4              5              6              7              8              9             10             11             12             13             14
+    {c TLC}{hline 211}
+  1 {c |}  {res} .0475649956    .0141402465    .0114611029     .005808906    .0052570069    .0024574714    .0017236983    .0012835177    .0008571498    .0005604332    .0002248028    .0001384086    .0001074871    .0000120954
+{txt}    {c BLC}{hline 211}
+                 15             16             17
+     {hline 46}{c TRC}
+  1    {res} 2.44144e-11   -.0000511351   -.0007622642{txt}  {c |}
+     {hline 46}{c BRC}
+  {res}Adjustment factor i
+  1
+  Standard errors:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.2111019667   .0274699163   .0686274623   .0437861569   .0506040076   .1002621767   .0426023879    .062384655   .0169765119   6.42481e-06   .0389790708   .0258947895   .0321127364    .012613644   .0946708743
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.0482066338   .0745879076{txt}  {c |}
+     {hline 29}{c BRC}
+  {res}p-values:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res} .370105215   .1320328482   .3253037654   3.73441e-08   .0907527468   .8233466062   .3440929333   .3387814502   .4388821186   .9214463382    .331018391   .7563680047   .0331744644    .106914146   .4761884644
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.4911417871   3.82203e-06{txt}  {c |}
+     {hline 29}{c BRC}
+F-stat for all: -73.6605651
+F-stat for first coefficient: .803311202
+  {res}1
+F-stat for IVed coefficients: .803311202
+{txt}
+{com}. local stderr_LUL = e(StdErr)[1,1]
+{txt}
+{com}. local depvar = e(depvar)
+{txt}
+{com}. sum `depvar' if e(sample)
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 3}DIVW_Long {c |}{res}     11,628    .3670451    .4820197          0          1
+{txt}
+{com}. local MeanDepVar = r(mean)
+{txt}
+{com}. local StDevDepVar = r(sd)
+{txt}
+{com}. outreg2 using "$path/Results/TableA16_iv.tex", tex append label addtext(IV, Same Hyp. Group, Controls, Yes, Dyadic Group Clustering, Yes) addstat(StdErr LUL, `stderr_LUL', \textit{c -(}Mean{c )-}(Dep. Var.), `MeanDepVar', \textit{c -(}Std.Dev.{c )-}(Dep. Var.), `StDevDepVar') ctitle(" ") nonotes dec(4) keep(LUL)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.txt", label"':seeout}
+
+{com}. 
+. *
+. ivreg2 DIVS_Long (LUL=SameAlphaHypGroupIV) $Xvar if $condition, noid
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   11628
+{txt}{col 55}F( 16, 11611) = {res}    8.82
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 636.7003784{txt}{col 55}Centered R2   = {res}  0.0043
+{txt}Total (uncentered) SS   = {res}         676{txt}{col 55}Uncentered R2 = {res}  0.0621
+{txt}Residual SS             = {res} 633.9937498{txt}{col 55}Root MSE      = {res}   .2335
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   DIVS_Long{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2} .1455356{col 26}{space 2} .1346086{col 37}{space 1}    1.08{col 46}{space 3}0.280{col 54}{space 4}-.1182925{col 67}{space 3} .4093636
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0192163{col 26}{space 2} .0062275{col 37}{space 1}    3.09{col 46}{space 3}0.002{col 54}{space 4} .0070106{col 67}{space 3}  .031422
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0434538{col 26}{space 2} .0065545{col 37}{space 1}   -6.63{col 46}{space 3}0.000{col 54}{space 4}-.0563004{col 67}{space 3}-.0306073
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2}-.0137515{col 26}{space 2} .0242019{col 37}{space 1}   -0.57{col 46}{space 3}0.570{col 54}{space 4}-.0611864{col 67}{space 3} .0336833
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2}-.0108107{col 26}{space 2} .0050822{col 37}{space 1}   -2.13{col 46}{space 3}0.033{col 54}{space 4}-.0207715{col 67}{space 3}-.0008498
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .0735049{col 26}{space 2} .0268428{col 37}{space 1}    2.74{col 46}{space 3}0.006{col 54}{space 4}  .020894{col 67}{space 3} .1261158
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0007753{col 26}{space 2} .0093889{col 37}{space 1}    0.08{col 46}{space 3}0.934{col 54}{space 4}-.0176267{col 67}{space 3} .0191772
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2}-.0197789{col 26}{space 2} .0182455{col 37}{space 1}   -1.08{col 46}{space 3}0.278{col 54}{space 4}-.0555395{col 67}{space 3} .0159816
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2}-.0045307{col 26}{space 2} .0044387{col 37}{space 1}   -1.02{col 46}{space 3}0.307{col 54}{space 4}-.0132304{col 67}{space 3} .0041689
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} 1.85e-06{col 26}{space 2} 9.09e-07{col 37}{space 1}    2.04{col 46}{space 3}0.042{col 54}{space 4} 6.90e-08{col 67}{space 3} 3.63e-06
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0118808{col 26}{space 2} .0051891{col 37}{space 1}    2.29{col 46}{space 3}0.022{col 54}{space 4} .0017103{col 67}{space 3} .0220513
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.0029102{col 26}{space 2}  .004532{col 37}{space 1}   -0.64{col 46}{space 3}0.521{col 54}{space 4}-.0117928{col 67}{space 3} .0059724
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.0071187{col 26}{space 2} .0146307{col 37}{space 1}   -0.49{col 46}{space 3}0.627{col 54}{space 4}-.0357943{col 67}{space 3} .0215569
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0067657{col 26}{space 2}  .004407{col 37}{space 1}   -1.54{col 46}{space 3}0.125{col 54}{space 4}-.0154033{col 67}{space 3}  .001872
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} .0580499{col 26}{space 2} .0183427{col 37}{space 1}    3.16{col 46}{space 3}0.002{col 54}{space 4} .0220987{col 67}{space 3}  .094001
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2}-.0374186{col 26}{space 2} .0266803{col 37}{space 1}   -1.40{col 46}{space 3}0.161{col 54}{space 4}-.0897109{col 67}{space 3} .0148738
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0511675{col 26}{space 2} .0074552{col 37}{space 1}    6.86{col 46}{space 3}0.000{col 54}{space 4} .0365555{col 67}{space 3} .0657795
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}SameAlphaHypGroupIV
+{hline 78}
+
+{com}. IVdyadic DIVS_Long LUL $Xvar if $condition, iv(SameAlphaHypGroupIV) groups(IGno_i1 IGno_i2)
+LHS: DIVS_Long
+RHS: LUL SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Covariates: SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Groups: IGno_i1 IGno_i2
+IV: SameAlphaHypGroupIV
+Group i1: IGno_i1
+Group i2: IGno_i2
+{txt}(282,678 observations deleted)
+  {res}11,628
+Nvar 17
+N 11628
+  Beta:
+
+{txt}{hline}
+{res}timer report
+{txt}  1.       1.51 /        1 = {res:    1.509}
+{txt}{hline}
+  {res}Diagonal of V:
+        {txt}          1
+     {c TLC}{hline 15}{c TRC}
+   1 {c |}  {res}.0221067758{txt}  {c |}
+   2 {c |}  {res}.0003256215{txt}  {c |}
+   3 {c |}  {res}.0008588853{txt}  {c |}
+   4 {c |}  {res}.0000394418{txt}  {c |}
+   5 {c |}  {res}.0002610547{txt}  {c |}
+   6 {c |}  {res}.0033475552{txt}  {c |}
+   7 {c |}  {res}.0001107138{txt}  {c |}
+   8 {c |}  {res}.0001479378{txt}  {c |}
+   9 {c |}  {res} .000064385{txt}  {c |}
+  10 {c |}  {res}4.99738e-12{txt}  {c |}
+  11 {c |}  {res} .000120883{txt}  {c |}
+  12 {c |}  {res}.0000674588{txt}  {c |}
+  13 {c |}  {res}.0000947689{txt}  {c |}
+  14 {c |}  {res}.0000129987{txt}  {c |}
+  15 {c |}  {res}.0006397905{txt}  {c |}
+  16 {c |}  {res}.0008043263{txt}  {c |}
+  17 {c |}  {res}.0005221231{txt}  {c |}
+     {c BLC}{hline 15}{c BRC}
+  {res}eValues:
+       {txt}           1              2              3              4              5              6              7              8              9             10             11             12             13             14
+    {c TLC}{hline 211}
+  1 {c |}  {res} .0229009215    .0041890661    .0010662506     .000678591    .0003363149    .0002582015     .000136612    .0000750996    .0000554895    .0000419891    .0000185711    4.87615e-10   -2.38122e-07   -6.62543e-06
+{txt}    {c BLC}{hline 211}
+                 15             16             17
+     {hline 46}{c TRC}
+  1    {res}-.0000125591   -.0000217243     -.00019124{txt}  {c |}
+     {hline 46}{c BRC}
+  {res}Adjustment factor i
+  1
+  Standard errors:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.1486834752   .0180449849   .0293067448   .0062802705   .0161571878   .0578580606   .0105220631   .0121629679   .0080240285   2.23548e-06   .0109946792    .008213333   .0097349316   .0036053713   .0252940801
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.0283606477   .0228500139{txt}  {c |}
+     {hline 29}{c BRC}
+  {res}p-values:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.3276648725   .2869161463   .1381476735   .0285503564   .5034362889   .2039296612   .9412655607   .1039155697   .5723144542   .4079315752   .2798767776   .7230909399   .4646229331   .0605801374   .0217332323
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.1870410052   .0251379925{txt}  {c |}
+     {hline 29}{c BRC}
+F-stat for all: -.337502009
+F-stat for first coefficient: .958104649
+  {res}1
+F-stat for IVed coefficients: .958104649
+{txt}
+{com}. local stderr_LUL = e(StdErr)[1,1]
+{txt}
+{com}. local depvar = e(depvar)
+{txt}
+{com}. sum `depvar' if e(sample)
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 3}DIVS_Long {c |}{res}     11,628    .0581355    .2340096          0          1
+{txt}
+{com}. local MeanDepVar = r(mean)
+{txt}
+{com}. local StDevDepVar = r(sd)
+{txt}
+{com}. outreg2 using "$path/Results/TableA16_iv.tex", tex append label addtext(IV, Same Hyp. Group, Controls, Yes, Dyadic Group Clustering, Yes) addstat(StdErr LUL, `stderr_LUL', \textit{c -(}Mean{c )-}(Dep. Var.), `MeanDepVar', \textit{c -(}Std.Dev.{c )-}(Dep. Var.), `StDevDepVar') ctitle(" ") nonotes dec(4) keep(LUL)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.txt", label"':seeout}
+
+{com}. 
+. *
+. ivreg2 COMOV_Long (LUL=SameAlphaHypGroupIV) $Xvar if $condition, noid
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   11628
+{txt}{col 55}F( 16, 11611) = {res}    8.88
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 2036.246302{txt}{col 55}Centered R2   = {res}  0.0094
+{txt}Total (uncentered) SS   = {res}        2632{txt}{col 55}Uncentered R2 = {res}  0.2336
+{txt}Residual SS             = {res} 2017.066795{txt}{col 55}Root MSE      = {res}   .4165
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}  COMOV_Long{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}  .164757{col 26}{space 2} .2400991{col 37}{space 1}    0.69{col 46}{space 3}0.493{col 54}{space 4}-.3058286{col 67}{space 3} .6353427
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0312002{col 26}{space 2} .0111079{col 37}{space 1}    2.81{col 46}{space 3}0.005{col 54}{space 4} .0094291{col 67}{space 3} .0529713
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2}-.0613482{col 26}{space 2} .0116911{col 37}{space 1}   -5.25{col 46}{space 3}0.000{col 54}{space 4}-.0842624{col 67}{space 3} -.038434
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2} .1832933{col 26}{space 2} .0431685{col 37}{space 1}    4.25{col 46}{space 3}0.000{col 54}{space 4} .0986845{col 67}{space 3}  .267902
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2}-.0365933{col 26}{space 2}  .009065{col 37}{space 1}   -4.04{col 46}{space 3}0.000{col 54}{space 4}-.0543604{col 67}{space 3}-.0188263
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .0080225{col 26}{space 2}  .047879{col 37}{space 1}    0.17{col 46}{space 3}0.867{col 54}{space 4}-.0858186{col 67}{space 3} .1018637
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2}-.0698754{col 26}{space 2} .0167469{col 37}{space 1}   -4.17{col 46}{space 3}0.000{col 54}{space 4}-.1026986{col 67}{space 3}-.0370521
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2}-.0301456{col 26}{space 2} .0325442{col 37}{space 1}   -0.93{col 46}{space 3}0.354{col 54}{space 4}-.0939311{col 67}{space 3} .0336398
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} -.003885{col 26}{space 2} .0079172{col 37}{space 1}   -0.49{col 46}{space 3}0.624{col 54}{space 4}-.0194024{col 67}{space 3} .0116325
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2} 2.93e-06{col 26}{space 2} 1.62e-06{col 37}{space 1}    1.81{col 46}{space 3}0.070{col 54}{space 4}-2.44e-07{col 67}{space 3} 6.11e-06
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2} .0298207{col 26}{space 2} .0092557{col 37}{space 1}    3.22{col 46}{space 3}0.001{col 54}{space 4} .0116798{col 67}{space 3} .0479617
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2} .0046451{col 26}{space 2} .0080837{col 37}{space 1}    0.57{col 46}{space 3}0.566{col 54}{space 4}-.0111986{col 67}{space 3} .0204889
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.0295708{col 26}{space 2} .0260965{col 37}{space 1}   -1.13{col 46}{space 3}0.257{col 54}{space 4}-.0807189{col 67}{space 3} .0215773
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2} .0068337{col 26}{space 2} .0078608{col 37}{space 1}    0.87{col 46}{space 3}0.385{col 54}{space 4}-.0085732{col 67}{space 3} .0222405
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} .1047951{col 26}{space 2} .0327176{col 37}{space 1}    3.20{col 46}{space 3}0.001{col 54}{space 4} .0406697{col 67}{space 3} .1689204
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .0172115{col 26}{space 2} .0475892{col 37}{space 1}    0.36{col 46}{space 3}0.718{col 54}{space 4}-.0760615{col 67}{space 3} .1104845
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .2047172{col 26}{space 2} .0132978{col 37}{space 1}   15.39{col 46}{space 3}0.000{col 54}{space 4}  .178654{col 67}{space 3} .2307804
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}SameAlphaHypGroupIV
+{hline 78}
+
+{com}. IVdyadic COMOV_Long LUL $Xvar if $condition, iv(SameAlphaHypGroupIV) groups(IGno_i1 IGno_i2)
+LHS: COMOV_Long
+RHS: LUL SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Covariates: SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Groups: IGno_i1 IGno_i2
+IV: SameAlphaHypGroupIV
+Group i1: IGno_i1
+Group i2: IGno_i2
+{txt}(282,678 observations deleted)
+  {res}11,628
+Nvar 17
+N 11628
+  Beta:
+
+{txt}{hline}
+{res}timer report
+{txt}  1.       1.46 /        1 = {res:    1.459}
+{txt}{hline}
+  {res}Diagonal of V:
+        {txt}           1
+     {c TLC}{hline 16}{c TRC}
+   1 {c |}  {res} .0543529507{txt}  {c |}
+   2 {c |}  {res} .0007842651{txt}  {c |}
+   3 {c |}  {res} .0033958365{txt}  {c |}
+   4 {c |}  {res}-.0007318407{txt}  {c |}
+   5 {c |}  {res} .0013134466{txt}  {c |}
+   6 {c |}  {res} .0042154042{txt}  {c |}
+   7 {c |}  {res} .0006273879{txt}  {c |}
+   8 {c |}  {res} .0010435518{txt}  {c |}
+   9 {c |}  {res} .0002318666{txt}  {c |}
+  10 {c |}  {res} 1.32770e-11{txt}  {c |}
+  11 {c |}  {res}  .001165911{txt}  {c |}
+  12 {c |}  {res} .0003279402{txt}  {c |}
+  13 {c |}  {res} .0007915849{txt}  {c |}
+  14 {c |}  {res}  .000116377{txt}  {c |}
+  15 {c |}  {res}  .002961787{txt}  {c |}
+  16 {c |}  {res} .0045178952{txt}  {c |}
+  17 {c |}  {res} .0023571959{txt}  {c |}
+     {c BLC}{hline 16}{c BRC}
+  {res}eValues:
+       {txt}           1              2              3              4              5              6              7              8              9             10             11             12             13             14
+    {c TLC}{hline 211}
+  1 {c |}  {res} .0573888545    .0069225447    .0050087568    .0031600329    .0023806729    .0013960712    .0009911319    .0006479756    .0003625528    .0002568448    .0001582364    .0000686999    .0000486465    1.42489e-12
+{txt}    {c BLC}{hline 211}
+                 15             16             17
+     {hline 46}{c TRC}
+  1    {res}-.0000177876   -.0000586852    -.001242988{txt}  {c |}
+     {hline 46}{c BRC}
+  {res}Adjustment factor i
+  .3
+  Standard errors:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res} .233137888   .0282036264   .0583414755   .0016371857   .0365305669   .0651082974   .0254797207   .0323946723   .0155866404   3.68841e-06   .0342110487   .0181527867   .0289665734    .011154869    .054516603
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.0672196413   .0485567743{txt}  {c |}
+     {hline 29}{c BRC}
+  {res}p-values:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.4797569397   .2686189965   .2930122691             0   .3164795172    .901934056   .0060993732   .3520740746   .8031680526   .4265768172   .3833885383   .7980361371   .3073210997   .5401291569    .054573128
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.7979130743   .0000248631{txt}  {c |}
+     {hline 29}{c BRC}
+F-stat for all: -3.30225814
+F-stat for first coefficient: .499415771
+  {res}1
+F-stat for IVed coefficients: .499415771
+{txt}
+{com}. local stderr_LUL = e(StdErr)[1,1]
+{txt}
+{com}. local depvar = e(depvar)
+{txt}
+{com}. sum `depvar' if e(sample)
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 2}COMOV_Long {c |}{res}     11,628    .2263502    .4184864          0          1
+{txt}
+{com}. local MeanDepVar = r(mean)
+{txt}
+{com}. local StDevDepVar = r(sd)
+{txt}
+{com}. outreg2 using "$path/Results/TableA16_iv.tex", tex append label addtext(IV, Same Hyp. Group, Controls, Yes, Dyadic Group Clustering, Yes) addstat(StdErr LUL, `stderr_LUL', \textit{c -(}Mean{c )-}(Dep. Var.), `MeanDepVar', \textit{c -(}Std.Dev.{c )-}(Dep. Var.), `StDevDepVar') ctitle(" ") nonotes dec(4) keep(LUL)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.txt", label"':seeout}
+
+{com}. 
+. *
+. ivreg2 ChangePP_Long (LUL=SameAlphaHypGroupIV) $Xvar if $condition, noid
+{res}
+{txt}IV (2SLS) estimation
+{hline 20}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   11628
+{txt}{col 55}F( 16, 11611) = {res}    7.42
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 28913.86997{txt}{col 55}Centered R2   = {res}  0.0049
+{txt}Total (uncentered) SS   = {res}       29028{txt}{col 55}Uncentered R2 = {res}  0.0088
+{txt}Residual SS             = {res} 28773.24248{txt}{col 55}Root MSE      = {res}   1.573
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}ChangePP_L~g{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}LUL {c |}{col 14}{res}{space 2}-1.047352{col 26}{space 2} .9068278{col 37}{space 1}   -1.15{col 46}{space 3}0.248{col 54}{space 4}-2.824702{col 67}{space 3} .7299977
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}-.0204548{col 26}{space 2} .0419533{col 37}{space 1}   -0.49{col 46}{space 3}0.626{col 54}{space 4}-.1026818{col 67}{space 3} .0617721
+{txt}{space 6}FEMALE {c |}{col 14}{res}{space 2} -.043578{col 26}{space 2} .0441561{col 37}{space 1}   -0.99{col 46}{space 3}0.324{col 54}{space 4}-.1301224{col 67}{space 3} .0429663
+{txt}{space 8}NAT1 {c |}{col 14}{res}{space 2} 1.112853{col 26}{space 2} .1630427{col 37}{space 1}    6.83{col 46}{space 3}0.000{col 54}{space 4} .7932948{col 67}{space 3} 1.432411
+{txt}{space 9}ADM {c |}{col 14}{res}{space 2} .0871108{col 26}{space 2} .0342374{col 37}{space 1}    2.54{col 46}{space 3}0.011{col 54}{space 4} .0200067{col 67}{space 3} .1542149
+{txt}{space 8}ADPR {c |}{col 14}{res}{space 2} .7618835{col 26}{space 2} .1808338{col 37}{space 1}    4.21{col 46}{space 3}0.000{col 54}{space 4} .4074558{col 67}{space 3} 1.116311
+{txt}{space 8}DEPB {c |}{col 14}{res}{space 2} .0128582{col 26}{space 2} .0632511{col 37}{space 1}    0.20{col 46}{space 3}0.839{col 54}{space 4}-.1111117{col 67}{space 3} .1368282
+{txt}{space 6}REGBAC {c |}{col 14}{res}{space 2} -.048797{col 26}{space 2} .1229158{col 37}{space 1}   -0.40{col 46}{space 3}0.691{col 54}{space 4}-.2897076{col 67}{space 3} .1921135
+{txt}{space 4}SERIEBAC {c |}{col 14}{res}{space 2} .0351705{col 26}{space 2} .0299024{col 37}{space 1}    1.18{col 46}{space 3}0.240{col 54}{space 4}-.0234372{col 67}{space 3} .0937782
+{txt}{space 6}DiffDR {c |}{col 14}{res}{space 2}-2.33e-06{col 26}{space 2} 6.12e-06{col 37}{space 1}   -0.38{col 46}{space 3}0.704{col 54}{space 4}-.0000143{col 67}{space 3} 9.67e-06
+{txt}{space 7}NOFEE {c |}{col 14}{res}{space 2}-.0494549{col 26}{space 2} .0349579{col 37}{space 1}   -1.41{col 46}{space 3}0.157{col 54}{space 4}-.1179711{col 67}{space 3} .0190613
+{txt}{space 8}PARI {c |}{col 14}{res}{space 2}-.0192597{col 26}{space 2} .0305312{col 37}{space 1}   -0.63{col 46}{space 3}0.528{col 54}{space 4}-.0790998{col 67}{space 3} .0405804
+{txt}{space 9}ZIP {c |}{col 14}{res}{space 2}-.2595913{col 26}{space 2} .0985635{col 37}{space 1}   -2.63{col 46}{space 3}0.008{col 54}{space 4}-.4527722{col 67}{space 3}-.0664104
+{txt}{space 7}Paris {c |}{col 14}{res}{space 2}-.0641366{col 26}{space 2} .0296893{col 37}{space 1}   -2.16{col 46}{space 3}0.031{col 54}{space 4}-.1223265{col 67}{space 3}-.0059466
+{txt}{space 6}IDFBAC {c |}{col 14}{res}{space 2} .2158548{col 26}{space 2} .1235709{col 37}{space 1}    1.75{col 46}{space 3}0.081{col 54}{space 4}-.0263397{col 67}{space 3} .4580493
+{txt}{space 8}PRO1 {c |}{col 14}{res}{space 2} .1174437{col 26}{space 2}  .179739{col 37}{space 1}    0.65{col 46}{space 3}0.513{col 54}{space 4}-.2348382{col 67}{space 3} .4697256
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.1112839{col 26}{space 2} .0502243{col 37}{space 1}   -2.22{col 46}{space 3}0.027{col 54}{space 4}-.2097217{col 67}{space 3} -.012846
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{help ivreg2##overidtests:Sargan statistic} (overidentification test of all instruments):{res}{col 71}   0.000
+{txt}{col 50}(equation exactly identified)
+{hline 78}
+Instrumented:{col 23}LUL
+Included instruments:{col 23}SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR
+{col 23}NOFEE PARI ZIP Paris IDFBAC PRO1
+Excluded instruments:{col 23}SameAlphaHypGroupIV
+{hline 78}
+
+{com}. IVdyadic ChangePP_Long LUL $Xvar if $condition, iv(SameAlphaHypGroupIV) groups(IGno_i1 IGno_i2)
+LHS: ChangePP_Long
+RHS: LUL SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Covariates: SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Groups: IGno_i1 IGno_i2
+IV: SameAlphaHypGroupIV
+Group i1: IGno_i1
+Group i2: IGno_i2
+{txt}(282,678 observations deleted)
+  {res}11,628
+Nvar 17
+N 11628
+  Beta:
+
+{txt}{hline}
+{res}timer report
+{txt}  1.       1.45 /        1 = {res:    1.448}
+{txt}{hline}
+  {res}Diagonal of V:
+        {txt}          1
+     {c TLC}{hline 15}{c TRC}
+   1 {c |}  {res}.7850540053{txt}  {c |}
+   2 {c |}  {res}.0156272127{txt}  {c |}
+   3 {c |}  {res}.0544634965{txt}  {c |}
+   4 {c |}  {res}.0195705445{txt}  {c |}
+   5 {c |}  {res}.0308842965{txt}  {c |}
+   6 {c |}  {res}.1540603451{txt}  {c |}
+   7 {c |}  {res}.0081999861{txt}  {c |}
+   8 {c |}  {res}.0169514273{txt}  {c |}
+   9 {c |}  {res}.0032633301{txt}  {c |}
+  10 {c |}  {res}3.24261e-10{txt}  {c |}
+  11 {c |}  {res}.0103448194{txt}  {c |}
+  12 {c |}  {res}.0048468126{txt}  {c |}
+  13 {c |}  {res}.0161373168{txt}  {c |}
+  14 {c |}  {res}.0016684042{txt}  {c |}
+  15 {c |}  {res}.0336510583{txt}  {c |}
+  16 {c |}  {res}.0650933504{txt}  {c |}
+  17 {c |}  {res}.0536792611{txt}  {c |}
+     {c BLC}{hline 15}{c BRC}
+  {res}eValues:
+       {txt}           1              2              3              4              5              6              7              8              9             10             11             12             13             14
+    {c TLC}{hline 211}
+  1 {c |}  {res}  .883147675    .1442191444    .1017562114    .0690650205    .0225245117     .019814668    .0170020265    .0134168196    .0071815233    .0033134927    .0027109451    .0020030824    .0008979721     .000430409
+{txt}    {c BLC}{hline 211}
+                 15             16             17
+     {hline 46}{c TRC}
+  1    {res} 1.98720e-10   -.0018979967   -.0120898378{txt}  {c |}
+     {hline 46}{c BRC}
+  {res}Adjustment factor i
+  1
+  Standard errors:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.8860327338   .1250088506   .2333741556   .1398947623   .1757392855   .3925052167   .0905537747   .1301976471   .0571255644   .0000180073   .1017094851   .0696190537   .1270327389   .0408461034   .1834422478
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.2551339852   .2316878528{txt}  {c |}
+     {hline 29}{c BRC}
+  {res}p-values:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.2371782149   .8700246763   .8518721636   1.77636e-15   .6201187227   .0522487461   .8870836055   .7078151346   .5381123742   .8971469313   .6267992532   .7820533701   .0410030553   .1163685757   .2393189271
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.6452853586   .6310012305{txt}  {c |}
+     {hline 29}{c BRC}
+F-stat for all: -1.41232095
+F-stat for first coefficient: 1.39728777
+  {res}1
+F-stat for IVed coefficients: 1.39728777
+{txt}
+{com}. local stderr_LUL = e(StdErr)[1,1]
+{txt}
+{com}. local depvar = e(depvar)
+{txt}
+{com}. sum `depvar' if e(sample)
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+ChangePP_L~g {c |}{res}     11,628   -.0990712    1.576955         -5          6
+{txt}
+{com}. local MeanDepVar = r(mean)
+{txt}
+{com}. local StDevDepVar = r(sd)
+{txt}
+{com}. outreg2 using "$path/Results/TableA16_iv.tex", tex append label addtext(IV, Same Hyp. Group, Controls, Yes, Dyadic Group Clustering, Yes) addstat(StdErr LUL, `stderr_LUL', \textit{c -(}Mean{c )-}(Dep. Var.), `MeanDepVar', \textit{c -(}Std.Dev.{c )-}(Dep. Var.), `StDevDepVar') ctitle(" ") nonotes dec(4) keep(LUL)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.txt", label"':seeout}
+
+{com}. 
+. // First stage - same for all specifications
+. ivreg2 LUL SameAlphaHypGroupIV $Xvar if $condition & ChangePP_Long!=., noid
+{res}
+{txt}OLS estimation
+{hline 14}
+
+Estimates efficient for homoskedasticity only
+Statistics consistent for homoskedasticity only
+
+{col 55}Number of obs = {res}   11628
+{txt}{col 55}F( 16, 11611) = {res}   62.20
+{txt}{col 55}Prob > F      = {res}  0.0000
+{txt}Total (centered) SS     = {res} 207.1712246{txt}{col 55}Centered R2   = {res}  0.0789
+{txt}Total (uncentered) SS   = {res}         211{txt}{col 55}Uncentered R2 = {res}  0.0957
+{txt}Residual SS             = {res} 190.8154028{txt}{col 55}Root MSE      = {res}   .1281
+
+{txt}{hline 20}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}                LUL{col 21}{c |} Coefficient{col 33}  Std. err.{col 45}      z{col 53}   P>|z|{col 61}     [95% con{col 74}f. interval]
+{hline 20}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+SameAlphaHypGroupIV {c |}{col 21}{res}{space 2} .1181334{col 33}{space 2} .0087239{col 44}{space 1}   13.54{col 53}{space 3}0.000{col 61}{space 4} .1010349{col 74}{space 3} .1352319
+{txt}{space 16}SEX {c |}{col 21}{res}{space 2} .0119715{col 33}{space 2} .0032996{col 44}{space 1}    3.63{col 53}{space 3}0.000{col 61}{space 4} .0055043{col 74}{space 3} .0184387
+{txt}{space 13}FEMALE {c |}{col 21}{res}{space 2}-.0074957{col 33}{space 2} .0035543{col 44}{space 1}   -2.11{col 53}{space 3}0.035{col 61}{space 4} -.014462{col 74}{space 3}-.0005294
+{txt}{space 15}NAT1 {c |}{col 21}{res}{space 2} .0036607{col 33}{space 2} .0132781{col 44}{space 1}    0.28{col 53}{space 3}0.783{col 61}{space 4} -.022364{col 74}{space 3} .0296854
+{txt}{space 16}ADM {c |}{col 21}{res}{space 2} .0024454{col 33}{space 2} .0027801{col 44}{space 1}    0.88{col 53}{space 3}0.379{col 61}{space 4}-.0030035{col 74}{space 3} .0078942
+{txt}{space 15}ADPR {c |}{col 21}{res}{space 2} .0102025{col 33}{space 2} .0147045{col 44}{space 1}    0.69{col 53}{space 3}0.488{col 61}{space 4}-.0186178{col 74}{space 3} .0390228
+{txt}{space 15}DEPB {c |}{col 21}{res}{space 2} .0164672{col 33}{space 2} .0050151{col 44}{space 1}    3.28{col 53}{space 3}0.001{col 61}{space 4} .0066378{col 74}{space 3} .0262967
+{txt}{space 13}REGBAC {c |}{col 21}{res}{space 2} .0122291{col 33}{space 2} .0099608{col 44}{space 1}    1.23{col 53}{space 3}0.220{col 61}{space 4}-.0072938{col 74}{space 3} .0317519
+{txt}{space 11}SERIEBAC {c |}{col 21}{res}{space 2} .0028968{col 33}{space 2} .0024281{col 44}{space 1}    1.19{col 53}{space 3}0.233{col 61}{space 4}-.0018622{col 74}{space 3} .0076557
+{txt}{space 13}DiffDR {c |}{col 21}{res}{space 2}-8.00e-07{col 33}{space 2} 4.95e-07{col 44}{space 1}   -1.62{col 53}{space 3}0.106{col 61}{space 4}-1.77e-06{col 74}{space 3} 1.70e-07
+{txt}{space 14}NOFEE {c |}{col 21}{res}{space 2} .0014318{col 33}{space 2}  .002846{col 44}{space 1}    0.50{col 53}{space 3}0.615{col 61}{space 4}-.0041464{col 74}{space 3} .0070099
+{txt}{space 15}PARI {c |}{col 21}{res}{space 2}-.0014058{col 33}{space 2} .0024842{col 44}{space 1}   -0.57{col 53}{space 3}0.571{col 61}{space 4}-.0062746{col 74}{space 3} .0034631
+{txt}{space 16}ZIP {c |}{col 21}{res}{space 2} .0176227{col 33}{space 2} .0079282{col 44}{space 1}    2.22{col 53}{space 3}0.026{col 61}{space 4} .0020837{col 74}{space 3} .0331617
+{txt}{space 14}Paris {c |}{col 21}{res}{space 2} .0014626{col 33}{space 2}  .002415{col 44}{space 1}    0.61{col 53}{space 3}0.545{col 61}{space 4}-.0032708{col 74}{space 3} .0061959
+{txt}{space 13}IDFBAC {c |}{col 21}{res}{space 2} -.014106{col 33}{space 2} .0099977{col 44}{space 1}   -1.41{col 53}{space 3}0.158{col 61}{space 4}-.0337011{col 74}{space 3} .0054891
+{txt}{space 15}PRO1 {c |}{col 21}{res}{space 2} .1765892{col 33}{space 2} .0064878{col 44}{space 1}   27.22{col 53}{space 3}0.000{col 61}{space 4} .1638734{col 74}{space 3}  .189305
+{txt}{space 14}_cons {c |}{col 21}{res}{space 2} .0035906{col 33}{space 2}   .00407{col 44}{space 1}    0.88{col 53}{space 3}0.378{col 61}{space 4}-.0043864{col 74}{space 3} .0115677
+{txt}{hline 20}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+Included instruments:{col 23}SameAlphaHypGroupIV SEX FEMALE NAT1 ADM ADPR DEPB REGBAC
+{col 23}SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+{hline 78}
+
+{com}. IVdyadic LUL SameAlphaHypGroupIV $Xvar if $condition & ChangePP_Long!=., iv(SameAlphaHypGroupIV) groups(IGno_i1 IGno_i2)
+LHS: LUL
+RHS: SameAlphaHypGroupIV SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Covariates: SEX FEMALE NAT1 ADM ADPR DEPB REGBAC SERIEBAC DiffDR NOFEE PARI ZIP Paris IDFBAC PRO1
+Groups: IGno_i1 IGno_i2
+IV: SameAlphaHypGroupIV
+Group i1: IGno_i1
+Group i2: IGno_i2
+{txt}(282,678 observations deleted)
+  {res}11,628
+Nvar 17
+N 11628
+  Beta:
+
+{txt}{hline}
+{res}timer report
+{txt}  1.       1.33 /        1 = {res:    1.329}
+{txt}{hline}
+  {res}Diagonal of V:
+        {txt}          1
+     {c TLC}{hline 15}{c TRC}
+   1 {c |}  {res}.0005806783{txt}  {c |}
+   2 {c |}  {res}.0000104877{txt}  {c |}
+   3 {c |}  {res}.0000197149{txt}  {c |}
+   4 {c |}  {res}2.96100e-06{txt}  {c |}
+   5 {c |}  {res}5.90884e-06{txt}  {c |}
+   6 {c |}  {res}.0002237968{txt}  {c |}
+   7 {c |}  {res}.0000372785{txt}  {c |}
+   8 {c |}  {res}.0001528851{txt}  {c |}
+   9 {c |}  {res}.0000101119{txt}  {c |}
+  10 {c |}  {res}2.22734e-13{txt}  {c |}
+  11 {c |}  {res}.0000122989{txt}  {c |}
+  12 {c |}  {res}3.82127e-06{txt}  {c |}
+  13 {c |}  {res}.0001058186{txt}  {c |}
+  14 {c |}  {res}.0000101258{txt}  {c |}
+  15 {c |}  {res}.0001701365{txt}  {c |}
+  16 {c |}  {res} .001301975{txt}  {c |}
+  17 {c |}  {res}.0000316884{txt}  {c |}
+     {c BLC}{hline 15}{c BRC}
+  {res}eValues:
+       {txt}           1              2              3              4              5              6              7              8              9             10             11             12             13             14
+    {c TLC}{hline 211}
+  1 {c |}  {res} .0013432432    .0006049794    .0003819556    .0001814078    .0000846003    .0000329489    .0000281348    .0000175532    5.26010e-06    3.73612e-06    2.08091e-06    6.69945e-07    3.51101e-07   -5.36956e-15
+{txt}    {c BLC}{hline 211}
+                 15             16             17
+     {hline 46}{c TRC}
+  1    {res}-4.85448e-07   -2.17515e-06   -4.57328e-06{txt}  {c |}
+     {hline 46}{c BRC}
+  {res}Adjustment factor i
+  1
+  Standard errors:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}.0240972684   .0032384677     .00444015    .001720757   .0024308095   .0149598384   .0061056147   .0123646718   .0031799256   4.71947e-07   .0035069765   .0019548057    .010286815   .0031821006   .0130436368
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}.0360828902   .0056292429{txt}  {c |}
+     {hline 29}{c BRC}
+  {res}p-values:
+       {txt}          1             2             3             4             5             6             7             8             9            10            11            12            13            14            15
+    {c TLC}{hline 211}
+  1 {c |}  {res}9.46936e-07   .0002184599    .091380185   .0333891699   .3144241615   .4952434384   .0069954204   .3226476805    .362317054   .0900998767   .6830827469    .472057906   .0866878558   .6457855131   .2794980797
+{txt}    {c BLC}{hline 211}
+                16            17
+     {hline 29}{c TRC}
+  1    {res}9.88136e-07   .5235679724{txt}  {c |}
+     {hline 29}{c BRC}
+F-stat for all: 14.4373256
+F-stat for first coefficient: 24.0331021
+  {res}1
+F-stat for IVed coefficients: 24.0331021
+{txt}
+{com}. local stderr_IV = e(StdErr)[1,1]
+{txt}
+{com}. local F_KP = e(F_1)
+{txt}
+{com}. local depvar = e(depvar)
+{txt}
+{com}. sum `depvar' if e(sample)
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}LUL {c |}{res}     11,628    .0181459    .1334845          0          1
+{txt}
+{com}. local MeanDepVar = r(mean)
+{txt}
+{com}. local StDevDepVar = r(sd)
+{txt}
+{com}. outreg2 using "$path/Results/TableA16_iv.tex", tex append label addtext(IV, No, Controls, Yes, Dyadic Group Clustering, Yes) addstat(StdErr IV, `stderr_IV', Kleibergen-Paap Weak IV F-stat, `F_KP', \textit{c -(}Mean{c )-}(Dep. Var.), `MeanDepVar', \textit{c -(}Std.Dev.{c )-}(Dep. Var.), `StDevDepVar') ctitle(" ") nonotes dec(4) keep(SameAlphaHypGroupIV)
+{txt}{stata `"shellout using `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.tex"'"':/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.tex}
+{browse `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Codes/Analysis"' :dir}{com} : {txt}{stata `"seeout using "/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA16_iv.txt", label"':seeout}
+
+{com}. 
+. log close // Table A16
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogTableA16.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}31 Dec 2025, 18:42:11
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

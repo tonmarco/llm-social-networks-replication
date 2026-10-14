@@ -1,0 +1,20 @@
+		(1)	(2)	(3)	(4)	(5)	(6)	(7)
+VARIABLES	LABELS							
+								
+LUL	LUL	0.2113	0.1622	-0.0316	0.0483	-0.0577	-0.5905	
+		(0.1932)	(0.1099)	(0.1905)	(0.0925)	(0.1654)	(0.6241)	
+IG	IG							0.1690***
+								(0.0085)
+Constant	Constant	0.4012***	0.0830***	0.3437***	0.0517***	0.2060***	-0.1140**	0.0024
+		(0.0155)	(0.0088)	(0.0152)	(0.0074)	(0.0132)	(0.0500)	(0.0040)
+								
+Observations		11,628	11,628	11,628	11,628	11,628	11,628	11,628
+R-squared		0.0262	0.0017	0.0122	0.0109	0.0118	0.0089	0.0950
+IV		Yes	Yes	Yes	Yes	Yes	Yes	No
+Controls		Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Dyadic Group Clustering		Yes	Yes	Yes	Yes	Yes	Yes	Yes
+StdErr LUL		0.169	0.108	0.209	0.0789	0.121	0.449	
+\textit{Mean}(Dep. Var.)		0.414	0.0835	0.367	0.0581	0.226	-0.0991	0.0181
+\textit{Std.Dev.}(Dep. Var.)		0.492	0.277	0.482	0.234	0.418	1.577	0.133
+StdErr IV								0.0288
+Kleibergen-Paap Weak IV F-stat								34.51

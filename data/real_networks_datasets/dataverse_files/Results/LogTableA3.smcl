@@ -1,0 +1,155 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogTableA3.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}31 Dec 2025, 18:20:15
+{txt}
+{com}. 
+. * full sample
+. preserve
+{txt}
+{com}. bysort uid_i1: gen t=_n
+{txt}
+{com}. keep if t==1
+{txt}(293,763 observations deleted)
+
+{com}. replace sex_i1 = 0 if sex_i1==2
+{txt}(213 real changes made)
+
+{com}. gen mention_i1=0 if Mentiontrsbien_i1=="Non"
+{txt}(427 missing values generated)
+
+{com}. replace mention_i1=1 if Mentiontrsbien_i1=="Oui"
+{txt}(427 real changes made)
+
+{com}. estpost summarize sex_i1 mention_i1 droits_i1
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:sex_i1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      543}}}{space 1}{space 1}{ralign 9:{res:{sf:      543}}}{space 1}{space 1}{ralign 9:{res:{sf: .6077348}}}{space 1}{space 1}{ralign 9:{res:{sf: .2388331}}}{space 1}{space 1}{ralign 9:{res:{sf: .4887055}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      330}}}{space 1}
+{space 0}{space 0}{ralign 12:mention_i1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      543}}}{space 1}{space 1}{ralign 9:{res:{sf:      543}}}{space 1}{space 1}{ralign 9:{res:{sf:  .786372}}}{space 1}{space 1}{ralign 9:{res:{sf:  .168301}}}{space 1}{space 1}{ralign 9:{res:{sf: .4102451}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      427}}}{space 1}
+{space 0}{space 0}{ralign 12:droits_i1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      496}}}{space 1}{space 1}{ralign 9:{res:{sf:      496}}}{space 1}{space 1}{ralign 9:{res:{sf: 3675.232}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.20e+07}}}{space 1}{space 1}{ralign 9:{res:{sf: 3469.297}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:     9800}}}{space 1}{space 1}{ralign 9:{res:{sf:  1822915}}}{space 1}
+
+{com}. estimates store panel_a_full
+{txt}
+{com}. restore
+{txt}
+{com}. 
+. * benchmark sample
+. preserve
+{txt}
+{com}. keep if $condition
+{txt}(241,980 observations deleted)
+
+{com}. bysort uid_i1: gen t=_n
+{txt}
+{com}. keep if t==1
+{txt}(52,003 observations deleted)
+
+{com}. replace sex_i1 = 0 if sex_i1==2
+{txt}(136 real changes made)
+
+{com}. gen mention_i1=0 if Mentiontrsbien_i1=="Non"
+{txt}(271 missing values generated)
+
+{com}. replace mention_i1=1 if Mentiontrsbien_i1=="Oui"
+{txt}(271 real changes made)
+
+{com}. estpost summarize sex_i1 mention_i1 droits_i1 // $Xvar 
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:sex_i1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      323}}}{space 1}{space 1}{ralign 9:{res:{sf:      323}}}{space 1}{space 1}{ralign 9:{res:{sf: .5789474}}}{space 1}{space 1}{ralign 9:{res:{sf: .2445244}}}{space 1}{space 1}{ralign 9:{res:{sf:  .494494}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      187}}}{space 1}
+{space 0}{space 0}{ralign 12:mention_i1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      323}}}{space 1}{space 1}{ralign 9:{res:{sf:      323}}}{space 1}{space 1}{ralign 9:{res:{sf: .8390093}}}{space 1}{space 1}{ralign 9:{res:{sf: .1354922}}}{space 1}{space 1}{ralign 9:{res:{sf: .3680926}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      271}}}{space 1}
+{space 0}{space 0}{ralign 12:droits_i1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:      323}}}{space 1}{space 1}{ralign 9:{res:{sf:      323}}}{space 1}{space 1}{ralign 9:{res:{sf: 3870.232}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.09e+07}}}{space 1}{space 1}{ralign 9:{res:{sf: 3308.393}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:     9800}}}{space 1}{space 1}{ralign 9:{res:{sf:  1250085}}}{space 1}
+
+{com}. estimates store panel_a_benchmark
+{txt}
+{com}. restore
+{txt}
+{com}. 
+. * Create the table
+. esttab panel_a_full panel_a_benchmark using "$path/Results/TableA3_panel_a.tex", replace ///
+>     cells("mean(fmt(3)) sd(fmt(3)) count(fmt(0))") ///
+>     title("Panel A: Monadic Dependent Variables") ///
+>     mtitles("Full Sample" "Benchmark Sample") ///
+>     label booktabs ///
+>     addnotes("Statistics in (1) are computed on the full sample of data available for each variable," ///
+>              "while statistics in (2) are computed on the benchmark sample.")
+{res}{txt}(output written to {browse  `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA3_panel_a.tex"'})
+
+{com}. 
+.  
+.  
+. *** panel B
+. * full sample
+. preserve
+{txt}
+{com}. estpost summarize $Xvar if uid_i1>uid_i2
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:SEX}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .5223339}}}{space 1}{space 1}{ralign 9:{res:{sf: .2495029}}}{space 1}{space 1}{ralign 9:{res:{sf: .4995026}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    76863}}}{space 1}
+{space 0}{space 0}{ralign 12:FEMALE}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .3689018}}}{space 1}{space 1}{ralign 9:{res:{sf: .2328148}}}{space 1}{space 1}{ralign 9:{res:{sf: .4825089}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    54285}}}{space 1}
+{space 0}{space 0}{ralign 12:NAT1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   145530}}}{space 1}{space 1}{ralign 9:{res:{sf:   145530}}}{space 1}{space 1}{ralign 9:{res:{sf: .0269566}}}{space 1}{space 1}{ralign 9:{res:{sf: .0262302}}}{space 1}{space 1}{ralign 9:{res:{sf: .1619573}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     3923}}}{space 1}
+{space 0}{space 0}{ralign 12:ADM}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .5653639}}}{space 1}{space 1}{ralign 9:{res:{sf: .2457292}}}{space 1}{space 1}{ralign 9:{res:{sf: .4957108}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    83195}}}{space 1}
+{space 0}{space 0}{ralign 12:ADPR}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .0290718}}}{space 1}{space 1}{ralign 9:{res:{sf: .0282268}}}{space 1}{space 1}{ralign 9:{res:{sf: .1680084}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     4278}}}{space 1}
+{space 0}{space 0}{ralign 12:DEPB}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   132870}}}{space 1}{space 1}{ralign 9:{res:{sf:   132870}}}{space 1}{space 1}{ralign 9:{res:{sf: .0516971}}}{space 1}{space 1}{ralign 9:{res:{sf: .0490249}}}{space 1}{space 1}{ralign 9:{res:{sf: .2214157}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     6869}}}{space 1}
+{space 0}{space 0}{ralign 12:REGBAC}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   132355}}}{space 1}{space 1}{ralign 9:{res:{sf:   132355}}}{space 1}{space 1}{ralign 9:{res:{sf: .2529183}}}{space 1}{space 1}{ralign 9:{res:{sf: .1889521}}}{space 1}{space 1}{ralign 9:{res:{sf: .4346862}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    33475}}}{space 1}
+{space 0}{space 0}{ralign 12:SERIEBAC}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:  .363275}}}{space 1}{space 1}{ralign 9:{res:{sf: .2313078}}}{space 1}{space 1}{ralign 9:{res:{sf: .4809447}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    53457}}}{space 1}
+{space 0}{space 0}{ralign 12:DiffDR}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   122760}}}{space 1}{space 1}{ralign 9:{res:{sf:   122760}}}{space 1}{space 1}{ralign 9:{res:{sf: 3878.769}}}{space 1}{space 1}{ralign 9:{res:{sf:  9027264}}}{space 1}{space 1}{ralign 9:{res:{sf: 3004.541}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:     9800}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.76e+08}}}{space 1}
+{space 0}{space 0}{ralign 12:NOFEE}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .4762458}}}{space 1}{space 1}{ralign 9:{res:{sf: .2494374}}}{space 1}{space 1}{ralign 9:{res:{sf: .4994371}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    70081}}}{space 1}
+{space 0}{space 0}{ralign 12:PARI}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   119316}}}{space 1}{space 1}{ralign 9:{res:{sf:   119316}}}{space 1}{space 1}{ralign 9:{res:{sf: .4224915}}}{space 1}{space 1}{ralign 9:{res:{sf: .2439945}}}{space 1}{space 1}{ralign 9:{res:{sf:  .493958}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    50410}}}{space 1}
+{space 0}{space 0}{ralign 12:ZIP}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   146611}}}{space 1}{space 1}{ralign 9:{res:{sf:   146611}}}{space 1}{space 1}{ralign 9:{res:{sf: .0263555}}}{space 1}{space 1}{ralign 9:{res:{sf:  .025661}}}{space 1}{space 1}{ralign 9:{res:{sf: .1601906}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     3864}}}{space 1}
+{space 0}{space 0}{ralign 12:Paris}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .5062554}}}{space 1}{space 1}{ralign 9:{res:{sf: .2499626}}}{space 1}{space 1}{ralign 9:{res:{sf: .4999626}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    74497}}}{space 1}
+{space 0}{space 0}{ralign 12:IDFBAC}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .2115145}}}{space 1}{space 1}{ralign 9:{res:{sf: .1667773}}}{space 1}{space 1}{ralign 9:{res:{sf: .4083837}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    31125}}}{space 1}
+{space 0}{space 0}{ralign 12:PRO1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf:   147153}}}{space 1}{space 1}{ralign 9:{res:{sf: .0281748}}}{space 1}{space 1}{ralign 9:{res:{sf: .0273811}}}{space 1}{space 1}{ralign 9:{res:{sf: .1654724}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     4146}}}{space 1}
+
+{com}. estimates store panel_b_full
+{txt}
+{com}. * benchmark sample
+. estpost summarize $Xvar if $condition
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:SEX}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:  .511371}}}{space 1}{space 1}{ralign 9:{res:{sf: .2498755}}}{space 1}{space 1}{ralign 9:{res:{sf: .4998755}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    26758}}}{space 1}
+{space 0}{space 0}{ralign 12:FEMALE}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .3359324}}}{space 1}{space 1}{ralign 9:{res:{sf: .2230861}}}{space 1}{space 1}{ralign 9:{res:{sf: .4723199}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    17578}}}{space 1}
+{space 0}{space 0}{ralign 12:NAT1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .0089822}}}{space 1}{space 1}{ralign 9:{res:{sf: .0089016}}}{space 1}{space 1}{ralign 9:{res:{sf: .0943485}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      470}}}{space 1}
+{space 0}{space 0}{ralign 12:ADM}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .6971486}}}{space 1}{space 1}{ralign 9:{res:{sf: .2111364}}}{space 1}{space 1}{ralign 9:{res:{sf: .4594959}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    36479}}}{space 1}
+{space 0}{space 0}{ralign 12:ADPR}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .0127279}}}{space 1}{space 1}{ralign 9:{res:{sf: .0125661}}}{space 1}{space 1}{ralign 9:{res:{sf: .1120988}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      666}}}{space 1}
+{space 0}{space 0}{ralign 12:DEPB}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:  .061308}}}{space 1}{space 1}{ralign 9:{res:{sf: .0575504}}}{space 1}{space 1}{ralign 9:{res:{sf: .2398966}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     3208}}}{space 1}
+{space 0}{space 0}{ralign 12:REGBAC}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .2498184}}}{space 1}{space 1}{ralign 9:{res:{sf: .1874128}}}{space 1}{space 1}{ralign 9:{res:{sf:  .432912}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    13072}}}{space 1}
+{space 0}{space 0}{ralign 12:SERIEBAC}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .3820281}}}{space 1}{space 1}{ralign 9:{res:{sf: .2360871}}}{space 1}{space 1}{ralign 9:{res:{sf:  .485888}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    19990}}}{space 1}
+{space 0}{space 0}{ralign 12:DiffDR}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: 3743.716}}}{space 1}{space 1}{ralign 9:{res:{sf:  7900355}}}{space 1}{space 1}{ralign 9:{res:{sf: 2810.757}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:     9800}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.96e+08}}}{space 1}
+{space 0}{space 0}{ralign 12:NOFEE}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:  .623839}}}{space 1}{space 1}{ralign 9:{res:{sf: .2346684}}}{space 1}{space 1}{ralign 9:{res:{sf: .4844258}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    32643}}}{space 1}
+{space 0}{space 0}{ralign 12:PARI}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .4448458}}}{space 1}{space 1}{ralign 9:{res:{sf: .2469627}}}{space 1}{space 1}{ralign 9:{res:{sf: .4969534}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    23277}}}{space 1}
+{space 0}{space 0}{ralign 12:ZIP}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .0252074}}}{space 1}{space 1}{ralign 9:{res:{sf: .0245724}}}{space 1}{space 1}{ralign 9:{res:{sf: .1567559}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     1319}}}{space 1}
+{space 0}{space 0}{ralign 12:Paris}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .5053511}}}{space 1}{space 1}{ralign 9:{res:{sf: .2499761}}}{space 1}{space 1}{ralign 9:{res:{sf: .4999761}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    26443}}}{space 1}
+{space 0}{space 0}{ralign 12:IDFBAC}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .2310515}}}{space 1}{space 1}{ralign 9:{res:{sf: .1776701}}}{space 1}{space 1}{ralign 9:{res:{sf: .4215093}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:    12090}}}{space 1}
+{space 0}{space 0}{ralign 12:PRO1}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf:    52326}}}{space 1}{space 1}{ralign 9:{res:{sf: .0311891}}}{space 1}{space 1}{ralign 9:{res:{sf: .0302169}}}{space 1}{space 1}{ralign 9:{res:{sf: .1738301}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:     1632}}}{space 1}
+
+{com}. estimates store panel_b_benchmark
+{txt}
+{com}. * Create the table
+. esttab panel_b_full panel_b_benchmark using "$path/Results/TableA3_panel_b.tex", replace ///
+>     cells("mean(fmt(3)) sd(fmt(3)) count(fmt(0))") ///
+>     title("Panel B: Dyadic Dependent Variables") ///
+>     mtitles("Full Sample" "Benchmark Sample") ///
+>     label booktabs ///
+>     addnotes("Statistics in (1) are computed on the full sample of data available for each variable," ///
+>              "while statistics in (2) are computed on the benchmark sample.")
+{res}{txt}(output written to {browse  `"/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/TableA3_panel_b.tex"'})
+
+{com}. 
+. restore
+{txt}
+{com}. 
+. log close // Table A3
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/quocanhdo/Monash Uni Enterprise Dropbox/Quoc-Anh Do/Project - Network at Sciences Po/QA - Nicolo/Replication_Package/Replication_Package_Dec2025/Results/LogTableA3.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}31 Dec 2025, 18:20:18
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
